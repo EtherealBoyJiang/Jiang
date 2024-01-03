@@ -502,6 +502,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1.测试计划">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      (1)用户定义的变量
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      (2).独立运行每个线程组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3teardown" class="md-nav__link">
+    <span class="md-ellipsis">
+      (3)主线程结束后运行tearDown线程组
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -630,7 +663,7 @@
 %JAVA_HOME%\bin;
 %JAVA_HOME%\jre\bin;</strong> (windows11好像不需要输入最后的;)
 确定-确定-应用-确定</p>
-<p><img alt="" src="../image/Jmeter/12.png" /></p>
+<p><img alt="" src="../image/Jmeter/5.png" /></p>
 <hr />
 <h3 id="3jmeter">3.安装Jmeter</h3>
 <p><strong>Jmeter下载地址</strong></p>
@@ -662,22 +695,22 @@
 <p>右键线程组--添加--取样器--HTTP请求</p>
 </li>
 <li>
-<p>点击HTTP请求--输入协议、IP或域名、端口、路径，选择请求方式</p>
+<p>点击HTTP请求--输入协议、IP或域名、端口、路径、内容编码，选择请求方式。</p>
 </li>
 </ol>
 <p><img alt="" src="../image/Jmeter/10.png" /></p>
 <ol>
 <li>
-<p>右键HTTP--添加--监听器--查看结果树</p>
+<p>右键测试计划--添加--监听器--查看结果树</p>
 </li>
 <li>
 <p>点击上方绿色三角</p>
 </li>
 <li>
-<p>点击查看结果树
-   <img alt="" src="../image/Jmeter/11.png" /></p>
+<p>点击查看结果树</p>
 </li>
 </ol>
+<p><img alt="" src="../image/Jmeter/11.png" /></p>
 <p><strong>注意：此接口由我编写，只在本地局域网才可请求，后续示例接口一致。请使用可用接口进行使用。</strong></p>
 <hr />
 <h2 id="_2">使用方法</h2>
@@ -685,75 +718,63 @@
 <p>可以将测试计划可视化为用于运行测试的JMeter脚本。测试计划由测试元素组成，例如线程组，逻辑控制器，样本生成控制器，监听器，定时器，断言和配置元素。 每个测试计划中至少应有一个线程组。 我们可以根据要求添加或删除元素。 上述的快速开始就是一个测试计划。</p>
 <p>此Part只阐述测试计划组件中用户定义的变量、独立运行每个线程组、主线程结束后运行tearDown线程组、函数测试模式、添加目录或jar包到classpath。</p>
 <hr />
-<ul>
-<li><strong>用户定义的变量</strong></li>
-</ul>
+<h4 id="1_1">(1)用户定义的变量</h4>
 <p>当你在测试计划的多个部分中有重复值时，可使用用户定义变量，它提供了灵活性。</p>
 <p>使用${name} 调用。</p>
 <p><strong>添加用户定义的变量</strong></p>
-<p><img alt="" src="../image/Jmeter/13.png" /></p>
+<p><img alt="" src="../image/Jmeter/12.png" /></p>
 <p><strong>调用用户定义的变量</strong></p>
+<p><img alt="" src="../image/Jmeter/13.png" /></p>
+<p><strong>运行后的请求参数</strong></p>
 <p><img alt="" src="../image/Jmeter/14.png" /></p>
-<p><strong>运行后，请求参数</strong></p>
+<p><strong>运行后的响应参数</strong></p>
 <p><img alt="" src="../image/Jmeter/15.png" /></p>
 <hr />
-<ul>
-<li><strong>独立运行每个线程组</strong></li>
-</ul>
+<h4 id="2">(2).独立运行每个线程组</h4>
 <p>当一个测试计划中有多个线程组，当多个线程组都是是执行状态时，可能会用到测试计划中的 “独立运行每个线程组”勾选框。</p>
 <p>此次示例的后端代码如下：</p>
-<p><code></code>
-  @app.route('/QuickStart/', methods=['GET', 'POST'])
-  def quickstart():  # put application's code here
-      sleep(3)
-      if request.method == 'GET':
-          return json.dumps({'code': 200, 'message': 'It is QuickStart API, you are GET request!'})
-      if "Post" not in request.get_json():
-          return json.dumps({'code': 400, 'message': 'Request message error!'})
-      return json.dumps({'code': 200, 'message': {"API": "It is QuickStart API, you are POST request!",
-                                                  "data": "The request message is " + request.get_json()['Post'] + '!',
-                                                  "date": "The time now is " + request.get_json()['date'] + "!"}})</p>
-<p>@app.route('/TestPlan/', methods=['POST'])
-  def testplan():
-      sleep(3)
-      if request.method == 'GET':
-          return json.dumps({'code': 200, 'message': 'It is TestPlan API, you are GET request!'})
-      if "Post" not in request.get_json():
-          return json.dumps({'code': 400, 'message': 'Request message error!'})
-      return json.dumps({'code': 200, 'message': {"API": "It is QuickStart API, you are POST request!",
-                                                  "data": "The request message is" + request.get_json()['Post'] + '!',
-                                                  "date": "The time now is " + request.get_json()['date'] + "!"}})
-  <code></code></p>
-<p>每个接口我都设置了休眠三秒，即每个接口在接收到请求数据三秒后，返回响应数据。</p>
+<pre><code>@api.route('/TestPlan1/', methods=['GET', 'POST'])
+def testplan1():
+    sleep(3)
+    if request.method != 'POST':
+        return json.dumps({'code': 200, 'data': 'ERROR: It is TestPlan1 API, you are not POST request!'})
+    data = request.get_json()
+    if "RunThreadGroupsConsecutively" not in data or "ThreadGroupName" not in data or "RequestTime" not in data:
+        return json.dumps({'code': 400, 'data': 'The request body is error!'})
+    return json.dumps({'code': 200,
+                       'data': 'Your request parameters is ' + '"RunThreadGroupsConsecutively:'
+                               + data['RunThreadGroupsConsecutively'] + '", "ThreadGroupName": "' + data[
+                                   'ThreadGroupName'] + '", "RequestTime": "' + data['RequestTime'] + '"'})
+</code></pre>
+<p>我把接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。</p>
 <hr />
-<p>不勾选时的执行顺序如下：测试计划中的多个线程组按照并发逻辑进行请求（同时请求）</p>
-<p>Jmeter中数据如下：</p>
-<p><strong>线程组1</strong></p>
+<p>不勾选时的执行顺序如下：测试计划中的多个线程组按照并发逻辑进行请求（同时请求） Jmeter中数据如下：</p>
+<p><strong>测试计划-独立运行每个线程组-1</strong></p>
 <p>请求数据</p>
-<p><img alt="" src="../image/Jmeter/16.png" />响应数据</p>
-<p><img alt="" src="../image/Jmeter/17.png" /></p>
-<p><strong>线程组2</strong></p>
+<p><img alt="" src="../image/Jmeter/16.png" /> </p>
+<p>请求时间是2024-01-03 04:27:16</p>
+<p><strong>测试计划-独立运行每个线程组-2</strong></p>
 <p>请求数据</p>
-<p><img alt="" src="../image/Jmeter/18.png" />响应数据</p>
-<p><img alt="" src="../image/Jmeter/19.png" /></p>
-<p>可以看出两个线程组发出请求的时间相同，是并发请求。</p>
+<p><img alt="" src="../image/Jmeter/18.png" /></p>
+<p>请求时间是2024-01-03 04:27:16</p>
+<p>可以看出两个线程组发出请求的时间相同，是并发请求。（伪并发）</p>
 <hr />
 <p>勾选时执行顺序如下：测试计划中的多个线程组按照串行逻辑进行请求（顺序请求）</p>
 <p>Jmeter中数据如下：</p>
-<p><strong>线程组1</strong></p>
+<p><strong>测试计划-独立运行每个线程组-1</strong></p>
+<p>请求数据 <img alt="" src="../image/Jmeter/19.png" /></p>
+<p>请求时间是2024-01-03 04:40:31</p>
+<p><strong>测试计划-独立运行每个线程组-2</strong></p>
 <p>请求数据</p>
 <p><img alt="" src="../image/Jmeter/20.png" /></p>
-<p>响应数据</p>
-<p><img alt="" src="../image/Jmeter/21.png" /></p>
-<p><strong>线程组2</strong></p>
-<p>请求数据</p>
-<p><img alt="" src="../image/Jmeter/22.png" />响应数据</p>
-<p><img alt="" src="../image/Jmeter/23.png" /></p>
+<p>请求时间是2024-01-03 04:40:34</p>
 <p>可以看出两个线程组发出请求的时间相隔3秒，是顺序请求。</p>
 <hr />
-<ul>
-<li></li>
-</ul>
+<h4 id="3teardown">(3)主线程结束后运行tearDown线程组</h4>
+<p>主要应用于普通线程因错误结束执行时。</p>
+<hr />
+<p>如果勾选此项，普通线程因错误结束执行时，会继续执行tearDown线程</p>
+<p>如果不勾选此项，普通线程因错误结束执行时，则不会执行tearDown线程组。</p>
 
 
 
