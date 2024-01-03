@@ -532,6 +532,48 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      (4).函数测试模式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5jarclasspath" class="md-nav__link">
+    <span class="md-ellipsis">
+      (5).添加目录或jar包到classpath
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.线程组
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.线程组">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      (1).线程组(普通线程组)
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -716,7 +758,24 @@
 <h2 id="_2">使用方法</h2>
 <h3 id="1">1.测试计划</h3>
 <p>可以将测试计划可视化为用于运行测试的JMeter脚本。测试计划由测试元素组成，例如线程组，逻辑控制器，样本生成控制器，监听器，定时器，断言和配置元素。 每个测试计划中至少应有一个线程组。 我们可以根据要求添加或删除元素。 上述的快速开始就是一个测试计划。</p>
-<p>此Part只阐述测试计划组件中用户定义的变量、独立运行每个线程组、主线程结束后运行tearDown线程组、函数测试模式、添加目录或jar包到classpath。</p>
+<p>测试计划控制面板包含：</p>
+<ul>
+<li>
+<p>用户定义的变量</p>
+</li>
+<li>
+<p>独立运行每个线程组</p>
+</li>
+<li>
+<p>主线程结束后运行tearDown线程组</p>
+</li>
+<li>
+<p>函数测试模式</p>
+</li>
+<li>
+<p>添加目录或jar包到classpath</p>
+</li>
+</ul>
 <hr />
 <h4 id="1_1">(1)用户定义的变量</h4>
 <p>当你在测试计划的多个部分中有重复值时，可使用用户定义变量，它提供了灵活性。</p>
@@ -771,10 +830,47 @@ def testplan1():
 <p>可以看出两个线程组发出请求的时间相隔3秒，是顺序请求。</p>
 <hr />
 <h4 id="3teardown">(3)主线程结束后运行tearDown线程组</h4>
-<p>主要应用于普通线程因错误结束执行时。</p>
+<p>主要应用于普通线程配置在取样器错误后要执行的动作选择停止测试或立即停止测试时。</p>
 <hr />
-<p>如果勾选此项，普通线程因错误结束执行时，会继续执行tearDown线程</p>
-<p>如果不勾选此项，普通线程因错误结束执行时，则不会执行tearDown线程组。</p>
+<p>如果勾选此项，普通线程因取样器错误结束执行时，会继续执行tearDown线程</p>
+<p>错误线程组</p>
+<p><img alt="" src="../image/Jmeter/21.png" /></p>
+<p>tearDown线程组继续执行</p>
+<p><img alt="" src="../image/Jmeter/22.png" /></p>
+<p>可以看出在取样器错误的情况下，仍执行tearDown线程组</p>
+<hr />
+<p>如果不勾选此项，普通线程因取样器错误结束执行时，则不会执行tearDown线程组。</p>
+<p><img alt="" src="../image/Jmeter/23.png" /></p>
+<p>可以看出在取样器错误的情况下，不再执行tearDown线程组</p>
+<hr />
+<h4 id="4_1">(4).函数测试模式</h4>
+<p>因极少使用，现在先不阐述，待日后更新</p>
+<hr />
+<h4 id="5jarclasspath">(5).添加目录或jar包到classpath</h4>
+<p>添加文件或jar包，此功能最常用于调用外部jar包。当脚本需要调用外部的java文件或jar包时，可以把jar包路径添加到这里，然后就可以在beanshell中直接import进来，并调用jar包中的方法。</p>
+<p>后续讲到beanshell时，再阐述用法。</p>
+<hr />
+<h3 id="2_1">2.线程组</h3>
+<p>线程组顾名思义，线程组表示JMeter在测试期间将使用的线程组。 线程组元素是任何测试计划的起点。 </p>
+<p>线程组包含:</p>
+<ul>
+<li>线程组(普通线程组)</li>
+<li>setup线程组</li>
+<li>tearDown 线程组</li>
+<li>开放模型线程组</li>
+</ul>
+<p>执行顺序：setup线程组&gt;线程组(普通线程组)=开放模型线程组&gt;tearDown 线程组</p>
+<p>多个同类型线程组情况下，需搭配 ‘独立运行每个线程组’。</p>
+<ul>
+<li>
+<p>勾选时，同类型线程组顺序请求</p>
+</li>
+<li>
+<p>未勾选时，同类型线程组随机请求，时间大致一样(伪并发)</p>
+</li>
+</ul>
+<hr />
+<h4 id="1_2">(1).线程组(普通线程组)</h4>
 
 
 
