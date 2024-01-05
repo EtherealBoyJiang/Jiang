@@ -762,14 +762,18 @@
 <p><br><br></p>
 <h2 id="jmeter_1"><font size=8>JMeter 环境安装及配置</font></h2>
 <hr />
+<p>JMeter依赖Java环境，如果没事先安装jdk，启动jmeter会出现“Not able to find Java executable or version. Please check your Java installation.”的错误。</p>
+<hr />
+<p><br></p>
 <h3 id="1-jdk"><font size=7>1. 安装JDK</font></h3>
 <hr />
-<p><strong>JMeter依赖Java环境，如果没事先安装jdk，启动jmeter会出现“Not able to find Java executable or version. Please check your Java installation.”的错误。</strong></p>
 <p><strong>JDK下载地址：</strong></p>
 <pre><code>https://www.oracle.com/java/technologies/downloads/#java21
 </code></pre>
 <hr />
-<p><strong>(1).示例为Windows，实际应根据电脑操作系统下载对应的jdk安装包下载后双击安装包进行安装。</strong></p>
+<ul>
+<li><strong>示例为Windows，实际应根据电脑操作系统下载对应的jdk安装包下载后双击安装包进行安装。</strong></li>
+</ul>
 <p><img alt="" src="../image/Jmeter/2.png" /></p>
 <hr />
 <p><br></p>
@@ -779,13 +783,20 @@
 <p><strong>注意：系统变量是很重要的，不要随意改动，不然可能会造成系统死机。</strong>
 我的系统是win11，如果你的是win10或win8、win7，进入系统变量的方法可能会有不同。</p>
 <hr />
-<p><strong>(1).新建系统变量：</strong></p>
+<p><br></p>
+<ul>
+<li><strong>新建系统变量：</strong></li>
+</ul>
 <p><img alt="" src="../image/Jmeter/3.png" /></p>
 <hr />
-<p><strong>(2).变量值就是JDK的安装目录路径。</strong></p>
+<ul>
+<li><strong>变量值就是JDK的安装目录路径。</strong></li>
+</ul>
 <p><img alt="" src="../image/Jmeter/4.png" /></p>
 <hr />
-<p><strong>(3).找到Path，选中，点击编辑。</strong></p>
+<ul>
+<li><strong>找到Path，选中，点击编辑。</strong></li>
+</ul>
 <p><strong>新建两个环境变量，依次输入
 %JAVA_HOME%\bin;
 %JAVA_HOME%\jre\bin;</strong> (windows11好像不需要输入最后的;)
@@ -799,23 +810,35 @@
 <pre><code>https://jmeter.apache.org/download_jmeter.cgi
 </code></pre>
 <hr />
-<p><strong>(1).点击红框内选项，下载Jmeter的ZIP包</strong></p>
+<ul>
+<li><strong>点击红框内选项，下载Jmeter的ZIP包</strong></li>
+</ul>
 <p><img alt="" src="../image/Jmeter/5.png" /></p>
 <hr />
-<p><strong>(2).在目录下解压，建议解压到D:\Tools目录下</strong></p>
+<ul>
+<li><strong>在目录下解压，建议解压到D:\Tools目录下</strong></li>
+</ul>
 <p><img alt="" src="../image/Jmeter/6.png" /></p>
 <hr />
-<p><strong>(3).汉化Jmeter界面，需要修改Jmeter目录下bin文件夹内jmeter.properties。language=zh_CN</strong></p>
+<ul>
+<li><strong>汉化Jmeter界面，需要修改Jmeter目录下bin文件夹内jmeter.properties。language=zh_CN</strong></li>
+</ul>
 <p><strong>推荐使用Notepad++软件进行修改</strong></p>
 <p><img alt="" src="../image/Jmeter/7.png" /></p>
 <hr />
-<p><strong>(4).把Jmeter.bat启动文件发送到桌面快捷方式</strong></p>
+<ul>
+<li><strong>把Jmeter.bat启动文件发送到桌面快捷方式</strong></li>
+</ul>
 <p><img alt="" src="../image/Jmeter/8.png" /></p>
 <hr />
-<p><strong>(5).在桌面打开后，我们就可以使用Jmeter了</strong></p>
+<ul>
+<li><strong>在桌面打开后，我们就可以使用Jmeter了</strong></li>
+</ul>
 <p><img alt="" src="../image/Jmeter/9.png" /></p>
 <hr />
+<p><br></p>
 <h3 id="4_1"><font size=7>4.快速使用</font></h3>
+<hr />
 <ul>
 <li>
 <p>右键测试计划--添加--线程(用户)--线程组</p>
@@ -831,6 +854,7 @@
 <pre><code>  协议：HTTP IP：127.0.0.1 端口：5000 请求方式：GET 路径：/QuickUse/
 </code></pre>
 <p><img alt="" src="../image/Jmeter/10.png" /></p>
+<hr />
 <ul>
 <li>
 <p>右键测试计划--添加--监听器--查看结果树</p>
@@ -846,11 +870,17 @@
 <pre><code>  {"code": 200, "data": "It is successful!"}
 </code></pre>
 <p><img alt="" src="../image/Jmeter/11.png" /></p>
+<hr />
 <p><strong>请注意：本文中示例接口仅在本地局域网内可用。后续我可能会将这些接口打包上传到我的 GitHub 仓库中，方便下载和使用。</strong>
 <strong>下载后的 ZIP 文件解压后，可在本地运行，你就可以对接口进行请求了。</strong></p>
 <hr />
+<p><br></p>
+<p><br></p>
 <h2 id="_2"><font size=8>使用方法</font></h2>
+<hr />
+<p><br></p>
 <h3 id="1"><font size=7>1.测试计划</font></h3>
+<hr />
 <p>可以将测试计划可视化为用于运行测试的JMeter脚本。测试计划由测试元素组成，例如线程组，逻辑控制器，样本生成控制器，监听器，定时器，断言和配置元素。 每个测试计划中至少应有一个线程组。 我们可以根据要求添加或删除元素。 上述的快速开始就是一个测试计划。</p>
 <p>测试计划控制面板包含：</p>
 <ul>
@@ -871,10 +901,13 @@
 </li>
 </ul>
 <hr />
+<p><br></p>
 <h4 id="1_1"><font size=6>(1)用户定义的变量</font></h4>
+<hr />
 <p>当你在测试计划的多个部分中有重复值时，可使用用户定义变量，它提供了灵活性。</p>
 <p>使用${name} 调用。</p>
 <hr />
+<p><br></p>
 <ul>
 <li><strong>添加用户定义的变量</strong></li>
 </ul>
@@ -886,6 +919,7 @@
 </code></pre>
 <p><img alt="" src="../image/Jmeter/12.png" /></p>
 <hr />
+<p><br></p>
 <ul>
 <li><strong>调用用户定义的变量</strong></li>
 </ul>
@@ -900,6 +934,7 @@
 </code></pre>
 <p><img alt="" src="../image/Jmeter/13.png" /></p>
 <hr />
+<p><br></p>
 <ul>
 <li><strong>右键取样器-添加-配置元件-HTTP信息头管理器</strong></li>
 </ul>
@@ -912,6 +947,7 @@
 </code></pre>
 <p><img alt="" src="../image/Jmeter/24.png" /></p>
 <hr />
+<p><br></p>
 <ul>
 <li><strong>点击上方绿色三角运行后，查看结果树</strong></li>
 </ul>
@@ -920,6 +956,7 @@
 </code></pre>
 <p><img alt="" src="../image/Jmeter/14.png" /></p>
 <hr />
+<p><br></p>
 <h4 id="2"><font size=6>(2).独立运行每个线程组</font></h4>
 <p>当一个测试计划中有多个线程组，当多个线程组都是是执行状态时，可能会用到测试计划中的 “独立运行每个线程组”勾选框。</p>
 <p>此次示例的后端代码如下：</p>
@@ -938,6 +975,7 @@ def testplan1():
 </code></pre>
 <p>我把接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。</p>
 <hr />
+<p><br></p>
 <p>Jmeter脚本如下：</p>
 <ul>
 <li>第一个线程组：测试计划-独立运行每个线程组-1</li>
@@ -955,6 +993,7 @@ def testplan1():
 <p>值输入：</p>
 <p><code>application/json</code></p>
 <hr />
+<p><br></p>
 <ul>
 <li>第二个线程组：测试计划-独立运行每个线程组-2</li>
 </ul>
@@ -970,6 +1009,7 @@ def testplan1():
 <p>值输入：</p>
 <p><code>application/json</code></p>
 <hr />
+<p><br></p>
 <ul>
 <li><strong>不勾选时的执行顺序如下：测试计划中的多个线程组按照并发逻辑进行请求（同时请求）</strong></li>
 </ul>
@@ -987,6 +1027,7 @@ def testplan1():
 <p><img alt="" src="../image/Jmeter/18.png" /></p>
 <p>可以看出两个线程组发出请求的时间相同，两个线程组是并发请求。</p>
 <hr />
+<p><br></p>
 <ul>
 <li><strong>勾选时执行顺序如下：测试计划中的多个线程组按照串行逻辑进行请求（顺序请求）</strong></li>
 </ul>
@@ -1003,11 +1044,14 @@ def testplan1():
 <p><img alt="" src="../image/Jmeter/20.png" /></p>
 <p>可以看出两个线程组发出请求的时间相隔3秒，正是接口中休眠的3秒，两个线程组是顺序请求。</p>
 <hr />
+<p><br></p>
 <h4 id="3teardown"><font size=6>(3)主线程结束后运行tearDown线程组</font></h4>
+<hr />
 <p>主要应用于普通线程配置在取样器错误后要执行的动作选择停止测试或立即停止测试时。</p>
 <p>如果勾选此项，普通线程因取样器错误结束执行时，会继续执行tearDown线程。</p>
 <p>右键测试计划-添加-线程-tearDown线程组。</p>
 <hr />
+<p><br></p>
 <p>Jmeter脚本如下：</p>
 <p>测试计划-错误线程:</p>
 <p>线程组控制面板内，在取样器错误后要执行的动作中，勾选停止或立即停止</p>
@@ -1015,6 +1059,7 @@ def testplan1():
 <pre><code>HTTP://127.127.5.1:5000/T/
 </code></pre>
 <hr />
+<p><br></p>
 <p>测试计划-主线程结束后运行tearDown线程组：</p>
 <p>请求地址：</p>
 <pre><code>HTTP://127.0.0.1:5000/TestPlan1/
@@ -1033,6 +1078,7 @@ def testplan1():
 <pre><code>application/json
 </code></pre>
 <hr />
+<p><br></p>
 <ul>
 <li>勾选主线程结束后运行tearDown线程组</li>
 </ul>
@@ -1040,6 +1086,7 @@ def testplan1():
 <p><img alt="" src="../image/Jmeter/22.png" /></p>
 <p>可以看出在取样器错误的情况下，仍执行tearDown线程组</p>
 <hr />
+<p><br></p>
 <ul>
 <li>不勾选主线程结束后运行tearDown线程组</li>
 </ul>
@@ -1047,14 +1094,20 @@ def testplan1():
 <p><img alt="" src="../image/Jmeter/23.png" /></p>
 <p>可以看出在取样器错误的情况下，不再执行tearDown线程组</p>
 <hr />
+<p><br></p>
 <h4 id="4_2"><font size=6>(4).函数测试模式</font></h4>
+<hr />
 <p>因极少使用，现在先不阐述，待日后更新</p>
 <hr />
+<p><br></p>
 <h4 id="5jarclasspath"><font size=6>(5).添加目录或jar包到classpath</font></h4>
 <p>添加文件或jar包，此功能最常用于调用外部jar包。当脚本需要调用外部的java文件或jar包时，可以把jar包路径添加到这里，然后就可以在beanshell中直接import进来，并调用jar包中的方法。</p>
 <p>后续讲到beanshell时，再阐述用法。</p>
 <hr />
+<p><br></p>
+<p><br></p>
 <h3 id="2_1"><font size=7>2.线程组</font></h3>
+<hr />
 <p>线程组元件是所有测试计划的入口。所有的取样器和控制器必须放在线程组下。一个线程组可以看作一个虚拟用户池，其中的每个线程都可以理解为一个虚拟用户，多个虚拟用户同时去执行相同的一批次任务。每个线程之间都是隔离的，互不影响的。一个线程的执行过程中，操作的变量不会影响其他线程的变量值。 </p>
 <p>线程组包含:</p>
 <ul>
@@ -1063,11 +1116,15 @@ def testplan1():
 <li>tearDown 线程组</li>
 <li>开放模型线程组</li>
 </ul>
+<hr />
+<p><br></p>
 <h4 id="1_2"><font size=6>(1).执行顺序</font></h4>
 <hr />
+<p><br></p>
 <h5 id="1setupteardown"><font size=5 color=#36464e>1).setup线程组&gt;线程组(普通线程组)=开放模型线程组&gt;tearDown 线程组</font></h5>
 <p>Jmeter脚本如下：</p>
 <hr />
+<p><br></p>
 <p>setup线程组(默认面板)：</p>
 <p>请求地址：</p>
 <pre><code>HTTP://127.0.0.1:5000/QuickUse/
@@ -1083,6 +1140,7 @@ def testplan1():
 <pre><code>${__time(yyyy-MM-dd%hh:mm:ss,now)}
 </code></pre>
 <hr />
+<p><br></p>
 <p>线程组(默认面板)：</p>
 <p>请求地址：</p>
 <pre><code>HTTP://127.0.0.1:5000/TestPlan/
@@ -1105,6 +1163,7 @@ def testplan1():
 <pre><code>3000
 </code></pre>
 <hr />
+<p><br></p>
 <p>tearDwon线程组(默认面板)</p>
 <p>请求地址：</p>
 <pre><code>HTTP://127.0.0.1:5000/TestPlan1/
@@ -1127,8 +1186,10 @@ def testplan1():
 <pre><code>3000
 </code></pre>
 <hr />
+<p><br></p>
 <p>运行后查看结果树：</p>
 <hr />
+<p><br></p>
 <p>setup线程组：</p>
 <p>请求参数：</p>
 <pre><code>?date=2024-01-04%04:19:12
@@ -1136,6 +1197,7 @@ def testplan1():
 <p>请求时间是2024-01-04 04:19:12</p>
 <p><img alt="" src="../image/Jmeter/25.png" /></p>
 <hr />
+<p><br></p>
 <p>线程组：</p>
 <p>请求参数：</p>
 <pre><code>{"UserDefinedVariables":"2024-01-04 04:19:15"}
@@ -1143,6 +1205,7 @@ def testplan1():
 <p>请求时间是2024-01-04 04:19:15</p>
 <p><img alt="" src="../image/Jmeter/26.png" /></p>
 <hr />
+<p><br></p>
 <p>tearDown线程组：</p>
 <p>请求参数：</p>
 <pre><code>{"RunThreadGroupsConsecutively":"1", "ThreadGroupName":"tearDown线程组", "RequestTime":"2024-01-04 04:19:18"}
@@ -1150,9 +1213,11 @@ def testplan1():
 <p>请求时间是2024-01-04 04:19:18</p>
 <p><img alt="" src="../image/Jmeter/27.png" /></p>
 <hr />
+<p><br></p>
 <p>可以看出它们之间各隔3秒(固定定时器延迟3秒)，是按照setup线程组&gt;线程组(普通线程组)&gt;tearDown 线程组的顺序。</p>
 <p>开放模型线程组与线程组优先级一样，在此不再演示。</p>
 <hr />
+<p><br></p>
 <h5 id="2_2"><font size=5 color=#36464e>2).多个同类型线程组情况下，需搭配 ‘独立运行每个线程组’。</font></h5>
 <hr />
 <ul>
@@ -1166,6 +1231,7 @@ def testplan1():
 <p>上面在测试计划篇章中，以线程组进行过演示。</p>
 <p>其它线程组同类型下与线程组逻辑一致，不再进行演示。</p>
 <hr />
+<p><br></p>
 <h4 id="1setupteardown_1"><font size=6>(1).setup线程组、线程组、tearDown线程组</font></h4>
 <hr />
 <p>这三种类型的线程组的控制面板基本一致，包括：</p>
@@ -1194,7 +1260,8 @@ def testplan1():
 <li>延迟创建线程直到需要</li>
 </ul>
 <hr />
-<h5 id="1_3"><font size=5>1).取样器错误后执行的动作</font></h5>
+<p><br></p>
+<h5 id="1_3"><font size=5 color=#36464e>1).取样器错误后执行的动作</font></h5>
 <p>这几个配置项控制了「当遇到错误的时候测试的执行策略」是否会继续执行。</p>
 <ul>
 <li>继续：忽略错误，继续执行</li>
