@@ -783,7 +783,6 @@
 <p><strong>注意：系统变量是很重要的，不要随意改动，不然可能会造成系统死机。</strong>
 我的系统是win11，如果你的是win10或win8、win7，进入系统变量的方法可能会有不同。</p>
 <hr />
-<p><br></p>
 <ul>
 <li><strong>新建系统变量：</strong></li>
 </ul>
@@ -907,7 +906,6 @@
 <p>当你在测试计划的多个部分中有重复值时，可使用用户定义变量，它提供了灵活性。</p>
 <p>使用${name} 调用。</p>
 <hr />
-<p><br></p>
 <ul>
 <li><strong>添加用户定义的变量</strong></li>
 </ul>
@@ -919,7 +917,6 @@
 </code></pre>
 <p><img alt="" src="../image/Jmeter/12.png" /></p>
 <hr />
-<p><br></p>
 <ul>
 <li><strong>调用用户定义的变量</strong></li>
 </ul>
@@ -934,7 +931,6 @@
 </code></pre>
 <p><img alt="" src="../image/Jmeter/13.png" /></p>
 <hr />
-<p><br></p>
 <ul>
 <li><strong>右键取样器-添加-配置元件-HTTP信息头管理器</strong></li>
 </ul>
@@ -947,7 +943,6 @@
 </code></pre>
 <p><img alt="" src="../image/Jmeter/24.png" /></p>
 <hr />
-<p><br></p>
 <ul>
 <li><strong>点击上方绿色三角运行后，查看结果树</strong></li>
 </ul>
@@ -975,7 +970,6 @@ def testplan1():
 </code></pre>
 <p>我把接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。</p>
 <hr />
-<p><br></p>
 <p>Jmeter脚本如下：</p>
 <ul>
 <li>第一个线程组：测试计划-独立运行每个线程组-1</li>
@@ -993,7 +987,6 @@ def testplan1():
 <p>值输入：</p>
 <p><code>application/json</code></p>
 <hr />
-<p><br></p>
 <ul>
 <li>第二个线程组：测试计划-独立运行每个线程组-2</li>
 </ul>
@@ -1027,7 +1020,6 @@ def testplan1():
 <p><img alt="" src="../image/Jmeter/18.png" /></p>
 <p>可以看出两个线程组发出请求的时间相同，两个线程组是并发请求。</p>
 <hr />
-<p><br></p>
 <ul>
 <li><strong>勾选时执行顺序如下：测试计划中的多个线程组按照串行逻辑进行请求（顺序请求）</strong></li>
 </ul>
@@ -1051,7 +1043,6 @@ def testplan1():
 <p>如果勾选此项，普通线程因取样器错误结束执行时，会继续执行tearDown线程。</p>
 <p>右键测试计划-添加-线程-tearDown线程组。</p>
 <hr />
-<p><br></p>
 <p>Jmeter脚本如下：</p>
 <p>测试计划-错误线程:</p>
 <p>线程组控制面板内，在取样器错误后要执行的动作中，勾选停止或立即停止</p>
@@ -1059,7 +1050,6 @@ def testplan1():
 <pre><code>HTTP://127.127.5.1:5000/T/
 </code></pre>
 <hr />
-<p><br></p>
 <p>测试计划-主线程结束后运行tearDown线程组：</p>
 <p>请求地址：</p>
 <pre><code>HTTP://127.0.0.1:5000/TestPlan1/
@@ -1078,7 +1068,6 @@ def testplan1():
 <pre><code>application/json
 </code></pre>
 <hr />
-<p><br></p>
 <ul>
 <li>勾选主线程结束后运行tearDown线程组</li>
 </ul>
@@ -1086,7 +1075,6 @@ def testplan1():
 <p><img alt="" src="../image/Jmeter/22.png" /></p>
 <p>可以看出在取样器错误的情况下，仍执行tearDown线程组</p>
 <hr />
-<p><br></p>
 <ul>
 <li>不勾选主线程结束后运行tearDown线程组</li>
 </ul>
@@ -1105,7 +1093,6 @@ def testplan1():
 <p>后续讲到beanshell时，再阐述用法。</p>
 <hr />
 <p><br></p>
-<p><br></p>
 <h3 id="2_1"><font size=7>2.线程组</font></h3>
 <hr />
 <p>线程组元件是所有测试计划的入口。所有的取样器和控制器必须放在线程组下。一个线程组可以看作一个虚拟用户池，其中的每个线程都可以理解为一个虚拟用户，多个虚拟用户同时去执行相同的一批次任务。每个线程之间都是隔离的，互不影响的。一个线程的执行过程中，操作的变量不会影响其他线程的变量值。 </p>
@@ -1120,11 +1107,9 @@ def testplan1():
 <p><br></p>
 <h4 id="1_2"><font size=6>(1).执行顺序</font></h4>
 <hr />
-<p><br></p>
 <h5 id="1setupteardown"><font size=5 color=#36464e>1).setup线程组&gt;线程组(普通线程组)=开放模型线程组&gt;tearDown 线程组</font></h5>
 <p>Jmeter脚本如下：</p>
 <hr />
-<p><br></p>
 <p>setup线程组(默认面板)：</p>
 <p>请求地址：</p>
 <pre><code>HTTP://127.0.0.1:5000/QuickUse/
@@ -1140,7 +1125,6 @@ def testplan1():
 <pre><code>${__time(yyyy-MM-dd%hh:mm:ss,now)}
 </code></pre>
 <hr />
-<p><br></p>
 <p>线程组(默认面板)：</p>
 <p>请求地址：</p>
 <pre><code>HTTP://127.0.0.1:5000/TestPlan/
@@ -1163,7 +1147,6 @@ def testplan1():
 <pre><code>3000
 </code></pre>
 <hr />
-<p><br></p>
 <p>tearDwon线程组(默认面板)</p>
 <p>请求地址：</p>
 <pre><code>HTTP://127.0.0.1:5000/TestPlan1/
@@ -1186,10 +1169,8 @@ def testplan1():
 <pre><code>3000
 </code></pre>
 <hr />
-<p><br></p>
 <p>运行后查看结果树：</p>
 <hr />
-<p><br></p>
 <p>setup线程组：</p>
 <p>请求参数：</p>
 <pre><code>?date=2024-01-04%04:19:12
@@ -1197,7 +1178,6 @@ def testplan1():
 <p>请求时间是2024-01-04 04:19:12</p>
 <p><img alt="" src="../image/Jmeter/25.png" /></p>
 <hr />
-<p><br></p>
 <p>线程组：</p>
 <p>请求参数：</p>
 <pre><code>{"UserDefinedVariables":"2024-01-04 04:19:15"}
@@ -1205,7 +1185,6 @@ def testplan1():
 <p>请求时间是2024-01-04 04:19:15</p>
 <p><img alt="" src="../image/Jmeter/26.png" /></p>
 <hr />
-<p><br></p>
 <p>tearDown线程组：</p>
 <p>请求参数：</p>
 <pre><code>{"RunThreadGroupsConsecutively":"1", "ThreadGroupName":"tearDown线程组", "RequestTime":"2024-01-04 04:19:18"}
@@ -1213,11 +1192,9 @@ def testplan1():
 <p>请求时间是2024-01-04 04:19:18</p>
 <p><img alt="" src="../image/Jmeter/27.png" /></p>
 <hr />
-<p><br></p>
 <p>可以看出它们之间各隔3秒(固定定时器延迟3秒)，是按照setup线程组&gt;线程组(普通线程组)&gt;tearDown 线程组的顺序。</p>
 <p>开放模型线程组与线程组优先级一样，在此不再演示。</p>
 <hr />
-<p><br></p>
 <h5 id="2_2"><font size=5 color=#36464e>2).多个同类型线程组情况下，需搭配 ‘独立运行每个线程组’。</font></h5>
 <hr />
 <ul>
@@ -1260,12 +1237,13 @@ def testplan1():
 <li>延迟创建线程直到需要</li>
 </ul>
 <hr />
-<p><br></p>
 <h5 id="1_3"><font size=5 color=#36464e>1).取样器错误后执行的动作</font></h5>
 <p>这几个配置项控制了「当遇到错误的时候测试的执行策略」是否会继续执行。</p>
+<hr />
 <ul>
 <li>继续：忽略错误，继续执行</li>
 </ul>
+<hr />
 <p>jmeter脚本如下：</p>
 <p>测试计划-错误线程:</p>
 <p>请求地址输入无法访问的地址：</p>
