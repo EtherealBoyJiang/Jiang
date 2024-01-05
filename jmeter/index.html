@@ -160,6 +160,18 @@
 </div>
     
     
+      <div class="md-header__source">
+        <a href="https://example.com/project/repo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Example
+  </div>
+</a>
+      </div>
+    
   </nav>
   
     
@@ -262,6 +274,18 @@
     </a>
     EtherealBoyJiang
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://example.com/project/repo" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Example
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -421,9 +445,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3_1" class="md-nav__link">
+  <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      3.工作流程
+      4.工作流程
     </span>
   </a>
   
@@ -472,7 +496,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#4_1" class="md-nav__link">
     <span class="md-ellipsis">
       4.快速使用
     </span>
@@ -533,7 +557,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4_1" class="md-nav__link">
+  <a href="#4_2" class="md-nav__link">
     <span class="md-ellipsis">
       (4).函数测试模式
     </span>
@@ -568,9 +592,57 @@
           <li class="md-nav__item">
   <a href="#1_2" class="md-nav__link">
     <span class="md-ellipsis">
-      (1).线程组(普通线程组)
+      (1).执行顺序
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="(1).执行顺序">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1setupteardown" class="md-nav__link">
+    <span class="md-ellipsis">
+      1).setup线程组&gt;线程组(普通线程组)=开放模型线程组&gt;tearDown 线程组
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2).多个同类型线程组情况下，需搭配 ‘独立运行每个线程组’。
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1setupteardown_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      (1).setup线程组、线程组、tearDown线程组
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="(1).setup线程组、线程组、tearDown线程组">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      1).取样器错误后执行的动作
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -635,15 +707,19 @@
                   
 
 
-<h1 id="jmeter">JMeter教程</h1>
-<h2 id="_1">前言</h2>
+<h1 id="jmeter"><font size=10> JMeter教程</font></h1>
+<h2 id="_1"><font size=8>前言</font></h2>
 <p><img alt="" src="../image/Jmeter/0.png" /></p>
-<h3 id="1jmeter">1.关于Jmeter</h3>
+<p><br></p>
+<h3 id="1jmeter"><font size=7>1.关于Jmeter</font></h3>
+<hr />
 <p>JMeter是Apache组织开发的基于Java的压力测试工具。用于对软件做压力测试，它最初被设计用于Web应用测试，但后来扩展到其他测试领域。 它可以用于测试静态和动态资源，例如静态文件、Java 小服务程序、CGI 脚本、Java 对象、数据库、FTP 服务器， 等等。</p>
 <p>JMeter 可以用于对服务器、网络或对象模拟巨大的负载，来自不同压力类别下测试它们的强度和分析整体性能。</p>
 <p>另外，JMeter能够对应用程序做功能/回归测试，通过创建带有断言的脚本来验证你的程序返回了你期望的结果。为了最大限度的灵活性，JMeter允许使用正则表达式创建断言。</p>
 <hr />
-<h3 id="2-jmeter">2. 我们为什么使用Jmeter</h3>
+<p><br></p>
+<h3 id="2-jmeter"><font size=7>2. 我们为什么使用Jmeter</font></h3>
+<hr />
 <ul>
 <li>开源免费，基于Java编写，可集成到其他系统可拓展各个功能插件</li>
 <li>支持接口测试，压力测试等多种功能，支持录制回放，入门简单</li>
@@ -651,7 +727,9 @@
 <li>多平台支持，可在Linux，Windows，Mac上运行selenium 是一套完整的web应用程序测试系统，包含了测试的录制（selenium IDE）,编写及运行（Selenium Remote Control）和测试的并行处理（Selenium Grid）。Selenium的核心Selenium Core基于JsUnit，完全由JavaScript编写，因此可以用于任何支持JavaScript的浏览器上。</li>
 </ul>
 <hr />
-<h3 id="3">3.主要组件介绍</h3>
+<p><br></p>
+<h3 id="3"><font size=7>3.主要组件介绍</font></h3>
+<hr />
 <p><strong>（1）测试计划(Test Plan)</strong></p>
 <p>是使用JMeter进行测试的起点，它是其它JMeter测试元件的容器。</p>
 <p><strong>（2）线程组(Thread Group)</strong></p>
@@ -674,13 +752,18 @@
 <p><strong>（10）执行顺序(Execution sequence)</strong></p>
 <p>配置元件、前置处理器、定时器、取样器、后置处理器、断言、监听器</p>
 <hr />
-<h3 id="3_1">3.工作流程</h3>
+<p><br></p>
+<h3 id="4"><font size=7>4.工作流程</font></h3>
+<hr />
 <p>JMeter通过模拟一组用户将请求发送到目标服务器。 随后，收集数据以通过各种格式计算目标服务器的统计和显示性能度量。</p>
 <p><strong>如下图所示：</strong></p>
 <p><img alt="" src="../image/Jmeter/1.png" /></p>
 <hr />
-<h2 id="jmeter_1">JMeter 环境安装及配置</h2>
-<h3 id="1-jdk">1. 安装JDK</h3>
+<p><br><br></p>
+<h2 id="jmeter_1"><font size=8>JMeter 环境安装及配置</font></h2>
+<hr />
+<h3 id="1-jdk"><font size=7>1. 安装JDK</font></h3>
+<hr />
 <p><strong>JMeter依赖Java环境，如果没事先安装jdk，启动jmeter会出现“Not able to find Java executable or version. Please check your Java installation.”的错误。</strong></p>
 <p><strong>JDK下载地址：</strong></p>
 <pre><code>https://www.oracle.com/java/technologies/downloads/#java21
@@ -689,7 +772,9 @@
 <p><strong>(1).示例为Windows，实际应根据电脑操作系统下载对应的jdk安装包下载后双击安装包进行安装。</strong></p>
 <p><img alt="" src="../image/Jmeter/2.png" /></p>
 <hr />
-<h3 id="2jdk">2.配置JDK系统变量</h3>
+<p><br></p>
+<h3 id="2jdk"><font size=7>2.配置JDK系统变量</font></h3>
+<hr />
 <p>安装完成了就是配置环境变量。右键此电脑-属性，然后点击高级系统设置-系统变量。</p>
 <p><strong>注意：系统变量是很重要的，不要随意改动，不然可能会造成系统死机。</strong>
 我的系统是win11，如果你的是win10或win8、win7，进入系统变量的方法可能会有不同。</p>
@@ -707,7 +792,9 @@
 确定-确定-应用-确定</p>
 <p><img alt="" src="../image/Jmeter/5.png" /></p>
 <hr />
-<h3 id="3jmeter">3.安装Jmeter</h3>
+<p><br></p>
+<h3 id="3jmeter"><font size=7>3.安装Jmeter</font></h3>
+<hr />
 <p><strong>Jmeter下载地址</strong></p>
 <pre><code>https://jmeter.apache.org/download_jmeter.cgi
 </code></pre>
@@ -728,7 +815,7 @@
 <p><strong>(5).在桌面打开后，我们就可以使用Jmeter了</strong></p>
 <p><img alt="" src="../image/Jmeter/9.png" /></p>
 <hr />
-<h3 id="4">4.快速使用</h3>
+<h3 id="4_1"><font size=7>4.快速使用</font></h3>
 <ul>
 <li>
 <p>右键测试计划--添加--线程(用户)--线程组</p>
@@ -762,8 +849,8 @@
 <p><strong>请注意：本文中示例接口仅在本地局域网内可用。后续我可能会将这些接口打包上传到我的 GitHub 仓库中，方便下载和使用。</strong>
 <strong>下载后的 ZIP 文件解压后，可在本地运行，你就可以对接口进行请求了。</strong></p>
 <hr />
-<h2 id="_2">使用方法</h2>
-<h3 id="1">1.测试计划</h3>
+<h2 id="_2"><font size=8>使用方法</font></h2>
+<h3 id="1"><font size=7>1.测试计划</font></h3>
 <p>可以将测试计划可视化为用于运行测试的JMeter脚本。测试计划由测试元素组成，例如线程组，逻辑控制器，样本生成控制器，监听器，定时器，断言和配置元素。 每个测试计划中至少应有一个线程组。 我们可以根据要求添加或删除元素。 上述的快速开始就是一个测试计划。</p>
 <p>测试计划控制面板包含：</p>
 <ul>
@@ -784,7 +871,7 @@
 </li>
 </ul>
 <hr />
-<h4 id="1_1">(1)用户定义的变量</h4>
+<h4 id="1_1"><font size=6>(1)用户定义的变量</font></h4>
 <p>当你在测试计划的多个部分中有重复值时，可使用用户定义变量，它提供了灵活性。</p>
 <p>使用${name} 调用。</p>
 <hr />
@@ -833,7 +920,7 @@
 </code></pre>
 <p><img alt="" src="../image/Jmeter/14.png" /></p>
 <hr />
-<h4 id="2">(2).独立运行每个线程组</h4>
+<h4 id="2"><font size=6>(2).独立运行每个线程组</font></h4>
 <p>当一个测试计划中有多个线程组，当多个线程组都是是执行状态时，可能会用到测试计划中的 “独立运行每个线程组”勾选框。</p>
 <p>此次示例的后端代码如下：</p>
 <pre><code>@api.route('/TestPlan1/', methods=['GET', 'POST'])
@@ -916,7 +1003,7 @@ def testplan1():
 <p><img alt="" src="../image/Jmeter/20.png" /></p>
 <p>可以看出两个线程组发出请求的时间相隔3秒，正是接口中休眠的3秒，两个线程组是顺序请求。</p>
 <hr />
-<h4 id="3teardown">(3)主线程结束后运行tearDown线程组</h4>
+<h4 id="3teardown"><font size=6>(3)主线程结束后运行tearDown线程组</font></h4>
 <p>主要应用于普通线程配置在取样器错误后要执行的动作选择停止测试或立即停止测试时。</p>
 <p>如果勾选此项，普通线程因取样器错误结束执行时，会继续执行tearDown线程。</p>
 <p>右键测试计划-添加-线程-tearDown线程组。</p>
@@ -960,15 +1047,15 @@ def testplan1():
 <p><img alt="" src="../image/Jmeter/23.png" /></p>
 <p>可以看出在取样器错误的情况下，不再执行tearDown线程组</p>
 <hr />
-<h4 id="4_1">(4).函数测试模式</h4>
+<h4 id="4_2"><font size=6>(4).函数测试模式</font></h4>
 <p>因极少使用，现在先不阐述，待日后更新</p>
 <hr />
-<h4 id="5jarclasspath">(5).添加目录或jar包到classpath</h4>
+<h4 id="5jarclasspath"><font size=6>(5).添加目录或jar包到classpath</font></h4>
 <p>添加文件或jar包，此功能最常用于调用外部jar包。当脚本需要调用外部的java文件或jar包时，可以把jar包路径添加到这里，然后就可以在beanshell中直接import进来，并调用jar包中的方法。</p>
 <p>后续讲到beanshell时，再阐述用法。</p>
 <hr />
-<h3 id="2_1">2.线程组</h3>
-<p>线程组顾名思义，线程组表示JMeter在测试期间将使用的线程组。 线程组元素是任何测试计划的起点。 </p>
+<h3 id="2_1"><font size=7>2.线程组</font></h3>
+<p>线程组元件是所有测试计划的入口。所有的取样器和控制器必须放在线程组下。一个线程组可以看作一个虚拟用户池，其中的每个线程都可以理解为一个虚拟用户，多个虚拟用户同时去执行相同的一批次任务。每个线程之间都是隔离的，互不影响的。一个线程的执行过程中，操作的变量不会影响其他线程的变量值。 </p>
 <p>线程组包含:</p>
 <ul>
 <li>线程组(普通线程组)</li>
@@ -976,8 +1063,98 @@ def testplan1():
 <li>tearDown 线程组</li>
 <li>开放模型线程组</li>
 </ul>
-<p>执行顺序：setup线程组&gt;线程组(普通线程组)=开放模型线程组&gt;tearDown 线程组</p>
-<p>多个同类型线程组情况下，需搭配 ‘独立运行每个线程组’。</p>
+<h4 id="1_2"><font size=6>(1).执行顺序</font></h4>
+<hr />
+<h5 id="1setupteardown"><font size=5 color=#36464e>1).setup线程组&gt;线程组(普通线程组)=开放模型线程组&gt;tearDown 线程组</font></h5>
+<p>Jmeter脚本如下：</p>
+<hr />
+<p>setup线程组(默认面板)：</p>
+<p>请求地址：</p>
+<pre><code>HTTP://127.0.0.1:5000/QuickUse/
+</code></pre>
+<p>请求方式：</p>
+<pre><code>GET
+</code></pre>
+<p>添加参数：</p>
+<p>名称：</p>
+<pre><code>date
+</code></pre>
+<p>值：</p>
+<pre><code>${__time(yyyy-MM-dd%hh:mm:ss,now)}
+</code></pre>
+<hr />
+<p>线程组(默认面板)：</p>
+<p>请求地址：</p>
+<pre><code>HTTP://127.0.0.1:5000/TestPlan/
+</code></pre>
+<p>请求方式：</p>
+<pre><code>POST
+</code></pre>
+<p>消息体数据：</p>
+<pre><code>{"UserDefinedVariables":"${__time(yyyy-MM-dd hh:mm:ss,now)}"}
+</code></pre>
+<p>在HTTP信息头管理器中点击下方添加信息头</p>
+<p>名称输入：</p>
+<pre><code>Content-Type
+</code></pre>
+<p>值输入：</p>
+<pre><code>application/json
+</code></pre>
+<p>右键取样器-添加-定时器-固定定时器(作用是延迟线程组或取样器工作的时间)</p>
+<p>线程延迟输入(单位毫秒)：</p>
+<pre><code>3000
+</code></pre>
+<hr />
+<p>tearDwon线程组(默认面板)</p>
+<p>请求地址：</p>
+<pre><code>HTTP://127.0.0.1:5000/TestPlan1/
+</code></pre>
+<p>请求方式：</p>
+<pre><code>POST
+</code></pre>
+<p>消息体数据：</p>
+<pre><code>{&quot;RunThreadGroupsConsecutively&quot;:&quot;1&quot;, &quot;ThreadGroupName&quot;:&quot;tearDown线程组&quot;, &quot;RequestTime&quot;:&quot;${__time(yyyy-MM-dd hh:mm:ss,now)}&quot;}
+</code></pre>
+<p>在HTTP信息头管理器中点击下方添加信息头</p>
+<p>名称输入：</p>
+<pre><code>Content-Type
+</code></pre>
+<p>值输入：</p>
+<pre><code>application/json
+</code></pre>
+<p>右键取样器-添加-定时器-固定定时器(作用是延迟线程组或取样器工作的时间)</p>
+<p>线程延迟输入(单位毫秒)：</p>
+<pre><code>3000
+</code></pre>
+<hr />
+<p>运行后查看结果树：</p>
+<hr />
+<p>setup线程组：</p>
+<p>请求参数：</p>
+<pre><code>?date=2024-01-04%04:19:12
+</code></pre>
+<p>请求时间是2024-01-04 04:19:12</p>
+<p><img alt="" src="../image/Jmeter/25.png" /></p>
+<hr />
+<p>线程组：</p>
+<p>请求参数：</p>
+<pre><code>{"UserDefinedVariables":"2024-01-04 04:19:15"}
+</code></pre>
+<p>请求时间是2024-01-04 04:19:15</p>
+<p><img alt="" src="../image/Jmeter/26.png" /></p>
+<hr />
+<p>tearDown线程组：</p>
+<p>请求参数：</p>
+<pre><code>{"RunThreadGroupsConsecutively":"1", "ThreadGroupName":"tearDown线程组", "RequestTime":"2024-01-04 04:19:18"}
+</code></pre>
+<p>请求时间是2024-01-04 04:19:18</p>
+<p><img alt="" src="../image/Jmeter/27.png" /></p>
+<hr />
+<p>可以看出它们之间各隔3秒(固定定时器延迟3秒)，是按照setup线程组&gt;线程组(普通线程组)&gt;tearDown 线程组的顺序。</p>
+<p>开放模型线程组与线程组优先级一样，在此不再演示。</p>
+<hr />
+<h5 id="2_2"><font size=5 color=#36464e>2).多个同类型线程组情况下，需搭配 ‘独立运行每个线程组’。</font></h5>
+<hr />
 <ul>
 <li>
 <p>勾选时，同类型线程组顺序请求</p>
@@ -986,8 +1163,52 @@ def testplan1():
 <p>未勾选时，同类型线程组随机请求，时间大致一样(伪并发)</p>
 </li>
 </ul>
+<p>上面在测试计划篇章中，以线程组进行过演示。</p>
+<p>其它线程组同类型下与线程组逻辑一致，不再进行演示。</p>
 <hr />
-<h4 id="1_2">(1).线程组(普通线程组)</h4>
+<h4 id="1setupteardown_1"><font size=6>(1).setup线程组、线程组、tearDown线程组</font></h4>
+<hr />
+<p>这三种类型的线程组的控制面板基本一致，包括：</p>
+<ul>
+<li>
+<p>取样器错误后执行的动作</p>
+</li>
+<li>
+<p>线程数</p>
+</li>
+<li>
+<p>Ramp-Up时间(秒)</p>
+</li>
+<li>
+<p>循环次数</p>
+</li>
+<li>
+<p>Same user on each iteration(在每次迭代中使用相同的用户)</p>
+</li>
+<li>
+<p>调度器</p>
+</li>
+</ul>
+<p>线程组的控制面板多一个：</p>
+<ul>
+<li>延迟创建线程直到需要</li>
+</ul>
+<hr />
+<h5 id="1_3"><font size=5>1).取样器错误后执行的动作</font></h5>
+<p>这几个配置项控制了「当遇到错误的时候测试的执行策略」是否会继续执行。</p>
+<ul>
+<li>继续：忽略错误，继续执行</li>
+</ul>
+<p>jmeter脚本如下：</p>
+<p>测试计划-错误线程:</p>
+<p>请求地址输入无法访问的地址：</p>
+<p><code>HTTP://127.127.5.1:5000/T/</code></p>
+<ul>
+<li>启动下一进程循环： 忽略错误，线程当前循环终止，执行下一个循环。</li>
+<li>停止线程：当前线程停止执行，不影响其他线程正常执行。</li>
+<li>停止测试：整个测试会在所有当前正在执行的线程执行完毕后停止</li>
+<li>立即停止测试：整个测试会立即停止执行，当前正在执行的取样器可能会被中断。</li>
+</ul>
 
 
 
