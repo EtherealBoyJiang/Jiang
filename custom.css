@@ -1,0 +1,5 @@
+/* 移动导航栏到最左边 */
+.navbar {
+    left: 0;
+    right: auto;
+}
