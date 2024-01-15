@@ -1140,16 +1140,19 @@
 </ul>
 <p>这是我的第一个教程，后续也会编辑更多的教程。希望能通过这一行为与各位取得交流，与大家一起讨论更多的事情。</p>
 <hr />
-<div class="admonition attention">
-<p class="admonition-title">注意：</p>
-<p>此教程基于Jmeter-5.6.2版本。</p>
-</div>
-<hr />
 <p>此教程的部分内容引用来源如下：</p>
 <blockquote>
 <p><a href="https://www.emqx.com/zh/blog/introduction-to-jmeter-test-components#%E4%B8%80-%E7%BA%BF%E7%A8%8B%E7%BB%84">JMeter 测试组件介绍 | EMQ</a></p>
 <p><a href="https://www.niaoge.com/jmeter/jmeter-index.html">鸟哥教程</a></p>
 </blockquote>
+<hr />
+<p><strong>请注意：本文中示例接口仅在本地局域网内可用。后续我会将这些接口打包并提供下载。</strong></p>
+<div class="admonition attention">
+<p class="admonition-title">注意：</p>
+<p>此教程基于Jmeter-5.6.2版本。
+本文中示例接口仅在本地局域网内可用。后续我会将这些接口打包并提供下载</p>
+</div>
+<hr />
 <div>
 <br>
 </div>
@@ -1202,6 +1205,8 @@
 <p><strong>如下图所示：</strong></p>
 <p><img alt="" src="../image/Jmeter/1.png" /></p>
 <hr />
+<p>本章节探讨了JMeter的由来及其作用，以及对JMeter主要组件的概要介绍、原理和流程的讨论。我们还探讨了为何选择使用JMeter进行性能测试，以及它在性能测试领域中的优势。通过对JMeter的整体了解，读者将更好地准备好深入学习和应用这个强大的性能测试工具。</p>
+<hr />
 <div>
 <br>
 <br>
@@ -1211,7 +1216,6 @@
 <hr />
 <p>JMeter依赖Java环境，如果没事先安装jdk，启动jmeter就会出错误。</p>
 <hr />
-<p><br></p>
 <h3 id="jdk">安装JDK</h3>
 <hr />
 <p><strong>1.下载JDK</strong></p>
@@ -1295,40 +1299,71 @@
 <p><br></p>
 <h3 id="_4">快速使用</h3>
 <hr />
-<ul>
-<li>
-<p>右键测试计划--添加--线程(用户)--线程组</p>
-</li>
-<li>
-<p>右键线程组--添加--取样器--HTTP请求</p>
-</li>
-<li>
-<p>点击HTTP请求--输入协议、IP或域名、端口、路径、内容编码，选择请求方式。</p>
-</li>
-</ul>
-<p>示例：</p>
-<div class="highlight"><pre><span></span><code>  协议：HTTP IP：127.0.0.1 端口：5000 请求方式：GET 路径：/QuickUse/
+<p>我们可以使用最简单的JMeter脚本来快速进行一次接口请求。这个脚本包括测试计划、线程组、取样器（Sampler）以及查看结果器（View Results Tree）。</p>
+<p>在测试计划中，我们定义了整个测试的基本设置。线程组用于模拟用户，而取样器则代表了具体的请求。查看结果器则用于查看请求的详细结果。</p>
+<p>通过这个简单的脚本，我们能够迅速进行一次接口请求测试，为后续更复杂的测试做好基础工作。这个基本结构也为我们学习更多JMeter的高级功能打下了基础。</p>
+<hr />
+<p><strong>示例接口：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@api</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/QuickUse/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">quickuse</span><span class="p">():</span>  <span class="c1"># Jmeter教程快速开始api</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR: The request method is not GET!&#39;</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;It is successful!&#39;</span><span class="p">})</span>
 </code></pre></div>
+<hr />
+<p><strong>Jmeter脚本如下：</strong></p>
+<hr />
+<p>1.添加基本组件</p>
+<p>右键测试计划-添加-线程（用户）-线程组。</p>
+<p>右键测试计划-添加-监听器-查看结果树。</p>
+<p>右键线程组-添加-取样器-HTTP请求。</p>
+<hr />
+<p>2.HTTP请求控制面板：</p>
+<p>请求地址：</p>
+<div class="highlight"><pre><span></span><code>HTTP://127.0.0.1:5000/QuickUse/
+</code></pre></div>
+<p>请求方式：</p>
+<div class="highlight"><pre><span></span><code>GET
+</code></pre></div>
+<hr />
+<p>如图：</p>
 <p><img alt="" src="../image/Jmeter/10.png" /></p>
 <hr />
-<ul>
-<li>
-<p>右键测试计划--添加--监听器--查看结果树</p>
-</li>
-<li>
-<p>点击上方绿色三角按钮</p>
-</li>
-<li>
-<p>点击查看结果树</p>
-</li>
-</ul>
-<p>响应数据：</p>
-<div class="highlight"><pre><span></span><code>  {&quot;code&quot;: 200, &quot;data&quot;: &quot;It is successful!&quot;}
-</code></pre></div>
-<p><img alt="" src="../image/Jmeter/11.png" /></p>
+<p><strong>运行Jmeter脚本（点击上方绿色三角形），查看结果树：</strong></p>
 <hr />
-<p><strong>请注意：本文中示例接口仅在本地局域网内可用。后续我可能会将这些接口打包上传到我的 GitHub 仓库中，方便下载和使用。</strong>
-<strong>下载后的 ZIP 文件解压后，可在本地运行，你就可以对接口进行请求了。</strong></p>
+<p>请求数据：</p>
+<hr />
+<p>请求头：</p>
+<div class="highlight"><pre><span></span><code>Connection: keep-alive
+Host: 127.0.0.1:5000
+User-Agent: Apache-HttpClient/4.5.14 (Java/20.0.2)
+</code></pre></div>
+<p>请求体：</p>
+<div class="highlight"><pre><span></span><code>GET http://127.0.0.1:5000/QuickUse/
+
+GET data:
+
+
+[no cookies]
+</code></pre></div>
+<hr />
+<p>响应数据：</p>
+<hr />
+<p>响应头：</p>
+<div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
+Server: Werkzeug/3.0.1 Python/3.12.1
+Date: Mon, 15 Jan 2024 03:39:26 GMT
+Content-Type: application/json
+Content-Length: 40
+Connection: close
+</code></pre></div>
+<p>响应体：</p>
+<div class="highlight"><pre><span></span><code>{&quot;code&quot;: 200, &quot;data&quot;: &quot;It is successful!&quot;}
+</code></pre></div>
+<p>如图：</p>
+<p><img alt="" src="../image/JmeterGIF/3.gif" /></p>
+<hr />
+<p>本篇主要介绍JMeter的环境配置以及初体验，为后续的JMeter之旅做好准备。在这一章节中，我们将了解如何配置JMeter的环境，以及如何进行简单的接口测试。接下来的篇章将深入探讨JMeter的各项功能和用法，帮助你更好地利用这个强大的性能测试工具。</p>
 <hr />
 <div>
 <br><br>
@@ -1336,7 +1371,6 @@
 
 <h2 id="_5">使用方法</h2>
 <hr />
-<p><br></p>
 <h3 id="_6">测试计划的控制面板</h3>
 <hr />
 <p>可以将测试计划可视化为用于运行测试的JMeter脚本。测试计划由测试元素组成，例如线程组，逻辑控制器，样本生成控制器，监听器，定时器，断言和配置元素。 每个测试计划中至少应有一个线程组。 我们可以根据要求添加或删除元素。 上述的快速开始就是一个测试计划。</p>
@@ -1362,53 +1396,100 @@
 <p><br></p>
 <h4 id="_7">用户定义的变量</h4>
 <hr />
-<p>当你在测试计划的多个部分中有重复值时，可使用用户定义变量，它提供了灵活性。</p>
-<p>使用${name} 调用。</p>
+<p>当在测试计划的多个部分中存在重复的数值时，可以通过使用用户定义变量来提供更灵活的设置。</p>
+<p>在测试计划控制面板中，用户定义变量的作用域覆盖整个测试计划。</p>
+<p>你可以通过<code>${变量名称}</code>的方式来引用这些变量。这种方式允许你在不同的请求或操作中使用相同的数值，从而更加方便地维护和修改。</p>
 <hr />
-<ul>
-<li><strong>添加用户定义的变量</strong></li>
-</ul>
-<p>名称输入</p>
-<div class="highlight"><pre><span></span><code>  UserDefinedVariables
+<p><strong>示例接口代码：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@api</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/TestPlan/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">testplan</span><span class="p">():</span>  <span class="c1"># Jmeter教程测试计划-用户定义的变量api</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR: The request method is not POST&#39;</span><span class="p">})</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>
+    <span class="k">if</span> <span class="s2">&quot;UserDefinedVariables&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR: The request body is error!&#39;</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;Your request parameters is &#39;</span> <span class="o">+</span> <span class="s1">&#39;&quot;UserDefinedVariables:&#39;</span>
+                                         <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;UserDefinedVariables&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">})</span><span class="err">!</span><span class="s1">&#39;})</span>
 </code></pre></div>
-<p>值可以随意输入，我输入的是：</p>
-<div class="highlight"><pre><span></span><code>  我是用户定义的变量
+<hr />
+<p><strong>示例Jmeter脚本：</strong></p>
+<hr />
+<p>1、测试计划组件控制面板中添加用户定义的变量</p>
+<p>名称：</p>
+<div class="highlight"><pre><span></span><code>UserDefinedVariables
 </code></pre></div>
+<p>值随意输入，如：</p>
+<div class="highlight"><pre><span></span><code>我是用户定义的变量
+</code></pre></div>
+<p>如图：</p>
 <p><img alt="" src="../image/Jmeter/12.png" /></p>
 <hr />
-<ul>
-<li><strong>调用用户定义的变量</strong></li>
-</ul>
+<p>2.取样器中调用用户定义的变量</p>
 <p>请求地址：</p>
-<div class="highlight"><pre><span></span><code>  HTTP://127.0.0.1:5000/TestPlan/
+<div class="highlight"><pre><span></span><code>HTTP://127.0.0.1:5000/TestPlan/
 </code></pre></div>
 <p>请求方式：</p>
-<div class="highlight"><pre><span></span><code>  POST
+<div class="highlight"><pre><span></span><code>POST
 </code></pre></div>
-<p>消息体数据：</p>
-<div class="highlight"><pre><span></span><code>  {&quot;UserDefinedVariables&quot;：&quot;${UserDefinedVariables}&quot;}
+<p>消息体数据，调用测试计划面板中用户变量：</p>
+<div class="highlight"><pre><span></span><code>{&quot;UserDefinedVariables&quot;:&quot;${UserDefinedVariables}&quot;}
 </code></pre></div>
+<p>如图：</p>
 <p><img alt="" src="../image/Jmeter/13.png" /></p>
 <hr />
-<ul>
-<li><strong>右键取样器-添加-配置元件-HTTP信息头管理器</strong></li>
-</ul>
-<p>在HTTP信息头管理器中点击下方添加信息头</p>
-<p>名称输入：</p>
-<div class="highlight"><pre><span></span><code>  Content-Type
+<p>3.添加HTTP信息头管理器（右键HTTP请求-添加-配置元件-HTTP信息头管理器），添加信息头，指定请求体类型</p>
+<p>名称：</p>
+<div class="highlight"><pre><span></span><code>Content-Type
 </code></pre></div>
-<p>值输入：</p>
-<div class="highlight"><pre><span></span><code>  application/json
+<p>值：</p>
+<div class="highlight"><pre><span></span><code>application/json
 </code></pre></div>
+<p>如图：</p>
 <p><img alt="" src="../image/Jmeter/24.png" /></p>
 <hr />
-<ul>
-<li><strong>点击上方绿色三角运行后，查看结果树</strong></li>
-</ul>
-<p>请求参数：</p>
-<div class="highlight"><pre><span></span><code>  {&quot;UserDefinedVariables&quot;：&quot;我是用户定义的变量&quot;}
+<p><strong>运行Jmeter脚本，查看结果树</strong></p>
+<hr />
+<p>请求数据：</p>
+<hr />
+<p>请求头：</p>
+<div class="highlight"><pre><span></span><code>Connection: keep-alive
+Content-Type: application/json
+Content-Length: 58
+Host: 127.0.0.1:5000
+User-Agent: Apache-HttpClient/4.5.14 (Java/20.0.2)
 </code></pre></div>
-<p><img alt="" src="../image/Jmeter/14.png" /></p>
+<p>请求体：</p>
+<div class="highlight"><pre><span></span><code>POST http://127.0.0.1:5000/TestPlan/
+
+POST data:
+
+{&quot;UserDefinedVariables&quot;:&quot;我是用户定义的变量&quot;}
+
+
+[no cookies]
+</code></pre></div>
+<hr />
+<p>响应数据：</p>
+<hr />
+<p>响应头：</p>
+<div class="highlight"><pre><span></span><code>HTTP/1.1 200 OK
+Server: Werkzeug/3.0.1 Python/3.12.1
+Date: Mon, 15 Jan 2024 06:19:08 GMT
+Content-Type: application/json
+Content-Length: 132
+Connection: close
+</code></pre></div>
+<p>响应体：</p>
+<div class="highlight"><pre><span></span><code>{
+    &quot;code&quot;: 200,
+    &quot;data&quot;: &quot;Your request parameters is :{\&quot;UserDefinedVariables:我是用户定义的变量\&quot;}&quot;
+}
+</code></pre></div>
+<p>如图：</p>
+<p><img alt="" src="../image/JmeterGIF/4.gif" /></p>
+<hr />
+<p>可以清晰地看出，接口请求参数中调用了用户定义的变量值：“我是用户定义的变量”。</p>
+<p>此外，JMeter提供的组件中也包含用户定义的变量，通过线程组/取样器-添加-配置元件-用户定义的变量进行添加。这个组件的用法与测试计划面板中的用户定义的变量一致，不同之处在于作用域。测试计划面板中用户定义的变量的作用范围是整个测试计划，而配置元件中的用户定义的变量根据所在位置的不同而决定作用范围。例如，位于测试计划下一级的用户定义的变量的作用范围是整个测试计划，与测试计划面板中用户定义的变量的作用范围相一致。</p>
 <hr />
 <p><br></p>
 <h4 id="_8">独立运行每个线程组</h4>
