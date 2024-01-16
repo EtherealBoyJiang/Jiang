@@ -1491,103 +1491,123 @@ Connection: close
 <p>可以清晰地看出，接口请求参数中调用了用户定义的变量值：“我是用户定义的变量”。</p>
 <p>此外，JMeter提供的组件中也包含用户定义的变量，通过线程组/取样器-添加-配置元件-用户定义的变量进行添加。这个组件的用法与测试计划面板中的用户定义的变量一致，不同之处在于作用域。测试计划面板中用户定义的变量的作用范围是整个测试计划，而配置元件中的用户定义的变量根据所在位置的不同而决定作用范围。例如，位于测试计划下一级的用户定义的变量的作用范围是整个测试计划，与测试计划面板中用户定义的变量的作用范围相一致。</p>
 <hr />
-<p><br></p>
+<div>
+<br>
+</div>
+
 <h4 id="_8">独立运行每个线程组</h4>
-<p>当一个测试计划中有多个线程组，当多个线程组都是是执行状态时，可能会用到测试计划中的 “独立运行每个线程组”勾选框。</p>
-<p>此次示例的后端代码如下：</p>
-<div class="highlight"><pre><span></span><code>@api.route(&#39;/TestPlan1/&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
-def testplan1():
-    sleep(3)
-    if request.method != &#39;POST&#39;:
-        return json.dumps({&#39;code&#39;: 200, &#39;data&#39;: &#39;ERROR: It is TestPlan1 API, you are not POST request!&#39;})
-    data = request.get_json()
-    if &quot;RunThreadGroupsConsecutively&quot; not in data or &quot;ThreadGroupName&quot; not in data or &quot;RequestTime&quot; not in data:
-        return json.dumps({&#39;code&#39;: 400, &#39;data&#39;: &#39;The request body is error!&#39;})
-    return json.dumps({&#39;code&#39;: 200,
-                       &#39;data&#39;: &#39;Your request parameters is &#39; + &#39;&quot;RunThreadGroupsConsecutively:&#39;
-                               + data[&#39;RunThreadGroupsConsecutively&#39;] + &#39;&quot;, &quot;ThreadGroupName&quot;: &quot;&#39; + data[
-                                   &#39;ThreadGroupName&#39;] + &#39;&quot;, &quot;RequestTime&quot;: &quot;&#39; + data[&#39;RequestTime&#39;] + &#39;&quot;&#39;})
-</code></pre></div>
-<p>我把接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。</p>
 <hr />
-<p>Jmeter脚本如下：</p>
-<ul>
-<li>第一个线程组：测试计划-独立运行每个线程组-1</li>
-</ul>
+<p>当一个测试计划中包含多个线程组，且这些线程组都处于执行状态时，可能会使用测试计划中的“独立运行每个线程组”勾选框，以防止各个线程组之间相互影响。</p>
+<p>在这种情况下，通过勾选“独立运行每个线程组”选项，确保每个线程组在执行时都是相互独立的。这意味着它们将不会共享任何变量或资源，从而避免潜在的相互干扰。</p>
+<p>这个选项的使用对于模拟多个并发场景或测试不同业务流程的情况非常重要。它确保每个线程组在测试计划中都能够独立运行，从而更准确地模拟真实世界的使用情境，提高测试的可靠性和准确性。</p>
+<hr />
+<p><strong>示例接口代码：</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nd">@api</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/TestPlan1/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">testplan1</span><span class="p">():</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39; 请求方式错误！&#39;</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;处理完毕&#39;</span><span class="p">})</span>
+</code></pre></div>
+<p>接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。</p>
+<hr />
+<p><strong>示例Jmeter脚本：</strong></p>
+<hr />
+<p>1、在测试计划中添加两个线程组，分别命名为“线程组1”和“线程组2”。</p>
+<p>2、在每个线程组下添加相同配置的取样器，并分别命名为“取样器1”和“取样器2”。</p>
 <p>请求地址：</p>
 <div class="highlight"><pre><span></span><code>HTTP://127.0.0.1:5000/TestPlan1/
 </code></pre></div>
 <p>请求方式：</p>
-<div class="highlight"><pre><span></span><code>POST
-</code></pre></div>
-<p>消息体数据：</p>
-<div class="highlight"><pre><span></span><code>{&quot;RunThreadGroupsConsecutively&quot;:&quot;未勾选/勾选&quot;,&quot;ThreadGroupName&quot;:&quot;测试计划-独立运行每个线程组-1&quot;,&quot;RequestTime&quot;:&quot;${__time(yyyy-MM-dd hh:mm:ss,now)}&quot;}
-</code></pre></div>
-<p>${__time(yyyy-MM-dd hh<img alt="🇲🇲" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f1f2-1f1f2.svg" title=":mm:" />ss,now)}的作用是发送请求时，引用当时时间，格式为2020-06-23 14:57:56，后面讲到函数时再详细阐述。</p>
-<p>在HTTP信息头管理器中点击下方添加信息头：</p>
-<p>名称输入：</p>
-<div class="highlight"><pre><span></span><code>Content-Type
-</code></pre></div>
-<p>值输入：</p>
-<div class="highlight"><pre><span></span><code>application/json
+<div class="highlight"><pre><span></span><code>GET
 </code></pre></div>
 <hr />
-<ul>
-<li>第二个线程组：测试计划-独立运行每个线程组-2</li>
-</ul>
-<p>请求地址：</p>
-<div class="highlight"><pre><span></span><code>HTTP://127.0.0.1:5000/TestPlan1/
-</code></pre></div>
-<p>请求方式：</p>
-<div class="highlight"><pre><span></span><code>POST
-</code></pre></div>
-<p>消息体数据：</p>
-<div class="highlight"><pre><span></span><code>{&quot;RunThreadGroupsConsecutively&quot;:&quot;未勾选/勾选&quot;,&quot;ThreadGroupName&quot;:&quot;测试计划-独立运行每个线程组-2&quot;,&quot;RequestTime&quot;:&quot;${__time(yyyy-MM-dd hh:mm:ss,now)}&quot;}
-</code></pre></div>
-<p>在HTTP信息头管理器中点击下方添加信息头</p>
-<p>名称输入：</p>
-<div class="highlight"><pre><span></span><code>Content-Type
-</code></pre></div>
-<p>值输入：</p>
-<div class="highlight"><pre><span></span><code>application/json
-</code></pre></div>
+<p><strong>不勾选时独立运行每个线程组，运行后查看结果树</strong></p>
 <hr />
-<p><br></p>
-<ul>
-<li><strong>不勾选时的执行顺序如下：测试计划中的多个线程组按照并发逻辑进行请求（同时请求）</strong></li>
-</ul>
-<p>运行后查看结果树：</p>
-<p>测试计划-独立运行每个线程组-1</p>
-<p>请求参数：</p>
-<div class="highlight"><pre><span></span><code>  {&quot;RunThreadGroupsConsecutively&quot;:&quot;未勾选&quot;,&quot;ThreadGroupName&quot;:&quot;测试计划-独立运行每个线程组-1&quot;,&quot;RequestTime&quot;:&quot;2024-01-03 04:27:16&quot;}
-</code></pre></div>
-<p>请求时间是2024-01-03 04:27:16</p>
-<p><img alt="" src="../image/Jmeter/16.png" /></p>
-<p>测试计划-独立运行每个线程组-2：</p>
-<p>请求参数：</p>
-<div class="highlight"><pre><span></span><code>{&quot;RunThreadGroupsConsecutively&quot;:&quot;未勾选&quot;,&quot;ThreadGroupName&quot;:&quot;测试计划-独立运行每个线程组-2&quot;,&quot;RequestTime&quot;:&quot;2024-01-03 04:27:16&quot;}
-</code></pre></div>
-<p>请求时间是2024-01-03 04:27:16</p>
-<p><img alt="" src="../image/Jmeter/18.png" /></p>
-<p>可以看出两个线程组发出请求的时间相同，两个线程组是并发请求。</p>
+<p>取样器结果：</p>
 <hr />
-<ul>
-<li><strong>勾选时执行顺序如下：测试计划中的多个线程组按照串行逻辑进行请求（顺序请求）</strong></li>
-</ul>
-<p>运行后查看结果树：</p>
-<p>测试计划-独立运行每个线程组-1</p>
-<p>请求参数：</p>
-<div class="highlight"><pre><span></span><code>{&quot;RunThreadGroupsConsecutively&quot;:&quot;勾选&quot;,&quot;ThreadGroupName&quot;:&quot;测试计划-独立运行每个线程组-1&quot;,&quot;RequestTime&quot;:&quot;2024-01-03 04:40:31&quot;}
+<p>HTTP请求1取样器结果：</p>
+<div class="highlight"><pre><span></span><code>hread Name:线程组1 1-1
+Sample Start:2024-01-16 11:19:34 CST
+Load time:3004
+Connect Time:1
+Latency:3004
+Size in bytes:231
+Sent bytes:210
+Headers size in bytes:165
+Body size in bytes:66
+Sample Count:1
+Error Count:0
+Data type (&quot;text&quot;|&quot;bin&quot;|&quot;&quot;):text
+Response code:200
+Response message:OK
 </code></pre></div>
-<p>请求时间是2024-01-03 04:40:31</p>
-<p><img alt="" src="../image/Jmeter/19.png" /></p>
-<p>测试计划-独立运行每个线程组-2</p>
-<p>请求参数：</p>
-<div class="highlight"><pre><span></span><code>{&quot;RunThreadGroupsConsecutively&quot;:&quot;勾选&quot;,&quot;ThreadGroupName&quot;:&quot;测试计划-独立运行每个线程组-2&quot;,&quot;RequestTime&quot;:&quot;2024-01-03 04:40:34&quot;}
+<p>HTTP请求2取样器结果：</p>
+<div class="highlight"><pre><span></span><code>Thread Name:线程组2 2-1
+Sample Start:2024-01-16 11:19:34 CST
+Load time:3003
+Connect Time:1
+Latency:3003
+Size in bytes:231
+Sent bytes:210
+Headers size in bytes:165
+Body size in bytes:66
+Sample Count:1
+Error Count:0
+Data type (&quot;text&quot;|&quot;bin&quot;|&quot;&quot;):text
+Response code:200
+Response message:OK
 </code></pre></div>
-<p>请求时间是2024-01-03 04:40:34</p>
-<p><img alt="" src="../image/Jmeter/20.png" /></p>
-<p>可以看出两个线程组发出请求的时间相隔3秒，正是接口中休眠的3秒，两个线程组是顺序请求。</p>
+<p>如图：</p>
+<p><img alt="" src="../image/JmeterGIF/5.gif" /></p>
+<hr />
+<p>Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求在同一时刻发出，即 '2024-01-16 11:19:34'。</p>
+<p>这说明两个取样器是在并发的情况下执行的。这种并发性能使你能够同时模拟两个线程组的请求，这对于测试系统在高负载情况下的性能和稳定性非常有用。</p>
+<hr />
+<p><strong>勾选时独立运行每个线程组，运行后查看结果树</strong></p>
+<hr />
+<p>取样器结果：</p>
+<hr />
+<p>HTTP请求1取样器结果：</p>
+<div class="highlight"><pre><span></span><code>Thread Name:线程组1 1-1
+Sample Start:2024-01-16 11:32:52 CST
+Load time:3004
+Connect Time:1
+Latency:3004
+Size in bytes:231
+Sent bytes:210
+Headers size in bytes:165
+Body size in bytes:66
+Sample Count:1
+Error Count:0
+Data type (&quot;text&quot;|&quot;bin&quot;|&quot;&quot;):text
+Response code:200
+Response message:OK
+</code></pre></div>
+<p>HTTP请求2取样器结果：</p>
+<div class="highlight"><pre><span></span><code>Thread Name:线程组2 2-1
+Sample Start:2024-01-16 11:32:55 CST
+Load time:3003
+Connect Time:1
+Latency:3003
+Size in bytes:231
+Sent bytes:210
+Headers size in bytes:165
+Body size in bytes:66
+Sample Count:1
+Error Count:0
+Data type (&quot;text&quot;|&quot;bin&quot;|&quot;&quot;):text
+Response code:200
+Response message:OK
+</code></pre></div>
+<p>如图：</p>
+<p><img alt="" src="../image/JmeterGIF/6.gif" /></p>
+<hr />
+<p>Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求并非在同一时刻发出。具体而言，HTTP 请求1的请求发出时间是 '2024-01-16 11:32:52'，而 HTTP 请求2的请求发出时间是 '2024-01-16 11:32:55'。两者之间的时间差正好为三秒，与接口休眠的三秒相符，这表明这两个取样器是按顺序执行的。</p>
+<p>这种顺序性的执行方式有助于模拟一些特定场景，例如确保某些操作在前一步骤完成后再进行。通过观察 Sample Start 时间，我们能够更好地理解测试中不同取样器的执行顺序和时间间隔。</p>
+<hr />
+<p>当勾选了 '独立运行每个线程组' 选项时，能够确保测试计划中的相同类型线程组按照顺序执行。在某些特定的测试情况下，这个选项非常有用。相反，若未勾选 '独立运行每个线程组' 时，测试计划中的线程组并不会严格并发，而是可能在较短时间内发出全部请求，尤其是在取样器数量较多的情况下。</p>
+<p>因此，在模拟高并发的情况下，建议在测试计划中添加同步定时器（Synchronizing Timer）。同步定时器可以确保在并发场景下的同一时间点触发多个线程组的请求，以更真实地模拟多用户同时访问系统的情况。这样的设置有助于提高测试的准确性和可靠性，使测试更符合实际应用场景。</p>
 <hr />
 <p><br></p>
 <h4 id="teardown">主线程结束后运行tearDown线程组</h4>
