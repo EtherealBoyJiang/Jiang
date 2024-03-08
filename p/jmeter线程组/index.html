@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='线程组 线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。
+线程组分为四类:
+线程组 setUp线程组 tearDown线程组 开放模型线程组 线程组、setUp线程组、tearDown线程组控制面板中的元素基本一致：
+名称、注释 在取样器错误后执行的动作 线程数 Ramp-Up时间 Same user on each iteration 延迟创建线程直到需要（只有线程组有） 调度器 开放模型线程组控制面板中的元素：
+名称、注释 在取样器错误后执行的动作 调度计划 随机种子 执行顺序 在JMeter中，setUp线程组拥有最高的优先级，而tearDown线程组则具有最低的优先级。这一优先级关系可用表达式表示为：setUp线程组 &amp;gt; 线程组 = 开放模型线程组 &amp;gt; tearDown线程组。
+这意味着在测试计划执行过程中，setUp线程组将首先执行，其后是线程组和开放模型线程组，最后执行tearDown线程组。通常情况下，setUp线程组用于在测试执行之前进行一些初始化工作，而tearDown线程组用于测试执行结束后的清理工作。其他线程组在测试执行过程中按照它们在测试计划中的顺序执行。
+这种优先级的设定确保了在测试的前后可以进行一些全局性的准备和清理工作，以确保测试环境的稳定性和一致性。这种有序的执行流程使得在性能测试中能够更灵活地控制测试场景，并确保测试的准确性和可重复性。
+示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/TestPlan2/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def testplan2(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;GET&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!'>
+<meta name="keywords" content="Jmeter"><title>Jmeter线程组</title>
+
+<link rel='canonical' href='https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/'>
+
+<link rel="stylesheet" href="/Jiang/scss/style.min.c21edb33e5668a98e70c7b72a36e704b8735c2bff69f937eaf930e1b904e6c6f.css"><meta property='og:title' content='Jmeter线程组'>
+<meta property='og:description' content='线程组 线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。
+线程组分为四类:
+线程组 setUp线程组 tearDown线程组 开放模型线程组 线程组、setUp线程组、tearDown线程组控制面板中的元素基本一致：
+名称、注释 在取样器错误后执行的动作 线程数 Ramp-Up时间 Same user on each iteration 延迟创建线程直到需要（只有线程组有） 调度器 开放模型线程组控制面板中的元素：
+名称、注释 在取样器错误后执行的动作 调度计划 随机种子 执行顺序 在JMeter中，setUp线程组拥有最高的优先级，而tearDown线程组则具有最低的优先级。这一优先级关系可用表达式表示为：setUp线程组 &amp;gt; 线程组 = 开放模型线程组 &amp;gt; tearDown线程组。
+这意味着在测试计划执行过程中，setUp线程组将首先执行，其后是线程组和开放模型线程组，最后执行tearDown线程组。通常情况下，setUp线程组用于在测试执行之前进行一些初始化工作，而tearDown线程组用于测试执行结束后的清理工作。其他线程组在测试执行过程中按照它们在测试计划中的顺序执行。
+这种优先级的设定确保了在测试的前后可以进行一些全局性的准备和清理工作，以确保测试环境的稳定性和一致性。这种有序的执行流程使得在性能测试中能够更灵活地控制测试场景，并确保测试的准确性和可重复性。
+示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/TestPlan2/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def testplan2(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;GET&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!'>
+<meta property='og:url' content='https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/'>
+<meta property='og:site_name' content='EtherealBoyJiang'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Jmeter' /><meta property='article:tag' content='线程组' /><meta property='article:published_time' content='2024-01-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-01-26T00:00:00&#43;00:00'/><meta property='og:image' content='https://etherealboyjiang.github.io/Jiang/img/Jmeter/0.png' />
+<meta name="twitter:title" content="Jmeter线程组">
+<meta name="twitter:description" content="线程组 线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。
+线程组分为四类:
+线程组 setUp线程组 tearDown线程组 开放模型线程组 线程组、setUp线程组、tearDown线程组控制面板中的元素基本一致：
+名称、注释 在取样器错误后执行的动作 线程数 Ramp-Up时间 Same user on each iteration 延迟创建线程直到需要（只有线程组有） 调度器 开放模型线程组控制面板中的元素：
+名称、注释 在取样器错误后执行的动作 调度计划 随机种子 执行顺序 在JMeter中，setUp线程组拥有最高的优先级，而tearDown线程组则具有最低的优先级。这一优先级关系可用表达式表示为：setUp线程组 &amp;gt; 线程组 = 开放模型线程组 &amp;gt; tearDown线程组。
+这意味着在测试计划执行过程中，setUp线程组将首先执行，其后是线程组和开放模型线程组，最后执行tearDown线程组。通常情况下，setUp线程组用于在测试执行之前进行一些初始化工作，而tearDown线程组用于测试执行结束后的清理工作。其他线程组在测试执行过程中按照它们在测试计划中的顺序执行。
+这种优先级的设定确保了在测试的前后可以进行一些全局性的准备和清理工作，以确保测试环境的稳定性和一致性。这种有序的执行流程使得在性能测试中能够更灵活地控制测试场景，并确保测试的准确性和可重复性。
+示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/TestPlan2/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def testplan2(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;GET&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://etherealboyjiang.github.io/Jiang/img/Jmeter/0.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/Jiang/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/Jiang/img/avatar_hu671083e86505a5e1920e1bb227929b71_154699_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/Jiang">EtherealBoyJiang</a></h1>
+            <h2 class="site-description">如梦游，星空下，心中留徜徉。幻境迷离余自遥，逍遥行自由。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/Jiang/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/Jiang/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/Jiang/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/Jiang/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/Jiang/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+    </ol>
+    <div class="menu-bottom-section">
+        <ol class="menu">
+
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </ol>
+    </div>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#执行顺序">执行顺序</a>
+      <ol>
+        <li><a href="#示例接口代码"><em>示例接口代码</em></a></li>
+        <li><a href="#示例jmeter脚本"><em>示例Jmeter脚本</em></a></li>
+        <li><a href="#运行查看结果树"><em>运行，查看结果树</em></a></li>
+        <li><a href="#结语"><em>结语</em></a></li>
+      </ol>
+    </li>
+    <li><a href="#线程数"><em>线程数</em></a>
+      <ol>
+        <li><a href="#示例接口代码-1"><em>示例接口代码</em></a></li>
+        <li><a href="#示例jmeter脚本-1"><em>示例Jmeter脚本</em></a></li>
+        <li><a href="#运行查看结果树-1"><em>运行，查看结果树</em></a></li>
+        <li><a href="#结语-1"><em>结语</em></a></li>
+      </ol>
+    </li>
+    <li><a href="#循环次数"><em>循环次数</em></a>
+      <ol>
+        <li><a href="#示例接口代码-2"><em>示例接口代码</em></a></li>
+        <li><a href="#示例jmeter脚本-2"><em>示例Jmeter脚本</em></a></li>
+        <li><a href="#运行查看结果树-2"><em>运行，查看结果树</em></a></li>
+        <li><a href="#结语-2"><em>结语</em></a></li>
+      </ol>
+    </li>
+    <li><a href="#取样器错误后执行的动作"><em>取样器错误后执行的动作</em></a>
+      <ol>
+        <li><a href="#示例接口代码-3"><em>示例接口代码</em></a></li>
+        <li><a href="#示例jmeter脚本-3"><em>示例Jmeter脚本</em></a></li>
+        <li><a href="#停止测试"><em>停止测试</em></a>
+          <ol>
+            <li><a href="#运行查看结果树-3"><em>运行，查看结果树</em></a>
+              <ol>
+                <li><a href="#多线程组"><em>多线程组</em></a></li>
+                <li><a href="#单线程组"><em>单线程组</em></a></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#立即停止测试"><em>立即停止测试</em></a>
+          <ol>
+            <li><a href="#运行查看结果树-4"><em>运行，查看结果树</em></a>
+              <ol>
+                <li><a href="#多线程组-1"><em>多线程组</em></a></li>
+                <li><a href="#单线程组-1"><em>单线程组</em></a></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#停止线程"><em>停止线程</em></a>
+          <ol>
+            <li><a href="#运行查看结果树-5"><em>运行，查看结果树</em></a>
+              <ol>
+                <li><a href="#多线程组-2"><em>多线程组</em></a></li>
+                <li><a href="#单线程组-2"><em>单线程组</em></a></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#启动下一进程循环"><em>启动下一进程循环</em></a>
+          <ol>
+            <li><a href="#修改示例脚本"><em>修改示例脚本</em></a></li>
+            <li><a href="#运行查看结果树-6"><em>运行，查看结果树</em></a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/">
+                
+                    <img src="/Jiang/img/Jmeter/0.png" loading="lazy" alt="Featured image of post Jmeter线程组" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/Jiang/categories/jmeter/" >
+                Jmeter
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/">Jmeter线程组</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024/01/26</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 3 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="线程组">线程组</h1>
+<p>线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。</p>
+<p>线程组分为四类:</p>
+<ul>
+<li><strong>线程组</strong></li>
+<li><strong>setUp线程组</strong></li>
+<li><strong>tearDown线程组</strong></li>
+<li><strong>开放模型线程组</strong></li>
+</ul>
+<p>线程组、setUp线程组、tearDown线程组控制面板中的元素基本一致：</p>
+<ul>
+<li><strong>名称、注释</strong></li>
+<li><strong>在取样器错误后执行的动作</strong></li>
+<li><strong>线程数</strong></li>
+<li><strong>Ramp-Up时间</strong></li>
+<li><strong>Same user on each iteration</strong></li>
+<li><strong>延迟创建线程直到需要（只有线程组有）</strong></li>
+<li><strong>调度器</strong></li>
+</ul>
+<p>开放模型线程组控制面板中的元素：</p>
+<ul>
+<li><strong>名称、注释</strong></li>
+<li><strong>在取样器错误后执行的动作</strong></li>
+<li><strong>调度计划</strong></li>
+<li><strong>随机种子</strong></li>
+</ul>
+<div><br></div>
+<h2 id="执行顺序">执行顺序</h2>
+<p>在JMeter中，<code>setUp线程组</code>拥有最高的优先级，而<code>tearDown线程组</code>则具有最低的优先级。这一优先级关系可用表达式表示为：<code>setUp线程组 &gt; 线程组 = 开放模型线程组 &gt; tearDown线程组</code>。</p>
+<p>这意味着在测试计划执行过程中，<code>setUp线程组</code>将首先执行，其后是<code>线程组</code>和<code>开放模型线程组</code>，最后执行<code>tearDown线程组</code>。通常情况下，<code>setUp线程组</code>用于在测试执行之前进行一些初始化工作，而<code>tearDown线程组</code>用于测试执行结束后的清理工作。其他线程组在测试执行过程中按照它们在测试计划中的顺序执行。</p>
+<p>这种优先级的设定确保了在测试的前后可以进行一些全局性的准备和清理工作，以确保测试环境的稳定性和一致性。这种有序的执行流程使得在性能测试中能够更灵活地控制测试场景，并确保测试的准确性和可重复性。</p>
+<h3 id="示例接口代码"><em>示例接口代码</em></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@api.route</span><span class="p">(</span><span class="s1">&#39;/TestPlan2/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">testplan2</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39; 请求方式错误！&#39;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s2">&#34;ThreadGroupName&#34;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;请求参数错误!&#39;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;线程组类型是：&#39;</span> <span class="o">+</span> <span class="n">data</span><span class="p">[</span><span class="s2">&#34;ThreadGroupName&#34;</span><span class="p">]})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例jmeter脚本"><em>示例Jmeter脚本</em></h3>
+<ol>
+<li>
+<p>在<font style="background-color: #efef48">测试计划</font>中，分别添加<font style="background-color: #efef48">tearDown线程组、线程组、setUp线程组</font></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">tearDown线程组、线程组、setUp线程组</font>下分别添加<font style="background-color: #efef48">HTTP请求</font> 取样器</p>
+<p>名称分别为：<code>tearDown线程组请求</code>、<code>线程组请求</code>、<code>setUp线程组请求</code></p>
+<p>请求地址：<code>HTTP://127.0.0.1:5000/ThreadGroup/</code></p>
+<p>请求方式：<code>POST</code></p>
+<p>消息体数据分别为：<p><code>{&ldquo;ThreadGroupName&rdquo;: &ldquo;tearDown线程组请求&rdquo;}</code><br><code>{&ldquo;ThreadGroupName&rdquo;: &ldquo;线程组请求&rdquo;}</code><br><code>{&ldquo;ThreadGroupName&rdquo;: &ldquo;setUp线程组请求&rdquo;}</code></P></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">tearDown线程组请求、线程组请求、setUp线程组请求取样器</font>下添加<font style="background-color: #efef48">HTTP信息头管理器</font></p>
+<p>名称：<code>Content-Type</code></p>
+<p>值：<code>application/json</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">测试计划</font>下添加<font style="background-color: #efef48">查看结果树</font></p>
+</li>
+</ol>
+<h3 id="运行查看结果树"><em>运行，查看结果树</em></h3>
+
+
+
+
+
+
+
+
+<div class="result">
+	
+		<div class="result-type">
+			<div class="result-type-svg">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
+			</div>
+			<div class="result-type-text"><span style="margin-left: 35%;">setUp线程组请求取样器</span></div>
+		</div>
+		<div class="result-body">
+			<div class="result-left">
+				<span>取样器结果</span>
+			</div>
+			<div class="result-right">
+				<span>hread Name:setUp 线程组 1-1 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-02-01 11:30:38 CST</font><br>Load time:3009<br>Connect Time:2<br>Latency:3009<br>Size in bytes:266<br>Sent bytes:210<br>Headers size in bytes:224<br>Body size in bytes:100<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK<br><br><br>HTTPSampleResult fields:<br>ContentType: application/json<br>DataEncoding: null</span>
+			</div>
+		</div>
+	
+</div>
+
+
+
+
+
+
+
+
+<div class="result">
+	
+		<div class="result-type">
+			<div class="result-type-svg">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
+			</div>
+			<div class="result-type-text"><span style="margin-left: 35%;">线程组请求取样器</span></div>
+		</div>
+		<div class="result-body">
+			<div class="result-left">
+				<span>取样器结果</span>
+			</div>
+			<div class="result-right">
+				<span>hread Name:线程组 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-02-01 11:30:41 CST</font><br>Load time:3004<br>Connect Time:1<br>Latency:3004<br>Size in bytes:260<br>Sent bytes:219<br>Headers size in bytes:165<br>Body size in bytes:95<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK<br><br><br>HTTPSampleResult fields:<br>ContentType: application/json<br>DataEncoding: null</span>
+			</div>
+		</div>
+	
+</div>
+
+
+
+
+
+
+
+
+<div class="result">
+	
+		<div class="result-type">
+			<div class="result-type-svg">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
+			</div>
+			<div class="result-type-text"><span style="margin-left: 35%;">tearDown线程组请求取样器</span></div>
+		</div>
+		<div class="result-body">
+			<div class="result-left">
+				<span>取样器结果</span>
+			</div>
+			<div class="result-right">
+				<span>hread Name:tearDown 线程组 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-02-01 11:30:44 CST</font><br>Load time:3005<br>Connect Time:2<br>Latency:3005<br>Size in bytes:269<br>Sent bytes:227<br>Headers size in bytes:166<br>Body size in bytes:103<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK<br><br><br>HTTPSampleResult fields:<br>ContentType: application/json<br>DataEncoding: null</span>
+			</div>
+		</div>
+	
+</div>
+<p>可以观察到在中国标准时间（CST）<code>2024-02-01 11:30:38</code> 时，<code>setUp线程组请求取样器</code>发送了请求；随后，在 <code>2024-02-01 11:30:41</code> CST，<code>线程组请求取样器</code>也发出了请求；最后，在 <code>2024-02-01 11:30:44</code> CST，<code>tearDown线程组请求取样器</code>发出了请求。</p>
+<p>这与接口设置的休眠时间一致，表明 JMeter 在接收到<code>setUp线程组请求取样器</code>的响应后，执行了线程组操作，然后在接收到<code>线程组请求取样器</code>的响应后，执行了 <code>tearDown线程组</code> 操作。</p>
+<p>总体来说，执行顺序可以归纳为：<code>setUp线程组</code> &gt; <code>线程组</code> &gt; <code>开放模型线程组</code> &gt; <code>tearDown线程组</code>。</p>
+<h3 id="结语"><em>结语</em></h3>
+<p>JMeter提供的<code>setUp线程组</code>和<code>tearDown线程组</code>功能为我们提供了很多便利。通过使用这两个线程组，我们能够执行一些必要的前置和后置操作，以更有效地进行性能测试。</p>
+<p>举例来说，<code>setUp线程组</code>可用于执行诸如登录、数据库查询等前置操作。这允许我们在性能测试开始前设置测试环境，确保系统处于一种预期的状态，从而更准确地模拟实际用户行为。</p>
+<p>另一方面，<code>tearDown线程组</code>可以用于执行一些关键的清理和还原操作，如删除数据库记录、退出登录等。这有助于确保在测试执行完成后系统状态得到有效还原，减少测试对系统的影响，并提供一致性的测试结果。</p>
+<p>综合而言，通过巧妙地利用<code>setUp线程组</code>和<code>tearDown线程组</code>，我们能够更方便地进行性能测试，确保测试环境的准备和清理工作得到有效管理，从而提高测试的可重复性和准确性。</p>
+<p>在测试计划中，同类型线程组的执行顺序可以通过勾选或不勾选<code>独立运行每个线程组</code>来控制。勾选<code>独立运行每个线程组</code>，则同类型线程组按照从上至下的顺序依次执行；反之，则同类型线程组并发执行。</p>
+<h2 id="线程数"><em>线程数</em></h2>
+<p>线程组中的线程数指的是同时运行的虚拟用户数量。这个数量决定了你的测试将模拟多少个用户同时访问目标应用程序或服务。</p>
+<p>在JMeter的线程组配置中，你可以根据你的需求来设置线程数，通常是根据你想要模拟的用户负载量和你的系统资源来决定的。</p>
+<p>需要注意的是，线程数设置得太高可能会导致测试机器资源不足，影响测试结果的准确性；而设置得太低可能无法模拟真实的负载情况。因此，需要根据具体情况进行合理的设置。</p>
+<h3 id="示例接口代码-1"><em>示例接口代码</em></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@api.route</span><span class="p">(</span><span class="s1">&#39;/QuickUse/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">quickuse</span><span class="p">():</span>  <span class="c1"># Jmeter教程快速开始api</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR: The request method is not GET!&#39;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;It is successful!&#39;</span><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例jmeter脚本-1"><em>示例Jmeter脚本</em></h3>
+<ol>
+<li>
+<p>在<font style="background-color: #efef48">测试计划</font>下，添加1个<font style="background-color: #efef48">线程组</font></p>
+<p>线程数：<code>3</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">线程组</font>下，添加<font style="background-color: #efef48">HTTP请求取样器</font></p>
+<p>请求地址：<code>HTTP://127.0.0.1:5000/QuickUse/</code></p>
+<p>请求方式：<code>GET</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">测试计划</font>中，添加<font style="background-color: #efef48">查看结果树</font></p>
+</li>
+</ol>
+<h3 id="运行查看结果树-1"><em>运行，查看结果树</em></h3>
+
+
+
+
+
+
+
+
+<div class="result">
+	
+		<div class="result-type">
+			<div class="result-type-svg">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
+			</div>
+			<div class="result-type-text"><span style="margin-left: 35%;">用户1-1</span></div>
+		</div>
+		<div class="result-body">
+			<div class="result-left">
+				<span>取样器结果</span>
+			</div>
+			<div class="result-right">
+				<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-1</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:34<br>Connect Time:24<br>Latency:30</span>
+			</div>
+		</div>
+	
+</div>
+
+
+
+
+
+
+
+
+<div class="result">
+	
+		<div class="result-type">
+			<div class="result-type-svg">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
+			</div>
+			<div class="result-type-text"><span style="margin-left: 35%;">用户1-2</span></div>
+		</div>
+		<div class="result-body">
+			<div class="result-left">
+				<span>取样器结果</span>
+			</div>
+			<div class="result-right">
+				<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-2</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:2<br>Connect Time:1<br>Latency:2</span>
+			</div>
+		</div>
+	
+</div>
+
+
+
+
+
+
+
+
+<div class="result">
+	
+		<div class="result-type">
+			<div class="result-type-svg">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
+			</div>
+			<div class="result-type-text"><span style="margin-left: 35%;">用户1-3</span></div>
+		</div>
+		<div class="result-body">
+			<div class="result-left">
+				<span>取样器结果</span>
+			</div>
+			<div class="result-right">
+				<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-3</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:4<br>Connect Time:1<br>Latency:4</span>
+			</div>
+		</div>
+	
+</div>
+<p>可以看出取样器结果中的Thread Name分别为<code>线程组 1-1</code>、<code>线程组 1-2</code>、<code>线程组 1-3</code>，这是因为<code>线程组</code>中<code>线程数</code>值为<code>3</code>，Jmeter启功了3个线程，每个线程皆执行1次<code>线程组</code>。在Jmeter中1个线程就代表1个用户，现在就相当于3个用户一起执行<code>线程组</code>。</p>
+<h3 id="结语-1"><em>结语</em></h3>
+<p>在JMeter中，线程数是指在测试计划中设置的虚拟用户数。这些虚拟用户模拟真实用户的行为，对目标服务器进行请求。设置线程数的目的是为了模拟高负载情况下系统的性能表现。</p>
+<p>线程数的设置通常在JMeter的<code>线程组</code>组件中进行。一个线程组可以包含一个或多个线程，每个线程模拟一个用户。通过增加线程数，可以模拟更多的并发用户，从而测试系统在高并发情况下的性能。</p>
+<p>设置线程数时，需要考虑以下几个因素：</p>
+<p>测试目标：根据你要测试的应用程序的预期负载来设置线程数。</p>
+<ol>
+<li>
+<p>系统资源：确保JMeter机器有足够的资源来管理这些线程。过多的线程可能会导致JMeter机器资源耗尽。</p>
+</li>
+<li>
+<p>服务器容量：线程数不应超过目标服务器的容量，否则可能会导致服务器崩溃或响应缓慢。</p>
+</li>
+<li>
+<p>合理地设置线程数对于获得准确的性能测试结果至关重要。通常建议从小规模的线程数开始，逐渐增加，直到达到预期的测试目标或服务器的性能瓶颈。</p>
+</li>
+</ol>
+<h2 id="循环次数"><em>循环次数</em></h2>
+<p>线程组中的循环次数指的是用户执行测试计划的次数。这个数量决定了你的测试将模拟用户访问目标应用程序或服务的次数。</p>
+<p>在JMeter的线程组配置中，你可以根据你的需求来设置循环次数，通常是根据你想要模拟的用户访问上限值，如抽奖次数。</p>
+<p>需要注意的是，循环次数设置得太高，特别设置循环次数为永远，可能会导致测试机器资源不足，影响测试结果的准确性；而设置得太低可能无法达到测试要求。因此，需要根据具体情况进行合理的设置。</p>
+<h3 id="示例接口代码-2"><em>示例接口代码</em></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@api.route</span><span class="p">(</span><span class="s1">&#39;/QuickUse/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">quickuse</span><span class="p">():</span>  <span class="c1"># Jmeter教程快速开始api</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR: The request method is not GET!&#39;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;It is successful!&#39;</span><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例jmeter脚本-2"><em>示例Jmeter脚本</em></h3>
+<ol>
+<li>
+<p>在<font style="background-color: #efef48">测试计划</font>下，添加1个<font style="background-color: #efef48">线程组</font></p>
+<p>循环次数：<code>3</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">线程组</font>下，添加<font style="background-color: #efef48">HTTP请求取样器</font></p>
+<p>请求地址：<code>HTTP://127.0.0.1:5000/QuickUse/</code></p>
+<p>请求方式：<code>GET</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">测试计划</font>中，添加<font style="background-color: #efef48">查看结果树</font></p>
+</li>
+</ol>
+<h3 id="运行查看结果树-2"><em>运行，查看结果树</em></h3>
+
+
+
+
+
+
+
+
+<div class="result">
+	
+		<div class="result-type">
+			<div class="result-type-svg">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
+			</div>
+			<div class="result-type-text"><span style="margin-left: 35%;">用户1-1</span></div>
+		</div>
+		<div class="result-body">
+			<div class="result-left">
+				<span>取样器结果</span>
+			</div>
+			<div class="result-right">
+				<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-1</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:3<br>Connect Time:1<br>Latency:3</span>
+			</div>
+		</div>
+	
+</div>
+
+
+
+
+
+
+
+
+<div class="result">
+	
+		<div class="result-type">
+			<div class="result-type-svg">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
+			</div>
+			<div class="result-type-text"><span style="margin-left: 35%;">用户1-1</span></div>
+		</div>
+		<div class="result-body">
+			<div class="result-left">
+				<span>取样器结果</span>
+			</div>
+			<div class="result-right">
+				<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-1</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:2<br>Connect Time:1<br>Latency:1</span>
+			</div>
+		</div>
+	
+</div>
+
+
+
+
+
+
+
+
+<div class="result">
+	
+		<div class="result-type">
+			<div class="result-type-svg">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
+			</div>
+			<div class="result-type-text"><span style="margin-left: 35%;">用户1-1</span></div>
+		</div>
+		<div class="result-body">
+			<div class="result-left">
+				<span>取样器结果</span>
+			</div>
+			<div class="result-right">
+				<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-1</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:1<br>Connect Time:0<br>Latency:1</span>
+			</div>
+		</div>
+	
+</div>
+<p>可以看出取样器结果中的Thread Name皆为<code>线程组 1-1</code>，这是因为<code>线程组</code>中<code>循环次数</code>值为<code>3</code>，Jmeter启功了1个线程，连续执行了3次<code>线程组</code>。在Jmeter中1个线程就代表1个用户，现在就相当于1个用户执行了3次<code>线程组</code>。</p>
+<h3 id="结语-2"><em>结语</em></h3>
+<p>在JMeter中，循环次数是指每个线程（即虚拟用户）执行其测试计划的次数。这是JMeter线程组中的一个重要设置，它决定了每个线程将重复执行其包含的采样器和其他配置元素的次数。</p>
+<p>设置循环次数时，需要考虑以下几点：</p>
+<ol>
+<li>
+<p><strong>测试目的</strong>：根据你的测试目标来决定循环次数。例如，如果你想要模拟用户在一定时间内持续访问某个页面，那么你可能需要设置较高的循环次数。</p>
+</li>
+<li>
+<p><strong>测试持续时间</strong>：循环次数与测试持续时间（如果设置了）共同决定测试的总执行次数。如果设置了持续时间，那么循环次数实际上决定了在持续时间结束前每个线程尝试执行的总次数。</p>
+</li>
+<li>
+<p><strong>服务器负载</strong>：循环次数的增加可能会导致服务器负载的增加。因此，在设置时需要考虑目标服务器的承受能力。</p>
+</li>
+<li>
+<p><strong>测试资源</strong>：高循环次数可能会增加JMeter的资源消耗，因此需要确保JMeter有足够的资源来处理这些请求。</p>
+</li>
+</ol>
+<p>在实际的测试场景中，通常建议先从较小的循环次数开始，然后根据测试结果和需求逐渐增加，直到达到满意的测试效果。</p>
+<h2 id="取样器错误后执行的动作"><em>取样器错误后执行的动作</em></h2>
+<p>在JMeter中，取样器（Sampler）是用于模拟用户请求发送到目标服务器的组件，例如HTTP请求、FTP请求等。当取样器执行过程中出现错误时，可以通过配置相应的动作来处理这些错误。以下是一些处理取样器错误时，线程组中常见方式：</p>
+<ul>
+<li><strong>停止测试</strong></li>
+<li><strong>立即停止测试</strong></li>
+<li><strong>停止线程</strong></li>
+<li><strong>启动下一进程循环</strong></li>
+<li><strong>继续</strong></li>
+</ul>
+<p>通过合理配置这些错误处理方式，可以根据测试需求和场景来控制测试计划的行为，确保对错误有适当的响应和处理。</p>
+<h3 id="示例接口代码-3"><em>示例接口代码</em></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@api.route</span><span class="p">(</span><span class="s1">&#39;/ThreadGroup1/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">threadgroup1</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>  <span class="c1"># `错误请求`立即返回</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;嘿！我有响应！&#39;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># 延长非`错误请求`的请求时间</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;嘿！我有响应！&#39;</span><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例jmeter脚本-3"><em>示例Jmeter脚本</em></h3>
+<ol>
+<li>
+<p>在<font style="background-color: #efef48">测试计划</font>中，添加2个<font style="background-color: #efef48">线程组</font></p>
+<p>名称分别为：<code>线程组1</code>、<code>线程组2</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">线程组1</font>中，添加3个<font style="background-color: #efef48">HTTP请求取样器</font></p>
+<p>名称分别为：<code>错误请求1</code>、<code>未加固定定时器</code>、<code>错误请求之后请求1</code></p>
+<p>请求地址：<code>HTTP://127.0.0.1:5000/ThreadGroup1/</code></p>
+<p>请求方式：<div style="margin-left: 10%;"><p>错误请求：<code>GET</code><br>未加固定定时器、错误请求之后请求1：<code>POST</code></p></div></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">线程组2</font>中，添加2个<font style="background-color: #efef48">HTTP请求取样器</font></p>
+<p>名称分别为：<code>与错误请求并行请求2</code>、<code>错误请求之后请求2</code></p>
+<p>请求地址：<code>HTTP://127.0.0.1:5000/ThreadGroup1/</code></p>
+<p>请求方式：<code>POST</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">错误请求之后请求1、2取样器</font>中，添加<font style="background-color: #efef48">固定定时器</font></p>
+<p>线程延迟（毫秒）：<code>3000</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">错误请求取样器</font>中，添加<font style="background-color: #efef48">响应断言</font></p>
+<p>注释：<code>接口响应与断言值不匹配，则判断该请求出错</code></p>
+<p>添加响应值：<code>1111</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">测试计划</font>中，添加<font style="background-color: #efef48">查看结果树</font></p>
+</li>
+</ol>
+<p><code>错误请求取样器</code>中的<code>响应断言</code>用于判断接口的响应是否与预期的值匹配，如果不匹配，则认为该请求出错。</p>
+<p><code>固定定时器</code>延迟4秒，可以保证<code>错误请求之后请求2</code>在<code>错误请求1</code>结束后执行。</p>
+<h3 id="停止测试"><em>停止测试</em></h3>
+<p>设置<code>取样器错误后执行的动作</code>为<code>停止测试</code>时，一旦任何一个取样器遇到错误，整个测试计划将会在所有当前正在执行的线程执行完毕后停止。这可以用于模拟在测试过程中发生重要错误或异常时的行为。</p>
+<p>这种设置确保在测试执行中任何关键的错误都会导致测试的终止，以便进行及时的识别和处理。这对于模拟真实世界中的异常情况以及确保测试的准确性和可重复性都是非常重要的。</p>
+<h4 id="运行查看结果树-3"><em>运行，查看结果树</em></h4>
+<h5 id="多线程组"><em>多线程组</em></h5>
+<p><strong><code>测试计划</code>中勾选<code>独立运行每个线程组</code></strong></p>
+<p><code>线程组1</code>前，<code>线程组2</code>后</p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/1.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了2次，但结果却不尽相同，与预期不符。</p>
+<p>在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>后，<code>线程组1</code>与<code>线程组2</code>互不干扰且顺序执行。因此，先执行<code>线程组1</code>时出现错误请求，不会影响到执行<code>线程组2</code>。取样器在线程组中按从上至下的顺序执行。但是结果是<code>线程组2</code>有概率不会执行。</p>
+<hr>
+<p><code>线程组2</code>前，<code>线程组1</code>后</p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/2.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果保持一致，与预期相符。</p>
+<p>在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>，所以<code>线程组2</code>与<code>线程组1</code>互不干扰且顺序执行。因此，先执行<code>线程组2</code>，待<code>线程组1</code>中出现错误请求时，测试计划停止测试。取样器在线程组中按从上至下的顺序执行。</p>
+<p><strong><code>测试计划</code>中取消勾选<code>独立运行每个线程组</code></strong></p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/3.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。</p>
+<p>在<code>测试计划</code>中未勾选<code>独立运行每个线程组</code>，因此<code>线程组2</code>与<code>线程组1</code>互相干扰且并行执行。当<code>线程组1</code>中出现错误请求时，<code>线程组2</code>中的<code>与错误请求并行请求2</code>也在执行，直到<code>与错误请求并行请求2</code>结束后，测试计划才停止测试。取样器在线程组中按从上至下的顺序执行。</p>
+<p><strong>建议</strong></p>
+<p>如果<code>测试计划</code>中勾选了“独立运行每个线程组”，不建议非最后排序的<code>线程组</code>中<code>取样器错误后执行的动作</code>设置为<code>停止测试</code>，它并不会按照你的预期去执行。</p>
+<h5 id="单线程组"><em>单线程组</em></h5>
+<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>,<code>未加固定定时器</code>放在<code>错误请求1</code>之前。</p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/7.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。先执行<code>未加固定定时器</code>请求，待<code>错误请求1</code>中出现错误请求时，测试计划停止测试。</p>
+<hr>
+<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>，<code>错误请求1</code>放在<code>错误请求之后请求1</code>之后。<code>线程组1</code>中的<code>线程数</code>改为<code>3</code>。</p>
+<p>线程组的线程数用于模拟用户数量，此时的脚本代表同时（不是并发）有三个用户同时执行<code>线程组1</code>。</p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/8.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，3个用户同时执行<code>线程组1</code>。3个用户中其中1个用户执行<code>错误请求1</code>出现错误时，另外2个用户还在执行<code>错误请求之后请求1</code>，待执行完毕后，测试计划停止测试。</p>
+<hr>
+<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>，<code>错误请求1</code>放在<code>错误请求之后请求1</code>之后。<code>线程组1</code>中的<code>循环数</code>改为<code>3</code>。</p>
+<p>线程组的循环数用于设置线程组的执行次数，此时的脚本代表1个用户执行3次<code>线程组1</code>。</p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/9.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，1个用户执行<code>线程组1</code>3次。用户在执行第1次<code>错误请求1</code>出现错误时，测试计划停止测试。</p>
+<h3 id="立即停止测试"><em>立即停止测试</em></h3>
+<p>设置<code>取样器错误后执行的动作</code>为<code>立即停止测试</code>时，当取样器在执行过程中遇到错误时，JMeter会立即停止当前运行的测试，不再执行任何后续的请求或操作。</p>
+<p>这有助于保护应用程序免受可能导致问题的异常或错误的影响，并确保测试结果的准确性。</p>
+<p>这种设置对于测试场景中的稳定性和可靠性非常重要，特别是在模拟并发用户或大负载情况下，能够及时发现问题并停止测试，有助于减少潜在的影响和损害。</p>
+<h4 id="运行查看结果树-4"><em>运行，查看结果树</em></h4>
+<h5 id="多线程组-1"><em>多线程组</em></h5>
+<p><strong><code>测试计划</code>中勾选<code>独立运行每个线程组</code></strong></p>
+<p><code>线程组1</code>前，<code>线程组2</code>后</p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/4.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了4次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行，在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>后，<code>线程组1</code>与<code>线程组2</code>互不干扰且顺序执行。因此，若<code>线程组1</code>中出现错误请求时,不会影响到执行<code>线程组2</code>。但是结果是<code>线程组2</code>有概率不会执行。</p>
+<hr>
+<p><code>线程组2</code>前，<code>线程组1</code>后</p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/5.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了4次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行，在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>，所以<code>线程组2</code>与<code>线程组1</code>互不干扰且顺序执行。因此，先执行<code>线程组2</code>，待<code>线程组1</code>中出现错误请求时，测试计划立即停止测试。</p>
+<p><strong><code>测试计划</code>中取消勾选<code>独立运行每个线程组</code></strong></p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/6.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了4次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，
+在<code>测试计划</code>中未勾选<code>独立运行每个线程组</code>，因此<code>线程组2</code>与<code>线程组1</code>互相干扰且并行执行。当<code>线程组1</code>中出现错误请求时，<code>线程组2</code>中的<code>与错误请求并行请求2</code>也在执行，但不等<code>与错误请求并行请求2</code>结束，测试计划立即停止测试，可以看出<code>与错误请求并行请求2</code>的响应体中提示 Socket 关闭异常。</p>
+<p><strong>建议</strong></p>
+<p>如果<code>测试计划</code>中勾选了“独立运行每个线程组”，不建议非最后排序的<code>线程组</code>中<code>取样器错误后执行的动作</code>设置为<code>立即停止测试</code>，它并不会按照你的预期去执行。</p>
+<h5 id="单线程组-1"><em>单线程组</em></h5>
+<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>,<code>未加固定定时器</code>放在<code>错误请求1</code>之前。</p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/10.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。先执行<code>未加固定定时器</code>请求，待<code>错误请求1</code>中出现错误请求时，测试计划立即停止测试。</p>
+<hr>
+<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>，<code>错误请求1</code>放在<code>错误请求之后请求1</code>之后。<code>线程组1</code>中的<code>线程数</code>改为<code>3</code>。</p>
+<p>线程组的线程数用于模拟用户数量，此时的脚本代表同时（不是并发）有三个用户同时执行<code>线程组1</code>。</p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/11.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，3个用户同时执行<code>线程组1</code>。3个用户中其中1个用户执行<code>错误请求1</code>出现错误时，另外2个用户还在执行<code>错误请求之后请求1</code>，
+但不等执行完毕后，测试计划立即停止测试，可以看出<code>与错误请求并行请求1</code>的响应体中提示 Socket 关闭异常。</p>
+<hr>
+<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>，<code>错误请求1</code>放在<code>错误请求之后请求1</code>之后。<code>线程组1</code>中的<code>循环数</code>改为<code>3</code>。</p>
+<p>线程组的循环数用于设置线程组的执行次数，此时的脚本代表1个用户执行3次<code>线程组1</code>。</p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/12.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，1个用户执行<code>线程组1</code>3次。用户在执行第1次<code>错误请求1</code>出现错误时，测试计划立即停止测试。</p>
+<h3 id="停止线程"><em>停止线程</em></h3>
+<p>设置<code>取样器错误后执行的动作</code>为<code>停止线程</code>时，当取样器在执行过程中遇到错误时，Jmeter会立即停止当前线程，但不会停止别的线程。</p>
+<p>这可以防止无效或无用的进一步测试，尤其是在错误可能导致后续操作无效的情况下。通过停止出现错误的线程，可以更准确地模拟用户行为和评估系统性能，因为现实世界中的用户通常在遇到问题时不会继续执行相同或相关的操作。
+此外，停止出现错误的线程有助于简化错误分析，因为只有出现问题的线程会被停止，从而更容易识别和诊断问题。</p>
+<h4 id="运行查看结果树-5"><em>运行，查看结果树</em></h4>
+<h5 id="多线程组-2"><em>多线程组</em></h5>
+<p><strong><code>测试计划</code>中勾选<code>独立运行每个线程组</code></strong></p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/13.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行，在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>，所以<code>线程组2</code>与<code>线程组1</code>互不干扰且顺序执行。因此，先执行<code>线程组1</code>，待<code>线程组1</code>中出现错误请求时，<code>线程组1</code>线程被停止，接着执行<code>线程组2</code>。</p>
+<p><strong><code>测试计划</code>中取消勾选<code>独立运行每个线程组</code></strong></p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/14.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，
+在<code>测试计划</code>中未勾选<code>独立运行每个线程组</code>，因此<code>线程组2</code>与<code>线程组1</code>互相干扰且并行执行。当<code>线程组1</code>中出现错误请求时，<code>线程组1</code>停止线程，<code>线程组2</code>继续执行。</p>
+<h5 id="单线程组-2"><em>单线程组</em></h5>
+<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>、<code>线程组1</code>下的<code>错误请求之后请求1</code>,<code>线程组1</code>中的<code>线程数</code>改为<code>3</code>，<code>线程组1</code>下添加一个<code>用户参数</code>。</p>
+<p>添加步骤：<code>右键线程组-添加-前置处理器-用户参数</code></p>
+<p><font style="background-color: #efef48">用户参数</font>设置：</p>
+<ul>
+<li>
+<p>添加变量：</p>
+<p>名称：<code>dy</code></p>
+<p>添加三个用户值：<code>{&quot;code&quot;:200,</code>、<code>1111</code>、<code>{&quot;code&quot;:200,</code></p>
+</li>
+</ul>
+<p><code>错误请求1</code>下响应断言的值,引用用户参数中的变量：<code>${dy}</code></p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/15.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。三个用户的<code>响应断言</code>值分别引用<code>{&quot;code&quot;:200,</code>、<code>1111</code>、<code>{&quot;code&quot;:200,</code>，导致第二个用户执行<code>错误请求1</code>时发生错误，
+结束该用户线程，未执行<code>未加固定定时器</code>。其他用户则未发生错误，可以执行<code>未加固定定时器</code>。因此导致每次会有3个<code>错误请求1</code>执行、但只有2个<code>未加固定定时器</code>执行。</p>
+<hr>
+<p>首先桌面上新建一个dy.txt文件,文件内容为：</p>
+<pre><code>{&quot;code&quot;:200,,
+1111,
+{&quot;code&quot;:200,,
+</code></pre>
+<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>、<code>线程组1</code>下的<code>错误请求之后请求1</code>,<code>线程组1</code>中的<code>循环数</code>改为<code>3</code>，<code>线程组1</code>下添加一个<code>CSV 数据文件设置</code>。</p>
+<p>添加步骤：<code>右键线程组-添加-配置元件-CSV Data Set Config</code></p>
+<p><font style="background-color: #efef48">CSV 数据文件设置</font>设置：</p>
+<ul>
+<li>
+<p>文件名：<code>dy.txt的路径</code></p>
+</li>
+<li>
+<p>文件编码：<code>UTF-8</code></p>
+</li>
+<li>
+<p>变量名称：<code>dy</code></p>
+</li>
+</ul>
+<p><code>错误请求1</code>下响应断言的值,引用用户参数中的变量：<code>${dy}</code></p>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/16.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。用户的三次循环的<code>响应断言</code>值分别引用<code>CSV 数据文件设置</code>的<code>{&quot;code&quot;:200,</code>、<code>1111</code>、<code>{&quot;code&quot;:200,</code>，导致用户第二次循环时执行<code>错误请求1</code>时发生错误，
+结束该用户线程，未执行之后<code>未加固定定时器</code>和第三次循环。</p>
+<h3 id="启动下一进程循环"><em>启动下一进程循环</em></h3>
+<p>设置取样器错误后执行的动作为停止线程时，当取样器在执行过程中遇到错误时，Jmeter会立即停止当前线程本次执行进行当前线程的下次执行，主要应用于线程多次循环时。</p>
+<p>这可以防止无效或无用的进一步测试，尤其是在错误可能导致本次循环后续操作无效的情况下。通过停止出现错误的循环，进行下一次循环，可以更准确地模拟用户行为和评估系统性能，因为现实世界中的用户通常在流程操作中，开始或中间过程遇到问题时不会继续执行后续的操作，会从头开始操作。</p>
+<h4 id="修改示例脚本"><em>修改示例脚本</em></h4>
+<h4 id="运行查看结果树-6"><em>运行，查看结果树</em></h4>
+<p>线程组的关键任务之一是定义并发用户的行为，包括设置线程数、循环次数、启动延迟等关键参数。通过适当配置线程组，测试人员可以模拟多用户在系统中同时执行任务的场景，从而评估系统的性能和稳定性。</p>
+<p>这种独立且隔离的线程执行方式，使得每个线程在执行任务时都保持相对独立，不受其他线程的影响。这是在模拟真实用户行为时非常重要的特性，能够更准确地评估系统在高并发负载下的性能表现。</p>
+<p>通过灵活使用setup线程组、线程组、tearDown线程组、开放模型线程组，配置前置操作、主要操作、后置操作，更能真实、详细的评估系统。</p>
+<p>总的来说，线程组在JMeter中扮演着至关重要的角色，通过深入理解和合理配置线程组，读者可以更好地模拟实际用户行为，为性能测试提供更准确的结果。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/Jiang/tags/jmeter/">Jmeter</a>
+        
+            <a href="/Jiang/tags/%E7%BA%BF%E7%A8%8B%E7%BB%84/">线程组</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>转载需要保留原始链接，未经明确许可，禁止商业使用。<a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/Jiang/p/jmeter%E5%89%8D%E8%A8%80/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/Jiang/img/Jmeter/0.png" loading="lazy" data-key="" data-hash="/Jiang/img/Jmeter/0.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Jmeter前言</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/Jiang/img/Jmeter/0.png" loading="lazy" data-key="" data-hash="/Jiang/img/Jmeter/0.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Jmeter测试计划</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/Jiang/img/Jmeter/0.png" loading="lazy" data-key="" data-hash="/Jiang/img/Jmeter/0.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Jmeter环境配置</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 梦游少年
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.23.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/Jiang/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

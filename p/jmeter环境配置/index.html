@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='JMeter 环境安装及配置 在使用 JMeter 之前，需要配置相应的环境，包括安装JDK和JMeter。
+首先，了解一下JDK，它就是Java的开发工具包。
+JMeter 是使用 Java 编写的。一般来说，只需要安装 JRE（Java 运行时环境）就可以运行 JMeter，因为 JRE 包含了运行 Java 应用程序所需的组件。那么为什么建议安装 JDK 呢？
+如果你想要在 JMeter 中使用一些插件、进行脚本开发、编译测试计划等高级功能，安装 JDK 可能会更有帮助，因为 JDK 包含了 JRE，并且还提供了编译 Java 代码所需的工具，比如 javac。此外，一些场景下，比如进行 HTTPS 压力测试，需要使用 JDK 中的 keytool 工具。
+确保正确配置JDK和JMeter环境，可以让你更灵活地应对不同的测试需求
+JDK 1.下载JDK JDK下载地址示例环境为Windows，读者应根据实际环境下载JDK的安装包。推荐下载exe文件，安装方便快捷。https://www.oracle.com/java/technologies/downloads/#jdk21-windows2.安装JDK 建议在安装之前在D盘或C盘下新建一个下新建一个Tools 文件夹。在安装 JDK 时，修改安装目录为Tools文件夹。这样做的好处在于方便管理和配置环境变量。
+接下来就是一直下一步就行。
+配置JDK系统变量、环境变量 系统变量和环境变量是计算机系统中的两个重要概念，它们用于存储和管理系统或应用程序运行过程中需要使用的信息。
+系统变量是指在操作系统级别上设置的一些全局信息，用于控制和影响整个计算机系统的行为。 这些变量通常由操作系统或系统管理员配置，用于存储系统范围的配置参数和信息。系统变量可以影响所有用户和应用程序的行为。 如PATH是一个常见的系统变量，它存储了操作系统在哪些目录中查找可执行文件的信息。
+环境变量是在操作系统或应用程序运行过程中设置的一些动态变量，用于影响当前进程的行为。 环境变量提供了一种将信息传递给正在运行的程序的方法，以便程序根据这些变量的值来调整其行为。 如PATH变量中的值就是执行文件的环境变量。
+总结来说，系统变量是操作系统级别的全局配置，而环境变量是在运行过程中用于传递信息给正在执行的程序的配置。在许多情况下，环境变量的值可以由用户或程序员进行配置，以影响特定应用程序或进程的行为。
+不要随意改动环境变量，否则可能造成系统死机。新建JAVA_HOME系统变量 右键此电脑-属性-高级系统设置-环境变量，系统变量-新建。
+变量名：JDK
+变量值：C:\Tools\JDK（JDK安装目录） 或者浏览目录进行选择（Windows11）
+然后确定。
+Path中新建JAVA_HOME的环境环境 系统变量中找到Path，选中，点击编辑，进入Path系统变量窗口，新建两条环境变量。
+第一条：%JAVA_HOME%\bin;
+第二条：%JAVA_HOME%\jre\bin;
+ps：windows11好像不需要输入最后的
+然后一路确定。'>
+<meta name="keywords" content="Jmeter"><title>Jmeter环境配置</title>
+
+<link rel='canonical' href='https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/'>
+
+<link rel="stylesheet" href="/Jiang/scss/style.min.c21edb33e5668a98e70c7b72a36e704b8735c2bff69f937eaf930e1b904e6c6f.css"><meta property='og:title' content='Jmeter环境配置'>
+<meta property='og:description' content='JMeter 环境安装及配置 在使用 JMeter 之前，需要配置相应的环境，包括安装JDK和JMeter。
+首先，了解一下JDK，它就是Java的开发工具包。
+JMeter 是使用 Java 编写的。一般来说，只需要安装 JRE（Java 运行时环境）就可以运行 JMeter，因为 JRE 包含了运行 Java 应用程序所需的组件。那么为什么建议安装 JDK 呢？
+如果你想要在 JMeter 中使用一些插件、进行脚本开发、编译测试计划等高级功能，安装 JDK 可能会更有帮助，因为 JDK 包含了 JRE，并且还提供了编译 Java 代码所需的工具，比如 javac。此外，一些场景下，比如进行 HTTPS 压力测试，需要使用 JDK 中的 keytool 工具。
+确保正确配置JDK和JMeter环境，可以让你更灵活地应对不同的测试需求
+JDK 1.下载JDK JDK下载地址示例环境为Windows，读者应根据实际环境下载JDK的安装包。推荐下载exe文件，安装方便快捷。https://www.oracle.com/java/technologies/downloads/#jdk21-windows2.安装JDK 建议在安装之前在D盘或C盘下新建一个下新建一个Tools 文件夹。在安装 JDK 时，修改安装目录为Tools文件夹。这样做的好处在于方便管理和配置环境变量。
+接下来就是一直下一步就行。
+配置JDK系统变量、环境变量 系统变量和环境变量是计算机系统中的两个重要概念，它们用于存储和管理系统或应用程序运行过程中需要使用的信息。
+系统变量是指在操作系统级别上设置的一些全局信息，用于控制和影响整个计算机系统的行为。 这些变量通常由操作系统或系统管理员配置，用于存储系统范围的配置参数和信息。系统变量可以影响所有用户和应用程序的行为。 如PATH是一个常见的系统变量，它存储了操作系统在哪些目录中查找可执行文件的信息。
+环境变量是在操作系统或应用程序运行过程中设置的一些动态变量，用于影响当前进程的行为。 环境变量提供了一种将信息传递给正在运行的程序的方法，以便程序根据这些变量的值来调整其行为。 如PATH变量中的值就是执行文件的环境变量。
+总结来说，系统变量是操作系统级别的全局配置，而环境变量是在运行过程中用于传递信息给正在执行的程序的配置。在许多情况下，环境变量的值可以由用户或程序员进行配置，以影响特定应用程序或进程的行为。
+不要随意改动环境变量，否则可能造成系统死机。新建JAVA_HOME系统变量 右键此电脑-属性-高级系统设置-环境变量，系统变量-新建。
+变量名：JDK
+变量值：C:\Tools\JDK（JDK安装目录） 或者浏览目录进行选择（Windows11）
+然后确定。
+Path中新建JAVA_HOME的环境环境 系统变量中找到Path，选中，点击编辑，进入Path系统变量窗口，新建两条环境变量。
+第一条：%JAVA_HOME%\bin;
+第二条：%JAVA_HOME%\jre\bin;
+ps：windows11好像不需要输入最后的
+然后一路确定。'>
+<meta property='og:url' content='https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/'>
+<meta property='og:site_name' content='EtherealBoyJiang'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='测试' /><meta property='article:tag' content='技术' /><meta property='article:tag' content='Jmeter' /><meta property='article:published_time' content='2024-01-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-01-25T00:00:00&#43;00:00'/><meta property='og:image' content='https://etherealboyjiang.github.io/Jiang/img/Jmeter/0.png' />
+<meta name="twitter:title" content="Jmeter环境配置">
+<meta name="twitter:description" content="JMeter 环境安装及配置 在使用 JMeter 之前，需要配置相应的环境，包括安装JDK和JMeter。
+首先，了解一下JDK，它就是Java的开发工具包。
+JMeter 是使用 Java 编写的。一般来说，只需要安装 JRE（Java 运行时环境）就可以运行 JMeter，因为 JRE 包含了运行 Java 应用程序所需的组件。那么为什么建议安装 JDK 呢？
+如果你想要在 JMeter 中使用一些插件、进行脚本开发、编译测试计划等高级功能，安装 JDK 可能会更有帮助，因为 JDK 包含了 JRE，并且还提供了编译 Java 代码所需的工具，比如 javac。此外，一些场景下，比如进行 HTTPS 压力测试，需要使用 JDK 中的 keytool 工具。
+确保正确配置JDK和JMeter环境，可以让你更灵活地应对不同的测试需求
+JDK 1.下载JDK JDK下载地址示例环境为Windows，读者应根据实际环境下载JDK的安装包。推荐下载exe文件，安装方便快捷。https://www.oracle.com/java/technologies/downloads/#jdk21-windows2.安装JDK 建议在安装之前在D盘或C盘下新建一个下新建一个Tools 文件夹。在安装 JDK 时，修改安装目录为Tools文件夹。这样做的好处在于方便管理和配置环境变量。
+接下来就是一直下一步就行。
+配置JDK系统变量、环境变量 系统变量和环境变量是计算机系统中的两个重要概念，它们用于存储和管理系统或应用程序运行过程中需要使用的信息。
+系统变量是指在操作系统级别上设置的一些全局信息，用于控制和影响整个计算机系统的行为。 这些变量通常由操作系统或系统管理员配置，用于存储系统范围的配置参数和信息。系统变量可以影响所有用户和应用程序的行为。 如PATH是一个常见的系统变量，它存储了操作系统在哪些目录中查找可执行文件的信息。
+环境变量是在操作系统或应用程序运行过程中设置的一些动态变量，用于影响当前进程的行为。 环境变量提供了一种将信息传递给正在运行的程序的方法，以便程序根据这些变量的值来调整其行为。 如PATH变量中的值就是执行文件的环境变量。
+总结来说，系统变量是操作系统级别的全局配置，而环境变量是在运行过程中用于传递信息给正在执行的程序的配置。在许多情况下，环境变量的值可以由用户或程序员进行配置，以影响特定应用程序或进程的行为。
+不要随意改动环境变量，否则可能造成系统死机。新建JAVA_HOME系统变量 右键此电脑-属性-高级系统设置-环境变量，系统变量-新建。
+变量名：JDK
+变量值：C:\Tools\JDK（JDK安装目录） 或者浏览目录进行选择（Windows11）
+然后确定。
+Path中新建JAVA_HOME的环境环境 系统变量中找到Path，选中，点击编辑，进入Path系统变量窗口，新建两条环境变量。
+第一条：%JAVA_HOME%\bin;
+第二条：%JAVA_HOME%\jre\bin;
+ps：windows11好像不需要输入最后的
+然后一路确定。"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://etherealboyjiang.github.io/Jiang/img/Jmeter/0.png' />
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/Jiang/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/Jiang/img/avatar_hu671083e86505a5e1920e1bb227929b71_154699_300x0_resize_box_3.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/Jiang">EtherealBoyJiang</a></h1>
+            <h2 class="site-description">如梦游，星空下，心中留徜徉。幻境迷离余自遥，逍遥行自由。</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://github.com/CaiJimmy/hugo-theme-stack'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/Jiang/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/Jiang/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/Jiang/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/Jiang/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/Jiang/%E5%8F%8B%E9%93%BE/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>友链</span>
+            </a>
+        </li>
+        
+    </ol>
+    <div class="menu-bottom-section">
+        <ol class="menu">
+
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>暗色模式</span>
+                </li>
+            
+        </ol>
+    </div>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#jdk"><em>JDK</em></a>
+      <ol>
+        <li><a href="#1下载jdk"><em>1.下载JDK</em></a></li>
+        <li><a href="#2安装jdk"><em>2.安装JDK</em></a></li>
+        <li><a href="#配置jdk系统变量环境变量"><em>配置JDK系统变量、环境变量</em></a>
+          <ol>
+            <li><a href="#新建java_home系统变量"><em>新建JAVA_HOME系统变量</em></a></li>
+            <li><a href="#path中新建java_home的环境环境"><em>Path中新建JAVA_HOME的环境环境</em></a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#jmeter"><em>Jmeter</em></a>
+      <ol>
+        <li><a href="#下载jmeterzip包"><em>下载JmeterZIP包</em></a></li>
+        <li><a href="#解压到目录"><em>解压到目录</em></a></li>
+        <li><a href="#汉化jmeter界面"><em>汉化Jmeter界面</em></a></li>
+        <li><a href="#发送启动文件到桌面快捷方式"><em>发送启动文件到桌面快捷方式</em></a></li>
+        <li><a href="#启动jmeter"><em>启动Jmeter</em></a></li>
+      </ol>
+    </li>
+    <li><a href="#快速使用"><em>快速使用</em></a>
+      <ol>
+        <li><a href="#示例接口"><em>示例接口</em></a></li>
+        <li><a href="#示例jmeter脚本"><em>示例Jmeter脚本</em></a></li>
+        <li><a href="#运行点击上方绿色三角形查看结果树"><em>运行（点击上方绿色三角形），查看结果树</em></a></li>
+      </ol>
+    </li>
+    <li><a href="#结尾"><em>结尾</em></a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                
+                    <img src="/Jiang/img/Jmeter/0.png" loading="lazy" alt="Featured image of post Jmeter环境配置" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/Jiang/categories/jmeter/" >
+                Jmeter
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">Jmeter环境配置</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">2024/01/25</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 1 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <div><br></div>
+<h1 id="jmeter-环境安装及配置">JMeter 环境安装及配置</h1>
+<p>在使用 JMeter 之前，需要配置相应的环境，包括安装JDK和JMeter。</p>
+<p>首先，了解一下JDK，它就是Java的开发工具包。</p>
+<p>JMeter 是使用 Java 编写的。一般来说，只需要安装 JRE（Java 运行时环境）就可以运行 JMeter，因为 JRE 包含了运行 Java 应用程序所需的组件。那么为什么建议安装 JDK 呢？</p>
+<p>如果你想要在 JMeter 中使用一些插件、进行脚本开发、编译测试计划等高级功能，安装 JDK 可能会更有帮助，因为 JDK 包含了 JRE，并且还提供了编译 Java 代码所需的工具，比如 javac。此外，一些场景下，比如进行 HTTPS 压力测试，需要使用 JDK 中的 keytool 工具。</p>
+<p>确保正确配置JDK和JMeter环境，可以让你更灵活地应对不同的测试需求</p>
+<div><br></div>
+<h2 id="jdk"><em>JDK</em></h2>
+<h3 id="1下载jdk"><em>1.下载JDK</em></h3>
+<div>
+<a1 href="https://www.oracle.com/java/technologies/downloads/#jdk21-windows" target="_blank">
+    <div class="zhengti">
+        <a href="https://www.oracle.com/java/technologies/downloads/#jdk21-windows">
+            <div class="wenzi">
+                <div class="linkk">
+                    <div class="namee">JDK下载地址</div><div class="descc">示例环境为Windows，读者应根据实际环境下载JDK的安装包。推荐下载exe文件，安装方便快捷。</div></div>
+        </a><div class="linktext">https://www.oracle.com/java/technologies/downloads/#jdk21-windows</div>
+
+        </div>
+        <div class="daimg">
+            <img class="link-card-img" loading="lazy" src="https://api.thumbnail.ws/api/ab41148c7048bd95441b7b09816cbd5db1ed220134d3/thumbnail/get?width=720&url=https%3a%2f%2fwww.oracle.com%2fjava%2ftechnologies%2fdownloads%2f%23jdk21-windows" alt="" /></div>
+
+    </div>
+</a1>
+
+<style>
+    a1 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .zhengti {
+        margin: auto;
+        padding-top: 4%;
+        padding-right: 4%;
+        padding-bottom: 4%;
+        padding-left: 4%;
+        width: 100%;
+        display: flex;
+        align-items: left;
+        flex-direction: row;
+        border: 1px solid #e5e7eb;
+        border-radius: 20px;
+        background-color: #ffffff;
+        transition: border 0.3s ease-in-out;
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .05);
+    }
+    
+    .wenzi {
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        flex: 2;
+    }
+    
+    .zhengti:hover {
+        transform: scale(1.03);
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .05);
+    }
+    
+    .linkk {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .iconn {
+        display: flex;
+        align-items: center;
+    }
+    
+    .iconn1 {
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 0.5em;
+        margin-bottom: 0.2em;
+    }
+    
+    .namee {
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--card-text-color-main);
+    }
+    
+    .descc {
+        font-size: 1.3rem;
+        color: #9ca3af;
+        margin-bottom: 0.5rem;
+    }
+    
+    .linktext {
+        font-size: 0.9rem;
+        color: #9ca3af;
+    }
+     
+    
+    .link-card-icoon {
+        width: 16px;
+        height: 16px;
+        margin-right: 0.5rem;
+    }
+     
+    
+    .daimg {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        align-self: right;
+    }
+    
+    .link-card-img {
+        display: block;
+        height: auto;
+        max-height: 200px;
+        width: 100%;
+         
+        object-fit: cover;
+        max-width: 50%;
+        margin-right: 2px;
+        border-radius: 0.25rem;
+    }
+    
+    a1:hover {
+        background-color: var(--color-zoom-bg);
+        border: 1px solid var(--theme);
+    }
+    
+    @media (max-width:900px) {
+        a1 {
+            max-height: 25em;
+            overflow-y: auto;
+            padding-right: 4%;
+        }
+        .zhengti {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+    [data-scheme="dark"] {
+        .zhengti {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+        }
+        .descc {
+            color: #9ca3af;
+        }
+        .linktext {
+            color: #9ca3af;
+        }
+    }
+</style>
+
+<br>
+</div>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/1.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div><br></div>
+<h3 id="2安装jdk"><em>2.安装JDK</em></h3>
+<p>建议在安装之前在<code>D盘或C盘</code>下新建一个下新建一个<code>Tools</code> 文件夹。在安装 JDK 时，修改安装目录为<code>Tools</code>文件夹。这样做的好处在于方便管理和配置环境变量。</p>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/2.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/3.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>接下来就是一直下一步就行。</p>
+<div><br></div>
+<h3 id="配置jdk系统变量环境变量"><em>配置JDK系统变量、环境变量</em></h3>
+<p>系统变量和环境变量是计算机系统中的两个重要概念，它们用于存储和管理系统或应用程序运行过程中需要使用的信息。</p>
+<p>系统变量是指在操作系统级别上设置的一些全局信息，用于控制和影响整个计算机系统的行为。
+这些变量通常由操作系统或系统管理员配置，用于存储系统范围的配置参数和信息。系统变量可以影响所有用户和应用程序的行为。
+如<code>PATH</code>是一个常见的系统变量，它存储了操作系统在哪些目录中查找可执行文件的信息。</p>
+<p>环境变量是在操作系统或应用程序运行过程中设置的一些动态变量，用于影响当前进程的行为。
+环境变量提供了一种将信息传递给正在运行的程序的方法，以便程序根据这些变量的值来调整其行为。
+如<code>PATH</code>变量中的值就是执行文件的环境变量。</p>
+<p>总结来说，系统变量是操作系统级别的全局配置，而环境变量是在运行过程中用于传递信息给正在执行的程序的配置。在许多情况下，环境变量的值可以由用户或程序员进行配置，以影响特定应用程序或进程的行为。</p>
+<div>  
+
+
+
+
+<div style="display: inline-grid; grid-template-columns: 7% 93%; padding: 15px; background-color: #f8f8f8; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 0; width: 99%;">
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-square-rounded" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" />
+            <path d="M12 8v4" />
+            <path d="M12 16h.01" />
+        </svg>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: flex-start; margin-left: 15px; font-size: 1.5rem; width: 100%; height: 100%;">
+不要随意改动环境变量，否则可能造成系统死机。
+</div>
+</div>
+
+</div>
+<div><br></div>
+<h4 id="新建java_home系统变量"><em>新建JAVA_HOME系统变量</em></h4>
+<p>右键此电脑-属性-高级系统设置-环境变量，系统变量-新建。</p>
+<p>变量名：<code>JDK</code></p>
+<p>变量值：<code>C:\Tools\JDK</code>（JDK安装目录）  或者浏览目录进行选择（Windows11）</p>
+<p>然后确定。</p>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/4.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div><br></div>
+<h4 id="path中新建java_home的环境环境"><em>Path中新建JAVA_HOME的环境环境</em></h4>
+<p>系统变量中找到Path，选中，点击编辑，进入Path系统变量窗口，新建两条环境变量。</p>
+<p>第一条：<code>%JAVA_HOME%\bin;</code></p>
+<p>第二条：<code>%JAVA_HOME%\jre\bin;</code></p>
+<p>ps：windows11好像不需要输入最后的</p>
+<p>然后一路确定。</p>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/5.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div><br></div>
+<h2 id="jmeter"><em>Jmeter</em></h2>
+<p>JMeter 是一个独立的 Java 应用程序，它不依赖于系统注册表或其他系统级配置。所以它能够在不同操作系统上运行而无需进行安装。只需要下载完成后，将 ZIP 文件解压缩到指定的目录。
+在解压缩后的目录中找到 JMeter 启动脚本（例如 jmeter.bat 或 jmeter.sh），运行该脚本以启动 JMeter。</p>
+<h3 id="下载jmeterzip包"><em>下载JmeterZIP包</em></h3>
+<div>
+<a1 href="https://archive.apache.org/dist/jmeter/binaries/" target="_blank">
+    <div class="zhengti">
+        <a href="https://archive.apache.org/dist/jmeter/binaries/">
+            <div class="wenzi">
+                <div class="linkk">
+                    <div class="namee">历史版本Jmeter下载地址</div><div class="descc">示例环境为Windows，读者应根据实际系统环境及JDK版本，下载Jmeter的安装包。下载页面写有JDK版本要求。Windows环境推荐zip包，Linux环境推荐tgz包。</div></div>
+        </a><div class="linktext">https://archive.apache.org/dist/jmeter/binaries/</div>
+
+        </div>
+        <div class="daimg">
+            <img class="link-card-img" loading="lazy" src="https://api.thumbnail.ws/api/ab41148c7048bd95441b7b09816cbd5db1ed220134d3/thumbnail/get?width=720&url=https%3a%2f%2farchive.apache.org%2fdist%2fjmeter%2fbinaries%2f" alt="" /></div>
+
+    </div>
+</a1>
+
+<style>
+    a1 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .zhengti {
+        margin: auto;
+        padding-top: 4%;
+        padding-right: 4%;
+        padding-bottom: 4%;
+        padding-left: 4%;
+        width: 100%;
+        display: flex;
+        align-items: left;
+        flex-direction: row;
+        border: 1px solid #e5e7eb;
+        border-radius: 20px;
+        background-color: #ffffff;
+        transition: border 0.3s ease-in-out;
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .05);
+    }
+    
+    .wenzi {
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        flex: 2;
+    }
+    
+    .zhengti:hover {
+        transform: scale(1.03);
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .05);
+    }
+    
+    .linkk {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .iconn {
+        display: flex;
+        align-items: center;
+    }
+    
+    .iconn1 {
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 0.5em;
+        margin-bottom: 0.2em;
+    }
+    
+    .namee {
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--card-text-color-main);
+    }
+    
+    .descc {
+        font-size: 1.3rem;
+        color: #9ca3af;
+        margin-bottom: 0.5rem;
+    }
+    
+    .linktext {
+        font-size: 0.9rem;
+        color: #9ca3af;
+    }
+     
+    
+    .link-card-icoon {
+        width: 16px;
+        height: 16px;
+        margin-right: 0.5rem;
+    }
+     
+    
+    .daimg {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        align-self: right;
+    }
+    
+    .link-card-img {
+        display: block;
+        height: auto;
+        max-height: 200px;
+        width: 100%;
+         
+        object-fit: cover;
+        max-width: 50%;
+        margin-right: 2px;
+        border-radius: 0.25rem;
+    }
+    
+    a1:hover {
+        background-color: var(--color-zoom-bg);
+        border: 1px solid var(--theme);
+    }
+    
+    @media (max-width:900px) {
+        a1 {
+            max-height: 25em;
+            overflow-y: auto;
+            padding-right: 4%;
+        }
+        .zhengti {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+    [data-scheme="dark"] {
+        .zhengti {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+        }
+        .descc {
+            color: #9ca3af;
+        }
+        .linktext {
+            color: #9ca3af;
+        }
+    }
+</style>
+
+<br>
+</div>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/6.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div>
+<a1 href="https://jmeter.apache.org/download_jmeter.cgi" target="_blank">
+    <div class="zhengti">
+        <a href="https://jmeter.apache.org/download_jmeter.cgi">
+            <div class="wenzi">
+                <div class="linkk">
+                    <div class="namee">最新版本Jmeter下载地址</div><div class="descc">示例环境为Windows，读者应根据实际系统环境及JDK版本，下载Jmeter的安装包。下载页面写有JDK版本要求。Windows环境推荐zip包，Linux环境推荐tgz包。</div></div>
+        </a><div class="linktext">https://jmeter.apache.org/download_jmeter.cgi</div>
+
+        </div>
+        <div class="daimg">
+            <img class="link-card-img" loading="lazy" src="https://api.thumbnail.ws/api/ab41148c7048bd95441b7b09816cbd5db1ed220134d3/thumbnail/get?width=720&url=https%3a%2f%2fjmeter.apache.org%2fdownload_jmeter.cgi" alt="" /></div>
+
+    </div>
+</a1>
+
+<style>
+    a1 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .zhengti {
+        margin: auto;
+        padding-top: 4%;
+        padding-right: 4%;
+        padding-bottom: 4%;
+        padding-left: 4%;
+        width: 100%;
+        display: flex;
+        align-items: left;
+        flex-direction: row;
+        border: 1px solid #e5e7eb;
+        border-radius: 20px;
+        background-color: #ffffff;
+        transition: border 0.3s ease-in-out;
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .05);
+    }
+    
+    .wenzi {
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        flex: 2;
+    }
+    
+    .zhengti:hover {
+        transform: scale(1.03);
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .05);
+    }
+    
+    .linkk {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .iconn {
+        display: flex;
+        align-items: center;
+    }
+    
+    .iconn1 {
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 0.5em;
+        margin-bottom: 0.2em;
+    }
+    
+    .namee {
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--card-text-color-main);
+    }
+    
+    .descc {
+        font-size: 1.3rem;
+        color: #9ca3af;
+        margin-bottom: 0.5rem;
+    }
+    
+    .linktext {
+        font-size: 0.9rem;
+        color: #9ca3af;
+    }
+     
+    
+    .link-card-icoon {
+        width: 16px;
+        height: 16px;
+        margin-right: 0.5rem;
+    }
+     
+    
+    .daimg {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        align-self: right;
+    }
+    
+    .link-card-img {
+        display: block;
+        height: auto;
+        max-height: 200px;
+        width: 100%;
+         
+        object-fit: cover;
+        max-width: 50%;
+        margin-right: 2px;
+        border-radius: 0.25rem;
+    }
+    
+    a1:hover {
+        background-color: var(--color-zoom-bg);
+        border: 1px solid var(--theme);
+    }
+    
+    @media (max-width:900px) {
+        a1 {
+            max-height: 25em;
+            overflow-y: auto;
+            padding-right: 4%;
+        }
+        .zhengti {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+    [data-scheme="dark"] {
+        .zhengti {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+        }
+        .descc {
+            color: #9ca3af;
+        }
+        .linktext {
+            color: #9ca3af;
+        }
+    }
+</style>
+
+<br>
+</div>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/7.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div><br></div>
+<h3 id="解压到目录"><em>解压到目录</em></h3>
+<p>建议解压到D:\Tools目录下,方便管理。</p>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/8.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div><br></div>
+<h3 id="汉化jmeter界面"><em>汉化Jmeter界面</em></h3>
+<p>修改Jmeter/bin/jmeter.properties，40行增加<code>language=zh_CN</code>。然后保存。</p>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/9.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div><br></div>
+<h3 id="发送启动文件到桌面快捷方式"><em>发送启动文件到桌面快捷方式</em></h3>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/10.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div><br></div>
+<h3 id="启动jmeter"><em>启动Jmeter</em></h3>
+<p>双击桌面上的 JMeter 快捷方式，等待脚本运行，然后 JMeter 界面将会显示出来。</p>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/11.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div><br></div>
+<h2 id="快速使用"><em>快速使用</em></h2>
+<p>我们可以使用最简单的JMeter脚本来快速进行一次接口请求。这个脚本包括测试计划、线程组、取样器（Sampler）以及查看结果器（View Results Tree）。</p>
+<p>在测试计划中，我们定义了整个测试的基本设置。线程组用于模拟用户，而取样器则代表了具体的请求。查看结果器则用于查看请求的详细结果。</p>
+<p>通过这个简单的脚本，我们能够迅速进行一次接口请求测试，为后续更复杂的测试做好基础工作。这个基本结构也为我们学习更多JMeter的高级功能打下了基础。</p>
+<div><br></div>
+<h3 id="示例接口"><em>示例接口</em></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@api.route</span><span class="p">(</span><span class="s1">&#39;/QuickUse/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">quickuse</span><span class="p">():</span>  <span class="c1"># Jmeter教程快速开始api</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR: The request method is not GET!&#39;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;It is successful!&#39;</span><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div><br></div>
+<h3 id="示例jmeter脚本"><em>示例Jmeter脚本</em></h3>
+<ul>
+<li>
+<p><font style="background-color: #efef48">测试计划</font>下添加<font style="background-color: #efef48">线程组</font></p>
+<p>右键测试计划-添加-线程（用户）-线程组</p>
+</li>
+<li>
+<p><font style="background-color: #efef48">测试计划</font>下添加<font style="background-color: #efef48">查看结果树</font></p>
+<p>右键测试计划-添加-监听器-查看结果树</p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组</font>下添加<font style="background-color: #efef48">HTTP请求</font></p>
+<p>右键线程组-添加-取样器-HTTP请求</p>
+<p>请求地址：<code>HTTP://127.0.0.1:5000/QuickUse/</code></p>
+<p>请求方式：<code>GET</code></p>
+</li>
+</ul>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/12.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div><br></div>
+<h3 id="运行点击上方绿色三角形查看结果树"><em>运行（点击上方绿色三角形），查看结果树</em></h3>
+
+
+
+
+
+
+
+
+<div class="result">
+	
+		<div class="result-type">
+			<div class="result-type-svg">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
+			</div>
+			<div class="result-type-text"><span>请求数据</span></div>
+		</div>
+		<div class="result-head">
+			<div class="result-left">
+				<span>请求头</span>
+			</div>
+			<div class="result-right">
+				<span>Connection: keep-alive<br>Host: 127.0.0.1:5000<br>User-Agent: Apache-HttpClient/4.5.14 (Java/20.0.2)</span>
+			</div>
+		</div>
+		<div class="result-body">
+			<div class="result-left">
+				<span>请求体</span>
+			</div>
+			<div class="result-right">
+				<span>GET http://127.0.0.1:5000/QuickUse/<br><br>GET data:<br><br><br>[no cookies]</span>
+			</div>
+		</div>
+	
+</div>
+<div><br></div>
+
+
+
+
+
+
+
+
+<div class="result">
+	
+		<div class="result-type">
+			<div class="result-type-svg">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
+			</div>
+			<div class="result-type-text"><span>响应数据</span></div>
+		</div>
+		<div class="result-head">
+			<div class="result-left">
+				<span>响应头</span>
+			</div>
+			<div class="result-right">
+				<span>HTTP/1.1 200 OK<br>Server: Werkzeug/3.0.1 Python/3.12.1<br>Date: Mon, 15 Jan 2024 03:39:26 GMT<br>Content-Type: application/json<br>Content-Length: 40<br>Connection: close</span>
+			</div>
+		</div>
+		<div class="result-body">
+			<div class="result-left">
+				<span>响应体</span>
+			</div>
+			<div class="result-right">
+				<span>{"code": 200, "data": "It is successful!"}</span>
+			</div>
+		</div>
+	
+</div>
+<p><img src="/Jiang/img/Jmeter/EnvConfig/1.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div><br></div>
+<h2 id="结尾"><em>结尾</em></h2>
+<p>本篇主要介绍JMeter的环境配置以及初体验，为后续的JMeter之旅做好准备。在这一章节中，我们将了解如何配置JMeter的环境，以及如何进行简单的接口测试。</p>
+<p>接下来的篇章EtherealBoyJiang将深入探讨JMeter的测试计划，帮助读者更好地利用这个强大的性能测试工具。</p>
+<div><br><hr></div>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/Jiang/tags/%E6%B5%8B%E8%AF%95/">测试</a>
+        
+            <a href="/Jiang/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+        
+            <a href="/Jiang/tags/jmeter/">Jmeter</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>转载需要保留原始链接，未经明确许可，禁止商业使用。<a class="link" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"  target="_blank" rel="noopener"
+    >CC BY-NC-SA 4.0</a></span>
+    </section>
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/Jiang/img/Jmeter/0.png" loading="lazy" data-key="" data-hash="/Jiang/img/Jmeter/0.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Jmeter测试计划</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/Jiang/img/Jmeter/0.png" loading="lazy" data-key="" data-hash="/Jiang/img/Jmeter/0.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Jmeter线程组</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/Jiang/p/jmeter%E5%89%8D%E8%A8%80/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="/Jiang/img/Jmeter/0.png" loading="lazy" data-key="" data-hash="/Jiang/img/Jmeter/0.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Jmeter前言</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2024 梦游少年
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.23.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/Jiang/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

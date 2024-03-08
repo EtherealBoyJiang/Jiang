@@ -7,7 +7,751 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>梦游少年</copyright>
-        <lastBuildDate>Tue, 23 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://etherealboyjiang.github.io/Jiang/tags/%E7%BA%BF%E7%A8%8B%E7%BB%84/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 26 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://etherealboyjiang.github.io/Jiang/tags/%E7%BA%BF%E7%A8%8B%E7%BB%84/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Jmeter线程组</title>
+        <link>https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/</link>
+        <pubDate>Fri, 26 Jan 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/</guid>
+        <description>&lt;img src="https://etherealboyjiang.github.io/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter线程组" /&gt;&lt;h1 id=&#34;线程组&#34;&gt;线程组&lt;/h1&gt;
+&lt;p&gt;线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。&lt;/p&gt;
+&lt;p&gt;线程组分为四类:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;线程组&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;setUp线程组&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;tearDown线程组&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开放模型线程组&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;线程组、setUp线程组、tearDown线程组控制面板中的元素基本一致：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;名称、注释&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在取样器错误后执行的动作&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;线程数&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Ramp-Up时间&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Same user on each iteration&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;延迟创建线程直到需要（只有线程组有）&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;调度器&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;开放模型线程组控制面板中的元素：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;名称、注释&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;在取样器错误后执行的动作&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;调度计划&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;随机种子&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+&lt;h2 id=&#34;执行顺序&#34;&gt;执行顺序&lt;/h2&gt;
+&lt;p&gt;在JMeter中，&lt;code&gt;setUp线程组&lt;/code&gt;拥有最高的优先级，而&lt;code&gt;tearDown线程组&lt;/code&gt;则具有最低的优先级。这一优先级关系可用表达式表示为：&lt;code&gt;setUp线程组 &amp;gt; 线程组 = 开放模型线程组 &amp;gt; tearDown线程组&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;这意味着在测试计划执行过程中，&lt;code&gt;setUp线程组&lt;/code&gt;将首先执行，其后是&lt;code&gt;线程组&lt;/code&gt;和&lt;code&gt;开放模型线程组&lt;/code&gt;，最后执行&lt;code&gt;tearDown线程组&lt;/code&gt;。通常情况下，&lt;code&gt;setUp线程组&lt;/code&gt;用于在测试执行之前进行一些初始化工作，而&lt;code&gt;tearDown线程组&lt;/code&gt;用于测试执行结束后的清理工作。其他线程组在测试执行过程中按照它们在测试计划中的顺序执行。&lt;/p&gt;
+&lt;p&gt;这种优先级的设定确保了在测试的前后可以进行一些全局性的准备和清理工作，以确保测试环境的稳定性和一致性。这种有序的执行流程使得在性能测试中能够更灵活地控制测试场景，并确保测试的准确性和可重复性。&lt;/p&gt;
+&lt;h3 id=&#34;示例接口代码&#34;&gt;&lt;em&gt;示例接口代码&lt;/em&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@api.route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/TestPlan2/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;methods&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;testplan2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;sleep&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jsonify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39; 请求方式错误！&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_json&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;ThreadGroupName&amp;#34;&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jsonify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;400&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;请求参数错误!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jsonify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;线程组类型是：&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;ThreadGroupName&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;示例jmeter脚本&#34;&gt;&lt;em&gt;示例Jmeter脚本&lt;/em&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中，分别添加&lt;font style=&#34;background-color: #efef48&#34;&gt;tearDown线程组、线程组、setUp线程组&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;tearDown线程组、线程组、setUp线程组&lt;/font&gt;下分别添加&lt;font style=&#34;background-color: #efef48&#34;&gt;HTTP请求&lt;/font&gt; 取样器&lt;/p&gt;
+&lt;p&gt;名称分别为：&lt;code&gt;tearDown线程组请求&lt;/code&gt;、&lt;code&gt;线程组请求&lt;/code&gt;、&lt;code&gt;setUp线程组请求&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;请求地址：&lt;code&gt;HTTP://127.0.0.1:5000/ThreadGroup/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;请求方式：&lt;code&gt;POST&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;消息体数据分别为：&lt;p&gt;&lt;code&gt;{&amp;ldquo;ThreadGroupName&amp;rdquo;: &amp;ldquo;tearDown线程组请求&amp;rdquo;}&lt;/code&gt;&lt;br&gt;&lt;code&gt;{&amp;ldquo;ThreadGroupName&amp;rdquo;: &amp;ldquo;线程组请求&amp;rdquo;}&lt;/code&gt;&lt;br&gt;&lt;code&gt;{&amp;ldquo;ThreadGroupName&amp;rdquo;: &amp;ldquo;setUp线程组请求&amp;rdquo;}&lt;/code&gt;&lt;/P&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;tearDown线程组请求、线程组请求、setUp线程组请求取样器&lt;/font&gt;下添加&lt;font style=&#34;background-color: #efef48&#34;&gt;HTTP信息头管理器&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;名称：&lt;code&gt;Content-Type&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;值：&lt;code&gt;application/json&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;下添加&lt;font style=&#34;background-color: #efef48&#34;&gt;查看结果树&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;运行查看结果树&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h3&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;result&#34;&gt;
+	
+		&lt;div class=&#34;result-type&#34;&gt;
+			&lt;div class=&#34;result-type-svg&#34;&gt;
+				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;setUp线程组请求取样器&lt;/span&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&#34;result-body&#34;&gt;
+			&lt;div class=&#34;result-left&#34;&gt;
+				&lt;span&gt;取样器结果&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-right&#34;&gt;
+				&lt;span&gt;hread Name:setUp 线程组 1-1 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-02-01 11:30:38 CST&lt;/font&gt;&lt;br&gt;Load time:3009&lt;br&gt;Connect Time:2&lt;br&gt;Latency:3009&lt;br&gt;Size in bytes:266&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:224&lt;br&gt;Body size in bytes:100&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;br&gt;&lt;br&gt;&lt;br&gt;HTTPSampleResult fields:&lt;br&gt;ContentType: application/json&lt;br&gt;DataEncoding: null&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;result&#34;&gt;
+	
+		&lt;div class=&#34;result-type&#34;&gt;
+			&lt;div class=&#34;result-type-svg&#34;&gt;
+				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;线程组请求取样器&lt;/span&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&#34;result-body&#34;&gt;
+			&lt;div class=&#34;result-left&#34;&gt;
+				&lt;span&gt;取样器结果&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-right&#34;&gt;
+				&lt;span&gt;hread Name:线程组 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-02-01 11:30:41 CST&lt;/font&gt;&lt;br&gt;Load time:3004&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3004&lt;br&gt;Size in bytes:260&lt;br&gt;Sent bytes:219&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:95&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;br&gt;&lt;br&gt;&lt;br&gt;HTTPSampleResult fields:&lt;br&gt;ContentType: application/json&lt;br&gt;DataEncoding: null&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;result&#34;&gt;
+	
+		&lt;div class=&#34;result-type&#34;&gt;
+			&lt;div class=&#34;result-type-svg&#34;&gt;
+				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;tearDown线程组请求取样器&lt;/span&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&#34;result-body&#34;&gt;
+			&lt;div class=&#34;result-left&#34;&gt;
+				&lt;span&gt;取样器结果&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-right&#34;&gt;
+				&lt;span&gt;hread Name:tearDown 线程组 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-02-01 11:30:44 CST&lt;/font&gt;&lt;br&gt;Load time:3005&lt;br&gt;Connect Time:2&lt;br&gt;Latency:3005&lt;br&gt;Size in bytes:269&lt;br&gt;Sent bytes:227&lt;br&gt;Headers size in bytes:166&lt;br&gt;Body size in bytes:103&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;br&gt;&lt;br&gt;&lt;br&gt;HTTPSampleResult fields:&lt;br&gt;ContentType: application/json&lt;br&gt;DataEncoding: null&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	
+&lt;/div&gt;
+&lt;p&gt;可以观察到在中国标准时间（CST）&lt;code&gt;2024-02-01 11:30:38&lt;/code&gt; 时，&lt;code&gt;setUp线程组请求取样器&lt;/code&gt;发送了请求；随后，在 &lt;code&gt;2024-02-01 11:30:41&lt;/code&gt; CST，&lt;code&gt;线程组请求取样器&lt;/code&gt;也发出了请求；最后，在 &lt;code&gt;2024-02-01 11:30:44&lt;/code&gt; CST，&lt;code&gt;tearDown线程组请求取样器&lt;/code&gt;发出了请求。&lt;/p&gt;
+&lt;p&gt;这与接口设置的休眠时间一致，表明 JMeter 在接收到&lt;code&gt;setUp线程组请求取样器&lt;/code&gt;的响应后，执行了线程组操作，然后在接收到&lt;code&gt;线程组请求取样器&lt;/code&gt;的响应后，执行了 &lt;code&gt;tearDown线程组&lt;/code&gt; 操作。&lt;/p&gt;
+&lt;p&gt;总体来说，执行顺序可以归纳为：&lt;code&gt;setUp线程组&lt;/code&gt; &amp;gt; &lt;code&gt;线程组&lt;/code&gt; &amp;gt; &lt;code&gt;开放模型线程组&lt;/code&gt; &amp;gt; &lt;code&gt;tearDown线程组&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;结语&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;JMeter提供的&lt;code&gt;setUp线程组&lt;/code&gt;和&lt;code&gt;tearDown线程组&lt;/code&gt;功能为我们提供了很多便利。通过使用这两个线程组，我们能够执行一些必要的前置和后置操作，以更有效地进行性能测试。&lt;/p&gt;
+&lt;p&gt;举例来说，&lt;code&gt;setUp线程组&lt;/code&gt;可用于执行诸如登录、数据库查询等前置操作。这允许我们在性能测试开始前设置测试环境，确保系统处于一种预期的状态，从而更准确地模拟实际用户行为。&lt;/p&gt;
+&lt;p&gt;另一方面，&lt;code&gt;tearDown线程组&lt;/code&gt;可以用于执行一些关键的清理和还原操作，如删除数据库记录、退出登录等。这有助于确保在测试执行完成后系统状态得到有效还原，减少测试对系统的影响，并提供一致性的测试结果。&lt;/p&gt;
+&lt;p&gt;综合而言，通过巧妙地利用&lt;code&gt;setUp线程组&lt;/code&gt;和&lt;code&gt;tearDown线程组&lt;/code&gt;，我们能够更方便地进行性能测试，确保测试环境的准备和清理工作得到有效管理，从而提高测试的可重复性和准确性。&lt;/p&gt;
+&lt;p&gt;在测试计划中，同类型线程组的执行顺序可以通过勾选或不勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;来控制。勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，则同类型线程组按照从上至下的顺序依次执行；反之，则同类型线程组并发执行。&lt;/p&gt;
+&lt;h2 id=&#34;线程数&#34;&gt;&lt;em&gt;线程数&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;线程组中的线程数指的是同时运行的虚拟用户数量。这个数量决定了你的测试将模拟多少个用户同时访问目标应用程序或服务。&lt;/p&gt;
+&lt;p&gt;在JMeter的线程组配置中，你可以根据你的需求来设置线程数，通常是根据你想要模拟的用户负载量和你的系统资源来决定的。&lt;/p&gt;
+&lt;p&gt;需要注意的是，线程数设置得太高可能会导致测试机器资源不足，影响测试结果的准确性；而设置得太低可能无法模拟真实的负载情况。因此，需要根据具体情况进行合理的设置。&lt;/p&gt;
+&lt;h3 id=&#34;示例接口代码-1&#34;&gt;&lt;em&gt;示例接口代码&lt;/em&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@api.route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/QuickUse/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;methods&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;quickuse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# Jmeter教程快速开始api&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jsonify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;400&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;ERROR: The request method is not GET!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jsonify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;It is successful!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;示例jmeter脚本-1&#34;&gt;&lt;em&gt;示例Jmeter脚本&lt;/em&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;下，添加1个&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;线程数：&lt;code&gt;3&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组&lt;/font&gt;下，添加&lt;font style=&#34;background-color: #efef48&#34;&gt;HTTP请求取样器&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;请求地址：&lt;code&gt;HTTP://127.0.0.1:5000/QuickUse/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;请求方式：&lt;code&gt;GET&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中，添加&lt;font style=&#34;background-color: #efef48&#34;&gt;查看结果树&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;运行查看结果树-1&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h3&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;result&#34;&gt;
+	
+		&lt;div class=&#34;result-type&#34;&gt;
+			&lt;div class=&#34;result-type-svg&#34;&gt;
+				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;用户1-1&lt;/span&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&#34;result-body&#34;&gt;
+			&lt;div class=&#34;result-left&#34;&gt;
+				&lt;span&gt;取样器结果&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-right&#34;&gt;
+				&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-1&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:34&lt;br&gt;Connect Time:24&lt;br&gt;Latency:30&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;result&#34;&gt;
+	
+		&lt;div class=&#34;result-type&#34;&gt;
+			&lt;div class=&#34;result-type-svg&#34;&gt;
+				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;用户1-2&lt;/span&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&#34;result-body&#34;&gt;
+			&lt;div class=&#34;result-left&#34;&gt;
+				&lt;span&gt;取样器结果&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-right&#34;&gt;
+				&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-2&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:2&lt;br&gt;Connect Time:1&lt;br&gt;Latency:2&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;result&#34;&gt;
+	
+		&lt;div class=&#34;result-type&#34;&gt;
+			&lt;div class=&#34;result-type-svg&#34;&gt;
+				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;用户1-3&lt;/span&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&#34;result-body&#34;&gt;
+			&lt;div class=&#34;result-left&#34;&gt;
+				&lt;span&gt;取样器结果&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-right&#34;&gt;
+				&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-3&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:4&lt;br&gt;Connect Time:1&lt;br&gt;Latency:4&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	
+&lt;/div&gt;
+&lt;p&gt;可以看出取样器结果中的Thread Name分别为&lt;code&gt;线程组 1-1&lt;/code&gt;、&lt;code&gt;线程组 1-2&lt;/code&gt;、&lt;code&gt;线程组 1-3&lt;/code&gt;，这是因为&lt;code&gt;线程组&lt;/code&gt;中&lt;code&gt;线程数&lt;/code&gt;值为&lt;code&gt;3&lt;/code&gt;，Jmeter启功了3个线程，每个线程皆执行1次&lt;code&gt;线程组&lt;/code&gt;。在Jmeter中1个线程就代表1个用户，现在就相当于3个用户一起执行&lt;code&gt;线程组&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;结语-1&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;在JMeter中，线程数是指在测试计划中设置的虚拟用户数。这些虚拟用户模拟真实用户的行为，对目标服务器进行请求。设置线程数的目的是为了模拟高负载情况下系统的性能表现。&lt;/p&gt;
+&lt;p&gt;线程数的设置通常在JMeter的&lt;code&gt;线程组&lt;/code&gt;组件中进行。一个线程组可以包含一个或多个线程，每个线程模拟一个用户。通过增加线程数，可以模拟更多的并发用户，从而测试系统在高并发情况下的性能。&lt;/p&gt;
+&lt;p&gt;设置线程数时，需要考虑以下几个因素：&lt;/p&gt;
+&lt;p&gt;测试目标：根据你要测试的应用程序的预期负载来设置线程数。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;系统资源：确保JMeter机器有足够的资源来管理这些线程。过多的线程可能会导致JMeter机器资源耗尽。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;服务器容量：线程数不应超过目标服务器的容量，否则可能会导致服务器崩溃或响应缓慢。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;合理地设置线程数对于获得准确的性能测试结果至关重要。通常建议从小规模的线程数开始，逐渐增加，直到达到预期的测试目标或服务器的性能瓶颈。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;循环次数&#34;&gt;&lt;em&gt;循环次数&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;线程组中的循环次数指的是用户执行测试计划的次数。这个数量决定了你的测试将模拟用户访问目标应用程序或服务的次数。&lt;/p&gt;
+&lt;p&gt;在JMeter的线程组配置中，你可以根据你的需求来设置循环次数，通常是根据你想要模拟的用户访问上限值，如抽奖次数。&lt;/p&gt;
+&lt;p&gt;需要注意的是，循环次数设置得太高，特别设置循环次数为永远，可能会导致测试机器资源不足，影响测试结果的准确性；而设置得太低可能无法达到测试要求。因此，需要根据具体情况进行合理的设置。&lt;/p&gt;
+&lt;h3 id=&#34;示例接口代码-2&#34;&gt;&lt;em&gt;示例接口代码&lt;/em&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@api.route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/QuickUse/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;methods&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;quickuse&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# Jmeter教程快速开始api&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jsonify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;400&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;ERROR: The request method is not GET!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jsonify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;It is successful!&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;示例jmeter脚本-2&#34;&gt;&lt;em&gt;示例Jmeter脚本&lt;/em&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;下，添加1个&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;循环次数：&lt;code&gt;3&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组&lt;/font&gt;下，添加&lt;font style=&#34;background-color: #efef48&#34;&gt;HTTP请求取样器&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;请求地址：&lt;code&gt;HTTP://127.0.0.1:5000/QuickUse/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;请求方式：&lt;code&gt;GET&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中，添加&lt;font style=&#34;background-color: #efef48&#34;&gt;查看结果树&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;运行查看结果树-2&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h3&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;result&#34;&gt;
+	
+		&lt;div class=&#34;result-type&#34;&gt;
+			&lt;div class=&#34;result-type-svg&#34;&gt;
+				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;用户1-1&lt;/span&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&#34;result-body&#34;&gt;
+			&lt;div class=&#34;result-left&#34;&gt;
+				&lt;span&gt;取样器结果&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-right&#34;&gt;
+				&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-1&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:3&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;result&#34;&gt;
+	
+		&lt;div class=&#34;result-type&#34;&gt;
+			&lt;div class=&#34;result-type-svg&#34;&gt;
+				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;用户1-1&lt;/span&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&#34;result-body&#34;&gt;
+			&lt;div class=&#34;result-left&#34;&gt;
+				&lt;span&gt;取样器结果&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-right&#34;&gt;
+				&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-1&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:2&lt;br&gt;Connect Time:1&lt;br&gt;Latency:1&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	
+&lt;/div&gt;
+
+
+
+
+
+
+
+
+&lt;div class=&#34;result&#34;&gt;
+	
+		&lt;div class=&#34;result-type&#34;&gt;
+			&lt;div class=&#34;result-type-svg&#34;&gt;
+				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;用户1-1&lt;/span&gt;&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&#34;result-body&#34;&gt;
+			&lt;div class=&#34;result-left&#34;&gt;
+				&lt;span&gt;取样器结果&lt;/span&gt;
+			&lt;/div&gt;
+			&lt;div class=&#34;result-right&#34;&gt;
+				&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-1&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:1&lt;br&gt;Connect Time:0&lt;br&gt;Latency:1&lt;/span&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	
+&lt;/div&gt;
+&lt;p&gt;可以看出取样器结果中的Thread Name皆为&lt;code&gt;线程组 1-1&lt;/code&gt;，这是因为&lt;code&gt;线程组&lt;/code&gt;中&lt;code&gt;循环次数&lt;/code&gt;值为&lt;code&gt;3&lt;/code&gt;，Jmeter启功了1个线程，连续执行了3次&lt;code&gt;线程组&lt;/code&gt;。在Jmeter中1个线程就代表1个用户，现在就相当于1个用户执行了3次&lt;code&gt;线程组&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;结语-2&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;在JMeter中，循环次数是指每个线程（即虚拟用户）执行其测试计划的次数。这是JMeter线程组中的一个重要设置，它决定了每个线程将重复执行其包含的采样器和其他配置元素的次数。&lt;/p&gt;
+&lt;p&gt;设置循环次数时，需要考虑以下几点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;测试目的&lt;/strong&gt;：根据你的测试目标来决定循环次数。例如，如果你想要模拟用户在一定时间内持续访问某个页面，那么你可能需要设置较高的循环次数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;测试持续时间&lt;/strong&gt;：循环次数与测试持续时间（如果设置了）共同决定测试的总执行次数。如果设置了持续时间，那么循环次数实际上决定了在持续时间结束前每个线程尝试执行的总次数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;服务器负载&lt;/strong&gt;：循环次数的增加可能会导致服务器负载的增加。因此，在设置时需要考虑目标服务器的承受能力。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;测试资源&lt;/strong&gt;：高循环次数可能会增加JMeter的资源消耗，因此需要确保JMeter有足够的资源来处理这些请求。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在实际的测试场景中，通常建议先从较小的循环次数开始，然后根据测试结果和需求逐渐增加，直到达到满意的测试效果。&lt;/p&gt;
+&lt;h2 id=&#34;取样器错误后执行的动作&#34;&gt;&lt;em&gt;取样器错误后执行的动作&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;在JMeter中，取样器（Sampler）是用于模拟用户请求发送到目标服务器的组件，例如HTTP请求、FTP请求等。当取样器执行过程中出现错误时，可以通过配置相应的动作来处理这些错误。以下是一些处理取样器错误时，线程组中常见方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;停止测试&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;立即停止测试&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;停止线程&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;启动下一进程循环&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;继续&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过合理配置这些错误处理方式，可以根据测试需求和场景来控制测试计划的行为，确保对错误有适当的响应和处理。&lt;/p&gt;
+&lt;h3 id=&#34;示例接口代码-3&#34;&gt;&lt;em&gt;示例接口代码&lt;/em&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@api.route&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;/ThreadGroup1/&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;methods&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;POST&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;threadgroup1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;method&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;GET&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# `错误请求`立即返回&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jsonify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;嘿！我有响应！&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;sleep&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 延长非`错误请求`的请求时间&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jsonify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;code&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;200&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;data&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;嘿！我有响应！&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;示例jmeter脚本-3&#34;&gt;&lt;em&gt;示例Jmeter脚本&lt;/em&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中，添加2个&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;名称分别为：&lt;code&gt;线程组1&lt;/code&gt;、&lt;code&gt;线程组2&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;中，添加3个&lt;font style=&#34;background-color: #efef48&#34;&gt;HTTP请求取样器&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;名称分别为：&lt;code&gt;错误请求1&lt;/code&gt;、&lt;code&gt;未加固定定时器&lt;/code&gt;、&lt;code&gt;错误请求之后请求1&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;请求地址：&lt;code&gt;HTTP://127.0.0.1:5000/ThreadGroup1/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;请求方式：&lt;div style=&#34;margin-left: 10%;&#34;&gt;&lt;p&gt;错误请求：&lt;code&gt;GET&lt;/code&gt;&lt;br&gt;未加固定定时器、错误请求之后请求1：&lt;code&gt;POST&lt;/code&gt;&lt;/p&gt;&lt;/div&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;中，添加2个&lt;font style=&#34;background-color: #efef48&#34;&gt;HTTP请求取样器&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;名称分别为：&lt;code&gt;与错误请求并行请求2&lt;/code&gt;、&lt;code&gt;错误请求之后请求2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;请求地址：&lt;code&gt;HTTP://127.0.0.1:5000/ThreadGroup1/&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;请求方式：&lt;code&gt;POST&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求之后请求1、2取样器&lt;/font&gt;中，添加&lt;font style=&#34;background-color: #efef48&#34;&gt;固定定时器&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;线程延迟（毫秒）：&lt;code&gt;3000&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求取样器&lt;/font&gt;中，添加&lt;font style=&#34;background-color: #efef48&#34;&gt;响应断言&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;注释：&lt;code&gt;接口响应与断言值不匹配，则判断该请求出错&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;添加响应值：&lt;code&gt;1111&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中，添加&lt;font style=&#34;background-color: #efef48&#34;&gt;查看结果树&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;错误请求取样器&lt;/code&gt;中的&lt;code&gt;响应断言&lt;/code&gt;用于判断接口的响应是否与预期的值匹配，如果不匹配，则认为该请求出错。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;固定定时器&lt;/code&gt;延迟4秒，可以保证&lt;code&gt;错误请求之后请求2&lt;/code&gt;在&lt;code&gt;错误请求1&lt;/code&gt;结束后执行。&lt;/p&gt;
+&lt;h3 id=&#34;停止测试&#34;&gt;&lt;em&gt;停止测试&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;设置&lt;code&gt;取样器错误后执行的动作&lt;/code&gt;为&lt;code&gt;停止测试&lt;/code&gt;时，一旦任何一个取样器遇到错误，整个测试计划将会在所有当前正在执行的线程执行完毕后停止。这可以用于模拟在测试过程中发生重要错误或异常时的行为。&lt;/p&gt;
+&lt;p&gt;这种设置确保在测试执行中任何关键的错误都会导致测试的终止，以便进行及时的识别和处理。这对于模拟真实世界中的异常情况以及确保测试的准确性和可重复性都是非常重要的。&lt;/p&gt;
+&lt;h4 id=&#34;运行查看结果树-3&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
+&lt;h5 id=&#34;多线程组&#34;&gt;&lt;em&gt;多线程组&lt;/em&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;测试计划&lt;/code&gt;中勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;线程组1&lt;/code&gt;前，&lt;code&gt;线程组2&lt;/code&gt;后&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/1.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了2次，但结果却不尽相同，与预期不符。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组1&lt;/code&gt;时出现错误请求，不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。取样器在线程组中按从上至下的顺序执行。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;线程组2&lt;/code&gt;前，&lt;code&gt;线程组1&lt;/code&gt;后&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/2.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果保持一致，与预期相符。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组2&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，测试计划停止测试。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;测试计划&lt;/code&gt;中取消勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/3.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中未勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，因此&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互相干扰且并行执行。当&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，&lt;code&gt;线程组2&lt;/code&gt;中的&lt;code&gt;与错误请求并行请求2&lt;/code&gt;也在执行，直到&lt;code&gt;与错误请求并行请求2&lt;/code&gt;结束后，测试计划才停止测试。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;建议&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果&lt;code&gt;测试计划&lt;/code&gt;中勾选了“独立运行每个线程组”，不建议非最后排序的&lt;code&gt;线程组&lt;/code&gt;中&lt;code&gt;取样器错误后执行的动作&lt;/code&gt;设置为&lt;code&gt;停止测试&lt;/code&gt;，它并不会按照你的预期去执行。&lt;/p&gt;
+&lt;h5 id=&#34;单线程组&#34;&gt;&lt;em&gt;单线程组&lt;/em&gt;&lt;/h5&gt;
+&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;,&lt;code&gt;未加固定定时器&lt;/code&gt;放在&lt;code&gt;错误请求1&lt;/code&gt;之前。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/7.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划停止测试。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;，&lt;code&gt;错误请求1&lt;/code&gt;放在&lt;code&gt;错误请求之后请求1&lt;/code&gt;之后。&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;线程数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;线程组的线程数用于模拟用户数量，此时的脚本代表同时（不是并发）有三个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/8.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，3个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。3个用户中其中1个用户执行&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，另外2个用户还在执行&lt;code&gt;错误请求之后请求1&lt;/code&gt;，待执行完毕后，测试计划停止测试。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;，&lt;code&gt;错误请求1&lt;/code&gt;放在&lt;code&gt;错误请求之后请求1&lt;/code&gt;之后。&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;循环数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;线程组的循环数用于设置线程组的执行次数，此时的脚本代表1个用户执行3次&lt;code&gt;线程组1&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/9.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，1个用户执行&lt;code&gt;线程组1&lt;/code&gt;3次。用户在执行第1次&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，测试计划停止测试。&lt;/p&gt;
+&lt;h3 id=&#34;立即停止测试&#34;&gt;&lt;em&gt;立即停止测试&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;设置&lt;code&gt;取样器错误后执行的动作&lt;/code&gt;为&lt;code&gt;立即停止测试&lt;/code&gt;时，当取样器在执行过程中遇到错误时，JMeter会立即停止当前运行的测试，不再执行任何后续的请求或操作。&lt;/p&gt;
+&lt;p&gt;这有助于保护应用程序免受可能导致问题的异常或错误的影响，并确保测试结果的准确性。&lt;/p&gt;
+&lt;p&gt;这种设置对于测试场景中的稳定性和可靠性非常重要，特别是在模拟并发用户或大负载情况下，能够及时发现问题并停止测试，有助于减少潜在的影响和损害。&lt;/p&gt;
+&lt;h4 id=&#34;运行查看结果树-4&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
+&lt;h5 id=&#34;多线程组-1&#34;&gt;&lt;em&gt;多线程组&lt;/em&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;测试计划&lt;/code&gt;中勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;线程组1&lt;/code&gt;前，&lt;code&gt;线程组2&lt;/code&gt;后&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/4.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了4次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行，在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行。因此，若&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时,不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;code&gt;线程组2&lt;/code&gt;前，&lt;code&gt;线程组1&lt;/code&gt;后&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/5.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了4次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行，在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组2&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;测试计划&lt;/code&gt;中取消勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/6.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了4次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，
+在&lt;code&gt;测试计划&lt;/code&gt;中未勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，因此&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互相干扰且并行执行。当&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，&lt;code&gt;线程组2&lt;/code&gt;中的&lt;code&gt;与错误请求并行请求2&lt;/code&gt;也在执行，但不等&lt;code&gt;与错误请求并行请求2&lt;/code&gt;结束，测试计划立即停止测试，可以看出&lt;code&gt;与错误请求并行请求2&lt;/code&gt;的响应体中提示 Socket 关闭异常。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;建议&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果&lt;code&gt;测试计划&lt;/code&gt;中勾选了“独立运行每个线程组”，不建议非最后排序的&lt;code&gt;线程组&lt;/code&gt;中&lt;code&gt;取样器错误后执行的动作&lt;/code&gt;设置为&lt;code&gt;立即停止测试&lt;/code&gt;，它并不会按照你的预期去执行。&lt;/p&gt;
+&lt;h5 id=&#34;单线程组-1&#34;&gt;&lt;em&gt;单线程组&lt;/em&gt;&lt;/h5&gt;
+&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;,&lt;code&gt;未加固定定时器&lt;/code&gt;放在&lt;code&gt;错误请求1&lt;/code&gt;之前。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/10.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;，&lt;code&gt;错误请求1&lt;/code&gt;放在&lt;code&gt;错误请求之后请求1&lt;/code&gt;之后。&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;线程数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;线程组的线程数用于模拟用户数量，此时的脚本代表同时（不是并发）有三个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/11.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，3个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。3个用户中其中1个用户执行&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，另外2个用户还在执行&lt;code&gt;错误请求之后请求1&lt;/code&gt;，
+但不等执行完毕后，测试计划立即停止测试，可以看出&lt;code&gt;与错误请求并行请求1&lt;/code&gt;的响应体中提示 Socket 关闭异常。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;，&lt;code&gt;错误请求1&lt;/code&gt;放在&lt;code&gt;错误请求之后请求1&lt;/code&gt;之后。&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;循环数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;线程组的循环数用于设置线程组的执行次数，此时的脚本代表1个用户执行3次&lt;code&gt;线程组1&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/12.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，1个用户执行&lt;code&gt;线程组1&lt;/code&gt;3次。用户在执行第1次&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，测试计划立即停止测试。&lt;/p&gt;
+&lt;h3 id=&#34;停止线程&#34;&gt;&lt;em&gt;停止线程&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;设置&lt;code&gt;取样器错误后执行的动作&lt;/code&gt;为&lt;code&gt;停止线程&lt;/code&gt;时，当取样器在执行过程中遇到错误时，Jmeter会立即停止当前线程，但不会停止别的线程。&lt;/p&gt;
+&lt;p&gt;这可以防止无效或无用的进一步测试，尤其是在错误可能导致后续操作无效的情况下。通过停止出现错误的线程，可以更准确地模拟用户行为和评估系统性能，因为现实世界中的用户通常在遇到问题时不会继续执行相同或相关的操作。
+此外，停止出现错误的线程有助于简化错误分析，因为只有出现问题的线程会被停止，从而更容易识别和诊断问题。&lt;/p&gt;
+&lt;h4 id=&#34;运行查看结果树-5&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
+&lt;h5 id=&#34;多线程组-2&#34;&gt;&lt;em&gt;多线程组&lt;/em&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;测试计划&lt;/code&gt;中勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/13.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行，在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组1&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，&lt;code&gt;线程组1&lt;/code&gt;线程被停止，接着执行&lt;code&gt;线程组2&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;测试计划&lt;/code&gt;中取消勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/14.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，
+在&lt;code&gt;测试计划&lt;/code&gt;中未勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，因此&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互相干扰且并行执行。当&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，&lt;code&gt;线程组1&lt;/code&gt;停止线程，&lt;code&gt;线程组2&lt;/code&gt;继续执行。&lt;/p&gt;
+&lt;h5 id=&#34;单线程组-2&#34;&gt;&lt;em&gt;单线程组&lt;/em&gt;&lt;/h5&gt;
+&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;、&lt;code&gt;线程组1&lt;/code&gt;下的&lt;code&gt;错误请求之后请求1&lt;/code&gt;,&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;线程数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;，&lt;code&gt;线程组1&lt;/code&gt;下添加一个&lt;code&gt;用户参数&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;添加步骤：&lt;code&gt;右键线程组-添加-前置处理器-用户参数&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;用户参数&lt;/font&gt;设置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;添加变量：&lt;/p&gt;
+&lt;p&gt;名称：&lt;code&gt;dy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;添加三个用户值：&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;错误请求1&lt;/code&gt;下响应断言的值,引用用户参数中的变量：&lt;code&gt;${dy}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/15.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。三个用户的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致第二个用户执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
+结束该用户线程，未执行&lt;code&gt;未加固定定时器&lt;/code&gt;。其他用户则未发生错误，可以执行&lt;code&gt;未加固定定时器&lt;/code&gt;。因此导致每次会有3个&lt;code&gt;错误请求1&lt;/code&gt;执行、但只有2个&lt;code&gt;未加固定定时器&lt;/code&gt;执行。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;首先桌面上新建一个dy.txt文件,文件内容为：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{&amp;quot;code&amp;quot;:200,,
+1111,
+{&amp;quot;code&amp;quot;:200,,
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;、&lt;code&gt;线程组1&lt;/code&gt;下的&lt;code&gt;错误请求之后请求1&lt;/code&gt;,&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;循环数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;，&lt;code&gt;线程组1&lt;/code&gt;下添加一个&lt;code&gt;CSV 数据文件设置&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;添加步骤：&lt;code&gt;右键线程组-添加-配置元件-CSV Data Set Config&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;CSV 数据文件设置&lt;/font&gt;设置：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;文件名：&lt;code&gt;dy.txt的路径&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;文件编码：&lt;code&gt;UTF-8&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;变量名称：&lt;code&gt;dy&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;错误请求1&lt;/code&gt;下响应断言的值,引用用户参数中的变量：&lt;code&gt;${dy}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/16.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。用户的三次循环的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;CSV 数据文件设置&lt;/code&gt;的&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致用户第二次循环时执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
+结束该用户线程，未执行之后&lt;code&gt;未加固定定时器&lt;/code&gt;和第三次循环。&lt;/p&gt;
+&lt;h3 id=&#34;启动下一进程循环&#34;&gt;&lt;em&gt;启动下一进程循环&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;设置取样器错误后执行的动作为停止线程时，当取样器在执行过程中遇到错误时，Jmeter会立即停止当前线程本次执行进行当前线程的下次执行，主要应用于线程多次循环时。&lt;/p&gt;
+&lt;p&gt;这可以防止无效或无用的进一步测试，尤其是在错误可能导致本次循环后续操作无效的情况下。通过停止出现错误的循环，进行下一次循环，可以更准确地模拟用户行为和评估系统性能，因为现实世界中的用户通常在流程操作中，开始或中间过程遇到问题时不会继续执行后续的操作，会从头开始操作。&lt;/p&gt;
+&lt;h4 id=&#34;修改示例脚本&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;运行查看结果树-6&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;线程组的关键任务之一是定义并发用户的行为，包括设置线程数、循环次数、启动延迟等关键参数。通过适当配置线程组，测试人员可以模拟多用户在系统中同时执行任务的场景，从而评估系统的性能和稳定性。&lt;/p&gt;
+&lt;p&gt;这种独立且隔离的线程执行方式，使得每个线程在执行任务时都保持相对独立，不受其他线程的影响。这是在模拟真实用户行为时非常重要的特性，能够更准确地评估系统在高并发负载下的性能表现。&lt;/p&gt;
+&lt;p&gt;通过灵活使用setup线程组、线程组、tearDown线程组、开放模型线程组，配置前置操作、主要操作、后置操作，更能真实、详细的评估系统。&lt;/p&gt;
+&lt;p&gt;总的来说，线程组在JMeter中扮演着至关重要的角色，通过深入理解和合理配置线程组，读者可以更好地模拟实际用户行为，为性能测试提供更准确的结果。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Jmeter前言</title>
         <link>https://etherealboyjiang.github.io/Jiang/p/jmeter%E5%89%8D%E8%A8%80/</link>
         <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
