@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>EtherealBoyJiang</title>
+        <link>https://etherealboyjiang.github.io/Jiang/</link>
+        <description>Recent content on EtherealBoyJiang</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>梦游少年</copyright>
+        <lastBuildDate>Tue, 23 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://etherealboyjiang.github.io/Jiang/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Jmeter前言</title>
+        <link>https://etherealboyjiang.github.io/Jiang/p/jmeter%E5%89%8D%E8%A8%80/</link>
+        <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://etherealboyjiang.github.io/Jiang/p/jmeter%E5%89%8D%E8%A8%80/</guid>
+        <description>&lt;img src="https://etherealboyjiang.github.io/Jiang/img/jmeter/0.png" alt="Featured image of post Jmeter前言" /&gt;&lt;h1 id=&#34;前言&#34;&gt;&lt;em&gt;前言&lt;/em&gt;&lt;/h1&gt;
+&lt;h2 id=&#34;为什么要撰写这样一个教程呢&#34;&gt;&lt;em&gt;为什么要撰写这样一个教程呢？&lt;/em&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;深入学习Jmeter&lt;/p&gt;
+&lt;p&gt;温故而知新，通过编写教程，我将更深入地学习JMeter。尽管我已经使用JMeter很长时间，但还有许多元件我并不十分了解。为了创作一个详尽且实用的JMeter教程，我需要精通JMeter的各个元件。因此，编写教程的过程成为了我的学习过程，通过反复回顾和整理知识，我能够更全面地掌握JMeter的使用技巧&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分享知识&lt;/p&gt;
+&lt;p&gt;我深信知识具有强大力量，而这种力量应该共享。我愿意将我的所学分享给志同道合的朋友——也就是你们。通过分享知识，我不仅能够为他人提供帮助，还能够在这个过程中体验到一种内在的满足感。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;结识朋友&lt;/p&gt;
+&lt;p&gt;这是我的第一个教程，后续也会编辑更多的教程。希望能通过这一行为与各位取得交流，成为朋友，与大家一起讨论更多的事情。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+&lt;h2 id=&#34;关于jmeter&#34;&gt;&lt;em&gt;关于Jmeter&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;JMeter是Apache组织开发的基于Java的压力测试工具。用于对软件做压力测试，它最初被设计用于Web应用测试，但后来扩展到其他测试领域。 它可以用于测试静态和动态资源，例如静态文件、Java 小服务程序、CGI 脚本、Java 对象、数据库、FTP 服务器， 等等。&lt;/p&gt;
+&lt;p&gt;JMeter 可以用于对服务器、网络或对象模拟巨大的负载，来自不同压力类别下测试它们的强度和分析整体性能。&lt;/p&gt;
+&lt;p&gt;另外，JMeter能够对应用程序做功能/回归测试，通过创建带有断言的脚本来验证你的程序返回了你期望的结果。为了最大限度的灵活性，JMeter允许使用正则表达式创建断言。&lt;/p&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+&lt;h2 id=&#34;我们为什么使用jmeter&#34;&gt;&lt;em&gt;我们为什么使用Jmeter&lt;/em&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;开源免费，基于Java编写，可集成到其他系统可拓展各个功能插件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;支持接口测试，压力测试等多种功能，支持录制回放，入门简单&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;相较于自己编写框架活其他开源工具，有较为完善的UI界面，便于接口调试&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;多平台支持，可在Linux，Windows，Mac上运行selenium 是一套完整的web应用程序测试系统，包含了测试的录制（selenium IDE）,编写及运行（Selenium Remote Control）和测试的并行处理（Selenium Grid）。Selenium的核心Selenium Core基于JsUnit，完全由JavaScript编写，因此可以用于任何支持JavaScript的浏览器上。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+&lt;h2 id=&#34;主要组件介绍&#34;&gt;&lt;em&gt;主要组件介绍&lt;/em&gt;&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划(Test Plan)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;是使用JMeter进行测试的起点，它是其它JMeter测试元件的容器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组(Thread Group)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;代表一定数量的并发用户，它可以用来模拟并发用户发送请求。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;取样器(sampler)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;定义实际的请求内容，被线程组包含，我们主要用HTTP请求。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;监听器(Listener)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;负责收集测试结果，同时也被告知了结果显示的方式。我们常用的包括：聚合报告、察看结果树、用表格查看结果，都支持将结果数据写入文件。其他的添加上去看看就行。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;逻辑控制器(Logic Controller)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;可以自定义JMeter发送请求的行为逻辑，它与Sampler结合使用可以模拟复杂的请求序列。&lt;/p&gt;
+&lt;p&gt;其分为循环控制器和事务控制器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;断言(Assertions)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;可以用来判断请求响应的结果是否如用户所期望的。它可以用来隔离问题域，即在确保功能正确的前提下执行压力测试。这个限制对于有效的测试是非常有用的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;配置元件(Config Element)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;维护Sampler需要的配置信息，并根据实际的需要会修改请求的内容。我们主要在参数化中用到CSV Data Set Config。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;前置处理器(Pre Processors)和后置处理器(Post Processors)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;负责在生成请求之前和之后完成工作。前置处理器常常用来修改请求的设置，后置处理器则常常用来处理响应的数据。我们主要在动态关联中用到后置处理器的正则表达式提取器。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;定时器(Timer)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;负责定义请求之间的延迟间隔。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;执行顺序(Execution sequence)&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;配置元件、前置处理器、定时器、取样器、后置处理器、断言、监听器&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+&lt;h2 id=&#34;工作流程&#34;&gt;&lt;em&gt;工作流程&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;JMeter通过模拟一组用户将请求发送到目标服务器。 随后，收集数据以通过各种格式计算目标服务器的统计和显示性能度量。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/Preface/0.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+&lt;h2 id=&#34;内容引用&#34;&gt;&lt;em&gt;内容引用&lt;/em&gt;&lt;/h2&gt;
+&lt;div&gt;
+&lt;a1 href=&#34;https://www.emqx.com/zh/blog/introduction-to-jmeter-test-components#%E4%B8%80-%E7%BA%BF%E7%A8%8B%E7%BB%84&#34; target=&#34;_blank&#34;&gt;
+    &lt;div class=&#34;zhengti&#34;&gt;
+        &lt;a href=&#34;https://www.emqx.com/zh/blog/introduction-to-jmeter-test-components#%E4%B8%80-%E7%BA%BF%E7%A8%8B%E7%BB%84&#34;&gt;
+            &lt;div class=&#34;wenzi&#34;&gt;
+                &lt;div class=&#34;linkk&#34;&gt;
+                    &lt;div class=&#34;namee&#34;&gt;Jmeter测试组件介绍|EMQ&lt;/div&gt;&lt;div class=&#34;descc&#34;&gt;本系列教程中部分组件介绍文本引用于此&lt;/div&gt;&lt;/div&gt;
+        &lt;/a&gt;&lt;div class=&#34;linktext&#34;&gt;https://www.emqx.com/zh/blog/introduction-to-jmeter-test-components#%E4%B8%80-%E7%BA%BF%E7%A8%8B%E7%BB%84&lt;/div&gt;
+
+        &lt;/div&gt;
+        &lt;div class=&#34;daimg&#34;&gt;
+            &lt;img class=&#34;link-card-img&#34; loading=&#34;lazy&#34; src=&#34;https://api.thumbnail.ws/api/ab41148c7048bd95441b7b09816cbd5db1ed220134d3/thumbnail/get?width=720&amp;url=https%3a%2f%2fwww.emqx.com%2fzh%2fblog%2fintroduction-to-jmeter-test-components%23%25E4%25B8%2580-%25E7%25BA%25BF%25E7%25A8%258B%25E7%25BB%2584&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/a1&gt;
+
+&lt;style&gt;
+    a1 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .zhengti {
+        margin: auto;
+        padding-top: 4%;
+        padding-right: 4%;
+        padding-bottom: 4%;
+        padding-left: 4%;
+        width: 100%;
+        display: flex;
+        align-items: left;
+        flex-direction: row;
+        border: 1px solid #e5e7eb;
+        border-radius: 20px;
+        background-color: #ffffff;
+        transition: border 0.3s ease-in-out;
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .05);
+    }
+    
+    .wenzi {
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        flex: 2;
+    }
+    
+    .zhengti:hover {
+        transform: scale(1.03);
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .05);
+    }
+    
+    .linkk {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .iconn {
+        display: flex;
+        align-items: center;
+    }
+    
+    .iconn1 {
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 0.5em;
+        margin-bottom: 0.2em;
+    }
+    
+    .namee {
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--card-text-color-main);
+    }
+    
+    .descc {
+        font-size: 1.3rem;
+        color: #9ca3af;
+        margin-bottom: 0.5rem;
+    }
+    
+    .linktext {
+        font-size: 0.9rem;
+        color: #9ca3af;
+    }
+     
+    
+    .link-card-icoon {
+        width: 16px;
+        height: 16px;
+        margin-right: 0.5rem;
+    }
+     
+    
+    .daimg {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        align-self: right;
+    }
+    
+    .link-card-img {
+        display: block;
+        height: auto;
+        max-height: 200px;
+        width: 100%;
+         
+        object-fit: cover;
+        max-width: 50%;
+        margin-right: 2px;
+        border-radius: 0.25rem;
+    }
+    
+    a1:hover {
+        background-color: var(--color-zoom-bg);
+        border: 1px solid var(--theme);
+    }
+    
+    @media (max-width:900px) {
+        a1 {
+            max-height: 25em;
+            overflow-y: auto;
+            padding-right: 4%;
+        }
+        .zhengti {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+    [data-scheme=&#34;dark&#34;] {
+        .zhengti {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+        }
+        .descc {
+            color: #9ca3af;
+        }
+        .linktext {
+            color: #9ca3af;
+        }
+    }
+&lt;/style&gt;
+
+&lt;br&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;a1 href=&#34;https://www.niaoge.com/jmeter/jmeter-index.html&#34; target=&#34;_blank&#34;&gt;
+    &lt;div class=&#34;zhengti&#34;&gt;
+        &lt;a href=&#34;https://www.niaoge.com/jmeter/jmeter-index.html&#34;&gt;
+            &lt;div class=&#34;wenzi&#34;&gt;
+                &lt;div class=&#34;linkk&#34;&gt;
+                    &lt;div class=&#34;namee&#34;&gt;鸟哥教程&lt;/div&gt;&lt;div class=&#34;descc&#34;&gt;本系列教程中部分组件介绍文本引用于此&lt;/div&gt;&lt;/div&gt;
+        &lt;/a&gt;&lt;div class=&#34;linktext&#34;&gt;https://www.niaoge.com/jmeter/jmeter-index.html&lt;/div&gt;
+
+        &lt;/div&gt;
+        &lt;div class=&#34;daimg&#34;&gt;
+            &lt;img class=&#34;link-card-img&#34; loading=&#34;lazy&#34; src=&#34;https://api.thumbnail.ws/api/ab41148c7048bd95441b7b09816cbd5db1ed220134d3/thumbnail/get?width=720&amp;url=https%3a%2f%2fwww.niaoge.com%2fjmeter%2fjmeter-index.html&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/a1&gt;
+
+&lt;style&gt;
+    a1 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .zhengti {
+        margin: auto;
+        padding-top: 4%;
+        padding-right: 4%;
+        padding-bottom: 4%;
+        padding-left: 4%;
+        width: 100%;
+        display: flex;
+        align-items: left;
+        flex-direction: row;
+        border: 1px solid #e5e7eb;
+        border-radius: 20px;
+        background-color: #ffffff;
+        transition: border 0.3s ease-in-out;
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .05);
+    }
+    
+    .wenzi {
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        flex: 2;
+    }
+    
+    .zhengti:hover {
+        transform: scale(1.03);
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .05);
+    }
+    
+    .linkk {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .iconn {
+        display: flex;
+        align-items: center;
+    }
+    
+    .iconn1 {
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 0.5em;
+        margin-bottom: 0.2em;
+    }
+    
+    .namee {
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--card-text-color-main);
+    }
+    
+    .descc {
+        font-size: 1.3rem;
+        color: #9ca3af;
+        margin-bottom: 0.5rem;
+    }
+    
+    .linktext {
+        font-size: 0.9rem;
+        color: #9ca3af;
+    }
+     
+    
+    .link-card-icoon {
+        width: 16px;
+        height: 16px;
+        margin-right: 0.5rem;
+    }
+     
+    
+    .daimg {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        align-self: right;
+    }
+    
+    .link-card-img {
+        display: block;
+        height: auto;
+        max-height: 200px;
+        width: 100%;
+         
+        object-fit: cover;
+        max-width: 50%;
+        margin-right: 2px;
+        border-radius: 0.25rem;
+    }
+    
+    a1:hover {
+        background-color: var(--color-zoom-bg);
+        border: 1px solid var(--theme);
+    }
+    
+    @media (max-width:900px) {
+        a1 {
+            max-height: 25em;
+            overflow-y: auto;
+            padding-right: 4%;
+        }
+        .zhengti {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+    [data-scheme=&#34;dark&#34;] {
+        .zhengti {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+        }
+        .descc {
+            color: #9ca3af;
+        }
+        .linktext {
+            color: #9ca3af;
+        }
+    }
+&lt;/style&gt;
+
+&lt;/div&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+&lt;h2 id=&#34;示例接口代码&#34;&gt;&lt;em&gt;示例接口代码&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;本系列文章中所有示例接口皆由python编写，python版本为3.12.1，如要使用示例接口请安装python3.12.1与pycharm。&lt;/p&gt;
+&lt;div&gt;
+&lt;a1 href=&#34;&#34; target=&#34;_blank&#34;&gt;
+    &lt;div class=&#34;zhengti&#34;&gt;
+        &lt;a href=&#34;&#34;&gt;
+            &lt;div class=&#34;wenzi&#34;&gt;
+                &lt;div class=&#34;linkk&#34;&gt;
+                    &lt;div class=&#34;namee&#34;&gt;下载地址&lt;/div&gt;&lt;div class=&#34;descc&#34;&gt;压缩包内包含源码和使用说明&lt;/div&gt;&lt;/div&gt;
+        &lt;/a&gt;&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/a1&gt;
+
+&lt;style&gt;
+    a1 {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .zhengti {
+        margin: auto;
+        padding-top: 4%;
+        padding-right: 4%;
+        padding-bottom: 4%;
+        padding-left: 4%;
+        width: 100%;
+        display: flex;
+        align-items: left;
+        flex-direction: row;
+        border: 1px solid #e5e7eb;
+        border-radius: 20px;
+        background-color: #ffffff;
+        transition: border 0.3s ease-in-out;
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .05);
+    }
+    
+    .wenzi {
+        display: flex;
+        align-items: left;
+        flex-direction: column;
+        flex: 2;
+    }
+    
+    .zhengti:hover {
+        transform: scale(1.03);
+        box-shadow: 2px 4px 16px rgba(0, 0, 0, .05);
+    }
+    
+    .linkk {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .iconn {
+        display: flex;
+        align-items: center;
+    }
+    
+    .iconn1 {
+        width: 1.2em;
+        height: 1.2em;
+        margin-right: 0.5em;
+        margin-bottom: 0.2em;
+    }
+    
+    .namee {
+        font-size: 1.7rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: var(--card-text-color-main);
+    }
+    
+    .descc {
+        font-size: 1.3rem;
+        color: #9ca3af;
+        margin-bottom: 0.5rem;
+    }
+    
+    .linktext {
+        font-size: 0.9rem;
+        color: #9ca3af;
+    }
+     
+    
+    .link-card-icoon {
+        width: 16px;
+        height: 16px;
+        margin-right: 0.5rem;
+    }
+     
+    
+    .daimg {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        align-self: right;
+    }
+    
+    .link-card-img {
+        display: block;
+        height: auto;
+        max-height: 200px;
+        width: 100%;
+         
+        object-fit: cover;
+        max-width: 50%;
+        margin-right: 2px;
+        border-radius: 0.25rem;
+    }
+    
+    a1:hover {
+        background-color: var(--color-zoom-bg);
+        border: 1px solid var(--theme);
+    }
+    
+    @media (max-width:900px) {
+        a1 {
+            max-height: 25em;
+            overflow-y: auto;
+            padding-right: 4%;
+        }
+        .zhengti {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+    [data-scheme=&#34;dark&#34;] {
+        .zhengti {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+        }
+        .descc {
+            color: #9ca3af;
+        }
+        .linktext {
+            color: #9ca3af;
+        }
+    }
+&lt;/style&gt;
+
+&lt;br&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;说明&#34;&gt;&lt;em&gt;说明&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;本文基于JDK21、Jmeter-5.6.3测试编写，可能不适用于历史版本及未来版本。&lt;/p&gt;
+&lt;p&gt;如果Jmeter在后续的新版本中有所变化，或者文中有错漏的地方，请联系EtherealBoyJiang，EtherealBoyJiang感激不尽。&lt;/p&gt;
+&lt;h2 id=&#34;结尾&#34;&gt;&lt;em&gt;结尾&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;对于测试人员来说，JMeter是一款非常强大的接口测试工具，尤其在性能测试方面表现出色。&lt;/p&gt;
+&lt;p&gt;希望读者们通过EtherealBoyJiang编写的系列教程，能够熟练掌握JMeter的使用。本系列教程旨在为读者提供全面而深入的理解，使读者将能够深入了解JMeter的各项功能，并掌握如何在性能测试中有效地利用这些功能。提高读者的技能水平，能够更自信地应对各类测试任务。能够为项目的成功实施提供有力的支持。&lt;/p&gt;
+&lt;p&gt;对EtherealBoyJiang来说，能够帮助到读者是一件莫大的荣幸，期待更多读者通过本系列教程获得成长。&lt;/p&gt;
+&lt;div&gt;&lt;br&gt;&lt;hr&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>归档</title>
+        <link>https://etherealboyjiang.github.io/Jiang/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://etherealboyjiang.github.io/Jiang/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>关于</title>
+        <link>https://etherealboyjiang.github.io/Jiang/%E5%85%B3%E4%BA%8E/</link>
+        <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://etherealboyjiang.github.io/Jiang/%E5%85%B3%E4%BA%8E/</guid>
+        <description>&lt;p&gt;This is a test page for i18n support.&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>搜索</title>
+        <link>https://etherealboyjiang.github.io/Jiang/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://etherealboyjiang.github.io/Jiang/search/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>友链</title>
+        <link>https://etherealboyjiang.github.io/Jiang/%E5%8F%8B%E9%93%BE/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://etherealboyjiang.github.io/Jiang/%E5%8F%8B%E9%93%BE/</guid>
+        <description>&lt;p&gt;To use this feature, add &lt;code&gt;links&lt;/code&gt; section to frontmatter.&lt;/p&gt;
+&lt;p&gt;This page&amp;rsquo;s frontmatter:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;links&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;GitHub is the world&amp;#39;s largest software development platform.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.com&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;description&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;website&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;https://www.typescriptlang.org&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;ts-logo-128.jpg&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;image&lt;/code&gt; field accepts both local and external images.&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
