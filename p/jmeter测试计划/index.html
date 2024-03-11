@@ -17,7 +17,7 @@
 
 <link rel='canonical' href='https://etherealboyjiang.github.io/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/'>
 
-<link rel="stylesheet" href="/Jiang/scss/style.min.c21edb33e5668a98e70c7b72a36e704b8735c2bff69f937eaf930e1b904e6c6f.css"><meta property='og:title' content='Jmeter测试计划'>
+<link rel="stylesheet" href="/Jiang/scss/style.min.bb220d06cde5d087bf00a7c4ab048a28581bf4e8e3ed0a34da6947dda1f83914.css"><meta property='og:title' content='Jmeter测试计划'>
 <meta property='og:description' content='测试计划 可以将测试计划可视化为用于运行测试的JMeter脚本。测试计划由测试元素组成，例如线程组，逻辑控制器，样本生成控制器，监听器，定时器，断言和配置元素。 每个测试计划中至少应有一个线程组。 我们可以根据要求添加或删除元素。 前言中的快速开始就是一个测试计划。
 测试计划控制面板中的元素：
 名称和注释
@@ -495,70 +495,74 @@
 
 
 
-
-
-
-
-<div class="result">
-	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span>请求数据</span></div>
+<style>
+	.massage {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.result-h {
+		display: inline-grid;
+		grid-template-columns: 10% 90%;
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+	}
+</style>
+<div class="massage">
+	<div style="text-align: center;"><span>请求数据</span></div>
+	<div class="result-h">
+		<div style="display: grid; place-items: center;"><span>headers</span></div>
+		<div style="display: grid;align-items: center;padding-left: 4%;">
+			<span>Connection: keep-alive<br>Content-Type: application/json<br>Content-Length: 58<br>Host: 127.0.0.1:5000<br>User-Agent: Apache-HttpClient/4.5.14 (Java/20.0.2)</span>
 		</div>
-		<div class="result-head">
-			<div class="result-left">
-				<span>请求头</span>
-			</div>
-			<div class="result-right">
-				<span>Connection: keep-alive<br>Content-Type: application/json<br>Content-Length: 58<br>Host: 127.0.0.1:5000<br>User-Agent: Apache-HttpClient/4.5.14 (Java/20.0.2)</span>
-			</div>
+	</div>
+
+	<div class="result-h">
+		<div style="display: grid; place-items: center;"><span>body</span></div>
+		<div style="display: grid;align-items: center;padding-left: 4%;">
+			<span>POST http://127.0.0.1:5000/TestPlan/<br><br>POST data:<br><br>{"UserDefinedVariables":"<font style="background-color: #ec5350; color: black;">我是用户定义的变量</font>"}<br><br><br>[no cookies]</span>
 		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>请求体</span>
-			</div>
-			<div class="result-right">
-				<span>POST http://127.0.0.1:5000/TestPlan/<br><br>POST data:<br><br>{"UserDefinedVariables":"<font style="background-color: #ec5350; color: black;">我是用户定义的变量</font>"}<br><br><br>[no cookies]</span>
-			</div>
-		</div>
-	
+	</div>
 </div>
 <div><br></div>
 
 
 
 
-
-
-
-
-<div class="result">
-	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span>响应数据</span></div>
+<style>
+	.massage {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.result-h {
+		display: inline-grid;
+		grid-template-columns: 10% 90%;
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+	}
+</style>
+<div class="massage">
+	<div style="text-align: center;"><span>响应数据</span></div>
+	<div class="result-h">
+		<div style="display: grid; place-items: center;"><span>headers</span></div>
+		<div style="display: grid;align-items: center;padding-left: 4%;">
+			<span>HTTP/1.1 200 OK<br>Server: Werkzeug/3.0.1 Python/3.12.1<br>Date: Mon, 15 Jan 2024 06:19:08 GMT<br>Content-Type: application/json<br>Content-Length: 132<br>Connection: close</span>
 		</div>
-		<div class="result-head">
-			<div class="result-left">
-				<span>响应头</span>
-			</div>
-			<div class="result-right">
-				<span>HTTP/1.1 200 OK<br>Server: Werkzeug/3.0.1 Python/3.12.1<br>Date: Mon, 15 Jan 2024 06:19:08 GMT<br>Content-Type: application/json<br>Content-Length: 132<br>Connection: close</span>
-			</div>
+	</div>
+
+	<div class="result-h">
+		<div style="display: grid; place-items: center;"><span>body</span></div>
+		<div style="display: grid;align-items: center;padding-left: 4%;">
+			<span>{"code": 200,"data": "Your request parameters is :{"UserDefinedVariables:我是用户定义的变量"}"}</span>
 		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>响应体</span>
-			</div>
-			<div class="result-right">
-				<span>{"code": 200,"data": "Your request parameters is :{"UserDefinedVariables:我是用户定义的变量"}"}</span>
-			</div>
-		</div>
-	
+	</div>
 </div>
 <p><img src="/Jiang/img/Jmeter/TestPlan/1.gif"
 	
@@ -619,55 +623,63 @@
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">线程组1取样器</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span>hread Name:线程组1 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-01-16 11:19:34 CST</font><br>Load time:3004<br>Connect Time:1<br>Latency:3004<br>Size in bytes:231<br>Sent bytes:210<br>Headers size in bytes:165<br>Body size in bytes:66<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>线程组1的取样器结果</span></div>
+	<div class="sampler-h">
+			<span>hread Name:线程组1 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-01-16 11:19:34 CST</font><br>Load time:3004<br>Connect Time:1<br>Latency:3004<br>Size in bytes:231<br>Sent bytes:210<br>Headers size in bytes:165<br>Body size in bytes:66<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK</span>
+	</div>
 </div>
 <div><br></div>
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">线程组2取样器</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span>hread Name:线程组2 2-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-01-16 11:19:34 CST</font><br>Load time:3003<br>Connect Time:1<br>Latency:3003<br>Size in bytes:231<br>Sent bytes:210<br>Headers size in bytes:165<br>Body size in bytes:66<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>线程组2的取样器结果</span></div>
+	<div class="sampler-h">
+			<span>hread Name:线程组2 2-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-01-16 11:19:34 CST</font><br>Load time:3003<br>Connect Time:1<br>Latency:3003<br>Size in bytes:231<br>Sent bytes:210<br>Headers size in bytes:165<br>Body size in bytes:66<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK</span>
+	</div>
 </div>
 <div><br></div>
 <p><img src="/Jiang/img/Jmeter/TestPlan/2.gif"
@@ -683,55 +695,63 @@
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">线程组1取样器</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span>hread Name:线程组1 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-01-16 11:32:52 CST</font><br>Load time:3004<br>Connect Time:1<br>Latency:3004<br>Size in bytes:231<br>Sent bytes:210<br>Headers size in bytes:165<br>Body size in bytes:66<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>线程组1的取样器结果</span></div>
+	<div class="sampler-h">
+			<span>hread Name:线程组1 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-01-16 11:32:52 CST</font><br>Load time:3004<br>Connect Time:1<br>Latency:3004<br>Size in bytes:231<br>Sent bytes:210<br>Headers size in bytes:165<br>Body size in bytes:66<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK</span>
+	</div>
 </div>
 <div><br></div>
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">线程组2取样器</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span>hread Name:线程组2 2-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-01-16 11:32:55 CST</font><br>Load time:3003<br>Connect Time:1<br>Latency:3003<br>Size in bytes:231<br>Sent bytes:210<br>Headers size in bytes:165<br>Body size in bytes:66<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>线程组2的取样器结果</span></div>
+	<div class="sampler-h">
+			<span>hread Name:线程组2 2-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-01-16 11:32:55 CST</font><br>Load time:3003<br>Connect Time:1<br>Latency:3003<br>Size in bytes:231<br>Sent bytes:210<br>Headers size in bytes:165<br>Body size in bytes:66<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK</span>
+	</div>
 </div>
 <p><img src="/Jiang/img/Jmeter/TestPlan/3.gif"
 	
@@ -802,35 +822,37 @@
 
 
 
-
-
-
-
-<div class="result">
-	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span>响应数据</span></div>
+<style>
+	.massage {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.result-h {
+		display: inline-grid;
+		grid-template-columns: 10% 90%;
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+	}
+</style>
+<div class="massage">
+	<div style="text-align: center;"><span>响应数据</span></div>
+	<div class="result-h">
+		<div style="display: grid; place-items: center;"><span>headers</span></div>
+		<div style="display: grid;align-items: center;padding-left: 4%;">
+			<span>HTTP/1.1 200 OK<br>Server: Werkzeug/3.0.1 Python/3.12.1<br>Date: Fri, 16 Jan 2024 14:52:02 GMT<br>Content-Type: application/json<br>Content-Length: 47<br>Connection: close</span>
 		</div>
-		<div class="result-head">
-			<div class="result-left">
-				<span>响应头</span>
-			</div>
-			<div class="result-right">
-				<span>HTTP/1.1 200 OK<br>Server: Werkzeug/3.0.1 Python/3.12.1<br>Date: Fri, 16 Jan 2024 14:52:02 GMT<br>Content-Type: application/json<br>Content-Length: 47<br>Connection: close</span>
-			</div>
+	</div>
+
+	<div class="result-h">
+		<div style="display: grid; place-items: center;"><span>body</span></div>
+		<div style="display: grid;align-items: center;padding-left: 4%;">
+			<span> <font style="background-color: #ec5350; color: black;">{"code": 200,"data": "处理完毕"}</font></span>
 		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>响应体</span>
-			</div>
-			<div class="result-right">
-				<span> <font style="background-color: #ec5350; color: black;">{"code": 200,"data": "处理完毕"}</font></span>
-			</div>
-		</div>
-	
+	</div>
 </div>
 <p><img src="/Jiang/img/Jmeter/TestPlan/4.gif"
 	

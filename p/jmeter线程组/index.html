@@ -13,7 +13,7 @@
 
 <link rel='canonical' href='https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/'>
 
-<link rel="stylesheet" href="/Jiang/scss/style.min.c21edb33e5668a98e70c7b72a36e704b8735c2bff69f937eaf930e1b904e6c6f.css"><meta property='og:title' content='Jmeter线程组'>
+<link rel="stylesheet" href="/Jiang/scss/style.min.bb220d06cde5d087bf00a7c4ab048a28581bf4e8e3ed0a34da6947dda1f83914.css"><meta property='og:title' content='Jmeter线程组'>
 <meta property='og:description' content='线程组 线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。
 线程组分为四类:
 线程组 setUp线程组 tearDown线程组 开放模型线程组 线程组、setUp线程组、tearDown线程组控制面板中的元素基本一致：
@@ -501,80 +501,94 @@
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">setUp线程组请求取样器</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span>hread Name:setUp 线程组 1-1 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-02-01 11:30:38 CST</font><br>Load time:3009<br>Connect Time:2<br>Latency:3009<br>Size in bytes:266<br>Sent bytes:210<br>Headers size in bytes:224<br>Body size in bytes:100<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK<br><br><br>HTTPSampleResult fields:<br>ContentType: application/json<br>DataEncoding: null</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>setUp线程组请求的取样器结果</span></div>
+	<div class="sampler-h">
+			<span>hread Name:setUp 线程组 1-1 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-02-01 11:30:38 CST</font><br>Load time:3009<br>Connect Time:2<br>Latency:3009<br>Size in bytes:266<br>Sent bytes:210<br>Headers size in bytes:224<br>Body size in bytes:100<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK<br><br><br>HTTPSampleResult fields:<br>ContentType: application/json<br>DataEncoding: null</span>
+	</div>
 </div>
+<div><br></div>
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">线程组请求取样器</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span>hread Name:线程组 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-02-01 11:30:41 CST</font><br>Load time:3004<br>Connect Time:1<br>Latency:3004<br>Size in bytes:260<br>Sent bytes:219<br>Headers size in bytes:165<br>Body size in bytes:95<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK<br><br><br>HTTPSampleResult fields:<br>ContentType: application/json<br>DataEncoding: null</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>线程组请求的取样器结果</span></div>
+	<div class="sampler-h">
+			<span>hread Name:线程组 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-02-01 11:30:41 CST</font><br>Load time:3004<br>Connect Time:1<br>Latency:3004<br>Size in bytes:260<br>Sent bytes:219<br>Headers size in bytes:165<br>Body size in bytes:95<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK<br><br><br>HTTPSampleResult fields:<br>ContentType: application/json<br>DataEncoding: null</span>
+	</div>
 </div>
+<div><br></div>
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">tearDown线程组请求取样器</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span>hread Name:tearDown 线程组 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-02-01 11:30:44 CST</font><br>Load time:3005<br>Connect Time:2<br>Latency:3005<br>Size in bytes:269<br>Sent bytes:227<br>Headers size in bytes:166<br>Body size in bytes:103<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK<br><br><br>HTTPSampleResult fields:<br>ContentType: application/json<br>DataEncoding: null</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>tearDown线程组请求的取样器结果</span></div>
+	<div class="sampler-h">
+			<span>hread Name:tearDown 线程组 1-1<br>Sample Start: <font style="background-color: #ec5350; color: black;">2024-02-01 11:30:44 CST</font><br>Load time:3005<br>Connect Time:2<br>Latency:3005<br>Size in bytes:269<br>Sent bytes:227<br>Headers size in bytes:166<br>Body size in bytes:103<br>Sample Count:1<br>Error Count:0<br>Data type ("text"|"bin"|""):text<br>Response code:200<br>Response message:OK<br><br><br>HTTPSampleResult fields:<br>ContentType: application/json<br>DataEncoding: null</span>
+	</div>
 </div>
 <p>可以观察到在中国标准时间（CST）<code>2024-02-01 11:30:38</code> 时，<code>setUp线程组请求取样器</code>发送了请求；随后，在 <code>2024-02-01 11:30:41</code> CST，<code>线程组请求取样器</code>也发出了请求；最后，在 <code>2024-02-01 11:30:44</code> CST，<code>tearDown线程组请求取样器</code>发出了请求。</p>
 <p>这与接口设置的休眠时间一致，表明 JMeter 在接收到<code>setUp线程组请求取样器</code>的响应后，执行了线程组操作，然后在接收到<code>线程组请求取样器</code>的响应后，执行了 <code>tearDown线程组</code> 操作。</p>
@@ -625,80 +639,94 @@
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">用户1-1</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-1</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:34<br>Connect Time:24<br>Latency:30</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>用户1-1的取样器结果</span></div>
+	<div class="sampler-h">
+			<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-1</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:34<br>Connect Time:24<br>Latency:30</span>
+	</div>
 </div>
+<div><br></div>
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">用户1-2</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-2</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:2<br>Connect Time:1<br>Latency:2</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>用户1-2的取样器结果</span></div>
+	<div class="sampler-h">
+			<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-2</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:2<br>Connect Time:1<br>Latency:2</span>
+	</div>
 </div>
+<div><br></div>
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">用户1-3</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-3</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:4<br>Connect Time:1<br>Latency:4</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>用户1-3的取样器结果</span></div>
+	<div class="sampler-h">
+			<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-3</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:4<br>Connect Time:1<br>Latency:4</span>
+	</div>
 </div>
 <p>可以看出取样器结果中的Thread Name分别为<code>线程组 1-1</code>、<code>线程组 1-2</code>、<code>线程组 1-3</code>，这是因为<code>线程组</code>中<code>线程数</code>值为<code>3</code>，Jmeter启功了3个线程，每个线程皆执行1次<code>线程组</code>。在Jmeter中1个线程就代表1个用户，现在就相当于3个用户一起执行<code>线程组</code>。</p>
 <h3 id="结语-1"><em>结语</em></h3>
@@ -757,80 +785,94 @@
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">用户1-1</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-1</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:3<br>Connect Time:1<br>Latency:3</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>取样器结果</span></div>
+	<div class="sampler-h">
+			<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-1</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:3<br>Connect Time:1<br>Latency:3</span>
+	</div>
 </div>
+<div><br></div>
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">用户1-1</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-1</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:2<br>Connect Time:1<br>Latency:1</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>取样器结果</span></div>
+	<div class="sampler-h">
+			<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-1</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:2<br>Connect Time:1<br>Latency:1</span>
+	</div>
 </div>
+<div><br></div>
 
 
 
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-<div class="result">
+	}
 	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span style="margin-left: 35%;">用户1-1</span></div>
-		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>取样器结果</span>
-			</div>
-			<div class="result-right">
-				<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-1</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:1<br>Connect Time:0<br>Latency:1</span>
-			</div>
-		</div>
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>取样器结果</span></div>
+	<div class="sampler-h">
+			<span><font style="background-color: #ec5350; color: black;">Thread Name:线程组 1-1</font><br>Sample Start:2024-03-07 13:38:46 CST<br>Load time:1<br>Connect Time:0<br>Latency:1</span>
+	</div>
 </div>
 <p>可以看出取样器结果中的Thread Name皆为<code>线程组 1-1</code>，这是因为<code>线程组</code>中<code>循环次数</code>值为<code>3</code>，Jmeter启功了1个线程，连续执行了3次<code>线程组</code>。在Jmeter中1个线程就代表1个用户，现在就相当于1个用户执行了3次<code>线程组</code>。</p>
 <h3 id="结语-2"><em>结语</em></h3>
@@ -930,7 +972,9 @@
 ></p>
 <p>连续运行了2次，但结果却不尽相同，与预期不符。</p>
 <p>在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>后，<code>线程组1</code>与<code>线程组2</code>互不干扰且顺序执行。因此，先执行<code>线程组1</code>时出现错误请求，不会影响到执行<code>线程组2</code>。取样器在线程组中按从上至下的顺序执行。但是结果是<code>线程组2</code>有概率不会执行。</p>
-<hr>
+<div>
+	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
+</div>
 <p><code>线程组2</code>前，<code>线程组1</code>后</p>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/2.gif"
 	
@@ -966,7 +1010,9 @@
 	
 ></p>
 <p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。先执行<code>未加固定定时器</code>请求，待<code>错误请求1</code>中出现错误请求时，测试计划停止测试。</p>
-<hr>
+<div>
+	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
+</div>
 <p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>，<code>错误请求1</code>放在<code>错误请求之后请求1</code>之后。<code>线程组1</code>中的<code>线程数</code>改为<code>3</code>。</p>
 <p>线程组的线程数用于模拟用户数量，此时的脚本代表同时（不是并发）有三个用户同时执行<code>线程组1</code>。</p>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/8.gif"
@@ -978,7 +1024,9 @@
 	
 ></p>
 <p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，3个用户同时执行<code>线程组1</code>。3个用户中其中1个用户执行<code>错误请求1</code>出现错误时，另外2个用户还在执行<code>错误请求之后请求1</code>，待执行完毕后，测试计划停止测试。</p>
-<hr>
+<div>
+	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
+</div>
 <p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>，<code>错误请求1</code>放在<code>错误请求之后请求1</code>之后。<code>线程组1</code>中的<code>循环数</code>改为<code>3</code>。</p>
 <p>线程组的循环数用于设置线程组的执行次数，此时的脚本代表1个用户执行3次<code>线程组1</code>。</p>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/9.gif"
@@ -1007,7 +1055,9 @@
 	
 ></p>
 <p>连续运行了4次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行，在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>后，<code>线程组1</code>与<code>线程组2</code>互不干扰且顺序执行。因此，若<code>线程组1</code>中出现错误请求时,不会影响到执行<code>线程组2</code>。但是结果是<code>线程组2</code>有概率不会执行。</p>
-<hr>
+<div>
+	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
+</div>
 <p><code>线程组2</code>前，<code>线程组1</code>后</p>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/5.gif"
 	
@@ -1042,7 +1092,9 @@
 	
 ></p>
 <p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。先执行<code>未加固定定时器</code>请求，待<code>错误请求1</code>中出现错误请求时，测试计划立即停止测试。</p>
-<hr>
+<div>
+	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
+</div>
 <p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>，<code>错误请求1</code>放在<code>错误请求之后请求1</code>之后。<code>线程组1</code>中的<code>线程数</code>改为<code>3</code>。</p>
 <p>线程组的线程数用于模拟用户数量，此时的脚本代表同时（不是并发）有三个用户同时执行<code>线程组1</code>。</p>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/11.gif"
@@ -1055,7 +1107,9 @@
 ></p>
 <p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，3个用户同时执行<code>线程组1</code>。3个用户中其中1个用户执行<code>错误请求1</code>出现错误时，另外2个用户还在执行<code>错误请求之后请求1</code>，
 但不等执行完毕后，测试计划立即停止测试，可以看出<code>与错误请求并行请求1</code>的响应体中提示 Socket 关闭异常。</p>
-<hr>
+<div>
+	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
+</div>
 <p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>，<code>错误请求1</code>放在<code>错误请求之后请求1</code>之后。<code>线程组1</code>中的<code>循环数</code>改为<code>3</code>。</p>
 <p>线程组的循环数用于设置线程组的执行次数，此时的脚本代表1个用户执行3次<code>线程组1</code>。</p>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/12.gif"
@@ -1116,7 +1170,9 @@
 ></p>
 <p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。三个用户的<code>响应断言</code>值分别引用<code>{&quot;code&quot;:200,</code>、<code>1111</code>、<code>{&quot;code&quot;:200,</code>，导致第二个用户执行<code>错误请求1</code>时发生错误，
 结束该用户线程，未执行<code>未加固定定时器</code>。其他用户则未发生错误，可以执行<code>未加固定定时器</code>。因此导致每次会有3个<code>错误请求1</code>执行、但只有2个<code>未加固定定时器</code>执行。</p>
-<hr>
+<div>
+	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
+</div>
 <p>首先桌面上新建一个dy.txt文件,文件内容为：</p>
 <pre><code>{&quot;code&quot;:200,,
 1111,

@@ -25,7 +25,7 @@ ps：windows11好像不需要输入最后的
 
 <link rel='canonical' href='https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/'>
 
-<link rel="stylesheet" href="/Jiang/scss/style.min.c21edb33e5668a98e70c7b72a36e704b8735c2bff69f937eaf930e1b904e6c6f.css"><meta property='og:title' content='Jmeter环境配置'>
+<link rel="stylesheet" href="/Jiang/scss/style.min.bb220d06cde5d087bf00a7c4ab048a28581bf4e8e3ed0a34da6947dda1f83914.css"><meta property='og:title' content='Jmeter环境配置'>
 <meta property='og:description' content='JMeter 环境安装及配置 在使用 JMeter 之前，需要配置相应的环境，包括安装JDK和JMeter。
 首先，了解一下JDK，它就是Java的开发工具包。
 JMeter 是使用 Java 编写的。一般来说，只需要安装 JRE（Java 运行时环境）就可以运行 JMeter，因为 JRE 包含了运行 Java 应用程序所需的组件。那么为什么建议安装 JDK 呢？
@@ -1074,70 +1074,74 @@ ps：windows11好像不需要输入最后的
 
 
 
-
-
-
-
-<div class="result">
-	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span>请求数据</span></div>
+<style>
+	.massage {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.result-h {
+		display: inline-grid;
+		grid-template-columns: 10% 90%;
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+	}
+</style>
+<div class="massage">
+	<div style="text-align: center;"><span>请求数据</span></div>
+	<div class="result-h">
+		<div style="display: grid; place-items: center;"><span>headers</span></div>
+		<div style="display: grid;align-items: center;padding-left: 4%;">
+			<span>Connection: keep-alive<br>Host: 127.0.0.1:5000<br>User-Agent: Apache-HttpClient/4.5.14 (Java/20.0.2)</span>
 		</div>
-		<div class="result-head">
-			<div class="result-left">
-				<span>请求头</span>
-			</div>
-			<div class="result-right">
-				<span>Connection: keep-alive<br>Host: 127.0.0.1:5000<br>User-Agent: Apache-HttpClient/4.5.14 (Java/20.0.2)</span>
-			</div>
+	</div>
+
+	<div class="result-h">
+		<div style="display: grid; place-items: center;"><span>body</span></div>
+		<div style="display: grid;align-items: center;padding-left: 4%;">
+			<span>GET http://127.0.0.1:5000/QuickUse/<br><br>GET data:<br><br><br>[no cookies]</span>
 		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>请求体</span>
-			</div>
-			<div class="result-right">
-				<span>GET http://127.0.0.1:5000/QuickUse/<br><br>GET data:<br><br><br>[no cookies]</span>
-			</div>
-		</div>
-	
+	</div>
 </div>
 <div><br></div>
 
 
 
 
-
-
-
-
-<div class="result">
-	
-		<div class="result-type">
-			<div class="result-type-svg">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <rect x="4" y="4" width="16" height="16" rx="2" ry="2" /> <line x1="8" y1="4" x2="8" y2="20" /> <line x1="16" y1="4" x2="16" y2="20" /> </svg>
-			</div>
-			<div class="result-type-text"><span>响应数据</span></div>
+<style>
+	.massage {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.result-h {
+		display: inline-grid;
+		grid-template-columns: 10% 90%;
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+	}
+</style>
+<div class="massage">
+	<div style="text-align: center;"><span>respond</span></div>
+	<div class="result-h">
+		<div style="display: grid; place-items: center;"><span>headers</span></div>
+		<div style="display: grid;align-items: center;padding-left: 4%;">
+			<span>HTTP/1.1 200 OK<br>Server: Werkzeug/3.0.1 Python/3.12.1<br>Date: Mon, 15 Jan 2024 03:39:26 GMT<br>Content-Type: application/json<br>Content-Length: 40<br>Connection: close</span>
 		</div>
-		<div class="result-head">
-			<div class="result-left">
-				<span>响应头</span>
-			</div>
-			<div class="result-right">
-				<span>HTTP/1.1 200 OK<br>Server: Werkzeug/3.0.1 Python/3.12.1<br>Date: Mon, 15 Jan 2024 03:39:26 GMT<br>Content-Type: application/json<br>Content-Length: 40<br>Connection: close</span>
-			</div>
+	</div>
+
+	<div class="result-h">
+		<div style="display: grid; place-items: center;"><span>body</span></div>
+		<div style="display: grid;align-items: center;padding-left: 4%;">
+			<span>{"code": 200, "data": "It is successful!"}</span>
 		</div>
-		<div class="result-body">
-			<div class="result-left">
-				<span>响应体</span>
-			</div>
-			<div class="result-right">
-				<span>{"code": 200, "data": "It is successful!"}</span>
-			</div>
-		</div>
-	
+	</div>
 </div>
 <p><img src="/Jiang/img/Jmeter/EnvConfig/1.gif"
 	

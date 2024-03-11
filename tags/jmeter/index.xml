@@ -105,70 +105,74 @@
 
 
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
-	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span&gt;请求数据&lt;/span&gt;&lt;/div&gt;
+&lt;style&gt;
+	.massage {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.result-h {
+		display: inline-grid;
+		grid-template-columns: 10% 90%;
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+	}
+&lt;/style&gt;
+&lt;div class=&#34;massage&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;请求数据&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;result-h&#34;&gt;
+		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;headers&lt;/span&gt;&lt;/div&gt;
+		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
+			&lt;span&gt;Connection: keep-alive&lt;br&gt;Content-Type: application/json&lt;br&gt;Content-Length: 58&lt;br&gt;Host: 127.0.0.1:5000&lt;br&gt;User-Agent: Apache-HttpClient/4.5.14 (Java/20.0.2)&lt;/span&gt;
 		&lt;/div&gt;
-		&lt;div class=&#34;result-head&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;请求头&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;Connection: keep-alive&lt;br&gt;Content-Type: application/json&lt;br&gt;Content-Length: 58&lt;br&gt;Host: 127.0.0.1:5000&lt;br&gt;User-Agent: Apache-HttpClient/4.5.14 (Java/20.0.2)&lt;/span&gt;
-			&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&#34;result-h&#34;&gt;
+		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;body&lt;/span&gt;&lt;/div&gt;
+		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
+			&lt;span&gt;POST http://127.0.0.1:5000/TestPlan/&lt;br&gt;&lt;br&gt;POST data:&lt;br&gt;&lt;br&gt;{&#34;UserDefinedVariables&#34;:&#34;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;我是用户定义的变量&lt;/font&gt;&#34;}&lt;br&gt;&lt;br&gt;&lt;br&gt;[no cookies]&lt;/span&gt;
 		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;请求体&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;POST http://127.0.0.1:5000/TestPlan/&lt;br&gt;&lt;br&gt;POST data:&lt;br&gt;&lt;br&gt;{&#34;UserDefinedVariables&#34;:&#34;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;我是用户定义的变量&lt;/font&gt;&#34;}&lt;br&gt;&lt;br&gt;&lt;br&gt;[no cookies]&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 
 
 
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
-	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span&gt;响应数据&lt;/span&gt;&lt;/div&gt;
+&lt;style&gt;
+	.massage {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.result-h {
+		display: inline-grid;
+		grid-template-columns: 10% 90%;
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+	}
+&lt;/style&gt;
+&lt;div class=&#34;massage&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;响应数据&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;result-h&#34;&gt;
+		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;headers&lt;/span&gt;&lt;/div&gt;
+		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
+			&lt;span&gt;HTTP/1.1 200 OK&lt;br&gt;Server: Werkzeug/3.0.1 Python/3.12.1&lt;br&gt;Date: Mon, 15 Jan 2024 06:19:08 GMT&lt;br&gt;Content-Type: application/json&lt;br&gt;Content-Length: 132&lt;br&gt;Connection: close&lt;/span&gt;
 		&lt;/div&gt;
-		&lt;div class=&#34;result-head&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;响应头&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;HTTP/1.1 200 OK&lt;br&gt;Server: Werkzeug/3.0.1 Python/3.12.1&lt;br&gt;Date: Mon, 15 Jan 2024 06:19:08 GMT&lt;br&gt;Content-Type: application/json&lt;br&gt;Content-Length: 132&lt;br&gt;Connection: close&lt;/span&gt;
-			&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&#34;result-h&#34;&gt;
+		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;body&lt;/span&gt;&lt;/div&gt;
+		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
+			&lt;span&gt;{&#34;code&#34;: 200,&#34;data&#34;: &#34;Your request parameters is :{&#34;UserDefinedVariables:我是用户定义的变量&#34;}&#34;}&lt;/span&gt;
 		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;响应体&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;{&#34;code&#34;: 200,&#34;data&#34;: &#34;Your request parameters is :{&#34;UserDefinedVariables:我是用户定义的变量&#34;}&#34;}&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34;
 	
@@ -229,55 +233,63 @@
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;线程组1取样器&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;hread Name:线程组1 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-01-16 11:19:34 CST&lt;/font&gt;&lt;br&gt;Load time:3004&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3004&lt;br&gt;Size in bytes:231&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:66&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;线程组1的取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;hread Name:线程组1 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-01-16 11:19:34 CST&lt;/font&gt;&lt;br&gt;Load time:3004&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3004&lt;br&gt;Size in bytes:231&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:66&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;线程组2取样器&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;hread Name:线程组2 2-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-01-16 11:19:34 CST&lt;/font&gt;&lt;br&gt;Load time:3003&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3003&lt;br&gt;Size in bytes:231&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:66&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;线程组2的取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;hread Name:线程组2 2-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-01-16 11:19:34 CST&lt;/font&gt;&lt;br&gt;Load time:3003&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3003&lt;br&gt;Size in bytes:231&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:66&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34;
@@ -293,55 +305,63 @@
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;线程组1取样器&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;hread Name:线程组1 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-01-16 11:32:52 CST&lt;/font&gt;&lt;br&gt;Load time:3004&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3004&lt;br&gt;Size in bytes:231&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:66&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;线程组1的取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;hread Name:线程组1 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-01-16 11:32:52 CST&lt;/font&gt;&lt;br&gt;Load time:3004&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3004&lt;br&gt;Size in bytes:231&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:66&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;线程组2取样器&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;hread Name:线程组2 2-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-01-16 11:32:55 CST&lt;/font&gt;&lt;br&gt;Load time:3003&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3003&lt;br&gt;Size in bytes:231&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:66&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;线程组2的取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;hread Name:线程组2 2-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-01-16 11:32:55 CST&lt;/font&gt;&lt;br&gt;Load time:3003&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3003&lt;br&gt;Size in bytes:231&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:66&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34;
 	
@@ -412,35 +432,37 @@
 
 
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
-	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span&gt;响应数据&lt;/span&gt;&lt;/div&gt;
+&lt;style&gt;
+	.massage {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.result-h {
+		display: inline-grid;
+		grid-template-columns: 10% 90%;
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+	}
+&lt;/style&gt;
+&lt;div class=&#34;massage&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;响应数据&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;result-h&#34;&gt;
+		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;headers&lt;/span&gt;&lt;/div&gt;
+		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
+			&lt;span&gt;HTTP/1.1 200 OK&lt;br&gt;Server: Werkzeug/3.0.1 Python/3.12.1&lt;br&gt;Date: Fri, 16 Jan 2024 14:52:02 GMT&lt;br&gt;Content-Type: application/json&lt;br&gt;Content-Length: 47&lt;br&gt;Connection: close&lt;/span&gt;
 		&lt;/div&gt;
-		&lt;div class=&#34;result-head&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;响应头&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;HTTP/1.1 200 OK&lt;br&gt;Server: Werkzeug/3.0.1 Python/3.12.1&lt;br&gt;Date: Fri, 16 Jan 2024 14:52:02 GMT&lt;br&gt;Content-Type: application/json&lt;br&gt;Content-Length: 47&lt;br&gt;Connection: close&lt;/span&gt;
-			&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&#34;result-h&#34;&gt;
+		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;body&lt;/span&gt;&lt;/div&gt;
+		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
+			&lt;span&gt; &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;{&#34;code&#34;: 200,&#34;data&#34;: &#34;处理完毕&#34;}&lt;/font&gt;&lt;/span&gt;
 		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;响应体&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt; &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;{&#34;code&#34;: 200,&#34;data&#34;: &#34;处理完毕&#34;}&lt;/font&gt;&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34;
 	
@@ -597,80 +619,94 @@
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;setUp线程组请求取样器&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;hread Name:setUp 线程组 1-1 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-02-01 11:30:38 CST&lt;/font&gt;&lt;br&gt;Load time:3009&lt;br&gt;Connect Time:2&lt;br&gt;Latency:3009&lt;br&gt;Size in bytes:266&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:224&lt;br&gt;Body size in bytes:100&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;br&gt;&lt;br&gt;&lt;br&gt;HTTPSampleResult fields:&lt;br&gt;ContentType: application/json&lt;br&gt;DataEncoding: null&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;setUp线程组请求的取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;hread Name:setUp 线程组 1-1 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-02-01 11:30:38 CST&lt;/font&gt;&lt;br&gt;Load time:3009&lt;br&gt;Connect Time:2&lt;br&gt;Latency:3009&lt;br&gt;Size in bytes:266&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:224&lt;br&gt;Body size in bytes:100&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;br&gt;&lt;br&gt;&lt;br&gt;HTTPSampleResult fields:&lt;br&gt;ContentType: application/json&lt;br&gt;DataEncoding: null&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;线程组请求取样器&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;hread Name:线程组 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-02-01 11:30:41 CST&lt;/font&gt;&lt;br&gt;Load time:3004&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3004&lt;br&gt;Size in bytes:260&lt;br&gt;Sent bytes:219&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:95&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;br&gt;&lt;br&gt;&lt;br&gt;HTTPSampleResult fields:&lt;br&gt;ContentType: application/json&lt;br&gt;DataEncoding: null&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;线程组请求的取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;hread Name:线程组 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-02-01 11:30:41 CST&lt;/font&gt;&lt;br&gt;Load time:3004&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3004&lt;br&gt;Size in bytes:260&lt;br&gt;Sent bytes:219&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:95&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;br&gt;&lt;br&gt;&lt;br&gt;HTTPSampleResult fields:&lt;br&gt;ContentType: application/json&lt;br&gt;DataEncoding: null&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;tearDown线程组请求取样器&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;hread Name:tearDown 线程组 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-02-01 11:30:44 CST&lt;/font&gt;&lt;br&gt;Load time:3005&lt;br&gt;Connect Time:2&lt;br&gt;Latency:3005&lt;br&gt;Size in bytes:269&lt;br&gt;Sent bytes:227&lt;br&gt;Headers size in bytes:166&lt;br&gt;Body size in bytes:103&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;br&gt;&lt;br&gt;&lt;br&gt;HTTPSampleResult fields:&lt;br&gt;ContentType: application/json&lt;br&gt;DataEncoding: null&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;tearDown线程组请求的取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;hread Name:tearDown 线程组 1-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-02-01 11:30:44 CST&lt;/font&gt;&lt;br&gt;Load time:3005&lt;br&gt;Connect Time:2&lt;br&gt;Latency:3005&lt;br&gt;Size in bytes:269&lt;br&gt;Sent bytes:227&lt;br&gt;Headers size in bytes:166&lt;br&gt;Body size in bytes:103&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;br&gt;&lt;br&gt;&lt;br&gt;HTTPSampleResult fields:&lt;br&gt;ContentType: application/json&lt;br&gt;DataEncoding: null&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;可以观察到在中国标准时间（CST）&lt;code&gt;2024-02-01 11:30:38&lt;/code&gt; 时，&lt;code&gt;setUp线程组请求取样器&lt;/code&gt;发送了请求；随后，在 &lt;code&gt;2024-02-01 11:30:41&lt;/code&gt; CST，&lt;code&gt;线程组请求取样器&lt;/code&gt;也发出了请求；最后，在 &lt;code&gt;2024-02-01 11:30:44&lt;/code&gt; CST，&lt;code&gt;tearDown线程组请求取样器&lt;/code&gt;发出了请求。&lt;/p&gt;
 &lt;p&gt;这与接口设置的休眠时间一致，表明 JMeter 在接收到&lt;code&gt;setUp线程组请求取样器&lt;/code&gt;的响应后，执行了线程组操作，然后在接收到&lt;code&gt;线程组请求取样器&lt;/code&gt;的响应后，执行了 &lt;code&gt;tearDown线程组&lt;/code&gt; 操作。&lt;/p&gt;
@@ -721,80 +757,94 @@
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;用户1-1&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-1&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:34&lt;br&gt;Connect Time:24&lt;br&gt;Latency:30&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;用户1-1的取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-1&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:34&lt;br&gt;Connect Time:24&lt;br&gt;Latency:30&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;用户1-2&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-2&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:2&lt;br&gt;Connect Time:1&lt;br&gt;Latency:2&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;用户1-2的取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-2&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:2&lt;br&gt;Connect Time:1&lt;br&gt;Latency:2&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;用户1-3&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-3&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:4&lt;br&gt;Connect Time:1&lt;br&gt;Latency:4&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;用户1-3的取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-3&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:4&lt;br&gt;Connect Time:1&lt;br&gt;Latency:4&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;可以看出取样器结果中的Thread Name分别为&lt;code&gt;线程组 1-1&lt;/code&gt;、&lt;code&gt;线程组 1-2&lt;/code&gt;、&lt;code&gt;线程组 1-3&lt;/code&gt;，这是因为&lt;code&gt;线程组&lt;/code&gt;中&lt;code&gt;线程数&lt;/code&gt;值为&lt;code&gt;3&lt;/code&gt;，Jmeter启功了3个线程，每个线程皆执行1次&lt;code&gt;线程组&lt;/code&gt;。在Jmeter中1个线程就代表1个用户，现在就相当于3个用户一起执行&lt;code&gt;线程组&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;结语-1&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
@@ -853,80 +903,94 @@
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;用户1-1&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-1&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:3&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-1&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:3&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;用户1-1&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-1&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:2&lt;br&gt;Connect Time:1&lt;br&gt;Latency:1&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-1&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:2&lt;br&gt;Connect Time:1&lt;br&gt;Latency:1&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
+&lt;div&gt;&lt;br&gt;&lt;/div&gt;
 
 
 
+&lt;style&gt;
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
+	}
 	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span style=&#34;margin-left: 35%;&#34;&gt;用户1-1&lt;/span&gt;&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;取样器结果&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-1&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:1&lt;br&gt;Connect Time:0&lt;br&gt;Latency:1&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+&lt;/style&gt;
+&lt;div class=&#34;sampler&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;取样器结果&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;sampler-h&#34;&gt;
+			&lt;span&gt;&lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;Thread Name:线程组 1-1&lt;/font&gt;&lt;br&gt;Sample Start:2024-03-07 13:38:46 CST&lt;br&gt;Load time:1&lt;br&gt;Connect Time:0&lt;br&gt;Latency:1&lt;/span&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;可以看出取样器结果中的Thread Name皆为&lt;code&gt;线程组 1-1&lt;/code&gt;，这是因为&lt;code&gt;线程组&lt;/code&gt;中&lt;code&gt;循环次数&lt;/code&gt;值为&lt;code&gt;3&lt;/code&gt;，Jmeter启功了1个线程，连续执行了3次&lt;code&gt;线程组&lt;/code&gt;。在Jmeter中1个线程就代表1个用户，现在就相当于1个用户执行了3次&lt;code&gt;线程组&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;结语-2&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
@@ -1026,7 +1090,9 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;连续运行了2次，但结果却不尽相同，与预期不符。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组1&lt;/code&gt;时出现错误请求，不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。取样器在线程组中按从上至下的顺序执行。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
-&lt;hr&gt;
+&lt;div&gt;
+	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
+&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;线程组2&lt;/code&gt;前，&lt;code&gt;线程组1&lt;/code&gt;后&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/2.gif&#34;
 	
@@ -1062,7 +1128,9 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划停止测试。&lt;/p&gt;
-&lt;hr&gt;
+&lt;div&gt;
+	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
+&lt;/div&gt;
 &lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;，&lt;code&gt;错误请求1&lt;/code&gt;放在&lt;code&gt;错误请求之后请求1&lt;/code&gt;之后。&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;线程数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;线程组的线程数用于模拟用户数量，此时的脚本代表同时（不是并发）有三个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/8.gif&#34;
@@ -1074,7 +1142,9 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，3个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。3个用户中其中1个用户执行&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，另外2个用户还在执行&lt;code&gt;错误请求之后请求1&lt;/code&gt;，待执行完毕后，测试计划停止测试。&lt;/p&gt;
-&lt;hr&gt;
+&lt;div&gt;
+	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
+&lt;/div&gt;
 &lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;，&lt;code&gt;错误请求1&lt;/code&gt;放在&lt;code&gt;错误请求之后请求1&lt;/code&gt;之后。&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;循环数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;线程组的循环数用于设置线程组的执行次数，此时的脚本代表1个用户执行3次&lt;code&gt;线程组1&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/9.gif&#34;
@@ -1103,7 +1173,9 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;连续运行了4次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行，在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行。因此，若&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时,不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
-&lt;hr&gt;
+&lt;div&gt;
+	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
+&lt;/div&gt;
 &lt;p&gt;&lt;code&gt;线程组2&lt;/code&gt;前，&lt;code&gt;线程组1&lt;/code&gt;后&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/5.gif&#34;
 	
@@ -1138,7 +1210,9 @@
 	
 &gt;&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
-&lt;hr&gt;
+&lt;div&gt;
+	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
+&lt;/div&gt;
 &lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;，&lt;code&gt;错误请求1&lt;/code&gt;放在&lt;code&gt;错误请求之后请求1&lt;/code&gt;之后。&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;线程数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;线程组的线程数用于模拟用户数量，此时的脚本代表同时（不是并发）有三个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/11.gif&#34;
@@ -1151,7 +1225,9 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，3个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。3个用户中其中1个用户执行&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，另外2个用户还在执行&lt;code&gt;错误请求之后请求1&lt;/code&gt;，
 但不等执行完毕后，测试计划立即停止测试，可以看出&lt;code&gt;与错误请求并行请求1&lt;/code&gt;的响应体中提示 Socket 关闭异常。&lt;/p&gt;
-&lt;hr&gt;
+&lt;div&gt;
+	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
+&lt;/div&gt;
 &lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;，&lt;code&gt;错误请求1&lt;/code&gt;放在&lt;code&gt;错误请求之后请求1&lt;/code&gt;之后。&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;循环数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;线程组的循环数用于设置线程组的执行次数，此时的脚本代表1个用户执行3次&lt;code&gt;线程组1&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/12.gif&#34;
@@ -1212,7 +1288,9 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。三个用户的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致第二个用户执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
 结束该用户线程，未执行&lt;code&gt;未加固定定时器&lt;/code&gt;。其他用户则未发生错误，可以执行&lt;code&gt;未加固定定时器&lt;/code&gt;。因此导致每次会有3个&lt;code&gt;错误请求1&lt;/code&gt;执行、但只有2个&lt;code&gt;未加固定定时器&lt;/code&gt;执行。&lt;/p&gt;
-&lt;hr&gt;
+&lt;div&gt;
+	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
+&lt;/div&gt;
 &lt;p&gt;首先桌面上新建一个dy.txt文件,文件内容为：&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;{&amp;quot;code&amp;quot;:200,,
 1111,
@@ -1915,70 +1993,74 @@
 
 
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
-	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span&gt;请求数据&lt;/span&gt;&lt;/div&gt;
+&lt;style&gt;
+	.massage {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.result-h {
+		display: inline-grid;
+		grid-template-columns: 10% 90%;
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+	}
+&lt;/style&gt;
+&lt;div class=&#34;massage&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;请求数据&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;result-h&#34;&gt;
+		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;headers&lt;/span&gt;&lt;/div&gt;
+		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
+			&lt;span&gt;Connection: keep-alive&lt;br&gt;Host: 127.0.0.1:5000&lt;br&gt;User-Agent: Apache-HttpClient/4.5.14 (Java/20.0.2)&lt;/span&gt;
 		&lt;/div&gt;
-		&lt;div class=&#34;result-head&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;请求头&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;Connection: keep-alive&lt;br&gt;Host: 127.0.0.1:5000&lt;br&gt;User-Agent: Apache-HttpClient/4.5.14 (Java/20.0.2)&lt;/span&gt;
-			&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&#34;result-h&#34;&gt;
+		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;body&lt;/span&gt;&lt;/div&gt;
+		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
+			&lt;span&gt;GET http://127.0.0.1:5000/QuickUse/&lt;br&gt;&lt;br&gt;GET data:&lt;br&gt;&lt;br&gt;&lt;br&gt;[no cookies]&lt;/span&gt;
 		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;请求体&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;GET http://127.0.0.1:5000/QuickUse/&lt;br&gt;&lt;br&gt;GET data:&lt;br&gt;&lt;br&gt;&lt;br&gt;[no cookies]&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 
 
 
 
-
-
-
-
-&lt;div class=&#34;result&#34;&gt;
-	
-		&lt;div class=&#34;result-type&#34;&gt;
-			&lt;div class=&#34;result-type-svg&#34;&gt;
-				&lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34; width=&#34;24&#34; height=&#34;24&#34; fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt; &lt;rect x=&#34;4&#34; y=&#34;4&#34; width=&#34;16&#34; height=&#34;16&#34; rx=&#34;2&#34; ry=&#34;2&#34; /&gt; &lt;line x1=&#34;8&#34; y1=&#34;4&#34; x2=&#34;8&#34; y2=&#34;20&#34; /&gt; &lt;line x1=&#34;16&#34; y1=&#34;4&#34; x2=&#34;16&#34; y2=&#34;20&#34; /&gt; &lt;/svg&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-type-text&#34;&gt;&lt;span&gt;响应数据&lt;/span&gt;&lt;/div&gt;
+&lt;style&gt;
+	.massage {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.result-h {
+		display: inline-grid;
+		grid-template-columns: 10% 90%;
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+	}
+&lt;/style&gt;
+&lt;div class=&#34;massage&#34;&gt;
+	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;respond&lt;/span&gt;&lt;/div&gt;
+	&lt;div class=&#34;result-h&#34;&gt;
+		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;headers&lt;/span&gt;&lt;/div&gt;
+		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
+			&lt;span&gt;HTTP/1.1 200 OK&lt;br&gt;Server: Werkzeug/3.0.1 Python/3.12.1&lt;br&gt;Date: Mon, 15 Jan 2024 03:39:26 GMT&lt;br&gt;Content-Type: application/json&lt;br&gt;Content-Length: 40&lt;br&gt;Connection: close&lt;/span&gt;
 		&lt;/div&gt;
-		&lt;div class=&#34;result-head&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;响应头&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;HTTP/1.1 200 OK&lt;br&gt;Server: Werkzeug/3.0.1 Python/3.12.1&lt;br&gt;Date: Mon, 15 Jan 2024 03:39:26 GMT&lt;br&gt;Content-Type: application/json&lt;br&gt;Content-Length: 40&lt;br&gt;Connection: close&lt;/span&gt;
-			&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div class=&#34;result-h&#34;&gt;
+		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;body&lt;/span&gt;&lt;/div&gt;
+		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
+			&lt;span&gt;{&#34;code&#34;: 200, &#34;data&#34;: &#34;It is successful!&#34;}&lt;/span&gt;
 		&lt;/div&gt;
-		&lt;div class=&#34;result-body&#34;&gt;
-			&lt;div class=&#34;result-left&#34;&gt;
-				&lt;span&gt;响应体&lt;/span&gt;
-			&lt;/div&gt;
-			&lt;div class=&#34;result-right&#34;&gt;
-				&lt;span&gt;{&#34;code&#34;: 200, &#34;data&#34;: &#34;It is successful!&#34;}&lt;/span&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-	
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/1.gif&#34;
 	
