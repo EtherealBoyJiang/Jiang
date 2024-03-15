@@ -13,7 +13,7 @@
 
 <link rel='canonical' href='https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/'>
 
-<link rel="stylesheet" href="/Jiang/scss/style.min.bb220d06cde5d087bf00a7c4ab048a28581bf4e8e3ed0a34da6947dda1f83914.css"><meta property='og:title' content='Jmeter线程组'>
+<link rel="stylesheet" href="/Jiang/scss/style.min.189d3104f1eaecf0785e379d83b6ff0b6ec3b8865ba9c1e02448e364e5266078.css"><meta property='og:title' content='Jmeter线程组'>
 <meta property='og:description' content='线程组 线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。
 线程组分为四类:
 线程组 setUp线程组 tearDown线程组 开放模型线程组 线程组、setUp线程组、tearDown线程组控制面板中的元素基本一致：
@@ -297,40 +297,79 @@
         <li><a href="#示例jmeter脚本-3"><em>示例Jmeter脚本</em></a></li>
         <li><a href="#停止测试"><em>停止测试</em></a>
           <ol>
-            <li><a href="#运行查看结果树-3"><em>运行，查看结果树</em></a>
+            <li><a href="#多线程组"><em>多线程组</em></a>
               <ol>
-                <li><a href="#多线程组"><em>多线程组</em></a></li>
-                <li><a href="#单线程组"><em>单线程组</em></a></li>
+                <li><a href="#修改示例脚本"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-3"><em>运行，查看结果树</em></a></li>
+                <li><a href="#修改示例脚本-1"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-4"><em>运行，查看结果树</em></a></li>
+                <li><a href="#修改示例脚本-2"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-5"><em>运行，查看结果树</em></a></li>
+              </ol>
+            </li>
+            <li><a href="#单线程组"><em>单线程组</em></a>
+              <ol>
+                <li><a href="#修改示例脚本-3"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-6"><em>运行，查看结果树</em></a></li>
+                <li><a href="#修改示例脚本-4"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-7"><em>运行，查看结果树</em></a></li>
+                <li><a href="#修改示例脚本-5"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-8"><em>运行，查看结果树</em></a></li>
               </ol>
             </li>
           </ol>
         </li>
         <li><a href="#立即停止测试"><em>立即停止测试</em></a>
           <ol>
-            <li><a href="#运行查看结果树-4"><em>运行，查看结果树</em></a>
+            <li><a href="#多线程组-1"><em>多线程组</em></a>
               <ol>
-                <li><a href="#多线程组-1"><em>多线程组</em></a></li>
-                <li><a href="#单线程组-1"><em>单线程组</em></a></li>
+                <li><a href="#修改示例脚本-6"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-9"><em>运行，查看结果树</em></a></li>
+                <li><a href="#修改示例脚本-7"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-10"><em>运行，查看结果树</em></a></li>
+                <li><a href="#修改示例脚本-8"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-11"><em>运行，查看结果树</em></a></li>
+              </ol>
+            </li>
+            <li><a href="#单线程组-1"><em>单线程组</em></a>
+              <ol>
+                <li><a href="#修改示例脚本-9"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-12"><em>运行，查看结果树</em></a></li>
+                <li><a href="#修改示例脚本-10"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-13"><em>运行，查看结果树</em></a></li>
+                <li><a href="#修改示例脚本-11"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-14"><em>运行，查看结果树</em></a></li>
               </ol>
             </li>
           </ol>
         </li>
         <li><a href="#停止线程"><em>停止线程</em></a>
           <ol>
-            <li><a href="#运行查看结果树-5"><em>运行，查看结果树</em></a>
+            <li><a href="#多线程组-2"><em>多线程组</em></a>
               <ol>
-                <li><a href="#多线程组-2"><em>多线程组</em></a></li>
-                <li><a href="#单线程组-2"><em>单线程组</em></a></li>
+                <li><a href="#修改示例脚本-12"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-15"><em>运行，查看结果树</em></a></li>
+                <li><a href="#修改示例脚本-13"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-16"><em>运行，查看结果树</em></a></li>
+              </ol>
+            </li>
+            <li><a href="#单线程组-2"><em>单线程组</em></a>
+              <ol>
+                <li><a href="#修改示例脚本-14"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-17"><em>运行，查看结果树</em></a></li>
+                <li><a href="#修改示例脚本-15"><em>修改示例脚本</em></a></li>
+                <li><a href="#运行查看结果树-18"><em>运行，查看结果树</em></a></li>
               </ol>
             </li>
           </ol>
         </li>
         <li><a href="#启动下一进程循环"><em>启动下一进程循环</em></a>
           <ol>
-            <li><a href="#修改示例脚本"><em>修改示例脚本</em></a></li>
-            <li><a href="#运行查看结果树-6"><em>运行，查看结果树</em></a></li>
+            <li><a href="#修改示例脚本-16"><em>修改示例脚本</em></a></li>
+            <li><a href="#运行查看结果树-19"><em>运行，查看结果树</em></a></li>
           </ol>
         </li>
+        <li><a href="#继续"><em>继续</em></a></li>
       </ol>
     </li>
   </ol>
@@ -405,7 +444,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 3 分钟
+                    阅读时长: 4 分钟
                 </time>
             </div>
         
@@ -958,10 +997,17 @@
 <h3 id="停止测试"><em>停止测试</em></h3>
 <p>设置<code>取样器错误后执行的动作</code>为<code>停止测试</code>时，一旦任何一个取样器遇到错误，整个测试计划将会在所有当前正在执行的线程执行完毕后停止。这可以用于模拟在测试过程中发生重要错误或异常时的行为。</p>
 <p>这种设置确保在测试执行中任何关键的错误都会导致测试的终止，以便进行及时的识别和处理。这对于模拟真实世界中的异常情况以及确保测试的准确性和可重复性都是非常重要的。</p>
-<h4 id="运行查看结果树-3"><em>运行，查看结果树</em></h4>
-<h5 id="多线程组"><em>多线程组</em></h5>
-<p><strong><code>测试计划</code>中勾选<code>独立运行每个线程组</code></strong></p>
-<p><code>线程组1</code>前，<code>线程组2</code>后</p>
+<h4 id="多线程组"><em>多线程组</em></h4>
+<h5 id="修改示例脚本"><em>修改示例脚本</em></h5>
+<ol>
+<li>
+<p><font style="background-color: #efef48">测试计划</font>中勾选<font style="background-color: #efef48">独立运行每个线程组</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>放在<font style="background-color: #efef48">线程组2</font>前</p>
+</li>
+</ol>
+<h5 id="运行查看结果树-3"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/1.gif"
 	
 	
@@ -970,12 +1016,18 @@
 	
 	
 ></p>
-<p>连续运行了2次，但结果却不尽相同，与预期不符。</p>
-<p>在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>后，<code>线程组1</code>与<code>线程组2</code>互不干扰且顺序执行。因此，先执行<code>线程组1</code>时出现错误请求，不会影响到执行<code>线程组2</code>。取样器在线程组中按从上至下的顺序执行。但是结果是<code>线程组2</code>有概率不会执行。</p>
-<div>
-	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
-</div>
-<p><code>线程组2</code>前，<code>线程组1</code>后</p>
+<p>连续运行了2次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行。</p>
+<p>在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>后，<code>线程组1</code>与<code>线程组2</code>互不干扰且顺序执行，因此，先执行<code>线程组1</code>时出现错误请求，不会影响到执行<code>线程组2</code>。但是结果是<code>线程组2</code>有概率不会执行。</p>
+<h5 id="修改示例脚本-1"><em>修改示例脚本</em></h5>
+<ol>
+<li>
+<p><font style="background-color: #efef48">测试计划</font>中勾选<font style="background-color: #efef48">独立运行每个线程组</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>放在<font style="background-color: #efef48">线程组2</font>后</p>
+</li>
+</ol>
+<h5 id="运行查看结果树-4"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/2.gif"
 	
 	
@@ -984,9 +1036,13 @@
 	
 	
 ></p>
-<p>连续运行了3次，结果保持一致，与预期相符。</p>
-<p>在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>，所以<code>线程组2</code>与<code>线程组1</code>互不干扰且顺序执行。因此，先执行<code>线程组2</code>，待<code>线程组1</code>中出现错误请求时，测试计划停止测试。取样器在线程组中按从上至下的顺序执行。</p>
-<p><strong><code>测试计划</code>中取消勾选<code>独立运行每个线程组</code></strong></p>
+<p>连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。</p>
+<p>在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>，所以<code>线程组2</code>与<code>线程组1</code>互不干扰且顺序执行。因此，先执行<code>线程组2</code>，待<code>线程组1</code>中出现错误请求时，测试计划停止测试。</p>
+<h5 id="修改示例脚本-2"><em>修改示例脚本</em></h5>
+<ol>
+<li><font style="background-color: #efef48">测试计划</font>中取消勾选<font style="background-color: #efef48">独立运行每个线程组</font></li>
+</ol>
+<h5 id="运行查看结果树-5"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/3.gif"
 	
 	
@@ -995,12 +1051,21 @@
 	
 	
 ></p>
-<p>连续运行了3次，结果一致且与预期一致。</p>
-<p>在<code>测试计划</code>中未勾选<code>独立运行每个线程组</code>，因此<code>线程组2</code>与<code>线程组1</code>互相干扰且并行执行。当<code>线程组1</code>中出现错误请求时，<code>线程组2</code>中的<code>与错误请求并行请求2</code>也在执行，直到<code>与错误请求并行请求2</code>结束后，测试计划才停止测试。取样器在线程组中按从上至下的顺序执行。</p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>在<code>测试计划</code>中未勾选<code>独立运行每个线程组</code>，因此<code>线程组2</code>与<code>线程组1</code>互相干扰且并行执行。当<code>线程组1</code>中出现错误请求时，<code>线程组2</code>中的<code>与错误请求并行请求2</code>也在执行，直到<code>与错误请求并行请求2</code>结束后，测试计划才停止测试。</p>
 <p><strong>建议</strong></p>
 <p>如果<code>测试计划</code>中勾选了“独立运行每个线程组”，不建议非最后排序的<code>线程组</code>中<code>取样器错误后执行的动作</code>设置为<code>停止测试</code>，它并不会按照你的预期去执行。</p>
-<h5 id="单线程组"><em>单线程组</em></h5>
-<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>,<code>未加固定定时器</code>放在<code>错误请求1</code>之前。</p>
+<h4 id="单线程组"><em>单线程组</em></h4>
+<h5 id="修改示例脚本-3"><em>修改示例脚本</em></h5>
+<ol>
+<li>
+<p>禁用<font style="background-color: #efef48">线程组2</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">未加固定定时器</font>放在<font style="background-color: #efef48">错误请求1</font>前</p>
+</li>
+</ol>
+<h5 id="运行查看结果树-6"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/7.gif"
 	
 	
@@ -1009,12 +1074,21 @@
 	
 	
 ></p>
-<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。先执行<code>未加固定定时器</code>请求，待<code>错误请求1</code>中出现错误请求时，测试计划停止测试。</p>
-<div>
-	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
-</div>
-<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>，<code>错误请求1</code>放在<code>错误请求之后请求1</code>之后。<code>线程组1</code>中的<code>线程数</code>改为<code>3</code>。</p>
-<p>线程组的线程数用于模拟用户数量，此时的脚本代表同时（不是并发）有三个用户同时执行<code>线程组1</code>。</p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>先执行<code>未加固定定时器</code>请求，待<code>错误请求1</code>中出现错误请求时，测试计划停止测试。</p>
+<h5 id="修改示例脚本-4"><em>修改示例脚本</em></h5>
+<ol>
+<li>
+<p>禁用<font style="background-color: #efef48">线程组2</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">错误请求1</font>放在<font style="background-color: #efef48">错误请求之后请求1</font>后</p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>中的</font>线程数</font>改为<font style="background-color: #efef48">3</font></p>
+</li>
+</ol>
+<h5 id="运行查看结果树-7"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/8.gif"
 	
 	
@@ -1023,12 +1097,21 @@
 	
 	
 ></p>
-<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，3个用户同时执行<code>线程组1</code>。3个用户中其中1个用户执行<code>错误请求1</code>出现错误时，另外2个用户还在执行<code>错误请求之后请求1</code>，待执行完毕后，测试计划停止测试。</p>
-<div>
-	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
-</div>
-<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>，<code>错误请求1</code>放在<code>错误请求之后请求1</code>之后。<code>线程组1</code>中的<code>循环数</code>改为<code>3</code>。</p>
-<p>线程组的循环数用于设置线程组的执行次数，此时的脚本代表1个用户执行3次<code>线程组1</code>。</p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>3个用户同时执行<code>线程组1</code>。3个用户中其中1个用户执行<code>错误请求1</code>出现错误时，另外2个用户还在执行<code>错误请求之后请求1</code>，待执行完毕后，测试计划停止测试。</p>
+<h5 id="修改示例脚本-5"><em>修改示例脚本</em></h5>
+<ol>
+<li>
+<p>禁用<font style="background-color: #efef48">线程组2</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">错误请求1</font>放在<font style="background-color: #efef48">错误请求之后请求1</font>后</p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>中的<font style="background-color: #efef48">循环数</font>改为<font style="background-color: #efef48">3</font></p>
+</li>
+</ol>
+<h5 id="运行查看结果树-8"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/9.gif"
 	
 	
@@ -1042,10 +1125,17 @@
 <p>设置<code>取样器错误后执行的动作</code>为<code>立即停止测试</code>时，当取样器在执行过程中遇到错误时，JMeter会立即停止当前运行的测试，不再执行任何后续的请求或操作。</p>
 <p>这有助于保护应用程序免受可能导致问题的异常或错误的影响，并确保测试结果的准确性。</p>
 <p>这种设置对于测试场景中的稳定性和可靠性非常重要，特别是在模拟并发用户或大负载情况下，能够及时发现问题并停止测试，有助于减少潜在的影响和损害。</p>
-<h4 id="运行查看结果树-4"><em>运行，查看结果树</em></h4>
-<h5 id="多线程组-1"><em>多线程组</em></h5>
-<p><strong><code>测试计划</code>中勾选<code>独立运行每个线程组</code></strong></p>
-<p><code>线程组1</code>前，<code>线程组2</code>后</p>
+<h4 id="多线程组-1"><em>多线程组</em></h4>
+<h5 id="修改示例脚本-6"><em>修改示例脚本</em></h5>
+<ol>
+<li>
+<p><font style="background-color: #efef48">测试计划</font>中勾选<font style="background-color: #efef48">独立运行每个线程组</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>放在<font style="background-color: #efef48">线程组2</font>前</p>
+</li>
+</ol>
+<h5 id="运行查看结果树-9"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/4.gif"
 	
 	
@@ -1054,11 +1144,18 @@
 	
 	
 ></p>
-<p>连续运行了4次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行，在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>后，<code>线程组1</code>与<code>线程组2</code>互不干扰且顺序执行。因此，若<code>线程组1</code>中出现错误请求时,不会影响到执行<code>线程组2</code>。但是结果是<code>线程组2</code>有概率不会执行。</p>
-<div>
-	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
-</div>
-<p><code>线程组2</code>前，<code>线程组1</code>后</p>
+<p>连续运行了4次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行。</p>
+<p>在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>后，<code>线程组1</code>与<code>线程组2</code>互不干扰且顺序执行。因此，若<code>线程组1</code>中出现错误请求时,不会影响到执行<code>线程组2</code>。但是结果是<code>线程组2</code>有概率不会执行。</p>
+<h5 id="修改示例脚本-7"><em>修改示例脚本</em></h5>
+<ol>
+<li>
+<p><font style="background-color: #efef48">测试计划</font>中勾选<font style="background-color: #efef48">独立运行每个线程组</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>放在<font style="background-color: #efef48">线程组2</font>后</p>
+</li>
+</ol>
+<h5 id="运行查看结果树-10"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/5.gif"
 	
 	
@@ -1067,8 +1164,13 @@
 	
 	
 ></p>
-<p>连续运行了4次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行，在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>，所以<code>线程组2</code>与<code>线程组1</code>互不干扰且顺序执行。因此，先执行<code>线程组2</code>，待<code>线程组1</code>中出现错误请求时，测试计划立即停止测试。</p>
-<p><strong><code>测试计划</code>中取消勾选<code>独立运行每个线程组</code></strong></p>
+<p>连续运行了4次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。</p>
+<p>在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>，所以<code>线程组2</code>与<code>线程组1</code>互不干扰且顺序执行。因此，先执行<code>线程组2</code>，待<code>线程组1</code>中出现错误请求时，测试计划立即停止测试。</p>
+<h5 id="修改示例脚本-8"><em>修改示例脚本</em></h5>
+<ol>
+<li><font style="background-color: #efef48">测试计划</font>中取消勾选<font style="background-color: #efef48">独立运行每个线程组</font></li>
+</ol>
+<h5 id="运行查看结果树-11"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/6.gif"
 	
 	
@@ -1077,12 +1179,21 @@
 	
 	
 ></p>
-<p>连续运行了4次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，
-在<code>测试计划</code>中未勾选<code>独立运行每个线程组</code>，因此<code>线程组2</code>与<code>线程组1</code>互相干扰且并行执行。当<code>线程组1</code>中出现错误请求时，<code>线程组2</code>中的<code>与错误请求并行请求2</code>也在执行，但不等<code>与错误请求并行请求2</code>结束，测试计划立即停止测试，可以看出<code>与错误请求并行请求2</code>的响应体中提示 Socket 关闭异常。</p>
+<p>连续运行了4次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>在<code>测试计划</code>中未勾选<code>独立运行每个线程组</code>，因此<code>线程组2</code>与<code>线程组1</code>互相干扰且并行执行。当<code>线程组1</code>中出现错误请求时，<code>线程组2</code>中的<code>与错误请求并行请求2</code>也在执行，但不等<code>与错误请求并行请求2</code>结束，测试计划立即停止测试，可以看出<code>与错误请求并行请求2</code>的响应体中提示 Socket 关闭异常。</p>
 <p><strong>建议</strong></p>
 <p>如果<code>测试计划</code>中勾选了“独立运行每个线程组”，不建议非最后排序的<code>线程组</code>中<code>取样器错误后执行的动作</code>设置为<code>立即停止测试</code>，它并不会按照你的预期去执行。</p>
-<h5 id="单线程组-1"><em>单线程组</em></h5>
-<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>,<code>未加固定定时器</code>放在<code>错误请求1</code>之前。</p>
+<h4 id="单线程组-1"><em>单线程组</em></h4>
+<h5 id="修改示例脚本-9"><em>修改示例脚本</em></h5>
+<ol>
+<li>
+<p>禁用<font style="background-color: #efef48">线程组2</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">未加固定定时器</font>放在<font style="background-color: #efef48">错误请求1</font>前</p>
+</li>
+</ol>
+<h5 id="运行查看结果树-12"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/10.gif"
 	
 	
@@ -1091,12 +1202,21 @@
 	
 	
 ></p>
-<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。先执行<code>未加固定定时器</code>请求，待<code>错误请求1</code>中出现错误请求时，测试计划立即停止测试。</p>
-<div>
-	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
-</div>
-<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>，<code>错误请求1</code>放在<code>错误请求之后请求1</code>之后。<code>线程组1</code>中的<code>线程数</code>改为<code>3</code>。</p>
-<p>线程组的线程数用于模拟用户数量，此时的脚本代表同时（不是并发）有三个用户同时执行<code>线程组1</code>。</p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>先执行<code>未加固定定时器</code>请求，待<code>错误请求1</code>中出现错误请求时，测试计划立即停止测试。</p>
+<h5 id="修改示例脚本-10"><em>修改示例脚本</em></h5>
+<ol>
+<li>
+<p>禁用<font style="background-color: #efef48">线程组2</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">错误请求1</font>放在<font style="background-color: #efef48">错误请求之后请求1</font>之后</p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>中的<font style="background-color: #efef48">线程数</font>改为<font style="background-color: #efef48">3</font></p>
+</li>
+</ol>
+<h5 id="运行查看结果树-13"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/11.gif"
 	
 	
@@ -1105,13 +1225,22 @@
 	
 	
 ></p>
-<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，3个用户同时执行<code>线程组1</code>。3个用户中其中1个用户执行<code>错误请求1</code>出现错误时，另外2个用户还在执行<code>错误请求之后请求1</code>，
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>3个用户同时执行<code>线程组1</code>。3个用户中其中1个用户执行<code>错误请求1</code>出现错误时，另外2个用户还在执行<code>错误请求之后请求1</code>，
 但不等执行完毕后，测试计划立即停止测试，可以看出<code>与错误请求并行请求1</code>的响应体中提示 Socket 关闭异常。</p>
-<div>
-	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
-</div>
-<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>，<code>错误请求1</code>放在<code>错误请求之后请求1</code>之后。<code>线程组1</code>中的<code>循环数</code>改为<code>3</code>。</p>
-<p>线程组的循环数用于设置线程组的执行次数，此时的脚本代表1个用户执行3次<code>线程组1</code>。</p>
+<h5 id="修改示例脚本-11"><em>修改示例脚本</em></h5>
+<ol>
+<li>
+<p>禁用<font style="background-color: #efef48">线程组2</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">错误请求1</font>放在<font style="background-color: #efef48">错误请求之后请求1</font>后</p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>中的<font style="background-color: #efef48">循环数</font>改为<font style="background-color: #efef48">3</font></p>
+</li>
+</ol>
+<h5 id="运行查看结果树-14"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/12.gif"
 	
 	
@@ -1120,14 +1249,18 @@
 	
 	
 ></p>
-<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，1个用户执行<code>线程组1</code>3次。用户在执行第1次<code>错误请求1</code>出现错误时，测试计划立即停止测试。</p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>1个用户执行<code>线程组1</code>3次。用户在执行第1次<code>错误请求1</code>出现错误时，测试计划立即停止测试。</p>
 <h3 id="停止线程"><em>停止线程</em></h3>
 <p>设置<code>取样器错误后执行的动作</code>为<code>停止线程</code>时，当取样器在执行过程中遇到错误时，Jmeter会立即停止当前线程，但不会停止别的线程。</p>
 <p>这可以防止无效或无用的进一步测试，尤其是在错误可能导致后续操作无效的情况下。通过停止出现错误的线程，可以更准确地模拟用户行为和评估系统性能，因为现实世界中的用户通常在遇到问题时不会继续执行相同或相关的操作。
 此外，停止出现错误的线程有助于简化错误分析，因为只有出现问题的线程会被停止，从而更容易识别和诊断问题。</p>
-<h4 id="运行查看结果树-5"><em>运行，查看结果树</em></h4>
-<h5 id="多线程组-2"><em>多线程组</em></h5>
-<p><strong><code>测试计划</code>中勾选<code>独立运行每个线程组</code></strong></p>
+<h4 id="多线程组-2"><em>多线程组</em></h4>
+<h5 id="修改示例脚本-12"><em>修改示例脚本</em></h5>
+<ol>
+<li><font style="background-color: #efef48">测试计划</font>中勾选<font style="background-color: #efef48">独立运行每个线程组</font></li>
+</ol>
+<h5 id="运行查看结果树-15"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/13.gif"
 	
 	
@@ -1136,8 +1269,13 @@
 	
 	
 ></p>
-<p>连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行，在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>，所以<code>线程组2</code>与<code>线程组1</code>互不干扰且顺序执行。因此，先执行<code>线程组1</code>，待<code>线程组1</code>中出现错误请求时，<code>线程组1</code>线程被停止，接着执行<code>线程组2</code>。</p>
-<p><strong><code>测试计划</code>中取消勾选<code>独立运行每个线程组</code></strong></p>
+<p>连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。</p>
+<p>在<code>测试计划</code>中勾选了<code>独立运行每个线程组</code>，所以<code>线程组2</code>与<code>线程组1</code>互不干扰且顺序执行。因此，先执行<code>线程组1</code>，待<code>线程组1</code>中的用户出现错误请求时，<code>线程组1</code>的用户线程被停止，接着执行<code>线程组2</code>。</p>
+<h5 id="修改示例脚本-13"><em>修改示例脚本</em></h5>
+<ol>
+<li><font style="background-color: #efef48">测试计划</font>中取消勾选<font style="background-color: #efef48">独立运行每个线程组</font></li>
+</ol>
+<h5 id="运行查看结果树-16"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/14.gif"
 	
 	
@@ -1146,20 +1284,31 @@
 	
 	
 ></p>
-<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，
-在<code>测试计划</code>中未勾选<code>独立运行每个线程组</code>，因此<code>线程组2</code>与<code>线程组1</code>互相干扰且并行执行。当<code>线程组1</code>中出现错误请求时，<code>线程组1</code>停止线程，<code>线程组2</code>继续执行。</p>
-<h5 id="单线程组-2"><em>单线程组</em></h5>
-<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>、<code>线程组1</code>下的<code>错误请求之后请求1</code>,<code>线程组1</code>中的<code>线程数</code>改为<code>3</code>，<code>线程组1</code>下添加一个<code>用户参数</code>。</p>
-<p>添加步骤：<code>右键线程组-添加-前置处理器-用户参数</code></p>
-<p><font style="background-color: #efef48">用户参数</font>设置：</p>
-<ul>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>在<code>测试计划</code>中未勾选<code>独立运行每个线程组</code>，因此<code>线程组2</code>与<code>线程组1</code>互相干扰且并行执行。待<code>线程组1</code>中的用户出现错误请求时，<code>线程组1</code>的用户线程被停止，<code>线程组2</code>继续执行。</p>
+<h4 id="单线程组-2"><em>单线程组</em></h4>
+<h5 id="修改示例脚本-14"><em>修改示例脚本</em></h5>
+<ol>
 <li>
-<p>添加变量：</p>
-<p>名称：<code>dy</code></p>
+<p>禁用<font style="background-color: #efef48">线程组2</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>下的<font style="background-color: #efef48">错误请求之后请求1</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>中的<font style="background-color: #efef48">线程数</font>改为<font style="background-color: #efef48">3</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>下添加一个<font style="background-color: #efef48">用户参数</font></p>
+<p>添加步骤：<code>右键线程组-添加-前置处理器-用户参数</code></p>
+<p>添加变量，名称：<code>dy</code></p>
 <p>添加三个用户值：<code>{&quot;code&quot;:200,</code>、<code>1111</code>、<code>{&quot;code&quot;:200,</code></p>
 </li>
-</ul>
-<p><code>错误请求1</code>下响应断言的值,引用用户参数中的变量：<code>${dy}</code></p>
+<li>
+<p><font style="background-color: #efef48">错误请求1</font>下响应断言的值,引用用户参数中的变量：<font style="background-color: #efef48">${dy}</font></p>
+</li>
+</ol>
+<h5 id="运行查看结果树-17"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/15.gif"
 	
 	
@@ -1168,31 +1317,39 @@
 	
 	
 ></p>
-<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。三个用户的<code>响应断言</code>值分别引用<code>{&quot;code&quot;:200,</code>、<code>1111</code>、<code>{&quot;code&quot;:200,</code>，导致第二个用户执行<code>错误请求1</code>时发生错误，
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>每次运行时，三个用户的<code>响应断言</code>值分别引用<code>{&quot;code&quot;:200,</code>、<code>1111</code>、<code>{&quot;code&quot;:200,</code>，导致第二个用户执行<code>错误请求1</code>时发生错误，
 结束该用户线程，未执行<code>未加固定定时器</code>。其他用户则未发生错误，可以执行<code>未加固定定时器</code>。因此导致每次会有3个<code>错误请求1</code>执行、但只有2个<code>未加固定定时器</code>执行。</p>
-<div>
-	<hr style="width: 100%;background: rgb(198 193 193 / 61%)">
-</div>
-<p>首先桌面上新建一个dy.txt文件,文件内容为：</p>
-<pre><code>{&quot;code&quot;:200,,
-1111,
-{&quot;code&quot;:200,,
-</code></pre>
-<p>示例Jmeter脚本的基础上，禁用<code>线程组2</code>、<code>线程组1</code>下的<code>错误请求之后请求1</code>,<code>线程组1</code>中的<code>循环数</code>改为<code>3</code>，<code>线程组1</code>下添加一个<code>CSV 数据文件设置</code>。</p>
+<h5 id="修改示例脚本-15"><em>修改示例脚本</em></h5>
+<ol>
+<li>
+<p>桌面上新建一个<font style="background-color: #efef48">dy.txt</font>文件,文本内容为：</p>
+<p><code>{&quot;code&quot;:200,,</code></p>
+<p><code>1111,</code></p>
+<p><code>{&quot;code&quot;:200,,</code></p>
+<p>注意：三个参数不能在一行，每行一个参数。每个参数最后的逗号作用为分隔符。</p>
+</li>
+<li>
+<p>禁用<font style="background-color: #efef48">线程组2</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>下的<font style="background-color: #efef48">错误请求之后请求1</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>中的<font style="background-color: #efef48">循环数</font>改为<font style="background-color: #efef48">3</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>下添加一个<font style="background-color: #efef48">CSV 数据文件设置</font></p>
 <p>添加步骤：<code>右键线程组-添加-配置元件-CSV Data Set Config</code></p>
-<p><font style="background-color: #efef48">CSV 数据文件设置</font>设置：</p>
-<ul>
-<li>
 <p>文件名：<code>dy.txt的路径</code></p>
-</li>
-<li>
 <p>文件编码：<code>UTF-8</code></p>
-</li>
-<li>
 <p>变量名称：<code>dy</code></p>
 </li>
-</ul>
-<p><code>错误请求1</code>下响应断言的值,引用用户参数中的变量：<code>${dy}</code></p>
+<li>
+<p><font style="background-color: #efef48">错误请求1</font>下响应断言的值,引用用户参数中的变量：<font style="background-color: #efef48">${dy}</font></p>
+</li>
+</ol>
+<h5 id="运行查看结果树-18"><em>运行，查看结果树</em></h5>
 <p><img src="/Jiang/img/Jmeter/ThreadGroup/16.gif"
 	
 	
@@ -1201,13 +1358,54 @@
 	
 	
 ></p>
-<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。用户的三次循环的<code>响应断言</code>值分别引用<code>CSV 数据文件设置</code>的<code>{&quot;code&quot;:200,</code>、<code>1111</code>、<code>{&quot;code&quot;:200,</code>，导致用户第二次循环时执行<code>错误请求1</code>时发生错误，
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>用户的三次循环的<code>响应断言</code>值分别引用<code>CSV 数据文件设置</code>的<code>{&quot;code&quot;:200,</code>、<code>1111</code>、<code>{&quot;code&quot;:200,</code>，导致用户第二次循环时执行<code>错误请求1</code>时发生错误，
 结束该用户线程，未执行之后<code>未加固定定时器</code>和第三次循环。</p>
 <h3 id="启动下一进程循环"><em>启动下一进程循环</em></h3>
-<p>设置取样器错误后执行的动作为停止线程时，当取样器在执行过程中遇到错误时，Jmeter会立即停止当前线程本次执行进行当前线程的下次执行，主要应用于线程多次循环时。</p>
+<p>设置取样器错误后执行的动作为<code>停止线程</code>时，当取样器在执行过程中遇到错误时，Jmeter会立即停止当前线程本次执行进行当前线程的下次执行，主要应用于线程多次循环时。</p>
 <p>这可以防止无效或无用的进一步测试，尤其是在错误可能导致本次循环后续操作无效的情况下。通过停止出现错误的循环，进行下一次循环，可以更准确地模拟用户行为和评估系统性能，因为现实世界中的用户通常在流程操作中，开始或中间过程遇到问题时不会继续执行后续的操作，会从头开始操作。</p>
-<h4 id="修改示例脚本"><em>修改示例脚本</em></h4>
-<h4 id="运行查看结果树-6"><em>运行，查看结果树</em></h4>
+<h4 id="修改示例脚本-16"><em>修改示例脚本</em></h4>
+<ol>
+<li>
+<p>桌面上新建一个<font style="background-color: #efef48">dy.txt</font>文件,文本内容为：</p>
+<p><code>{&quot;code&quot;:200,,</code></p>
+<p><code>1111,</code></p>
+<p><code>{&quot;code&quot;:200,,</code></p>
+<p>注意：三个参数不能在一行，每行一个参数。每个参数最后的逗号作用为分隔符。</p>
+</li>
+<li>
+<p>禁用<font style="background-color: #efef48">线程组2</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>下的<font style="background-color: #efef48">错误请求之后请求1</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>中的<font style="background-color: #efef48">循环数</font>改为<font style="background-color: #efef48">3</font></p>
+</li>
+<li>
+<p><font style="background-color: #efef48">线程组1</font>下添加一个<font style="background-color: #efef48">CSV 数据文件设置</font></p>
+<p>添加步骤：<code>右键线程组-添加-配置元件-CSV Data Set Config</code></p>
+<p>文件名：<code>dy.txt的路径</code></p>
+<p>文件编码：<code>UTF-8</code></p>
+<p>变量名称：<code>dy</code></p>
+</li>
+</ol>
+<p>6.<font style="background-color: #efef48">错误请求1</font>下响应断言的值,引用用户参数中的变量：<font style="background-color: #efef48">${dy}</font></p>
+<h4 id="运行查看结果树-19"><em>运行，查看结果树</em></h4>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/17.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>每次运行时，用户的三次循环的<code>响应断言</code>值分别引用<code>CSV 数据文件设置</code>的<code>{&quot;code&quot;:200,</code>、<code>1111</code>、<code>{&quot;code&quot;:200,</code>，导致用户第二次循环时执行<code>错误请求1</code>时发生错误，
+该用户线程跳过本次循环，不在执行之后<code>未加固定定时器</code>，直接进行第三次循环。</p>
+<h3 id="继续"><em>继续</em></h3>
+<p>设置取样器错误后执行的动作为<code>继续</code>时，JMeter将在取样器执行错误时，忽略错误继续执行本线程的后续操作及执行其他线程。</p>
+<p>这种设置通常用于测试过程中，即使某些请求失败，也需要继续执行其他请求，以模拟真实用户的行为。</p>
 <p>线程组的关键任务之一是定义并发用户的行为，包括设置线程数、循环次数、启动延迟等关键参数。通过适当配置线程组，测试人员可以模拟多用户在系统中同时执行任务的场景，从而评估系统的性能和稳定性。</p>
 <p>这种独立且隔离的线程执行方式，使得每个线程在执行任务时都保持相对独立，不受其他线程的影响。这是在模拟真实用户行为时非常重要的特性，能够更准确地评估系统在高并发负载下的性能表现。</p>
 <p>通过灵活使用setup线程组、线程组、tearDown线程组、开放模型线程组，配置前置操作、主要操作、后置操作，更能真实、详细的评估系统。</p>
@@ -1326,10 +1524,43 @@
         2024 EtherealBoyJiang
     </section>
     
+	
+	<section class="running-time">
+		本博客已稳定运行
+		<span id="runningdays" class="running-days"></span>
+	</section>
+	
+	
+	<section class="totalcount">
+		
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+		发表了4篇文章 · 
+		总计1.59k字
+	</section>
+	
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.23.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
+	
+
+
 </footer>
 
 
@@ -1430,5 +1661,18 @@
     }());
 </script>
 
+<script>
+    let s1 = '2024-1-23'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
+</script>
     </body>
 </html>

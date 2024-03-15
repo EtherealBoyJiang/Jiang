@@ -551,10 +551,17 @@
 &lt;h3 id=&#34;停止测试&#34;&gt;&lt;em&gt;停止测试&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;设置&lt;code&gt;取样器错误后执行的动作&lt;/code&gt;为&lt;code&gt;停止测试&lt;/code&gt;时，一旦任何一个取样器遇到错误，整个测试计划将会在所有当前正在执行的线程执行完毕后停止。这可以用于模拟在测试过程中发生重要错误或异常时的行为。&lt;/p&gt;
 &lt;p&gt;这种设置确保在测试执行中任何关键的错误都会导致测试的终止，以便进行及时的识别和处理。这对于模拟真实世界中的异常情况以及确保测试的准确性和可重复性都是非常重要的。&lt;/p&gt;
-&lt;h4 id=&#34;运行查看结果树-3&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
-&lt;h5 id=&#34;多线程组&#34;&gt;&lt;em&gt;多线程组&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;测试计划&lt;/code&gt;中勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;线程组1&lt;/code&gt;前，&lt;code&gt;线程组2&lt;/code&gt;后&lt;/p&gt;
+&lt;h4 id=&#34;多线程组&#34;&gt;&lt;em&gt;多线程组&lt;/em&gt;&lt;/h4&gt;
+&lt;h5 id=&#34;修改示例脚本&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;放在&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;前&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-3&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/1.gif&#34;
 	
 	
@@ -563,12 +570,18 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了2次，但结果却不尽相同，与预期不符。&lt;/p&gt;
-&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组1&lt;/code&gt;时出现错误请求，不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。取样器在线程组中按从上至下的顺序执行。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
-&lt;div&gt;
-	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;线程组2&lt;/code&gt;前，&lt;code&gt;线程组1&lt;/code&gt;后&lt;/p&gt;
+&lt;p&gt;连续运行了2次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行，因此，先执行&lt;code&gt;线程组1&lt;/code&gt;时出现错误请求，不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
+&lt;h5 id=&#34;修改示例脚本-1&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;放在&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;后&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-4&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/2.gif&#34;
 	
 	
@@ -577,9 +590,13 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了3次，结果保持一致，与预期相符。&lt;/p&gt;
-&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组2&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，测试计划停止测试。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;测试计划&lt;/code&gt;中取消勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组2&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，测试计划停止测试。&lt;/p&gt;
+&lt;h5 id=&#34;修改示例脚本-2&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中取消勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-5&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/3.gif&#34;
 	
 	
@@ -588,12 +605,21 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了3次，结果一致且与预期一致。&lt;/p&gt;
-&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中未勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，因此&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互相干扰且并行执行。当&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，&lt;code&gt;线程组2&lt;/code&gt;中的&lt;code&gt;与错误请求并行请求2&lt;/code&gt;也在执行，直到&lt;code&gt;与错误请求并行请求2&lt;/code&gt;结束后，测试计划才停止测试。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中未勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，因此&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互相干扰且并行执行。当&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，&lt;code&gt;线程组2&lt;/code&gt;中的&lt;code&gt;与错误请求并行请求2&lt;/code&gt;也在执行，直到&lt;code&gt;与错误请求并行请求2&lt;/code&gt;结束后，测试计划才停止测试。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;建议&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;如果&lt;code&gt;测试计划&lt;/code&gt;中勾选了“独立运行每个线程组”，不建议非最后排序的&lt;code&gt;线程组&lt;/code&gt;中&lt;code&gt;取样器错误后执行的动作&lt;/code&gt;设置为&lt;code&gt;停止测试&lt;/code&gt;，它并不会按照你的预期去执行。&lt;/p&gt;
-&lt;h5 id=&#34;单线程组&#34;&gt;&lt;em&gt;单线程组&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;,&lt;code&gt;未加固定定时器&lt;/code&gt;放在&lt;code&gt;错误请求1&lt;/code&gt;之前。&lt;/p&gt;
+&lt;h4 id=&#34;单线程组&#34;&gt;&lt;em&gt;单线程组&lt;/em&gt;&lt;/h4&gt;
+&lt;h5 id=&#34;修改示例脚本-3&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;禁用&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;未加固定定时器&lt;/font&gt;放在&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求1&lt;/font&gt;前&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-6&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/7.gif&#34;
 	
 	
@@ -602,12 +628,21 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划停止测试。&lt;/p&gt;
-&lt;div&gt;
-	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
-&lt;/div&gt;
-&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;，&lt;code&gt;错误请求1&lt;/code&gt;放在&lt;code&gt;错误请求之后请求1&lt;/code&gt;之后。&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;线程数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;线程组的线程数用于模拟用户数量，此时的脚本代表同时（不是并发）有三个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划停止测试。&lt;/p&gt;
+&lt;h5 id=&#34;修改示例脚本-4&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;禁用&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求1&lt;/font&gt;放在&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求之后请求1&lt;/font&gt;后&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;中的&lt;/font&gt;线程数&lt;/font&gt;改为&lt;font style=&#34;background-color: #efef48&#34;&gt;3&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-7&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/8.gif&#34;
 	
 	
@@ -616,12 +651,21 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，3个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。3个用户中其中1个用户执行&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，另外2个用户还在执行&lt;code&gt;错误请求之后请求1&lt;/code&gt;，待执行完毕后，测试计划停止测试。&lt;/p&gt;
-&lt;div&gt;
-	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
-&lt;/div&gt;
-&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;，&lt;code&gt;错误请求1&lt;/code&gt;放在&lt;code&gt;错误请求之后请求1&lt;/code&gt;之后。&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;循环数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;线程组的循环数用于设置线程组的执行次数，此时的脚本代表1个用户执行3次&lt;code&gt;线程组1&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;3个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。3个用户中其中1个用户执行&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，另外2个用户还在执行&lt;code&gt;错误请求之后请求1&lt;/code&gt;，待执行完毕后，测试计划停止测试。&lt;/p&gt;
+&lt;h5 id=&#34;修改示例脚本-5&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;禁用&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求1&lt;/font&gt;放在&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求之后请求1&lt;/font&gt;后&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;中的&lt;font style=&#34;background-color: #efef48&#34;&gt;循环数&lt;/font&gt;改为&lt;font style=&#34;background-color: #efef48&#34;&gt;3&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-8&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/9.gif&#34;
 	
 	
@@ -635,10 +679,17 @@
 &lt;p&gt;设置&lt;code&gt;取样器错误后执行的动作&lt;/code&gt;为&lt;code&gt;立即停止测试&lt;/code&gt;时，当取样器在执行过程中遇到错误时，JMeter会立即停止当前运行的测试，不再执行任何后续的请求或操作。&lt;/p&gt;
 &lt;p&gt;这有助于保护应用程序免受可能导致问题的异常或错误的影响，并确保测试结果的准确性。&lt;/p&gt;
 &lt;p&gt;这种设置对于测试场景中的稳定性和可靠性非常重要，特别是在模拟并发用户或大负载情况下，能够及时发现问题并停止测试，有助于减少潜在的影响和损害。&lt;/p&gt;
-&lt;h4 id=&#34;运行查看结果树-4&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
-&lt;h5 id=&#34;多线程组-1&#34;&gt;&lt;em&gt;多线程组&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;测试计划&lt;/code&gt;中勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;线程组1&lt;/code&gt;前，&lt;code&gt;线程组2&lt;/code&gt;后&lt;/p&gt;
+&lt;h4 id=&#34;多线程组-1&#34;&gt;&lt;em&gt;多线程组&lt;/em&gt;&lt;/h4&gt;
+&lt;h5 id=&#34;修改示例脚本-6&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;放在&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;前&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-9&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/4.gif&#34;
 	
 	
@@ -647,11 +698,18 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了4次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行，在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行。因此，若&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时,不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
-&lt;div&gt;
-	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;线程组2&lt;/code&gt;前，&lt;code&gt;线程组1&lt;/code&gt;后&lt;/p&gt;
+&lt;p&gt;连续运行了4次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行。因此，若&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时,不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
+&lt;h5 id=&#34;修改示例脚本-7&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;放在&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;后&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-10&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/5.gif&#34;
 	
 	
@@ -660,8 +718,13 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了4次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行，在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组2&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;测试计划&lt;/code&gt;中取消勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了4次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组2&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
+&lt;h5 id=&#34;修改示例脚本-8&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中取消勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-11&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/6.gif&#34;
 	
 	
@@ -670,12 +733,21 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了4次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，
-在&lt;code&gt;测试计划&lt;/code&gt;中未勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，因此&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互相干扰且并行执行。当&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，&lt;code&gt;线程组2&lt;/code&gt;中的&lt;code&gt;与错误请求并行请求2&lt;/code&gt;也在执行，但不等&lt;code&gt;与错误请求并行请求2&lt;/code&gt;结束，测试计划立即停止测试，可以看出&lt;code&gt;与错误请求并行请求2&lt;/code&gt;的响应体中提示 Socket 关闭异常。&lt;/p&gt;
+&lt;p&gt;连续运行了4次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中未勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，因此&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互相干扰且并行执行。当&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，&lt;code&gt;线程组2&lt;/code&gt;中的&lt;code&gt;与错误请求并行请求2&lt;/code&gt;也在执行，但不等&lt;code&gt;与错误请求并行请求2&lt;/code&gt;结束，测试计划立即停止测试，可以看出&lt;code&gt;与错误请求并行请求2&lt;/code&gt;的响应体中提示 Socket 关闭异常。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;建议&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;如果&lt;code&gt;测试计划&lt;/code&gt;中勾选了“独立运行每个线程组”，不建议非最后排序的&lt;code&gt;线程组&lt;/code&gt;中&lt;code&gt;取样器错误后执行的动作&lt;/code&gt;设置为&lt;code&gt;立即停止测试&lt;/code&gt;，它并不会按照你的预期去执行。&lt;/p&gt;
-&lt;h5 id=&#34;单线程组-1&#34;&gt;&lt;em&gt;单线程组&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;,&lt;code&gt;未加固定定时器&lt;/code&gt;放在&lt;code&gt;错误请求1&lt;/code&gt;之前。&lt;/p&gt;
+&lt;h4 id=&#34;单线程组-1&#34;&gt;&lt;em&gt;单线程组&lt;/em&gt;&lt;/h4&gt;
+&lt;h5 id=&#34;修改示例脚本-9&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;禁用&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;未加固定定时器&lt;/font&gt;放在&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求1&lt;/font&gt;前&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-12&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/10.gif&#34;
 	
 	
@@ -684,12 +756,21 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
-&lt;div&gt;
-	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
-&lt;/div&gt;
-&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;，&lt;code&gt;错误请求1&lt;/code&gt;放在&lt;code&gt;错误请求之后请求1&lt;/code&gt;之后。&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;线程数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;线程组的线程数用于模拟用户数量，此时的脚本代表同时（不是并发）有三个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
+&lt;h5 id=&#34;修改示例脚本-10&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;禁用&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求1&lt;/font&gt;放在&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求之后请求1&lt;/font&gt;之后&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;中的&lt;font style=&#34;background-color: #efef48&#34;&gt;线程数&lt;/font&gt;改为&lt;font style=&#34;background-color: #efef48&#34;&gt;3&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-13&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/11.gif&#34;
 	
 	
@@ -698,13 +779,22 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，3个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。3个用户中其中1个用户执行&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，另外2个用户还在执行&lt;code&gt;错误请求之后请求1&lt;/code&gt;，
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;3个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。3个用户中其中1个用户执行&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，另外2个用户还在执行&lt;code&gt;错误请求之后请求1&lt;/code&gt;，
 但不等执行完毕后，测试计划立即停止测试，可以看出&lt;code&gt;与错误请求并行请求1&lt;/code&gt;的响应体中提示 Socket 关闭异常。&lt;/p&gt;
-&lt;div&gt;
-	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
-&lt;/div&gt;
-&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;，&lt;code&gt;错误请求1&lt;/code&gt;放在&lt;code&gt;错误请求之后请求1&lt;/code&gt;之后。&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;循环数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;线程组的循环数用于设置线程组的执行次数，此时的脚本代表1个用户执行3次&lt;code&gt;线程组1&lt;/code&gt;。&lt;/p&gt;
+&lt;h5 id=&#34;修改示例脚本-11&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;禁用&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求1&lt;/font&gt;放在&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求之后请求1&lt;/font&gt;后&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;中的&lt;font style=&#34;background-color: #efef48&#34;&gt;循环数&lt;/font&gt;改为&lt;font style=&#34;background-color: #efef48&#34;&gt;3&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-14&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/12.gif&#34;
 	
 	
@@ -713,14 +803,18 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，1个用户执行&lt;code&gt;线程组1&lt;/code&gt;3次。用户在执行第1次&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，测试计划立即停止测试。&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;1个用户执行&lt;code&gt;线程组1&lt;/code&gt;3次。用户在执行第1次&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，测试计划立即停止测试。&lt;/p&gt;
 &lt;h3 id=&#34;停止线程&#34;&gt;&lt;em&gt;停止线程&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;设置&lt;code&gt;取样器错误后执行的动作&lt;/code&gt;为&lt;code&gt;停止线程&lt;/code&gt;时，当取样器在执行过程中遇到错误时，Jmeter会立即停止当前线程，但不会停止别的线程。&lt;/p&gt;
 &lt;p&gt;这可以防止无效或无用的进一步测试，尤其是在错误可能导致后续操作无效的情况下。通过停止出现错误的线程，可以更准确地模拟用户行为和评估系统性能，因为现实世界中的用户通常在遇到问题时不会继续执行相同或相关的操作。
 此外，停止出现错误的线程有助于简化错误分析，因为只有出现问题的线程会被停止，从而更容易识别和诊断问题。&lt;/p&gt;
-&lt;h4 id=&#34;运行查看结果树-5&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
-&lt;h5 id=&#34;多线程组-2&#34;&gt;&lt;em&gt;多线程组&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;测试计划&lt;/code&gt;中勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;多线程组-2&#34;&gt;&lt;em&gt;多线程组&lt;/em&gt;&lt;/h4&gt;
+&lt;h5 id=&#34;修改示例脚本-12&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-15&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/13.gif&#34;
 	
 	
@@ -729,8 +823,13 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行，在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组1&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，&lt;code&gt;线程组1&lt;/code&gt;线程被停止，接着执行&lt;code&gt;线程组2&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;测试计划&lt;/code&gt;中取消勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组1&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中的用户出现错误请求时，&lt;code&gt;线程组1&lt;/code&gt;的用户线程被停止，接着执行&lt;code&gt;线程组2&lt;/code&gt;。&lt;/p&gt;
+&lt;h5 id=&#34;修改示例脚本-13&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中取消勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-16&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/14.gif&#34;
 	
 	
@@ -739,20 +838,31 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，
-在&lt;code&gt;测试计划&lt;/code&gt;中未勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，因此&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互相干扰且并行执行。当&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，&lt;code&gt;线程组1&lt;/code&gt;停止线程，&lt;code&gt;线程组2&lt;/code&gt;继续执行。&lt;/p&gt;
-&lt;h5 id=&#34;单线程组-2&#34;&gt;&lt;em&gt;单线程组&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;、&lt;code&gt;线程组1&lt;/code&gt;下的&lt;code&gt;错误请求之后请求1&lt;/code&gt;,&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;线程数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;，&lt;code&gt;线程组1&lt;/code&gt;下添加一个&lt;code&gt;用户参数&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;添加步骤：&lt;code&gt;右键线程组-添加-前置处理器-用户参数&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;用户参数&lt;/font&gt;设置：&lt;/p&gt;
-&lt;ul&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中未勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，因此&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互相干扰且并行执行。待&lt;code&gt;线程组1&lt;/code&gt;中的用户出现错误请求时，&lt;code&gt;线程组1&lt;/code&gt;的用户线程被停止，&lt;code&gt;线程组2&lt;/code&gt;继续执行。&lt;/p&gt;
+&lt;h4 id=&#34;单线程组-2&#34;&gt;&lt;em&gt;单线程组&lt;/em&gt;&lt;/h4&gt;
+&lt;h5 id=&#34;修改示例脚本-14&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;添加变量：&lt;/p&gt;
-&lt;p&gt;名称：&lt;code&gt;dy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;禁用&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;下的&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求之后请求1&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;中的&lt;font style=&#34;background-color: #efef48&#34;&gt;线程数&lt;/font&gt;改为&lt;font style=&#34;background-color: #efef48&#34;&gt;3&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;下添加一个&lt;font style=&#34;background-color: #efef48&#34;&gt;用户参数&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;添加步骤：&lt;code&gt;右键线程组-添加-前置处理器-用户参数&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;添加变量，名称：&lt;code&gt;dy&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;添加三个用户值：&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;错误请求1&lt;/code&gt;下响应断言的值,引用用户参数中的变量：&lt;code&gt;${dy}&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求1&lt;/font&gt;下响应断言的值,引用用户参数中的变量：&lt;font style=&#34;background-color: #efef48&#34;&gt;${dy}&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-17&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/15.gif&#34;
 	
 	
@@ -761,31 +871,39 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。三个用户的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致第二个用户执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;每次运行时，三个用户的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致第二个用户执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
 结束该用户线程，未执行&lt;code&gt;未加固定定时器&lt;/code&gt;。其他用户则未发生错误，可以执行&lt;code&gt;未加固定定时器&lt;/code&gt;。因此导致每次会有3个&lt;code&gt;错误请求1&lt;/code&gt;执行、但只有2个&lt;code&gt;未加固定定时器&lt;/code&gt;执行。&lt;/p&gt;
-&lt;div&gt;
-	&lt;hr style=&#34;width: 100%;background: rgb(198 193 193 / 61%)&#34;&gt;
-&lt;/div&gt;
-&lt;p&gt;首先桌面上新建一个dy.txt文件,文件内容为：&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{&amp;quot;code&amp;quot;:200,,
-1111,
-{&amp;quot;code&amp;quot;:200,,
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;示例Jmeter脚本的基础上，禁用&lt;code&gt;线程组2&lt;/code&gt;、&lt;code&gt;线程组1&lt;/code&gt;下的&lt;code&gt;错误请求之后请求1&lt;/code&gt;,&lt;code&gt;线程组1&lt;/code&gt;中的&lt;code&gt;循环数&lt;/code&gt;改为&lt;code&gt;3&lt;/code&gt;，&lt;code&gt;线程组1&lt;/code&gt;下添加一个&lt;code&gt;CSV 数据文件设置&lt;/code&gt;。&lt;/p&gt;
+&lt;h5 id=&#34;修改示例脚本-15&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;桌面上新建一个&lt;font style=&#34;background-color: #efef48&#34;&gt;dy.txt&lt;/font&gt;文件,文本内容为：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;{&amp;quot;code&amp;quot;:200,,&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;1111,&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;{&amp;quot;code&amp;quot;:200,,&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;注意：三个参数不能在一行，每行一个参数。每个参数最后的逗号作用为分隔符。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;禁用&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;下的&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求之后请求1&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;中的&lt;font style=&#34;background-color: #efef48&#34;&gt;循环数&lt;/font&gt;改为&lt;font style=&#34;background-color: #efef48&#34;&gt;3&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;下添加一个&lt;font style=&#34;background-color: #efef48&#34;&gt;CSV 数据文件设置&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;添加步骤：&lt;code&gt;右键线程组-添加-配置元件-CSV Data Set Config&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;CSV 数据文件设置&lt;/font&gt;设置：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
 &lt;p&gt;文件名：&lt;code&gt;dy.txt的路径&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;文件编码：&lt;code&gt;UTF-8&lt;/code&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;变量名称：&lt;code&gt;dy&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;错误请求1&lt;/code&gt;下响应断言的值,引用用户参数中的变量：&lt;code&gt;${dy}&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求1&lt;/font&gt;下响应断言的值,引用用户参数中的变量：&lt;font style=&#34;background-color: #efef48&#34;&gt;${dy}&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h5 id=&#34;运行查看结果树-18&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
 &lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/16.gif&#34;
 	
 	
@@ -794,13 +912,54 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。用户的三次循环的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;CSV 数据文件设置&lt;/code&gt;的&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致用户第二次循环时执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;用户的三次循环的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;CSV 数据文件设置&lt;/code&gt;的&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致用户第二次循环时执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
 结束该用户线程，未执行之后&lt;code&gt;未加固定定时器&lt;/code&gt;和第三次循环。&lt;/p&gt;
 &lt;h3 id=&#34;启动下一进程循环&#34;&gt;&lt;em&gt;启动下一进程循环&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;设置取样器错误后执行的动作为停止线程时，当取样器在执行过程中遇到错误时，Jmeter会立即停止当前线程本次执行进行当前线程的下次执行，主要应用于线程多次循环时。&lt;/p&gt;
+&lt;p&gt;设置取样器错误后执行的动作为&lt;code&gt;停止线程&lt;/code&gt;时，当取样器在执行过程中遇到错误时，Jmeter会立即停止当前线程本次执行进行当前线程的下次执行，主要应用于线程多次循环时。&lt;/p&gt;
 &lt;p&gt;这可以防止无效或无用的进一步测试，尤其是在错误可能导致本次循环后续操作无效的情况下。通过停止出现错误的循环，进行下一次循环，可以更准确地模拟用户行为和评估系统性能，因为现实世界中的用户通常在流程操作中，开始或中间过程遇到问题时不会继续执行后续的操作，会从头开始操作。&lt;/p&gt;
-&lt;h4 id=&#34;修改示例脚本&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h4&gt;
-&lt;h4 id=&#34;运行查看结果树-6&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
+&lt;h4 id=&#34;修改示例脚本-16&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;桌面上新建一个&lt;font style=&#34;background-color: #efef48&#34;&gt;dy.txt&lt;/font&gt;文件,文本内容为：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;{&amp;quot;code&amp;quot;:200,,&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;1111,&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;{&amp;quot;code&amp;quot;:200,,&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;注意：三个参数不能在一行，每行一个参数。每个参数最后的逗号作用为分隔符。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;禁用&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组2&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;下的&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求之后请求1&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;中的&lt;font style=&#34;background-color: #efef48&#34;&gt;循环数&lt;/font&gt;改为&lt;font style=&#34;background-color: #efef48&#34;&gt;3&lt;/font&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;线程组1&lt;/font&gt;下添加一个&lt;font style=&#34;background-color: #efef48&#34;&gt;CSV 数据文件设置&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;添加步骤：&lt;code&gt;右键线程组-添加-配置元件-CSV Data Set Config&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;文件名：&lt;code&gt;dy.txt的路径&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;文件编码：&lt;code&gt;UTF-8&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;变量名称：&lt;code&gt;dy&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;6.&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求1&lt;/font&gt;下响应断言的值,引用用户参数中的变量：&lt;font style=&#34;background-color: #efef48&#34;&gt;${dy}&lt;/font&gt;&lt;/p&gt;
+&lt;h4 id=&#34;运行查看结果树-19&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/17.gif&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
+&lt;p&gt;每次运行时，用户的三次循环的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;CSV 数据文件设置&lt;/code&gt;的&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致用户第二次循环时执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
+该用户线程跳过本次循环，不在执行之后&lt;code&gt;未加固定定时器&lt;/code&gt;，直接进行第三次循环。&lt;/p&gt;
+&lt;h3 id=&#34;继续&#34;&gt;&lt;em&gt;继续&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;设置取样器错误后执行的动作为&lt;code&gt;继续&lt;/code&gt;时，JMeter将在取样器执行错误时，忽略错误继续执行本线程的后续操作及执行其他线程。&lt;/p&gt;
+&lt;p&gt;这种设置通常用于测试过程中，即使某些请求失败，也需要继续执行其他请求，以模拟真实用户的行为。&lt;/p&gt;
 &lt;p&gt;线程组的关键任务之一是定义并发用户的行为，包括设置线程数、循环次数、启动延迟等关键参数。通过适当配置线程组，测试人员可以模拟多用户在系统中同时执行任务的场景，从而评估系统的性能和稳定性。&lt;/p&gt;
 &lt;p&gt;这种独立且隔离的线程执行方式，使得每个线程在执行任务时都保持相对独立，不受其他线程的影响。这是在模拟真实用户行为时非常重要的特性，能够更准确地评估系统在高并发负载下的性能表现。&lt;/p&gt;
 &lt;p&gt;通过灵活使用setup线程组、线程组、tearDown线程组、开放模型线程组，配置前置操作、主要操作、后置操作，更能真实、详细的评估系统。&lt;/p&gt;

@@ -6,7 +6,7 @@
 
 <link rel='canonical' href='https://etherealboyjiang.github.io/Jiang/404.html'>
 
-<link rel="stylesheet" href="/Jiang/scss/style.min.bb220d06cde5d087bf00a7c4ab048a28581bf4e8e3ed0a34da6947dda1f83914.css"><meta property='og:title' content='404 Page not found'>
+<link rel="stylesheet" href="/Jiang/scss/style.min.189d3104f1eaecf0785e379d83b6ff0b6ec3b8865ba9c1e02448e364e5266078.css"><meta property='og:title' content='404 Page not found'>
 <meta property='og:description' content='如梦游，星空下，心中留徜徉。幻境迷离余自遥，逍遥行自由。'>
 <meta property='og:url' content='https://etherealboyjiang.github.io/Jiang/404.html'>
 <meta property='og:site_name' content='EtherealBoyJiang'>
@@ -233,10 +233,43 @@
         2024 EtherealBoyJiang
     </section>
     
+	
+	<section class="running-time">
+		本博客已稳定运行
+		<span id="runningdays" class="running-days"></span>
+	</section>
+	
+	
+	<section class="totalcount">
+		
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+		发表了4篇文章 · 
+		总计1.59k字
+	</section>
+	
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.23.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
+	
+
+
 </footer>
 
 
@@ -259,5 +292,18 @@
     }());
 </script>
 
+<script>
+    let s1 = '2024-1-23'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
+</script>
     </body>
 </html>

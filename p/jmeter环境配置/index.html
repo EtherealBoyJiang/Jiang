@@ -25,7 +25,7 @@ ps：windows11好像不需要输入最后的
 
 <link rel='canonical' href='https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/'>
 
-<link rel="stylesheet" href="/Jiang/scss/style.min.bb220d06cde5d087bf00a7c4ab048a28581bf4e8e3ed0a34da6947dda1f83914.css"><meta property='og:title' content='Jmeter环境配置'>
+<link rel="stylesheet" href="/Jiang/scss/style.min.189d3104f1eaecf0785e379d83b6ff0b6ec3b8865ba9c1e02448e364e5266078.css"><meta property='og:title' content='Jmeter环境配置'>
 <meta property='og:description' content='JMeter 环境安装及配置 在使用 JMeter 之前，需要配置相应的环境，包括安装JDK和JMeter。
 首先，了解一下JDK，它就是Java的开发工具包。
 JMeter 是使用 Java 编写的。一般来说，只需要安装 JRE（Java 运行时环境）就可以运行 JMeter，因为 JRE 包含了运行 Java 应用程序所需的组件。那么为什么建议安装 JDK 呢？
@@ -1272,10 +1272,43 @@ ps：windows11好像不需要输入最后的
         2024 EtherealBoyJiang
     </section>
     
+	
+	<section class="running-time">
+		本博客已稳定运行
+		<span id="runningdays" class="running-days"></span>
+	</section>
+	
+	
+	<section class="totalcount">
+		
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+			
+		
+		发表了4篇文章 · 
+		总计1.59k字
+	</section>
+	
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.23.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
+	
+
+
 </footer>
 
 
@@ -1376,5 +1409,18 @@ ps：windows11好像不需要输入最后的
     }());
 </script>
 
+<script>
+    let s1 = '2024-1-23'; 
+    s1 = new Date(s1.replace(/-/g, "/"));
+    let s2 = new Date();
+    let timeDifference = s2.getTime() - s1.getTime();
+
+    let days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
+    let result = days + "天" + hours + "小时" + minutes + "分钟";
+    document.getElementById('runningdays').innerHTML = result;
+</script>
     </body>
 </html>
