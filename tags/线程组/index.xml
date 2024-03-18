@@ -964,7 +964,7 @@
 &lt;p&gt;这种独立且隔离的线程执行方式，使得每个线程在执行任务时都保持相对独立，不受其他线程的影响。这是在模拟真实用户行为时非常重要的特性，能够更准确地评估系统在高并发负载下的性能表现。&lt;/p&gt;
 &lt;p&gt;通过灵活使用setup线程组、线程组、tearDown线程组、开放模型线程组，配置前置操作、主要操作、后置操作，更能真实、详细的评估系统。&lt;/p&gt;
 &lt;p&gt;总的来说，线程组在JMeter中扮演着至关重要的角色，通过深入理解和合理配置线程组，读者可以更好地模拟实际用户行为，为性能测试提供更准确的结果。&lt;/p&gt;
-</description>
+&lt;script&gt;window.TWIKOO_MAGIC_PATH=&#34;xxx&#34;&lt;/script&gt;</description>
         </item>
         <item>
         <title>Jmeter前言</title>

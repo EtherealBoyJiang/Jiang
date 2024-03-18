@@ -1410,7 +1410,7 @@
 <p>这种独立且隔离的线程执行方式，使得每个线程在执行任务时都保持相对独立，不受其他线程的影响。这是在模拟真实用户行为时非常重要的特性，能够更准确地评估系统在高并发负载下的性能表现。</p>
 <p>通过灵活使用setup线程组、线程组、tearDown线程组、开放模型线程组，配置前置操作、主要操作、后置操作，更能真实、详细的评估系统。</p>
 <p>总的来说，线程组在JMeter中扮演着至关重要的角色，通过深入理解和合理配置线程组，读者可以更好地模拟实际用户行为，为性能测试提供更准确的结果。</p>
-
+<script>window.TWIKOO_MAGIC_PATH="xxx"</script>
 </section>
 
 
@@ -1516,8 +1516,29 @@
 
      
     
+    
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://npm.elemecdn.com/@waline/emojis@1.1.0/bilibili","https://npm.elemecdn.com/@waline/emojis@1.1.0/bmoji","https://npm.elemecdn.com/@waline/emojis@1.1.0/weibo"],"lang":"zh-CN","locale":{"admin":"站长","placeholder":null,"sofa":"还没有人评论哦！快来抢沙发吧~"},"placeholder":"欢迎留下宝贵的评论！","requiredMeta":["name","email","url"],"serverURL":"https://waline-1-b8159938.deta.app/","visitor":false});
+</script>
 
-    <footer class="site-footer">
+	
+
+    <footer class="site-footer">	
     <section class="copyright">
         &copy; 
         
@@ -1530,6 +1551,7 @@
 		<span id="runningdays" class="running-days"></span>
 	</section>
 	
+
 	
 	<section class="totalcount">
 		
@@ -1558,20 +1580,6 @@
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.23.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
-	<div id="tcomment"></div>
-	<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
-	<script>
-	twikoo.init({
-	  envId: 'https://etherealboyjiang-jiang.hf.space', 
-	  el: '#tcomment', 
-	  
-	  
-	  
-	})
-</script>
-
-
-
 </footer>
 
 

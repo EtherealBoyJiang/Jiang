@@ -1091,8 +1091,29 @@ JMeter 可以用于对服务器、网络或对象模拟巨大的负载，来自�
 
      
     
+    
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://npm.elemecdn.com/@waline/emojis@1.1.0/bilibili","https://npm.elemecdn.com/@waline/emojis@1.1.0/bmoji","https://npm.elemecdn.com/@waline/emojis@1.1.0/weibo"],"lang":"zh-CN","locale":{"admin":"站长","placeholder":null,"sofa":"还没有人评论哦！快来抢沙发吧~"},"placeholder":"欢迎留下宝贵的评论！","requiredMeta":["name","email","url"],"serverURL":"https://waline-1-b8159938.deta.app/","visitor":false});
+</script>
 
-    <footer class="site-footer">
+	
+
+    <footer class="site-footer">	
     <section class="copyright">
         &copy; 
         
@@ -1105,6 +1126,7 @@ JMeter 可以用于对服务器、网络或对象模拟巨大的负载，来自�
 		<span id="runningdays" class="running-days"></span>
 	</section>
 	
+
 	
 	<section class="totalcount">
 		
@@ -1133,20 +1155,6 @@ JMeter 可以用于对服务器、网络或对象模拟巨大的负载，来自�
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.23.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
-	<div id="tcomment"></div>
-	<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
-	<script>
-	twikoo.init({
-	  envId: 'https://etherealboyjiang-jiang.hf.space', 
-	  el: '#tcomment', 
-	  
-	  
-	  
-	})
-</script>
-
-
-
 </footer>
 
 

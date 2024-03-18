@@ -284,7 +284,7 @@
         <li><a href="#示例接口代码"><em>示例接口代码：</em></a></li>
         <li><a href="#示例jmeter脚本"><em>示例Jmeter脚本</em></a></li>
         <li><a href="#运行查看结果树"><em>运行，查看结果树</em></a></li>
-        <li><a href="#总结"><em>总结</em></a></li>
+        <li><a href="#结语"><em>结语</em></a></li>
       </ol>
     </li>
     <li><a href="#独立运行每个线程组"><em>独立运行每个线程组</em></a>
@@ -297,7 +297,7 @@
             <li><a href="#勾选独立运行每个线程组运行结果"><em>勾选<code>独立运行每个线程组</code>，运行结果</em></a></li>
           </ol>
         </li>
-        <li><a href="#总结-1"><em>总结</em></a></li>
+        <li><a href="#结语-1"><em>结语</em></a></li>
       </ol>
     </li>
     <li><a href="#主线程结束后运行teardown线程组"><em>主线程结束后运行tearDown线程组</em></a>
@@ -310,12 +310,12 @@
             <li><a href="#勾选主线程结束后运行teardown线程组运行结果"><em>勾选<code>主线程结束后运行tearDown线程组</code>,运行结果</em></a></li>
           </ol>
         </li>
-        <li><a href="#总结-2"><em>总结</em></a></li>
+        <li><a href="#结语-2"><em>结语</em></a></li>
       </ol>
     </li>
     <li><a href="#函数测试模式"><em>函数测试模式</em></a></li>
     <li><a href="#添加目录或jar包到classpath"><em>添加目录或jar包到classpath</em></a></li>
-    <li><a href="#结尾"><em>结尾</em></a></li>
+    <li><a href="#总结"><em>总结</em></a></li>
   </ol>
 </nav>
         </div>
@@ -572,7 +572,7 @@
 	
 	
 ></p>
-<h3 id="总结"><em>总结</em></h3>
+<h3 id="结语"><em>结语</em></h3>
 <p>可以清晰地看出，接口请求参数中调用了<code>用户定义的变量</code>的值:<code>我是用户定义的变量</code>。</p>
 <p>此外，JMeter提供的配置元件中也包含<code>用户定义的变量</code>元件，通过<code>测试计划/线程组/取样器-添加-配置元件-用户定义的变量</code>进行添加。用法与测试计划面板中的<code>用户定义的变量</code>一致，不同之处在于作用域。</p>
 <p>测试计划面板中<code>用户定义的变量</code>具有整个测试计划范围的作用，而配置元件中的<code>用户定义的变量</code>则根据其位置确定作用范围。</p>
@@ -762,7 +762,7 @@
 	
 ></p>
 <p>Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求并非在同一时刻发出。具体而言，HTTP 请求1的请求发出时间是 <code>2024-01-16 11:32:52</code>，而 HTTP 请求2的请求发出时间是 <code>2024-01-16 11:32:55</code>。两者之间的时间差正好为三秒，与接口休眠的三秒相符，这表明两个线程组是顺序执行的。</p>
-<h3 id="总结-1"><em>总结</em></h3>
+<h3 id="结语-1"><em>结语</em></h3>
 <p>当勾选了<code>独立运行每个线程组</code>选项时，能够确保测试计划中的相同类型线程组按照顺序执行。在某些特定的测试情况下，这个选项非常有用。相反，若未勾选 <code>独立运行每个线程组</code>时，线程组是并发执行。</p>
 <p>但线程组中的多个取样器并不会并发，而是在较短时间内发出全部请求，尤其是在取样器数量较多的情况下。</p>
 <p>因此，在模拟高并发时，如果需要多线程组、所有取样器请求并发，建议在测试计划中添加<code>同步定时器（Synchronizing Timer）</code>。</p>
@@ -885,7 +885,7 @@
 	
 ></p>
 <p>即使响应断言判断请求发生错误，因为勾选<code>主线程结束后运行tearDown线程组</code>,线程组被执行后，tearDown 线程组紧接被执行。</p>
-<h3 id="总结-2"><em>总结</em></h3>
+<h3 id="结语-2"><em>结语</em></h3>
 <p>在确保测试环境的可靠性和稳定性方面，通过勾选<code>主线程结束后运行tearDown线程组</code>以及配置线程组中的取样器错误后执行的动作，可以在主线程结束后执行 tearDown 线程组，从而进行一些关键的清理和还原操作。这一设置在测试流程中发生错误或异常情况时，能够确保系统状态的正确还原，为后续测试提供稳定的基础。</p>
 <p>具体而言，主线程结束后执行 tearDown 线程组的步骤可以被理解为测试执行的最后一道关口，确保在测试结束时执行特定的操作。通过配置线程组中的取样器错误后执行的动作，例如<code>停止测试</code>或<code>立即停止测试</code>，可以更加灵活地处理测试中的异常情况。</p>
 <p>这样的设置在以下方面发挥关键作用：</p>
@@ -914,7 +914,7 @@
 <h2 id="添加目录或jar包到classpath"><em>添加目录或jar包到classpath</em></h2>
 <p>添加文件或 JAR 包功能主要用于调用外部的 JAR 包。当脚本需要引用外部的 Java 文件或 JAR 包时，可以通过将 JAR 包的路径添加到此功能中。这样，在 Beanshell 脚本中就可以通过 import 语句导入外部 JAR 包，并直接调用其中的方法。</p>
 <p>在后续的内容中，当涉及到 Beanshell 时，将详细阐述如何使用这一功能。这个特性提供了一种扩展 JMeter 功能的途径，使得用户可以方便地集成和调用外部 Java 类库，从而实现更复杂和灵活的测试脚本。</p>
-<h2 id="结尾"><em>结尾</em></h2>
+<h2 id="总结"><em>总结</em></h2>
 <p>JMeter的测试计划是测试工作的主要组织结构，它定义了测试的执行流程、配置和执行的参数。在测试计划中，包括了多个关键组件，如线程组、tearDown线程组、HTTP取样器、响应断言等，它们构成了一个完整的测试计划。</p>
 <p>当你执行测试时，添加的所有所需组件和元件组成了一个有机整体，即一个完整的测试计划。这个测试计划反映了你对系统性能和功能的验证方式以及测试场景的设计。</p>
 <p>本篇主要探讨了测试计划组件面板中各元素的使用，这包括了配置用户定义的变量、定义并发用户行为的线程组、定义进测试后清理的tearDown线程组，这些元素的组合和配置，直接影响着测试的有效性和准确性。</p>
@@ -1028,8 +1028,29 @@
 
      
     
+    
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+<link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet'/>
+<div id="waline" class="waline-container"></div>
+<style>
+    .waline-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+        --waline-font-size: var(--article-font-size);
+    }
+    .waline-container .wl-count {
+        color: var(--card-text-color-main);
+    }
+</style><script>
+    
+    Waline.init({"dark":"html[data-scheme=\"dark\"]","el":"#waline","emoji":["https://npm.elemecdn.com/@waline/emojis@1.1.0/bilibili","https://npm.elemecdn.com/@waline/emojis@1.1.0/bmoji","https://npm.elemecdn.com/@waline/emojis@1.1.0/weibo"],"lang":"zh-CN","locale":{"admin":"站长","placeholder":null,"sofa":"还没有人评论哦！快来抢沙发吧~"},"placeholder":"欢迎留下宝贵的评论！","requiredMeta":["name","email","url"],"serverURL":"https://waline-1-b8159938.deta.app/","visitor":false});
+</script>
 
-    <footer class="site-footer">
+	
+
+    <footer class="site-footer">	
     <section class="copyright">
         &copy; 
         
@@ -1042,6 +1063,7 @@
 		<span id="runningdays" class="running-days"></span>
 	</section>
 	
+
 	
 	<section class="totalcount">
 		
@@ -1070,20 +1092,6 @@
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         主题 <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.23.0">Stack</a></b> 由 <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> 设计
     </section>
-	<div id="tcomment"></div>
-	<script src="https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js"></script>
-	<script>
-	twikoo.init({
-	  envId: 'https://etherealboyjiang-jiang.hf.space', 
-	  el: '#tcomment', 
-	  
-	  
-	  
-	})
-</script>
-
-
-
 </footer>
 
 
