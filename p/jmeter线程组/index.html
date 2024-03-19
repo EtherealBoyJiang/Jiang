@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/Jiang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Jiang/livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='线程组 线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。
 线程组分为四类:
 线程组 setUp线程组 tearDown线程组 开放模型线程组 线程组、setUp线程组、tearDown线程组控制面板中的元素基本一致：
@@ -8,10 +8,10 @@
 名称、注释 在取样器错误后执行的动作 调度计划 随机种子 执行顺序 在JMeter中，setUp线程组拥有最高的优先级，而tearDown线程组则具有最低的优先级。这一优先级关系可用表达式表示为：setUp线程组 &amp;gt; 线程组 = 开放模型线程组 &amp;gt; tearDown线程组。
 这意味着在测试计划执行过程中，setUp线程组将首先执行，其后是线程组和开放模型线程组，最后执行tearDown线程组。通常情况下，setUp线程组用于在测试执行之前进行一些初始化工作，而tearDown线程组用于测试执行结束后的清理工作。其他线程组在测试执行过程中按照它们在测试计划中的顺序执行。
 这种优先级的设定确保了在测试的前后可以进行一些全局性的准备和清理工作，以确保测试环境的稳定性和一致性。这种有序的执行流程使得在性能测试中能够更灵活地控制测试场景，并确保测试的准确性和可重复性。
-示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/TestPlan2/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def testplan2(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;GET&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!'>
+示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/ThreadGroup/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def threadgroup(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;POST&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!'>
 <meta name="keywords" content="Jmeter"><title>Jmeter线程组</title>
 
-<link rel='canonical' href='https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/'>
+<link rel='canonical' href='http://localhost:1313/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/'>
 
 <link rel="stylesheet" href="/Jiang/scss/style.min.189d3104f1eaecf0785e379d83b6ff0b6ec3b8865ba9c1e02448e364e5266078.css"><meta property='og:title' content='Jmeter线程组'>
 <meta property='og:description' content='线程组 线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。
@@ -21,10 +21,10 @@
 名称、注释 在取样器错误后执行的动作 调度计划 随机种子 执行顺序 在JMeter中，setUp线程组拥有最高的优先级，而tearDown线程组则具有最低的优先级。这一优先级关系可用表达式表示为：setUp线程组 &amp;gt; 线程组 = 开放模型线程组 &amp;gt; tearDown线程组。
 这意味着在测试计划执行过程中，setUp线程组将首先执行，其后是线程组和开放模型线程组，最后执行tearDown线程组。通常情况下，setUp线程组用于在测试执行之前进行一些初始化工作，而tearDown线程组用于测试执行结束后的清理工作。其他线程组在测试执行过程中按照它们在测试计划中的顺序执行。
 这种优先级的设定确保了在测试的前后可以进行一些全局性的准备和清理工作，以确保测试环境的稳定性和一致性。这种有序的执行流程使得在性能测试中能够更灵活地控制测试场景，并确保测试的准确性和可重复性。
-示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/TestPlan2/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def testplan2(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;GET&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!'>
-<meta property='og:url' content='https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/'>
+示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/ThreadGroup/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def threadgroup(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;POST&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!'>
+<meta property='og:url' content='http://localhost:1313/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/'>
 <meta property='og:site_name' content='EtherealBoyJiang'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Jmeter' /><meta property='article:tag' content='线程组' /><meta property='article:published_time' content='2024-01-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-01-26T00:00:00&#43;00:00'/><meta property='og:image' content='https://etherealboyjiang.github.io/Jiang/img/Jmeter/0.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Jmeter' /><meta property='article:tag' content='线程组' /><meta property='article:published_time' content='2024-01-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-01-26T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/Jiang/img/Jmeter/0.png' />
 <meta name="twitter:title" content="Jmeter线程组">
 <meta name="twitter:description" content="线程组 线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。
 线程组分为四类:
@@ -33,8 +33,8 @@
 名称、注释 在取样器错误后执行的动作 调度计划 随机种子 执行顺序 在JMeter中，setUp线程组拥有最高的优先级，而tearDown线程组则具有最低的优先级。这一优先级关系可用表达式表示为：setUp线程组 &amp;gt; 线程组 = 开放模型线程组 &amp;gt; tearDown线程组。
 这意味着在测试计划执行过程中，setUp线程组将首先执行，其后是线程组和开放模型线程组，最后执行tearDown线程组。通常情况下，setUp线程组用于在测试执行之前进行一些初始化工作，而tearDown线程组用于测试执行结束后的清理工作。其他线程组在测试执行过程中按照它们在测试计划中的顺序执行。
 这种优先级的设定确保了在测试的前后可以进行一些全局性的准备和清理工作，以确保测试环境的稳定性和一致性。这种有序的执行流程使得在性能测试中能够更灵活地控制测试场景，并确保测试的准确性和可重复性。
-示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/TestPlan2/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def testplan2(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;GET&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://etherealboyjiang.github.io/Jiang/img/Jmeter/0.png' />
+示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/ThreadGroup/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def threadgroup(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;POST&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='http://localhost:1313/Jiang/img/Jmeter/0.png' />
     </head>
     <body class="
     article-page
@@ -369,9 +369,33 @@
             <li><a href="#运行查看结果树-19"><em>运行，查看结果树</em></a></li>
           </ol>
         </li>
-        <li><a href="#继续"><em>继续</em></a></li>
+        <li><a href="#继续"><em>继续</em></a>
+          <ol>
+            <li><a href="#运行查看结果树-20"><em>运行，查看结果树</em></a></li>
+          </ol>
+        </li>
+        <li><a href="#结语-3"><em>结语</em></a></li>
       </ol>
     </li>
+    <li><a href="#ramp-up时间"><em>ramp-up时间</em></a>
+      <ol>
+        <li><a href="#示例接口代码-4"><em>示例接口代码</em></a></li>
+        <li><a href="#示例jmeter脚本-4"><em>示例Jmeter脚本</em></a></li>
+        <li><a href="#运行查看结果树-21"><em>运行，查看结果树</em></a></li>
+      </ol>
+    </li>
+    <li><a href="#same-user-on-each-iteration在每次迭代中使用相同的用户"><em>same user on each iteration（在每次迭代中使用相同的用户）</em></a></li>
+    <li><a href="#延迟创建线程直到需要"><em>延迟创建线程直到需要</em></a></li>
+    <li><a href="#调度器"><em>调度器</em></a>
+      <ol>
+        <li><a href="#示例接口代码-5"><em>示例接口代码</em></a></li>
+        <li><a href="#示例jmeter脚本-5"><em>示例Jmeter脚本</em></a></li>
+        <li><a href="#运行查看结果树-22"><em>运行，查看结果树</em></a></li>
+        <li><a href="#修改示例脚本-17"><em>修改示例脚本</em></a></li>
+        <li><a href="#运行查看结果树-23"><em>运行，查看结果树</em></a></li>
+      </ol>
+    </li>
+    <li><a href="#结语-4"><em>结语</em></a></li>
   </ol>
 </nav>
         </div>
@@ -444,7 +468,7 @@
 
 
                 <time class="article-time--reading">
-                    阅读时长: 4 分钟
+                    阅读时长: 5 分钟
                 </time>
             </div>
         
@@ -504,10 +528,10 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@api.route</span><span class="p">(</span><span class="s1">&#39;/TestPlan2/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
-</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">testplan2</span><span class="p">():</span>
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@api.route</span><span class="p">(</span><span class="s1">&#39;/ThreadGroup/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">threadgroup</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">    <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39; 请求方式错误！&#39;</span><span class="p">})</span>
 </span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">get_json</span><span class="p">()</span>
 </span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="s2">&#34;ThreadGroupName&#34;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span>
@@ -1406,11 +1430,233 @@
 <h3 id="继续"><em>继续</em></h3>
 <p>设置取样器错误后执行的动作为<code>继续</code>时，JMeter将在取样器执行错误时，忽略错误继续执行本线程的后续操作及执行其他线程。</p>
 <p>这种设置通常用于测试过程中，即使某些请求失败，也需要继续执行其他请求，以模拟真实用户的行为。</p>
+<h4 id="运行查看结果树-20"><em>运行，查看结果树</em></h4>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/18.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>每次运行时，虽然<code>错误请求1</code>取样器发生错误，但还是执行<code>线程组1</code>中后续的请求及<code>线程组2</code>。</p>
+<h3 id="结语-3"><em>结语</em></h3>
+<p>在 JMeter 中，<code>取样器错误后执行的动作</code>提供了多种错误处理方式，可以根据不同的测试需求和场景来选择适当的处理方式。作为用户，在进行测试之前，必须仔细思考并制定可行的测试方案，以合理地运用这些错误处理方式。</p>
+<p>首先，了解应用程序的预期行为以及可能出现的错误情况是至关重要的。这有助于确定何时以及如何使用错误处理方式。例如，在模拟高负载时，可能会出现服务器超载或数据库连接超时等问题。为了使测试更加真实，可以选择在发生这些错误时重试请求，或者暂时停止并记录错误以便进一步分析。</p>
+<p>其次，考虑到测试的目标和性质。如果是性能测试，可能更关注系统的稳定性和吞吐量。在这种情况下，可能会选择忽略某些错误，继续进行测试以观察系统的性能表现。但是，如果是功能测试，那么对错误的处理可能会更为严格，以确保系统在各种情况下都能正确运行。</p>
+<p>最后，在选择错误处理方式时，还需考虑测试环境和资源的限制。例如，在模拟大量用户的情况下，频繁的重试可能会对系统产生额外的负担，导致测试结果不准确。因此，需要权衡利弊，并选择最适合当前情况的处理方式。</p>
+<p>作为用户，在测试之前应该仔细思考，并根据测试需求和场景制定合适的测试方案，以合理地运用 JMeter 中提供的错误处理方式。这样可以确保测试结果的准确性和可靠性，从而更好地评估应用程序的性能和功能。</p>
+<h2 id="ramp-up时间"><em>ramp-up时间</em></h2>
+<p>ramp-up时间用于设置启动所有线程所需要的时间。例如：线程数设置为10，ramp-up时间设置为100秒，那么JMeter将使用100秒使10个用户启动并运行，每个用户将在前一个用户启动后的10秒启动。</p>
+<p>如果ramp-up值设置得很小、线程数又设置得很大，刚开始执行测试时会对服务器产生很大的压力。</p>
+<h3 id="示例接口代码-4"><em>示例接口代码</em></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@api.route</span><span class="p">(</span><span class="s1">&#39;/QuickUse/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">quickuse</span><span class="p">():</span>  <span class="c1"># Jmeter教程快速开始api</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR: The request method is not GET!&#39;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;It is successful!&#39;</span><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例jmeter脚本-4"><em>示例Jmeter脚本</em></h3>
+<ol>
+<li>
+<p>在<font style="background-color: #efef48">测试计划</font>下，添加1个<font style="background-color: #efef48">线程组</font></p>
+<p>线程数：<code>3</code></p>
+<p>ramp-up时间：<code>30</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">线程组</font>下，添加<font style="background-color: #efef48">HTTP请求取样器</font></p>
+<p>请求地址：<code>HTTP://127.0.0.1:5000/QuickUse/</code></p>
+<p>请求方式：<code>GET</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">测试计划</font>中，添加<font style="background-color: #efef48">查看结果树</font></p>
+</li>
+</ol>
+<h3 id="运行查看结果树-21"><em>运行，查看结果树</em></h3>
+
+
+
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+
+	}
+	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>用户1-1的取样器结果</span></div>
+	<div class="sampler-h">
+			<span>Thread Name:线程组 1-1<br>Sample Start:<font style="background-color: #ec5350; color: black;">2024-03-18 17:55:11 CST</font><br>Load time:3<br>Connect Time:1<br>Latency:2</span>
+	</div>
+</div>
+<div><br></div>
+
+
+
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+
+	}
+	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>用户1-2的取样器结果</span></div>
+	<div class="sampler-h">
+			<span>Thread Name:线程组 1-2<br>Sample Start:<font style="background-color: #ec5350; color: black;">2024-03-18 17:55:21 CST</font><br>Load time:7<br>Connect Time:2<br>Latency:6</span>
+	</div>
+</div>
+<div><br></div>
+
+
+
+<style>
+	.sampler {
+		display: grid; 
+		padding: 15px; 
+		background-color: #f8f8f8; 
+		border: 1px solid #ccc; 
+		border-radius: 10px; 
+		margin-bottom: 0; width: 99%;
+	}
+	.sampler-h {
+		border-top: 1px solid #b5b1b185;
+		padding: 3% 0;
+
+	}
+	
+	.sampler-h span {
+		margin-left: 15%;
+		display: inline-block;  
+	}	
+
+</style>
+<div class="sampler">
+	<div style="text-align: center;"><span>用户1-3的取样器结果</span></div>
+	<div class="sampler-h">
+			<span>Thread Name:线程组 1-3<br>Sample Start:<font style="background-color: #ec5350; color: black;">2024-03-18 17:55:31 CST</font><br>Load time:4<br>Connect Time:1<br>Latency:4</span>
+	</div>
+</div>
+<p>连续运行了3次，结果一致且与预期一致。每个用户的请求时间间隔10秒。</p>
+<h2 id="same-user-on-each-iteration在每次迭代中使用相同的用户"><em>same user on each iteration（在每次迭代中使用相同的用户）</em></h2>
+<p>没有研究出来它有什么用。经过我的测试，<code>same user on each iteration（在每次迭代中使用相同的用户）</code>启用与否，作用是一样的。</p>
+<p>如读者对此有不同见解，欢迎与我联系，共同探讨。目前，我对此十分费解。</p>
+<h2 id="延迟创建线程直到需要"><em>延迟创建线程直到需要</em></h2>
+<p>当在JMeter中启用<code>延迟创建线程直到需要</code>时，JMeter会根据预设的<code>Ramp-up时间</code>动态地分配线程。假设<code>Ramp-up时间</code>设置为20秒，<code>线程数</code>为10，那么JMeter会在测试启动后立即创建第一个线程并开始请求处理。随后，每隔2秒，JMeter将创建下一个线程，直到所有线程都被启动。</p>
+<p>如果关闭“延迟创建线程直到需要”选项，JMeter会在测试开始时一次性创建所有线程。使用同样的参数，即在测试一开始，JMeter会立即创建全部的10个线程。这些线程会按照设定的“Ramp-up时间”进行执行，每个线程将间隔2秒启动。</p>
+<p><code>延迟创建线程直到需要</code>这一配置的目的是为了应对测试机性能有限的情况。通过这种方式，可以避免在测试初期就创建所有线程，导致资源过度占用和可能的性能问题。这种方法有助于平滑地增加系统负载，同时防止资源瞬间紧张导致测试无法正常进行。</p>
+<h2 id="调度器"><em>调度器</em></h2>
+<p><code>调度器</code>主要控制线程操作时间。启用<code>调度器</code>后，可以输入<code>持续时间</code>，<code>启动延迟</code>来控制线程组的操作时间及线程组操作前的延迟时间。</p>
+<p>同时输入<code>持续时间</code>，<code>启动延迟</code>时，先计算<code>启动延迟</code>，再计算<code>持续时间</code>。</p>
+<h3 id="示例接口代码-5"><em>示例接口代码</em></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@api.route</span><span class="p">(</span><span class="s1">&#39;/QuickUse/&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">quickuse</span><span class="p">():</span>  <span class="c1"># Jmeter教程快速开始api</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">!=</span> <span class="s1">&#39;GET&#39;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">400</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;ERROR: The request method is not GET!&#39;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;code&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;It is successful!&#39;</span><span class="p">})</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="示例jmeter脚本-5"><em>示例Jmeter脚本</em></h3>
+<ol>
+<li>
+<p>在<font style="background-color: #efef48">测试计划</font>下，添加1个<font style="background-color: #efef48">线程组</font></p>
+<p>启用<code>调度器</code></p>
+<p><code>启动延迟</code>：<code>3</code></p>
+<p><code>持续时间</code>：<code>2</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">线程组</font>下，添加2个<font style="background-color: #efef48">HTTP请求取样器</font></p>
+<p>名称分别为：<code>请求1</code>、<code>请求2</code></p>
+<p>请求地址：<code>HTTP://127.0.0.1:5000/QuickUse/</code></p>
+<p>请求方式：<code>GET</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">请求2</font>中，添加<font style="background-color: #efef48">固定定时器</font></p>
+<p>线程延迟（毫秒）：<code>3000</code></p>
+</li>
+<li>
+<p>在<font style="background-color: #efef48">测试计划</font>中，添加<font style="background-color: #efef48">查看结果树</font></p>
+</li>
+</ol>
+<h3 id="运行查看结果树-22"><em>运行，查看结果树</em></h3>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/19.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>每次运行时，Jmeter都会延迟<code>3</code>秒（看右上角）,然后再执行<code>线程组</code>值。由于<code>持续时间</code>设置的是<code>2</code>秒，<code>线程组</code>只会持续执行<code>2</code>秒，而固定定时器的延迟是<code>3</code>，所以不会执行<code>请求2</code>。</p>
+<h3 id="修改示例脚本-17"><em>修改示例脚本</em></h3>
+<ol>
+<li>禁用<font style="background-color: #efef48">请求2</font>中的<font style="background-color: #efef48">固定定时器</font></li>
+</ol>
+<h3 id="运行查看结果树-23"><em>运行，查看结果树</em></h3>
+<p><img src="/Jiang/img/Jmeter/ThreadGroup/20.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。</p>
+<p>每次运行时，Jmeter都会延迟<code>3</code>秒（看右上角）,然后再执行<code>线程组</code>值。虽然<code>持续时间</code>设置的是<code>2</code>秒，<code>线程组</code>只会持续执行<code>2</code>秒，但没有了固定定时器的延迟，也会执行<code>请求2</code>。</p>
+<h2 id="结语-4"><em>结语</em></h2>
 <p>线程组的关键任务之一是定义并发用户的行为，包括设置线程数、循环次数、启动延迟等关键参数。通过适当配置线程组，测试人员可以模拟多用户在系统中同时执行任务的场景，从而评估系统的性能和稳定性。</p>
-<p>这种独立且隔离的线程执行方式，使得每个线程在执行任务时都保持相对独立，不受其他线程的影响。这是在模拟真实用户行为时非常重要的特性，能够更准确地评估系统在高并发负载下的性能表现。</p>
 <p>通过灵活使用setup线程组、线程组、tearDown线程组、开放模型线程组，配置前置操作、主要操作、后置操作，更能真实、详细的评估系统。</p>
-<p>总的来说，线程组在JMeter中扮演着至关重要的角色，通过深入理解和合理配置线程组，读者可以更好地模拟实际用户行为，为性能测试提供更准确的结果。</p>
-<script>window.TWIKOO_MAGIC_PATH="xxx"</script>
+<p>线程组在JMeter中扮演着至关重要的角色，通过深入理解和合理配置线程组，读者可以更好地模拟实际用户行为，为性能测试提供更准确的结果。</p>
+
 </section>
 
 
@@ -1573,7 +1819,7 @@
 			
 		
 		发表了4篇文章 · 
-		总计1.59k字
+		总计1.70k字
 	</section>
 	
     <section class="powerby">

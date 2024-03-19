@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>测试 on EtherealBoyJiang</title>
-        <link>https://etherealboyjiang.github.io/Jiang/tags/%E6%B5%8B%E8%AF%95/</link>
+        <link>http://localhost:1313/Jiang/tags/%E6%B5%8B%E8%AF%95/</link>
         <description>Recent content in 测试 on EtherealBoyJiang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>EtherealBoyJiang</copyright>
-        <lastBuildDate>Fri, 26 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://etherealboyjiang.github.io/Jiang/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 26 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/Jiang/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Jmeter测试计划</title>
-        <link>https://etherealboyjiang.github.io/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/</link>
+        <link>http://localhost:1313/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/</link>
         <pubDate>Fri, 26 Jan 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://etherealboyjiang.github.io/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/</guid>
-        <description>&lt;img src="https://etherealboyjiang.github.io/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter测试计划" /&gt;&lt;h1 id=&#34;测试计划&#34;&gt;&lt;em&gt;测试计划&lt;/em&gt;&lt;/h1&gt;
+        <guid>http://localhost:1313/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/</guid>
+        <description>&lt;img src="http://localhost:1313/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter测试计划" /&gt;&lt;h1 id=&#34;测试计划&#34;&gt;&lt;em&gt;测试计划&lt;/em&gt;&lt;/h1&gt;
 &lt;p&gt;可以将测试计划可视化为用于运行测试的JMeter脚本。测试计划由测试元素组成，例如线程组，逻辑控制器，样本生成控制器，监听器，定时器，断言和配置元素。 每个测试计划中至少应有一个线程组。 我们可以根据要求添加或删除元素。 前言中的快速开始就是一个测试计划。&lt;/p&gt;
 &lt;p&gt;测试计划控制面板中的元素：&lt;/p&gt;
 &lt;ul&gt;
@@ -92,7 +92,7 @@
 &lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;下添加&lt;font style=&#34;background-color: #efef48&#34;&gt;查看结果树&lt;/font&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/TestPlan/0.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/0.gif&#34;
 	
 	
 	
@@ -174,7 +174,7 @@
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34;
 	
 	
 	
@@ -292,7 +292,7 @@
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34;
 	
 	
 	
@@ -363,7 +363,7 @@
 			&lt;span&gt;hread Name:线程组2 2-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-01-16 11:32:55 CST&lt;/font&gt;&lt;br&gt;Load time:3003&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3003&lt;br&gt;Size in bytes:231&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:66&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34;
 	
 	
 	
@@ -464,7 +464,7 @@
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34;
 	
 	
 	
@@ -475,7 +475,7 @@
 &lt;p&gt;因为不勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;，而且响应体&lt;code&gt;{&amp;quot;code&amp;quot;: 200,&amp;quot;data&amp;quot;: &amp;quot;处理完毕&amp;quot;}&lt;/code&gt;与断言&lt;code&gt;1111&lt;/code&gt;无法匹配，响应断言判断该取样器请求发生错误，所以只有线程组被执行完毕后，而 tearDown 线程组并未被执行。&lt;/p&gt;
 &lt;p&gt;此时，修改响应断言为：&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;再运行。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/TestPlan/5.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/5.gif&#34;
 	
 	
 	
@@ -486,7 +486,7 @@
 &lt;p&gt;即使不勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;，因为响应体&lt;code&gt;{&amp;quot;code&amp;quot;: 200,&amp;quot;data&amp;quot;: &amp;quot;处理完毕&amp;quot;}&lt;/code&gt;与断言&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;匹配，响应断言判断该取样器请求正常，所以线程组被执行完毕后，执行 tearDown 线程组。&lt;/p&gt;
 &lt;h4 id=&#34;勾选主线程结束后运行teardown线程组运行结果&#34;&gt;&lt;em&gt;勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;,运行结果&lt;/em&gt;&lt;/h4&gt;
 &lt;p&gt;响应断言改回为：&lt;code&gt;1111&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/TestPlan/6.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/6.gif&#34;
 	
 	
 	
@@ -534,11 +534,11 @@
         </item>
         <item>
         <title>Jmeter环境配置</title>
-        <link>https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+        <link>http://localhost:1313/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
         <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
-        <description>&lt;img src="https://etherealboyjiang.github.io/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter环境配置" /&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+        <guid>http://localhost:1313/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+        <description>&lt;img src="http://localhost:1313/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter环境配置" /&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h1 id=&#34;jmeter-环境安装及配置&#34;&gt;JMeter 环境安装及配置&lt;/h1&gt;
 &lt;p&gt;在使用 JMeter 之前，需要配置相应的环境，包括安装JDK和JMeter。&lt;/p&gt;
 &lt;p&gt;首先，了解一下JDK，它就是Java的开发工具包。&lt;/p&gt;
@@ -694,7 +694,7 @@
 
 &lt;br&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/1.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/1.png&#34;
 	
 	
 	
@@ -705,7 +705,7 @@
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;2安装jdk&#34;&gt;&lt;em&gt;2.安装JDK&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;建议在安装之前在&lt;code&gt;D盘或C盘&lt;/code&gt;下新建一个下新建一个&lt;code&gt;Tools&lt;/code&gt; 文件夹。在安装 JDK 时，修改安装目录为&lt;code&gt;Tools&lt;/code&gt;文件夹。这样做的好处在于方便管理和配置环境变量。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/2.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/2.png&#34;
 	
 	
 	
@@ -713,7 +713,7 @@
 	
 	
 &gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/3.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/3.png&#34;
 	
 	
 	
@@ -759,7 +759,7 @@
 &lt;p&gt;变量名：&lt;code&gt;JDK&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;变量值：&lt;code&gt;C:\Tools\JDK&lt;/code&gt;（JDK安装目录）  或者浏览目录进行选择（Windows11）&lt;/p&gt;
 &lt;p&gt;然后确定。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/4.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/4.png&#34;
 	
 	
 	
@@ -774,7 +774,7 @@
 &lt;p&gt;第二条：&lt;code&gt;%JAVA_HOME%\jre\bin;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;ps：windows11好像不需要输入最后的&lt;/p&gt;
 &lt;p&gt;然后一路确定。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/5.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/5.png&#34;
 	
 	
 	
@@ -933,7 +933,7 @@
 
 &lt;br&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/6.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/6.png&#34;
 	
 	
 	
@@ -1087,7 +1087,7 @@
 
 &lt;br&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/7.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/7.png&#34;
 	
 	
 	
@@ -1098,7 +1098,7 @@
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;解压到目录&#34;&gt;&lt;em&gt;解压到目录&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;建议解压到D:\Tools目录下,方便管理。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/8.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/8.png&#34;
 	
 	
 	
@@ -1109,7 +1109,7 @@
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;汉化jmeter界面&#34;&gt;&lt;em&gt;汉化Jmeter界面&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;修改Jmeter/bin/jmeter.properties，40行增加&lt;code&gt;language=zh_CN&lt;/code&gt;。然后保存。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/9.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/9.png&#34;
 	
 	
 	
@@ -1119,7 +1119,7 @@
 &gt;&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;发送启动文件到桌面快捷方式&#34;&gt;&lt;em&gt;发送启动文件到桌面快捷方式&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/10.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/10.png&#34;
 	
 	
 	
@@ -1130,7 +1130,7 @@
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;启动jmeter&#34;&gt;&lt;em&gt;启动Jmeter&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;双击桌面上的 JMeter 快捷方式，等待脚本运行，然后 JMeter 界面将会显示出来。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/11.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/11.png&#34;
 	
 	
 	
@@ -1179,7 +1179,7 @@
 &lt;p&gt;请求方式：&lt;code&gt;GET&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/12.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/12.png&#34;
 	
 	
 	
@@ -1262,7 +1262,7 @@
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;https://etherealboyjiang.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/1.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/1.gif&#34;
 	
 	
 	
