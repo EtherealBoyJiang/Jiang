@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Pages on EtherealBoyJiang</title>
-        <link>http://localhost:1313/Jiang/page/</link>
+        <link>https://etherealboyjiang.github.io/Jiang/page/</link>
         <description>Recent content in Pages on EtherealBoyJiang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>EtherealBoyJiang</copyright>
-        <lastBuildDate>Mon, 23 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/Jiang/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 23 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://etherealboyjiang.github.io/Jiang/page/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>关于</title>
-        <link>http://localhost:1313/Jiang/%E5%85%B3%E4%BA%8E/</link>
+        <link>https://etherealboyjiang.github.io/Jiang/%E5%85%B3%E4%BA%8E/</link>
         <pubDate>Mon, 23 Jan 2023 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/Jiang/%E5%85%B3%E4%BA%8E/</guid>
+        <guid>https://etherealboyjiang.github.io/Jiang/%E5%85%B3%E4%BA%8E/</guid>
         <description>&lt;h2 id=&#34;关于我&#34;&gt;关于我&lt;/h2&gt;
 &lt;p&gt;一个热爱分享的人，你可以叫我Jiang或者Ethereal Boy Jiang。&lt;/p&gt;
 &lt;p&gt;我从事软件测试工程师行业，目前任职于锐菲网络。这是一家氛围很好的公司。&lt;/p&gt;
@@ -29,26 +29,26 @@
         </item>
         <item>
         <title>归档</title>
-        <link>http://localhost:1313/Jiang/archives/</link>
+        <link>https://etherealboyjiang.github.io/Jiang/archives/</link>
         <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/Jiang/archives/</guid>
+        <guid>https://etherealboyjiang.github.io/Jiang/archives/</guid>
         <description></description>
         </item>
         <item>
         <title>搜索</title>
-        <link>http://localhost:1313/Jiang/search/</link>
+        <link>https://etherealboyjiang.github.io/Jiang/search/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/Jiang/search/</guid>
+        <guid>https://etherealboyjiang.github.io/Jiang/search/</guid>
         <description></description>
         </item>
         <item>
         <title>友链</title>
-        <link>http://localhost:1313/Jiang/%E5%8F%8B%E9%93%BE/</link>
+        <link>https://etherealboyjiang.github.io/Jiang/%E5%8F%8B%E9%93%BE/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
-        <guid>http://localhost:1313/Jiang/%E5%8F%8B%E9%93%BE/</guid>
+        <guid>https://etherealboyjiang.github.io/Jiang/%E5%8F%8B%E9%93%BE/</guid>
         <description></description>
         </item>
         
