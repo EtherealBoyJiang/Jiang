@@ -35,7 +35,7 @@
 这种优先级的设定确保了在测试的前后可以进行一些全局性的准备和清理工作，以确保测试环境的稳定性和一致性。这种有序的执行流程使得在性能测试中能够更灵活地控制测试场景，并确保测试的准确性和可重复性。
 示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/ThreadGroup/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def threadgroup(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;POST&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png' />
-    <link rel="shortcut icon" href="static/favicon.ico" />
+    <link rel="shortcut icon" href="https://thelonelypatient.github.io/Jiang/favicon.ico" />
 
     </head>
     <body class="
