@@ -11,7 +11,7 @@
 示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/ThreadGroup/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def threadgroup(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;POST&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!'>
 <meta name="keywords" content="Jmeter"><title>Jmeter线程组</title>
 
-<link rel='canonical' href='https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/'>
+<link rel='canonical' href='https://thelonelypatient.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/'>
 
 <link rel="stylesheet" href="/Jiang/scss/style.min.189d3104f1eaecf0785e379d83b6ff0b6ec3b8865ba9c1e02448e364e5266078.css"><meta property='og:title' content='Jmeter线程组'>
 <meta property='og:description' content='线程组 线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。
@@ -22,9 +22,9 @@
 这意味着在测试计划执行过程中，setUp线程组将首先执行，其后是线程组和开放模型线程组，最后执行tearDown线程组。通常情况下，setUp线程组用于在测试执行之前进行一些初始化工作，而tearDown线程组用于测试执行结束后的清理工作。其他线程组在测试执行过程中按照它们在测试计划中的顺序执行。
 这种优先级的设定确保了在测试的前后可以进行一些全局性的准备和清理工作，以确保测试环境的稳定性和一致性。这种有序的执行流程使得在性能测试中能够更灵活地控制测试场景，并确保测试的准确性和可重复性。
 示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/ThreadGroup/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def threadgroup(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;POST&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!'>
-<meta property='og:url' content='https://etherealboyjiang.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/'>
+<meta property='og:url' content='https://thelonelypatient.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/'>
 <meta property='og:site_name' content='EtherealBoyJiang'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Jmeter' /><meta property='article:tag' content='线程组' /><meta property='article:published_time' content='2024-03-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-03-19T00:00:00&#43;00:00'/><meta property='og:image' content='https://etherealboyjiang.github.io/Jiang/img/Jmeter/0.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Jmeter' /><meta property='article:tag' content='线程组' /><meta property='article:published_time' content='2024-03-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-03-19T00:00:00&#43;00:00'/><meta property='og:image' content='https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png' />
 <meta name="twitter:title" content="Jmeter线程组">
 <meta name="twitter:description" content="线程组 线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。
 线程组分为四类:
@@ -34,7 +34,7 @@
 这意味着在测试计划执行过程中，setUp线程组将首先执行，其后是线程组和开放模型线程组，最后执行tearDown线程组。通常情况下，setUp线程组用于在测试执行之前进行一些初始化工作，而tearDown线程组用于测试执行结束后的清理工作。其他线程组在测试执行过程中按照它们在测试计划中的顺序执行。
 这种优先级的设定确保了在测试的前后可以进行一些全局性的准备和清理工作，以确保测试环境的稳定性和一致性。这种有序的执行流程使得在性能测试中能够更灵活地控制测试场景，并确保测试的准确性和可重复性。
 示例接口代码 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/ThreadGroup/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def threadgroup(): sleep(3) # 接口设置了休眠三秒，即接口在接收到请求数据三秒后，返回响应数据。 if request.method != &amp;#39;POST&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39; 请求方式错误！&amp;#39;}) data = request.get_json() if &amp;#34;ThreadGroupName&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;请求参数错误!"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://etherealboyjiang.github.io/Jiang/img/Jmeter/0.png' />
+    <meta name="twitter:image" content='https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png' />
     </head>
     <body class="
     article-page
