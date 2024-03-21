@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Categories on EtherealBoyJiang</title>
-        <link>https://thelonelypatient.github.io/Jiang/categories/</link>
+        <link>http://localhost:1313/Jiang/categories/</link>
         <description>Recent content in Categories on EtherealBoyJiang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>EtherealBoyJiang</copyright>
-        <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://thelonelypatient.github.io/Jiang/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/Jiang/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Jmeter</title>
-        <link>https://thelonelypatient.github.io/Jiang/categories/jmeter/</link>
+        <link>http://localhost:1313/Jiang/categories/jmeter/</link>
         <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://thelonelypatient.github.io/Jiang/categories/jmeter/</guid>
-        <description>&lt;img src="https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter" /&gt;</description>
+        <guid>http://localhost:1313/Jiang/categories/jmeter/</guid>
+        <description>&lt;img src="http://localhost:1313/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter" /&gt;</description>
         </item>
         
     </channel>

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>取样器 on EtherealBoyJiang</title>
-        <link>https://thelonelypatient.github.io/Jiang/tags/%E5%8F%96%E6%A0%B7%E5%99%A8/</link>
+        <link>http://localhost:1313/Jiang/tags/%E5%8F%96%E6%A0%B7%E5%99%A8/</link>
         <description>Recent content in 取样器 on EtherealBoyJiang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>EtherealBoyJiang</copyright>
-        <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://thelonelypatient.github.io/Jiang/tags/%E5%8F%96%E6%A0%B7%E5%99%A8/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/Jiang/tags/%E5%8F%96%E6%A0%B7%E5%99%A8/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>JmeterHTTP请求</title>
-        <link>https://thelonelypatient.github.io/Jiang/p/jmeterhttp%E8%AF%B7%E6%B1%82/</link>
+        <link>http://localhost:1313/Jiang/p/jmeterhttp%E8%AF%B7%E6%B1%82/</link>
         <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://thelonelypatient.github.io/Jiang/p/jmeterhttp%E8%AF%B7%E6%B1%82/</guid>
-        <description>&lt;img src="https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png" alt="Featured image of post JmeterHTTP请求" /&gt;&lt;h1 id=&#34;http请求&#34;&gt;&lt;em&gt;HTTP请求&lt;/em&gt;&lt;/h1&gt;
+        <guid>http://localhost:1313/Jiang/p/jmeterhttp%E8%AF%B7%E6%B1%82/</guid>
+        <description>&lt;img src="http://localhost:1313/Jiang/img/Jmeter/0.png" alt="Featured image of post JmeterHTTP请求" /&gt;&lt;h1 id=&#34;http请求&#34;&gt;&lt;em&gt;HTTP请求&lt;/em&gt;&lt;/h1&gt;
 </description>
         </item>
         

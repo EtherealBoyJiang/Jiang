@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>线程组 on EtherealBoyJiang</title>
-        <link>https://thelonelypatient.github.io/Jiang/tags/%E7%BA%BF%E7%A8%8B%E7%BB%84/</link>
+        <link>http://localhost:1313/Jiang/tags/%E7%BA%BF%E7%A8%8B%E7%BB%84/</link>
         <description>Recent content in 线程组 on EtherealBoyJiang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>EtherealBoyJiang</copyright>
-        <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://thelonelypatient.github.io/Jiang/tags/%E7%BA%BF%E7%A8%8B%E7%BB%84/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 19 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/Jiang/tags/%E7%BA%BF%E7%A8%8B%E7%BB%84/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Jmeter线程组</title>
-        <link>https://thelonelypatient.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/</link>
+        <link>http://localhost:1313/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/</link>
         <pubDate>Tue, 19 Mar 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://thelonelypatient.github.io/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/</guid>
-        <description>&lt;img src="https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter线程组" /&gt;&lt;h1 id=&#34;线程组&#34;&gt;线程组&lt;/h1&gt;
+        <guid>http://localhost:1313/Jiang/p/jmeter%E7%BA%BF%E7%A8%8B%E7%BB%84/</guid>
+        <description>&lt;img src="http://localhost:1313/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter线程组" /&gt;&lt;h1 id=&#34;线程组&#34;&gt;线程组&lt;/h1&gt;
 &lt;p&gt;线程组作为JMeter测试计划的核心组件之一，对于模拟并发用户的行为至关重要。线程组元件是整个测试计划的入口，所有的取样器和控制器必须放置在线程组下。将线程组视为一个虚拟用户池，其中每个线程可被理解为一个虚拟用户，多个虚拟用户同时执行相同的一批任务。在这个虚拟用户池中，每个线程之间是相互隔离且互不影响的。每个线程的执行过程中，操作的变量不会对其他线程的变量值产生影响。&lt;/p&gt;
 &lt;p&gt;线程组分为四类:&lt;/p&gt;
 &lt;ul&gt;
@@ -562,7 +562,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-3&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/1.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/1.gif&#34;
 	
 	
 	
@@ -582,7 +582,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-4&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/2.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/2.gif&#34;
 	
 	
 	
@@ -597,7 +597,7 @@
 &lt;li&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中取消勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-5&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/3.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/3.gif&#34;
 	
 	
 	
@@ -620,7 +620,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-6&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/7.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/7.gif&#34;
 	
 	
 	
@@ -643,7 +643,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-7&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/8.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/8.gif&#34;
 	
 	
 	
@@ -666,7 +666,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-8&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/9.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/9.gif&#34;
 	
 	
 	
@@ -690,7 +690,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-9&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/4.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/4.gif&#34;
 	
 	
 	
@@ -710,7 +710,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-10&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/5.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/5.gif&#34;
 	
 	
 	
@@ -725,7 +725,7 @@
 &lt;li&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中取消勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-11&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/6.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/6.gif&#34;
 	
 	
 	
@@ -748,7 +748,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-12&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/10.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/10.gif&#34;
 	
 	
 	
@@ -771,7 +771,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-13&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/11.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/11.gif&#34;
 	
 	
 	
@@ -795,7 +795,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-14&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/12.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/12.gif&#34;
 	
 	
 	
@@ -815,7 +815,7 @@
 &lt;li&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-15&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/13.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/13.gif&#34;
 	
 	
 	
@@ -830,7 +830,7 @@
 &lt;li&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中取消勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-16&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/14.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/14.gif&#34;
 	
 	
 	
@@ -863,7 +863,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-17&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/15.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/15.gif&#34;
 	
 	
 	
@@ -904,7 +904,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-18&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/16.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/16.gif&#34;
 	
 	
 	
@@ -946,7 +946,7 @@
 &lt;/ol&gt;
 &lt;p&gt;6.&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求1&lt;/font&gt;下响应断言的值,引用用户参数中的变量：&lt;font style=&#34;background-color: #efef48&#34;&gt;${dy}&lt;/font&gt;&lt;/p&gt;
 &lt;h4 id=&#34;运行查看结果树-19&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/17.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/17.gif&#34;
 	
 	
 	
@@ -961,7 +961,7 @@
 &lt;p&gt;设置取样器错误后执行的动作为&lt;code&gt;继续&lt;/code&gt;时，JMeter将在取样器执行错误时，忽略错误继续执行本线程的后续操作及执行其他线程。&lt;/p&gt;
 &lt;p&gt;这种设置通常用于测试过程中，即使某些请求失败，也需要继续执行其他请求，以模拟真实用户的行为。&lt;/p&gt;
 &lt;h4 id=&#34;运行查看结果树-20&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/18.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/18.gif&#34;
 	
 	
 	
@@ -1157,7 +1157,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;运行查看结果树-22&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/19.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/19.gif&#34;
 	
 	
 	
@@ -1172,7 +1172,7 @@
 &lt;li&gt;禁用&lt;font style=&#34;background-color: #efef48&#34;&gt;请求2&lt;/font&gt;中的&lt;font style=&#34;background-color: #efef48&#34;&gt;固定定时器&lt;/font&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;运行查看结果树-23&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/ThreadGroup/20.gif&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/20.gif&#34;
 	
 	
 	
@@ -1190,11 +1190,11 @@
         </item>
         <item>
         <title>Jmeter前言</title>
-        <link>https://thelonelypatient.github.io/Jiang/p/jmeter%E5%89%8D%E8%A8%80/</link>
+        <link>http://localhost:1313/Jiang/p/jmeter%E5%89%8D%E8%A8%80/</link>
         <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://thelonelypatient.github.io/Jiang/p/jmeter%E5%89%8D%E8%A8%80/</guid>
-        <description>&lt;img src="https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter前言" /&gt;&lt;h1 id=&#34;前言&#34;&gt;&lt;em&gt;前言&lt;/em&gt;&lt;/h1&gt;
+        <guid>http://localhost:1313/Jiang/p/jmeter%E5%89%8D%E8%A8%80/</guid>
+        <description>&lt;img src="http://localhost:1313/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter前言" /&gt;&lt;h1 id=&#34;前言&#34;&gt;&lt;em&gt;前言&lt;/em&gt;&lt;/h1&gt;
 &lt;h2 id=&#34;为什么要撰写这样一个教程呢&#34;&gt;&lt;em&gt;为什么要撰写这样一个教程呢？&lt;/em&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -1279,7 +1279,7 @@
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h2 id=&#34;工作流程&#34;&gt;&lt;em&gt;工作流程&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;JMeter通过模拟一组用户将请求发送到目标服务器。 随后，收集数据以通过各种格式计算目标服务器的统计和显示性能度量。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/Preface/0.png&#34;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/Preface/0.png&#34;
 	
 	
 	
@@ -1584,13 +1584,17 @@
 &lt;h2 id=&#34;示例接口代码&#34;&gt;&lt;em&gt;示例接口代码&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;本系列文章中所有示例接口皆由python编写，python版本为3.12.1，如要使用示例接口请安装python3.12.1与pycharm。&lt;/p&gt;
 &lt;div&gt;
-&lt;a1 href=&#34;&#34; target=&#34;_blank&#34;&gt;
+&lt;a1 href=&#34;https://thelonelypatient.github.io/Jiang/JmeterApi.zip&#34; target=&#34;_blank&#34;&gt;
     &lt;div class=&#34;zhengti&#34;&gt;
-        &lt;a href=&#34;&#34;&gt;
+        &lt;a href=&#34;https://thelonelypatient.github.io/Jiang/JmeterApi.zip&#34;&gt;
             &lt;div class=&#34;wenzi&#34;&gt;
                 &lt;div class=&#34;linkk&#34;&gt;
-                    &lt;div class=&#34;namee&#34;&gt;下载地址&lt;/div&gt;&lt;div class=&#34;descc&#34;&gt;压缩包内包含源码和使用说明&lt;/div&gt;&lt;/div&gt;
-        &lt;/a&gt;&lt;/div&gt;
+                    &lt;div class=&#34;namee&#34;&gt;下载示例代码&lt;/div&gt;&lt;div class=&#34;descc&#34;&gt;压缩包内包含源码和使用说明&lt;/div&gt;&lt;/div&gt;
+        &lt;/a&gt;&lt;div class=&#34;linktext&#34;&gt;https://thelonelypatient.github.io/Jiang/JmeterApi.zip&lt;/div&gt;
+
+        &lt;/div&gt;
+        &lt;div class=&#34;daimg&#34;&gt;
+            &lt;img class=&#34;link-card-img&#34; loading=&#34;lazy&#34; src=&#34;https://api.thumbnail.ws/api/ab41148c7048bd95441b7b09816cbd5db1ed220134d3/thumbnail/get?width=720&amp;url=https%3a%2f%2fthelonelypatient.github.io%2fJiang%2fJmeterApi.zip&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
 
     &lt;/div&gt;
 &lt;/a1&gt;
