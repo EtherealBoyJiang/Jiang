@@ -47,6 +47,8 @@
 你可以通过${变量名称}的方式来引用这些变量。这种方式允许你在不同的请求或操作中使用相同的数值，从而更加方便地维护和修改。
 示例接口代码： 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/TestPlan/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def testplan(): # Jmeter教程测试计划-用户定义的变量api if request.method != &amp;#39;POST&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;ERROR: The request method is not POST&amp;#39;}) data = request.get_json() if &amp;#34;UserDefinedVariables&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;ERROR: The request body is error!&amp;#39;}) return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39;Your request parameters is &amp;#39; &#43; &amp;#39;&amp;#34;UserDefinedVariables:&amp;#39; &#43; data[&amp;#39;UserDefinedVariables&amp;#39;] &#43; &amp;#39;&amp;#34;&amp;#39;})!"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png' />
+    <link rel="shortcut icon" href="static/favicon.ico" />
+
     </head>
     <body class="
     article-page
