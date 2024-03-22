@@ -571,14 +571,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-3&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/1.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/1.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/1.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/1.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/1.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了2次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行，因此，先执行&lt;code&gt;线程组1&lt;/code&gt;时出现错误请求，不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
 &lt;h5 id=&#34;修改示例脚本-1&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
@@ -591,14 +604,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-4&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/2.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/2.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/2.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/2.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/2.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组2&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，测试计划停止测试。&lt;/p&gt;
 &lt;h5 id=&#34;修改示例脚本-2&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
@@ -606,14 +632,27 @@
 &lt;li&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中取消勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-5&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/3.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/3.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/3.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/3.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/3.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中未勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，因此&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互相干扰且并行执行。当&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，&lt;code&gt;线程组2&lt;/code&gt;中的&lt;code&gt;与错误请求并行请求2&lt;/code&gt;也在执行，直到&lt;code&gt;与错误请求并行请求2&lt;/code&gt;结束后，测试计划才停止测试。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;建议&lt;/strong&gt;&lt;/p&gt;
@@ -629,14 +668,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-6&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/7.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/7.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/7.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/7.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/7.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划停止测试。&lt;/p&gt;
 &lt;h5 id=&#34;修改示例脚本-4&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
@@ -652,14 +704,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-7&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/8.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/8.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/8.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/8.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/8.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;3个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。3个用户中其中1个用户执行&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，另外2个用户还在执行&lt;code&gt;错误请求之后请求1&lt;/code&gt;，待执行完毕后，测试计划停止测试。&lt;/p&gt;
 &lt;h5 id=&#34;修改示例脚本-5&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
@@ -675,14 +740,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-8&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/9.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/9.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/9.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/9.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/9.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，1个用户执行&lt;code&gt;线程组1&lt;/code&gt;3次。用户在执行第1次&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，测试计划停止测试。&lt;/p&gt;
 &lt;h3 id=&#34;立即停止测试&#34;&gt;&lt;em&gt;立即停止测试&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;设置&lt;code&gt;取样器错误后执行的动作&lt;/code&gt;为&lt;code&gt;立即停止测试&lt;/code&gt;时，当取样器在执行过程中遇到错误时，JMeter会立即停止当前运行的测试，不再执行任何后续的请求或操作。&lt;/p&gt;
@@ -699,14 +777,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-9&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/4.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/4.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/4.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/4.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/4.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了4次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行。因此，若&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时,不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
 &lt;h5 id=&#34;修改示例脚本-7&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
@@ -719,14 +810,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-10&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/5.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/5.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/5.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/5.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/5.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了4次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组2&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
 &lt;h5 id=&#34;修改示例脚本-8&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
@@ -734,14 +838,27 @@
 &lt;li&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中取消勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-11&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/6.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/6.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/6.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/6.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/6.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了4次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中未勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，因此&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互相干扰且并行执行。当&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，&lt;code&gt;线程组2&lt;/code&gt;中的&lt;code&gt;与错误请求并行请求2&lt;/code&gt;也在执行，但不等&lt;code&gt;与错误请求并行请求2&lt;/code&gt;结束，测试计划立即停止测试，可以看出&lt;code&gt;与错误请求并行请求2&lt;/code&gt;的响应体中提示 Socket 关闭异常。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;建议&lt;/strong&gt;&lt;/p&gt;
@@ -757,14 +874,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-12&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/10.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/10.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/10.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/10.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/10.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
 &lt;h5 id=&#34;修改示例脚本-10&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
@@ -780,14 +910,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-13&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/11.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/11.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/11.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/11.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/11.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;3个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。3个用户中其中1个用户执行&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，另外2个用户还在执行&lt;code&gt;错误请求之后请求1&lt;/code&gt;，
 但不等执行完毕后，测试计划立即停止测试，可以看出&lt;code&gt;与错误请求并行请求1&lt;/code&gt;的响应体中提示 Socket 关闭异常。&lt;/p&gt;
@@ -804,14 +947,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-14&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/12.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/12.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/12.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/12.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/12.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;1个用户执行&lt;code&gt;线程组1&lt;/code&gt;3次。用户在执行第1次&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，测试计划立即停止测试。&lt;/p&gt;
 &lt;h3 id=&#34;停止线程&#34;&gt;&lt;em&gt;停止线程&lt;/em&gt;&lt;/h3&gt;
@@ -824,14 +980,27 @@
 &lt;li&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-15&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/13.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/13.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/13.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/13.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/13.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组1&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中的用户出现错误请求时，&lt;code&gt;线程组1&lt;/code&gt;的用户线程被停止，接着执行&lt;code&gt;线程组2&lt;/code&gt;。&lt;/p&gt;
 &lt;h5 id=&#34;修改示例脚本-13&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h5&gt;
@@ -839,14 +1008,27 @@
 &lt;li&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;中取消勾选&lt;font style=&#34;background-color: #efef48&#34;&gt;独立运行每个线程组&lt;/font&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-16&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/14.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/14.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/14.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/14.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/14.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中未勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，因此&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互相干扰且并行执行。待&lt;code&gt;线程组1&lt;/code&gt;中的用户出现错误请求时，&lt;code&gt;线程组1&lt;/code&gt;的用户线程被停止，&lt;code&gt;线程组2&lt;/code&gt;继续执行。&lt;/p&gt;
 &lt;h4 id=&#34;单线程组-2&#34;&gt;&lt;em&gt;单线程组&lt;/em&gt;&lt;/h4&gt;
@@ -872,14 +1054,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-17&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/15.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/15.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/15.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/15.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/15.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;每次运行时，三个用户的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致第二个用户执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
 结束该用户线程，未执行&lt;code&gt;未加固定定时器&lt;/code&gt;。其他用户则未发生错误，可以执行&lt;code&gt;未加固定定时器&lt;/code&gt;。因此导致每次会有3个&lt;code&gt;错误请求1&lt;/code&gt;执行、但只有2个&lt;code&gt;未加固定定时器&lt;/code&gt;执行。&lt;/p&gt;
@@ -913,14 +1108,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h5 id=&#34;运行查看结果树-18&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/16.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/16.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/16.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/16.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/16.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;用户的三次循环的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;CSV 数据文件设置&lt;/code&gt;的&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致用户第二次循环时执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
 结束该用户线程，未执行之后&lt;code&gt;未加固定定时器&lt;/code&gt;和第三次循环。&lt;/p&gt;
@@ -955,14 +1163,27 @@
 &lt;/ol&gt;
 &lt;p&gt;6.&lt;font style=&#34;background-color: #efef48&#34;&gt;错误请求1&lt;/font&gt;下响应断言的值,引用用户参数中的变量：&lt;font style=&#34;background-color: #efef48&#34;&gt;${dy}&lt;/font&gt;&lt;/p&gt;
 &lt;h4 id=&#34;运行查看结果树-19&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/17.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/17.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/17.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/17.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/17.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;每次运行时，用户的三次循环的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;CSV 数据文件设置&lt;/code&gt;的&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致用户第二次循环时执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
 该用户线程跳过本次循环，不在执行之后&lt;code&gt;未加固定定时器&lt;/code&gt;，直接进行第三次循环。&lt;/p&gt;
@@ -970,14 +1191,27 @@
 &lt;p&gt;设置取样器错误后执行的动作为&lt;code&gt;继续&lt;/code&gt;时，JMeter将在取样器执行错误时，忽略错误继续执行本线程的后续操作及执行其他线程。&lt;/p&gt;
 &lt;p&gt;这种设置通常用于测试过程中，即使某些请求失败，也需要继续执行其他请求，以模拟真实用户的行为。&lt;/p&gt;
 &lt;h4 id=&#34;运行查看结果树-20&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/18.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/18.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/18.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/18.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/18.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;每次运行时，虽然&lt;code&gt;错误请求1&lt;/code&gt;取样器发生错误，但还是执行&lt;code&gt;线程组1&lt;/code&gt;中后续的请求及&lt;code&gt;线程组2&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;结语-3&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
@@ -1166,14 +1400,27 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;运行查看结果树-22&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/19.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/19.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/19.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/19.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/19.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;每次运行时，Jmeter都会延迟&lt;code&gt;3&lt;/code&gt;秒（看右上角）,然后再执行&lt;code&gt;线程组&lt;/code&gt;值。由于&lt;code&gt;持续时间&lt;/code&gt;设置的是&lt;code&gt;2&lt;/code&gt;秒，&lt;code&gt;线程组&lt;/code&gt;只会持续执行&lt;code&gt;2&lt;/code&gt;秒，而固定定时器的延迟是&lt;code&gt;3&lt;/code&gt;，所以不会执行&lt;code&gt;请求2&lt;/code&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;修改示例脚本-17&#34;&gt;&lt;em&gt;修改示例脚本&lt;/em&gt;&lt;/h3&gt;
@@ -1181,14 +1428,27 @@
 &lt;li&gt;禁用&lt;font style=&#34;background-color: #efef48&#34;&gt;请求2&lt;/font&gt;中的&lt;font style=&#34;background-color: #efef48&#34;&gt;固定定时器&lt;/font&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;运行查看结果树-23&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/20.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/20.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/ThreadGroup/20.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/ThreadGroup/20.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/ThreadGroup/20.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;每次运行时，Jmeter都会延迟&lt;code&gt;3&lt;/code&gt;秒（看右上角）,然后再执行&lt;code&gt;线程组&lt;/code&gt;值。虽然&lt;code&gt;持续时间&lt;/code&gt;设置的是&lt;code&gt;2&lt;/code&gt;秒，&lt;code&gt;线程组&lt;/code&gt;只会持续执行&lt;code&gt;2&lt;/code&gt;秒，但没有了固定定时器的延迟，也会执行&lt;code&gt;请求2&lt;/code&gt;。&lt;/p&gt;
 &lt;h2 id=&#34;结语-4&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h2&gt;
@@ -1282,14 +1542,27 @@
 &lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;下添加&lt;font style=&#34;background-color: #efef48&#34;&gt;查看结果树&lt;/font&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/0.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/0.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/0.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/0.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/0.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;h3 id=&#34;运行查看结果树&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h3&gt;
 
 
@@ -1364,14 +1637,27 @@
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/1.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/1.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;h3 id=&#34;结语&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;可以清晰地看出，接口请求参数中调用了&lt;code&gt;用户定义的变量&lt;/code&gt;的值:&lt;code&gt;我是用户定义的变量&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;此外，JMeter提供的配置元件中也包含&lt;code&gt;用户定义的变量&lt;/code&gt;元件，通过&lt;code&gt;测试计划/线程组/取样器-添加-配置元件-用户定义的变量&lt;/code&gt;进行添加。用法与测试计划面板中的&lt;code&gt;用户定义的变量&lt;/code&gt;一致，不同之处在于作用域。&lt;/p&gt;
@@ -1482,14 +1768,27 @@
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/2.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/2.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求在同一时刻发出，即 &lt;code&gt;2024-01-16 11:19:34&lt;/code&gt;。因为两个线程组是并发、随机执行的。&lt;/p&gt;
 &lt;h4 id=&#34;勾选独立运行每个线程组运行结果&#34;&gt;&lt;em&gt;勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，运行结果&lt;/em&gt;&lt;/h4&gt;
 
@@ -1553,14 +1852,27 @@
 			&lt;span&gt;hread Name:线程组2 2-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-01-16 11:32:55 CST&lt;/font&gt;&lt;br&gt;Load time:3003&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3003&lt;br&gt;Size in bytes:231&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:66&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/3.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/3.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求并非在同一时刻发出。具体而言，HTTP 请求1的请求发出时间是 &lt;code&gt;2024-01-16 11:32:52&lt;/code&gt;，而 HTTP 请求2的请求发出时间是 &lt;code&gt;2024-01-16 11:32:55&lt;/code&gt;。两者之间的时间差正好为三秒，与接口休眠的三秒相符，这表明两个线程组是顺序执行的。&lt;/p&gt;
 &lt;h3 id=&#34;结语-1&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;当勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;选项时，能够确保测试计划中的相同类型线程组按照顺序执行。在某些特定的测试情况下，这个选项非常有用。相反，若未勾选 &lt;code&gt;独立运行每个线程组&lt;/code&gt;时，线程组是并发执行。&lt;/p&gt;
@@ -1654,36 +1966,75 @@
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/4.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/4.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;因为不勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;，而且响应体&lt;code&gt;{&amp;quot;code&amp;quot;: 200,&amp;quot;data&amp;quot;: &amp;quot;处理完毕&amp;quot;}&lt;/code&gt;与断言&lt;code&gt;1111&lt;/code&gt;无法匹配，响应断言判断该取样器请求发生错误，所以只有线程组被执行完毕后，而 tearDown 线程组并未被执行。&lt;/p&gt;
 &lt;p&gt;此时，修改响应断言为：&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;再运行。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/5.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/5.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/5.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/5.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/5.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;即使不勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;，因为响应体&lt;code&gt;{&amp;quot;code&amp;quot;: 200,&amp;quot;data&amp;quot;: &amp;quot;处理完毕&amp;quot;}&lt;/code&gt;与断言&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;匹配，响应断言判断该取样器请求正常，所以线程组被执行完毕后，执行 tearDown 线程组。&lt;/p&gt;
 &lt;h4 id=&#34;勾选主线程结束后运行teardown线程组运行结果&#34;&gt;&lt;em&gt;勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;,运行结果&lt;/em&gt;&lt;/h4&gt;
 &lt;p&gt;响应断言改回为：&lt;code&gt;1111&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/6.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/6.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/6.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/6.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/6.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;即使响应断言判断请求发生错误，因为勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;,线程组被执行后，tearDown 线程组紧接被执行。&lt;/p&gt;
 &lt;h3 id=&#34;结语-2&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;在确保测试环境的可靠性和稳定性方面，通过勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;以及配置线程组中的取样器错误后执行的动作，可以在主线程结束后执行 tearDown 线程组，从而进行一些关键的清理和还原操作。这一设置在测试流程中发生错误或异常情况时，能够确保系统状态的正确还原，为后续测试提供稳定的基础。&lt;/p&gt;
@@ -1884,33 +2235,72 @@
 
 &lt;br&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/1.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/1.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/1.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/1.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/1.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;2安装jdk&#34;&gt;&lt;em&gt;2.安装JDK&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;建议在安装之前在&lt;code&gt;D盘或C盘&lt;/code&gt;下新建一个下新建一个&lt;code&gt;Tools&lt;/code&gt; 文件夹。在安装 JDK 时，修改安装目录为&lt;code&gt;Tools&lt;/code&gt;文件夹。这样做的好处在于方便管理和配置环境变量。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/2.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/3.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/2.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/2.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/2.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/2.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/3.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/3.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/3.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/3.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;接下来就是一直下一步就行。&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;配置jdk系统变量环境变量&#34;&gt;&lt;em&gt;配置JDK系统变量、环境变量&lt;/em&gt;&lt;/h3&gt;
@@ -1921,7 +2311,7 @@
 &lt;p&gt;环境变量是在操作系统或应用程序运行过程中设置的一些动态变量，用于影响当前进程的行为。
 环境变量提供了一种将信息传递给正在运行的程序的方法，以便程序根据这些变量的值来调整其行为。
 如&lt;code&gt;PATH&lt;/code&gt;变量中的值就是执行文件的环境变量。&lt;/p&gt;
-&lt;p&gt;总结来说，系统变量是操作系统级别的全局配置，而环境变量是在运行过程中用于传递信息给正在执行的程序的配置。在许多情况下，环境变量的值可以由用户或程序员进行配置，以影响特定应用程序或进程的行为。&lt;/p&gt;
+&lt;p&gt;系统变量是操作系统级别的全局配置，而环境变量是在运行过程中用于传递信息给正在执行的程序的配置。在许多情况下，环境变量的值可以由用户或程序员进行配置，以影响特定应用程序或进程的行为。&lt;/p&gt;
 &lt;div&gt;  
 
 
@@ -1945,37 +2335,78 @@
 &lt;/div&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h4 id=&#34;新建java_home系统变量&#34;&gt;&lt;em&gt;新建JAVA_HOME系统变量&lt;/em&gt;&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;
 &lt;p&gt;右键此电脑-属性-高级系统设置-环境变量，系统变量-新建。&lt;/p&gt;
 &lt;p&gt;变量名：&lt;code&gt;JDK&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;变量值：&lt;code&gt;C:\Tools\JDK&lt;/code&gt;（JDK安装目录）  或者浏览目录进行选择（Windows11）&lt;/p&gt;
-&lt;p&gt;然后确定。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/4.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;确定。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/4.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/4.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/4.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/4.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h4 id=&#34;path中新建java_home的环境环境&#34;&gt;&lt;em&gt;Path中新建JAVA_HOME的环境环境&lt;/em&gt;&lt;/h4&gt;
-&lt;p&gt;系统变量中找到Path，选中，点击编辑，进入Path系统变量窗口，新建两条环境变量。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;系统变量中找到Path，选中&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;点击编辑，进入Path系统变量窗口，新建两条环境变量。&lt;/p&gt;
 &lt;p&gt;第一条：&lt;code&gt;%JAVA_HOME%\bin;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;第二条：&lt;code&gt;%JAVA_HOME%\jre\bin;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;ps：windows11好像不需要输入最后的&lt;/p&gt;
-&lt;p&gt;然后一路确定。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/5.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一路确定&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/5.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/5.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/5.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/5.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h2 id=&#34;jmeter&#34;&gt;&lt;em&gt;Jmeter&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;JMeter 是一个独立的 Java 应用程序，它不依赖于系统注册表或其他系统级配置。所以它能够在不同操作系统上运行而无需进行安装。只需要下载完成后，将 ZIP 文件解压缩到指定的目录。
-在解压缩后的目录中找到 JMeter 启动脚本（例如 jmeter.bat 或 jmeter.sh），运行该脚本以启动 JMeter。&lt;/p&gt;
+在解压缩后的目录中找到 JMeter 启动脚本（例如 windows的jmeter.bat 或 Linux的jmeter.sh），运行该脚本以启动 JMeter。&lt;/p&gt;
 &lt;h3 id=&#34;下载jmeterzip包&#34;&gt;&lt;em&gt;下载JmeterZIP包&lt;/em&gt;&lt;/h3&gt;
 &lt;div&gt;
 &lt;a1 href=&#34;https://archive.apache.org/dist/jmeter/binaries/&#34; target=&#34;_blank&#34;&gt;
@@ -2123,14 +2554,27 @@
 
 &lt;br&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/6.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/6.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/6.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/6.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/6.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;div&gt;
 &lt;a1 href=&#34;https://jmeter.apache.org/download_jmeter.cgi&#34; target=&#34;_blank&#34;&gt;
     &lt;div class=&#34;zhengti&#34;&gt;
@@ -2277,62 +2721,127 @@
 
 &lt;br&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/7.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/7.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/7.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/7.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/7.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;解压到目录&#34;&gt;&lt;em&gt;解压到目录&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;建议解压到D:\Tools目录下,方便管理。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/8.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;建议解压到D:\Tools目录下，方便管理。&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/8.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/8.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/8.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/8.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;汉化jmeter界面&#34;&gt;&lt;em&gt;汉化Jmeter界面&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;修改Jmeter/bin/jmeter.properties，40行增加&lt;code&gt;language=zh_CN&lt;/code&gt;。然后保存。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/9.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;编辑Jmeter/bin/jmeter.properties，40行增加&lt;code&gt;language=zh_CN&lt;/code&gt;，然后保存。&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/9.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/9.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/9.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/9.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;发送启动文件到桌面快捷方式&#34;&gt;&lt;em&gt;发送启动文件到桌面快捷方式&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/10.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/10.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/10.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/10.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/10.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;启动jmeter&#34;&gt;&lt;em&gt;启动Jmeter&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;双击桌面上的 JMeter 快捷方式，等待脚本运行，然后 JMeter 界面将会显示出来。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/11.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/11.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/11.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/11.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/11.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h2 id=&#34;快速使用&#34;&gt;&lt;em&gt;快速使用&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;我们可以使用最简单的JMeter脚本来快速进行一次接口请求。这个脚本包括测试计划、线程组、取样器（Sampler）以及查看结果器（View Results Tree）。&lt;/p&gt;
 &lt;p&gt;在测试计划中，我们定义了整个测试的基本设置。线程组用于模拟用户，而取样器则代表了具体的请求。查看结果器则用于查看请求的详细结果。&lt;/p&gt;
-&lt;p&gt;通过这个简单的脚本，我们能够迅速进行一次接口请求测试，为后续更复杂的测试做好基础工作。这个基本结构也为我们学习更多JMeter的高级功能打下了基础。&lt;/p&gt;
+&lt;p&gt;通过这个简单的脚本，我们能够迅速进行一次接口请求测试。&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;示例接口&#34;&gt;&lt;em&gt;示例接口&lt;/em&gt;&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
@@ -2369,101 +2878,51 @@
 &lt;p&gt;请求方式：&lt;code&gt;GET&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/12.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/12.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/12.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/12.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/12.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;h3 id=&#34;运行点击上方绿色三角形查看结果树&#34;&gt;&lt;em&gt;运行（点击上方绿色三角形），查看结果树&lt;/em&gt;&lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/1.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/1.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
 
 
-
-
-&lt;style&gt;
-	.massage {
-		display: grid; 
-		padding: 15px; 
-		background-color: #f8f8f8; 
-		border: 1px solid #ccc; 
-		border-radius: 10px; 
-		margin-bottom: 0; width: 99%;
-	}
-	.result-h {
-		display: inline-grid;
-		grid-template-columns: 10% 90%;
-		border-top: 1px solid #b5b1b185;
-		padding: 3% 0;
-	}
-&lt;/style&gt;
-&lt;div class=&#34;massage&#34;&gt;
-	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;请求数据&lt;/span&gt;&lt;/div&gt;
-	&lt;div class=&#34;result-h&#34;&gt;
-		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;headers&lt;/span&gt;&lt;/div&gt;
-		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
-			&lt;span&gt;Connection: keep-alive&lt;br&gt;Host: 127.0.0.1:5000&lt;br&gt;User-Agent: Apache-HttpClient/4.5.14 (Java/20.0.2)&lt;/span&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&#34;result-h&#34;&gt;
-		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;body&lt;/span&gt;&lt;/div&gt;
-		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
-			&lt;span&gt;GET http://127.0.0.1:5000/QuickUse/&lt;br&gt;&lt;br&gt;GET data:&lt;br&gt;&lt;br&gt;&lt;br&gt;[no cookies]&lt;/span&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/1.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/EnvConfig/1.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
 &lt;/div&gt;
-&lt;div&gt;&lt;br&gt;&lt;/div&gt;
 
 
-
-
-&lt;style&gt;
-	.massage {
-		display: grid; 
-		padding: 15px; 
-		background-color: #f8f8f8; 
-		border: 1px solid #ccc; 
-		border-radius: 10px; 
-		margin-bottom: 0; width: 99%;
-	}
-	.result-h {
-		display: inline-grid;
-		grid-template-columns: 10% 90%;
-		border-top: 1px solid #b5b1b185;
-		padding: 3% 0;
-	}
-&lt;/style&gt;
-&lt;div class=&#34;massage&#34;&gt;
-	&lt;div style=&#34;text-align: center;&#34;&gt;&lt;span&gt;respond&lt;/span&gt;&lt;/div&gt;
-	&lt;div class=&#34;result-h&#34;&gt;
-		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;headers&lt;/span&gt;&lt;/div&gt;
-		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
-			&lt;span&gt;HTTP/1.1 200 OK&lt;br&gt;Server: Werkzeug/3.0.1 Python/3.12.1&lt;br&gt;Date: Mon, 15 Jan 2024 03:39:26 GMT&lt;br&gt;Content-Type: application/json&lt;br&gt;Content-Length: 40&lt;br&gt;Connection: close&lt;/span&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-
-	&lt;div class=&#34;result-h&#34;&gt;
-		&lt;div style=&#34;display: grid; place-items: center;&#34;&gt;&lt;span&gt;body&lt;/span&gt;&lt;/div&gt;
-		&lt;div style=&#34;display: grid;align-items: center;padding-left: 4%;&#34;&gt;
-			&lt;span&gt;{&#34;code&#34;: 200, &#34;data&#34;: &#34;It is successful!&#34;}&lt;/span&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/1.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;div&gt;&lt;br&gt;&lt;/div&gt;
-&lt;h2 id=&#34;结尾&#34;&gt;&lt;em&gt;结尾&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;本篇主要介绍JMeter的环境配置以及初体验，为后续的JMeter之旅做好准备。在这一章节中，我们将了解如何配置JMeter的环境，以及如何进行简单的接口测试。&lt;/p&gt;
-&lt;p&gt;接下来的篇章EtherealBoyJiang将深入探讨JMeter的测试计划，帮助读者更好地利用这个强大的性能测试工具。&lt;/p&gt;
+&lt;/p&gt;
+&lt;p&gt;请求成功。请求数据中，包括&lt;code&gt;Request Headers 请求头&lt;/code&gt;和&lt;code&gt;Request Body 请求体&lt;/code&gt;。响应数据中，包括&lt;code&gt;Response Headers 响应头&lt;/code&gt;和&lt;code&gt;Response Body 响应体&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;此次请求的响应体数据为 &lt;font style=&#34;background-color: #fbe5e1; color:#c0341d;&#34;&gt;{&amp;ldquo;code&amp;rdquo;: 200, &amp;ldquo;data&amp;rdquo;: &amp;ldquo;It is successful!&amp;rdquo;}&lt;/font&gt;&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;hr&gt;&lt;/div&gt;
 </description>
         </item>
@@ -2478,11 +2937,11 @@
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;深入学习Jmeter&lt;/p&gt;
-&lt;p&gt;温故而知新，通过编写教程，我将更深入地学习JMeter。尽管我已经使用JMeter很长时间，但还有许多元件我并不十分了解。为了创作一个详尽且实用的JMeter教程，我需要精通JMeter的各个元件。因此，编写教程的过程成为了我的学习过程，通过反复回顾和整理知识，我能够更全面地掌握JMeter的使用技巧&lt;/p&gt;
+&lt;p&gt;温故而知新。尽管我已经使用JMeter很长时间，但还有许多元件我并不十分了解，因此，编写教程的过程成为了我的学习过程，通过反复回顾和整理知识，我能够更全面地掌握JMeter。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;分享知识&lt;/p&gt;
-&lt;p&gt;我深信知识具有强大力量，而这种力量应该共享。我愿意将我的所学分享给志同道合的朋友——也就是你们。通过分享知识，我不仅能够为他人提供帮助，还能够在这个过程中体验到一种内在的满足感。&lt;/p&gt;
+&lt;p&gt;我深信知识具有强大力量，而这种力量应该共享，我愿意将我的所学分享给志同道合的朋友——也就是你们。它不仅能够为他人提供帮助，EtherealBoyJiang还能够在这个过程中体验到一种内在的满足感。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;结识朋友&lt;/p&gt;
@@ -2558,14 +3017,27 @@
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h2 id=&#34;工作流程&#34;&gt;&lt;em&gt;工作流程&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;JMeter通过模拟一组用户将请求发送到目标服务器。 随后，收集数据以通过各种格式计算目标服务器的统计和显示性能度量。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/Preface/0.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/Preface/0.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/Preface/0.png&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/Preface/0.png&#34;&gt;
+&lt;img src=&#34;img/Jmeter/Preface/0.png&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h2 id=&#34;内容引用&#34;&gt;&lt;em&gt;内容引用&lt;/em&gt;&lt;/h2&gt;
 &lt;div&gt;
@@ -2861,19 +3333,17 @@
 &lt;/div&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h2 id=&#34;示例接口代码&#34;&gt;&lt;em&gt;示例接口代码&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;本系列文章中所有示例接口皆由python编写，python版本为3.12.1，如要使用示例接口请安装python3.12.1与pycharm。&lt;/p&gt;
 &lt;div&gt;
 &lt;a1 href=&#34;https://thelonelypatient.github.io/Jiang/JmeterApi.zip&#34; target=&#34;_blank&#34;&gt;
     &lt;div class=&#34;zhengti&#34;&gt;
         &lt;a href=&#34;https://thelonelypatient.github.io/Jiang/JmeterApi.zip&#34;&gt;
             &lt;div class=&#34;wenzi&#34;&gt;
                 &lt;div class=&#34;linkk&#34;&gt;
-                    &lt;div class=&#34;namee&#34;&gt;下载示例代码&lt;/div&gt;&lt;div class=&#34;descc&#34;&gt;压缩包内包含源码和使用说明&lt;/div&gt;&lt;/div&gt;
+                    &lt;div class=&#34;namee&#34;&gt;下载示例代码&lt;/div&gt;&lt;div class=&#34;descc&#34;&gt;本系列文章中所有示例接口皆由python编写，python版本为3.12.1，如要使用示例接口请安装python3.12.1与pycharm。压缩包内包含源码和使用说明&lt;/div&gt;&lt;/div&gt;
         &lt;/a&gt;&lt;div class=&#34;linktext&#34;&gt;https://thelonelypatient.github.io/Jiang/JmeterApi.zip&lt;/div&gt;
 
         &lt;/div&gt;
-        &lt;div class=&#34;daimg&#34;&gt;
-            &lt;img class=&#34;link-card-img&#34; loading=&#34;lazy&#34; src=&#34;https://api.thumbnail.ws/api/ab41148c7048bd95441b7b09816cbd5db1ed220134d3/thumbnail/get?width=720&amp;url=https%3a%2f%2fthelonelypatient.github.io%2fJiang%2fJmeterApi.zip&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
+        &lt;div class=&#34;daimg&#34;&gt;&lt;img class=&#34;link-card-img&#34; loading=&#34;lazy&#34; src=&#34;https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png&#34; alt=&#34;&#34; /&gt; &lt;/div&gt;
 
     &lt;/div&gt;
 &lt;/a1&gt;
@@ -3009,11 +3479,8 @@
 &lt;br&gt;
 &lt;/div&gt;
 &lt;h2 id=&#34;说明&#34;&gt;&lt;em&gt;说明&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;本文基于JDK21、Jmeter-5.6.3测试编写，可能不适用于历史版本及未来版本。&lt;/p&gt;
-&lt;p&gt;如果Jmeter在后续的新版本中有所变化，或者文中有错漏的地方，请联系EtherealBoyJiang，EtherealBoyJiang感激不尽。&lt;/p&gt;
-&lt;h2 id=&#34;结尾&#34;&gt;&lt;em&gt;结尾&lt;/em&gt;&lt;/h2&gt;
-&lt;p&gt;对于测试人员来说，JMeter是一款非常强大的接口测试工具，尤其在性能测试方面表现出色。&lt;/p&gt;
-&lt;p&gt;希望读者们通过EtherealBoyJiang编写的系列教程，能够熟练掌握JMeter的使用。本系列教程旨在为读者提供全面而深入的理解，使读者将能够深入了解JMeter的各项功能，并掌握如何在性能测试中有效地利用这些功能。提高读者的技能水平，能够更自信地应对各类测试任务。能够为项目的成功实施提供有力的支持。&lt;/p&gt;
+&lt;p&gt;对于测试人员来说，JMeter是一款非常强大的接口测试工具，尤其在性能测试方面表现出色。希望读者们通过EtherealBoyJiang编写的系列教程，能够熟练掌握JMeter的使用。&lt;/p&gt;
+&lt;p&gt;本文基于JDK21、Jmeter-5.6.3测试编写，可能不适用于历史版本及未来版本。如果Jmeter在后续的新版本中有所变化，或者文中有错漏的地方，请联系EtherealBoyJiang，EtherealBoyJiang感激不尽。&lt;/p&gt;
 &lt;p&gt;对EtherealBoyJiang来说，能够帮助到读者是一件莫大的荣幸，期待更多读者通过本系列教程获得成长。&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;hr&gt;&lt;/div&gt;</description>
         </item>

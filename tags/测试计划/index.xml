@@ -92,14 +92,27 @@
 &lt;p&gt;&lt;font style=&#34;background-color: #efef48&#34;&gt;测试计划&lt;/font&gt;下添加&lt;font style=&#34;background-color: #efef48&#34;&gt;查看结果树&lt;/font&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/0.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/0.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/0.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/0.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/0.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;h3 id=&#34;运行查看结果树&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h3&gt;
 
 
@@ -174,14 +187,27 @@
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/1.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/1.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;h3 id=&#34;结语&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;可以清晰地看出，接口请求参数中调用了&lt;code&gt;用户定义的变量&lt;/code&gt;的值:&lt;code&gt;我是用户定义的变量&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;此外，JMeter提供的配置元件中也包含&lt;code&gt;用户定义的变量&lt;/code&gt;元件，通过&lt;code&gt;测试计划/线程组/取样器-添加-配置元件-用户定义的变量&lt;/code&gt;进行添加。用法与测试计划面板中的&lt;code&gt;用户定义的变量&lt;/code&gt;一致，不同之处在于作用域。&lt;/p&gt;
@@ -292,14 +318,27 @@
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/2.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/2.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求在同一时刻发出，即 &lt;code&gt;2024-01-16 11:19:34&lt;/code&gt;。因为两个线程组是并发、随机执行的。&lt;/p&gt;
 &lt;h4 id=&#34;勾选独立运行每个线程组运行结果&#34;&gt;&lt;em&gt;勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，运行结果&lt;/em&gt;&lt;/h4&gt;
 
@@ -363,14 +402,27 @@
 			&lt;span&gt;hread Name:线程组2 2-1&lt;br&gt;Sample Start: &lt;font style=&#34;background-color: #ec5350; color: black;&#34;&gt;2024-01-16 11:32:55 CST&lt;/font&gt;&lt;br&gt;Load time:3003&lt;br&gt;Connect Time:1&lt;br&gt;Latency:3003&lt;br&gt;Size in bytes:231&lt;br&gt;Sent bytes:210&lt;br&gt;Headers size in bytes:165&lt;br&gt;Body size in bytes:66&lt;br&gt;Sample Count:1&lt;br&gt;Error Count:0&lt;br&gt;Data type (&#34;text&#34;|&#34;bin&#34;|&#34;&#34;):text&lt;br&gt;Response code:200&lt;br&gt;Response message:OK&lt;/span&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/3.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/3.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求并非在同一时刻发出。具体而言，HTTP 请求1的请求发出时间是 &lt;code&gt;2024-01-16 11:32:52&lt;/code&gt;，而 HTTP 请求2的请求发出时间是 &lt;code&gt;2024-01-16 11:32:55&lt;/code&gt;。两者之间的时间差正好为三秒，与接口休眠的三秒相符，这表明两个线程组是顺序执行的。&lt;/p&gt;
 &lt;h3 id=&#34;结语-1&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;当勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;选项时，能够确保测试计划中的相同类型线程组按照顺序执行。在某些特定的测试情况下，这个选项非常有用。相反，若未勾选 &lt;code&gt;独立运行每个线程组&lt;/code&gt;时，线程组是并发执行。&lt;/p&gt;
@@ -464,36 +516,75 @@
 		&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/4.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/4.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;因为不勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;，而且响应体&lt;code&gt;{&amp;quot;code&amp;quot;: 200,&amp;quot;data&amp;quot;: &amp;quot;处理完毕&amp;quot;}&lt;/code&gt;与断言&lt;code&gt;1111&lt;/code&gt;无法匹配，响应断言判断该取样器请求发生错误，所以只有线程组被执行完毕后，而 tearDown 线程组并未被执行。&lt;/p&gt;
 &lt;p&gt;此时，修改响应断言为：&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;再运行。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/5.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/5.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/5.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/5.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/5.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;即使不勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;，因为响应体&lt;code&gt;{&amp;quot;code&amp;quot;: 200,&amp;quot;data&amp;quot;: &amp;quot;处理完毕&amp;quot;}&lt;/code&gt;与断言&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;匹配，响应断言判断该取样器请求正常，所以线程组被执行完毕后，执行 tearDown 线程组。&lt;/p&gt;
 &lt;h4 id=&#34;勾选主线程结束后运行teardown线程组运行结果&#34;&gt;&lt;em&gt;勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;,运行结果&lt;/em&gt;&lt;/h4&gt;
 &lt;p&gt;响应断言改回为：&lt;code&gt;1111&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/6.gif&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-	
-&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/6.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/6.gif&#34;
+		
+		
+		
+		loading=&#34;lazy&#34;
+		
+		
+	&gt;
+&lt;/a&gt;
+
+
+&lt;div class=&#34;post-img-view&#34;&gt;
+&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/6.gif&#34;&gt;
+&lt;img src=&#34;img/Jmeter/TestPlan/6.gif&#34; alt=&#34;&#34;  /&gt;
+&lt;/a&gt;
+&lt;/div&gt;
+
+
+&lt;/p&gt;
 &lt;p&gt;即使响应断言判断请求发生错误，因为勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;,线程组被执行后，tearDown 线程组紧接被执行。&lt;/p&gt;
 &lt;h3 id=&#34;结语-2&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;在确保测试环境的可靠性和稳定性方面，通过勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;以及配置线程组中的取样器错误后执行的动作，可以在主线程结束后执行 tearDown 线程组，从而进行一些关键的清理和还原操作。这一设置在测试流程中发生错误或异常情况时，能够确保系统状态的正确还原，为后续测试提供稳定的基础。&lt;/p&gt;
