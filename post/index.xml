@@ -590,7 +590,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了2次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行，因此，先执行&lt;code&gt;线程组1&lt;/code&gt;时出现错误请求，不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
@@ -623,7 +622,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组2&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，测试计划停止测试。&lt;/p&gt;
@@ -650,7 +648,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/3.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -687,7 +684,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划停止测试。&lt;/p&gt;
@@ -723,7 +719,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;3个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。3个用户中其中1个用户执行&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，另外2个用户还在执行&lt;code&gt;错误请求之后请求1&lt;/code&gt;，待执行完毕后，测试计划停止测试。&lt;/p&gt;
@@ -758,7 +753,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/9.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，1个用户执行&lt;code&gt;线程组1&lt;/code&gt;3次。用户在执行第1次&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，测试计划停止测试。&lt;/p&gt;
@@ -796,7 +790,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了4次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行。因此，若&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时,不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
@@ -829,7 +822,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了4次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组2&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
@@ -856,7 +848,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/6.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了4次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -893,7 +884,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
@@ -928,7 +918,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/11.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -966,7 +955,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;1个用户执行&lt;code&gt;线程组1&lt;/code&gt;3次。用户在执行第1次&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，测试计划立即停止测试。&lt;/p&gt;
@@ -999,7 +987,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组1&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中的用户出现错误请求时，&lt;code&gt;线程组1&lt;/code&gt;的用户线程被停止，接着执行&lt;code&gt;线程组2&lt;/code&gt;。&lt;/p&gt;
@@ -1026,7 +1013,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/14.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -1072,7 +1058,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/15.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -1126,7 +1111,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/16.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -1182,7 +1166,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;每次运行时，用户的三次循环的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;CSV 数据文件设置&lt;/code&gt;的&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致用户第二次循环时执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
@@ -1209,7 +1192,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/18.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -1419,7 +1401,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;每次运行时，Jmeter都会延迟&lt;code&gt;3&lt;/code&gt;秒（看右上角）,然后再执行&lt;code&gt;线程组&lt;/code&gt;值。由于&lt;code&gt;持续时间&lt;/code&gt;设置的是&lt;code&gt;2&lt;/code&gt;秒，&lt;code&gt;线程组&lt;/code&gt;只会持续执行&lt;code&gt;2&lt;/code&gt;秒，而固定定时器的延迟是&lt;code&gt;3&lt;/code&gt;，所以不会执行&lt;code&gt;请求2&lt;/code&gt;。&lt;/p&gt;
@@ -1446,7 +1427,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/20.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -1561,7 +1541,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;h3 id=&#34;运行查看结果树&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h3&gt;
 
@@ -1655,7 +1634,6 @@
 &lt;img src=&#34;img/Jmeter/TestPlan/1.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;h3 id=&#34;结语&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
@@ -1787,7 +1765,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求在同一时刻发出，即 &lt;code&gt;2024-01-16 11:19:34&lt;/code&gt;。因为两个线程组是并发、随机执行的。&lt;/p&gt;
 &lt;h4 id=&#34;勾选独立运行每个线程组运行结果&#34;&gt;&lt;em&gt;勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，运行结果&lt;/em&gt;&lt;/h4&gt;
@@ -1870,7 +1847,6 @@
 &lt;img src=&#34;img/Jmeter/TestPlan/3.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求并非在同一时刻发出。具体而言，HTTP 请求1的请求发出时间是 &lt;code&gt;2024-01-16 11:32:52&lt;/code&gt;，而 HTTP 请求2的请求发出时间是 &lt;code&gt;2024-01-16 11:32:55&lt;/code&gt;。两者之间的时间差正好为三秒，与接口休眠的三秒相符，这表明两个线程组是顺序执行的。&lt;/p&gt;
@@ -1985,7 +1961,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;因为不勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;，而且响应体&lt;code&gt;{&amp;quot;code&amp;quot;: 200,&amp;quot;data&amp;quot;: &amp;quot;处理完毕&amp;quot;}&lt;/code&gt;与断言&lt;code&gt;1111&lt;/code&gt;无法匹配，响应断言判断该取样器请求发生错误，所以只有线程组被执行完毕后，而 tearDown 线程组并未被执行。&lt;/p&gt;
 &lt;p&gt;此时，修改响应断言为：&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;&lt;/p&gt;
@@ -2009,7 +1984,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;即使不勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;，因为响应体&lt;code&gt;{&amp;quot;code&amp;quot;: 200,&amp;quot;data&amp;quot;: &amp;quot;处理完毕&amp;quot;}&lt;/code&gt;与断言&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;匹配，响应断言判断该取样器请求正常，所以线程组被执行完毕后，执行 tearDown 线程组。&lt;/p&gt;
 &lt;h4 id=&#34;勾选主线程结束后运行teardown线程组运行结果&#34;&gt;&lt;em&gt;勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;,运行结果&lt;/em&gt;&lt;/h4&gt;
@@ -2032,7 +2006,6 @@
 &lt;img src=&#34;img/Jmeter/TestPlan/6.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;即使响应断言判断请求发生错误，因为勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;,线程组被执行后，tearDown 线程组紧接被执行。&lt;/p&gt;
@@ -2254,7 +2227,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;2安装jdk&#34;&gt;&lt;em&gt;2.安装JDK&lt;/em&gt;&lt;/h3&gt;
@@ -2278,7 +2250,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;
 &lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/3.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
@@ -2298,7 +2269,6 @@
 &lt;img src=&#34;img/Jmeter/EnvConfig/3.png&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;接下来就是一直下一步就行。&lt;/p&gt;
@@ -2364,7 +2334,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h4 id=&#34;path中新建java_home的环境环境&#34;&gt;&lt;em&gt;Path中新建JAVA_HOME的环境环境&lt;/em&gt;&lt;/h4&gt;
@@ -2400,7 +2369,6 @@
 &lt;img src=&#34;img/Jmeter/EnvConfig/5.png&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
@@ -2573,7 +2541,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;div&gt;
 &lt;a1 href=&#34;https://jmeter.apache.org/download_jmeter.cgi&#34; target=&#34;_blank&#34;&gt;
@@ -2740,7 +2707,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;解压到目录&#34;&gt;&lt;em&gt;解压到目录&lt;/em&gt;&lt;/h3&gt;
@@ -2763,7 +2729,6 @@
 &lt;img src=&#34;img/Jmeter/EnvConfig/8.png&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
@@ -2788,7 +2753,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;发送启动文件到桌面快捷方式&#34;&gt;&lt;em&gt;发送启动文件到桌面快捷方式&lt;/em&gt;&lt;/h3&gt;
@@ -2810,7 +2774,6 @@
 &lt;img src=&#34;img/Jmeter/EnvConfig/10.png&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
@@ -2834,7 +2797,6 @@
 &lt;img src=&#34;img/Jmeter/EnvConfig/11.png&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
@@ -2897,7 +2859,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;h3 id=&#34;运行点击上方绿色三角形查看结果树&#34;&gt;&lt;em&gt;运行（点击上方绿色三角形），查看结果树&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;
@@ -2918,7 +2879,6 @@
 &lt;img src=&#34;img/Jmeter/EnvConfig/1.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;请求成功。请求数据中，包括&lt;code&gt;Request Headers 请求头&lt;/code&gt;和&lt;code&gt;Request Body 请求体&lt;/code&gt;。响应数据中，包括&lt;code&gt;Response Headers 响应头&lt;/code&gt;和&lt;code&gt;Response Body 响应体&lt;/code&gt;。&lt;/p&gt;
@@ -3035,7 +2995,6 @@
 &lt;img src=&#34;img/Jmeter/Preface/0.png&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;

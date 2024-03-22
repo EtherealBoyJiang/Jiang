@@ -20,13 +20,6 @@
 <link rel="stylesheet" href="/Jiang/scss/style.min.189d3104f1eaecf0785e379d83b6ff0b6ec3b8865ba9c1e02448e364e5266078.css">
 <body>
     
-	
-	<script src="https://thelonelypatient.github.io/Jiang/Fancybox/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://thelonelypatient.github.io/Jiang/Fancybox/jquery.fancybox.min.css" />
-	<link rel="stylesheet" href="https://thelonelypatient.github.io/Jiang/Fancybox/jquery.fancybox.css" />
-	<script src="https://thelonelypatient.github.io/Jiang/Fancybox/jquery.fancybox.min.js"></script>
-	
-	
 </body>
 <meta property='og:title' content='Jmeter测试计划'>
 <meta property='og:description' content='测试计划 可以将测试计划可视化为用于运行测试的JMeter脚本。测试计划由测试元素组成，例如线程组，逻辑控制器，样本生成控制器，监听器，定时器，断言和配置元素。 每个测试计划中至少应有一个线程组。 我们可以根据要求添加或删除元素。 前言中的快速开始就是一个测试计划。
@@ -59,6 +52,10 @@
 示例接口代码： 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/TestPlan/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def testplan(): # Jmeter教程测试计划-用户定义的变量api if request.method != &amp;#39;POST&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;ERROR: The request method is not POST&amp;#39;}) data = request.get_json() if &amp;#34;UserDefinedVariables&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;ERROR: The request body is error!&amp;#39;}) return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39;Your request parameters is &amp;#39; &#43; &amp;#39;&amp;#34;UserDefinedVariables:&amp;#39; &#43; data[&amp;#39;UserDefinedVariables&amp;#39;] &#43; &amp;#39;&amp;#34;&amp;#39;})!"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='http://localhost:1313/Jiang/img/Jmeter/0.png' />
     <link rel="shortcut icon" href="https://thelonelypatient.github.io/Jiang/favicon.ico" />
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
     </head>
     <body class="
@@ -514,7 +511,6 @@
 </a>
 </div>
 
-
 </p>
 <h3 id="运行查看结果树"><em>运行，查看结果树</em></h3>
 
@@ -608,7 +604,6 @@
 <img src="img/Jmeter/TestPlan/1.gif" alt=""  />
 </a>
 </div>
-
 
 </p>
 <h3 id="结语"><em>结语</em></h3>
@@ -740,7 +735,6 @@
 </a>
 </div>
 
-
 </p>
 <p>Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求在同一时刻发出，即 <code>2024-01-16 11:19:34</code>。因为两个线程组是并发、随机执行的。</p>
 <h4 id="勾选独立运行每个线程组运行结果"><em>勾选<code>独立运行每个线程组</code>，运行结果</em></h4>
@@ -823,7 +817,6 @@
 <img src="img/Jmeter/TestPlan/3.gif" alt=""  />
 </a>
 </div>
-
 
 </p>
 <p>Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求并非在同一时刻发出。具体而言，HTTP 请求1的请求发出时间是 <code>2024-01-16 11:32:52</code>，而 HTTP 请求2的请求发出时间是 <code>2024-01-16 11:32:55</code>。两者之间的时间差正好为三秒，与接口休眠的三秒相符，这表明两个线程组是顺序执行的。</p>
@@ -938,7 +931,6 @@
 </a>
 </div>
 
-
 </p>
 <p>因为不勾选<code>主线程结束后运行tearDown线程组</code>，而且响应体<code>{&quot;code&quot;: 200,&quot;data&quot;: &quot;处理完毕&quot;}</code>与断言<code>1111</code>无法匹配，响应断言判断该取样器请求发生错误，所以只有线程组被执行完毕后，而 tearDown 线程组并未被执行。</p>
 <p>此时，修改响应断言为：<code>{&quot;code&quot;:200,</code></p>
@@ -962,7 +954,6 @@
 </a>
 </div>
 
-
 </p>
 <p>即使不勾选<code>主线程结束后运行tearDown线程组</code>，因为响应体<code>{&quot;code&quot;: 200,&quot;data&quot;: &quot;处理完毕&quot;}</code>与断言<code>{&quot;code&quot;:200,</code>匹配，响应断言判断该取样器请求正常，所以线程组被执行完毕后，执行 tearDown 线程组。</p>
 <h4 id="勾选主线程结束后运行teardown线程组运行结果"><em>勾选<code>主线程结束后运行tearDown线程组</code>,运行结果</em></h4>
@@ -985,7 +976,6 @@
 <img src="img/Jmeter/TestPlan/6.gif" alt=""  />
 </a>
 </div>
-
 
 </p>
 <p>即使响应断言判断请求发生错误，因为勾选<code>主线程结束后运行tearDown线程组</code>,线程组被执行后，tearDown 线程组紧接被执行。</p>

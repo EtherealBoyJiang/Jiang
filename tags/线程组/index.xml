@@ -581,7 +581,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了2次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行，因此，先执行&lt;code&gt;线程组1&lt;/code&gt;时出现错误请求，不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
@@ -614,7 +613,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组2&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，测试计划停止测试。&lt;/p&gt;
@@ -641,7 +639,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/3.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -678,7 +675,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划停止测试。&lt;/p&gt;
@@ -714,7 +710,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;3个用户同时执行&lt;code&gt;线程组1&lt;/code&gt;。3个用户中其中1个用户执行&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，另外2个用户还在执行&lt;code&gt;错误请求之后请求1&lt;/code&gt;，待执行完毕后，测试计划停止测试。&lt;/p&gt;
@@ -749,7 +744,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/9.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行，1个用户执行&lt;code&gt;线程组1&lt;/code&gt;3次。用户在执行第1次&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，测试计划停止测试。&lt;/p&gt;
@@ -787,7 +781,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了4次，但结果却不尽相同，与预期不符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;后，&lt;code&gt;线程组1&lt;/code&gt;与&lt;code&gt;线程组2&lt;/code&gt;互不干扰且顺序执行。因此，若&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时,不会影响到执行&lt;code&gt;线程组2&lt;/code&gt;。但是结果是&lt;code&gt;线程组2&lt;/code&gt;有概率不会执行。&lt;/p&gt;
@@ -820,7 +813,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了4次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组2&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
@@ -847,7 +839,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/6.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了4次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -884,7 +875,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;先执行&lt;code&gt;未加固定定时器&lt;/code&gt;请求，待&lt;code&gt;错误请求1&lt;/code&gt;中出现错误请求时，测试计划立即停止测试。&lt;/p&gt;
@@ -919,7 +909,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/11.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -957,7 +946,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;1个用户执行&lt;code&gt;线程组1&lt;/code&gt;3次。用户在执行第1次&lt;code&gt;错误请求1&lt;/code&gt;出现错误时，测试计划立即停止测试。&lt;/p&gt;
@@ -990,7 +978,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果保持一致，与预期相符。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;在&lt;code&gt;测试计划&lt;/code&gt;中勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;，所以&lt;code&gt;线程组2&lt;/code&gt;与&lt;code&gt;线程组1&lt;/code&gt;互不干扰且顺序执行。因此，先执行&lt;code&gt;线程组1&lt;/code&gt;，待&lt;code&gt;线程组1&lt;/code&gt;中的用户出现错误请求时，&lt;code&gt;线程组1&lt;/code&gt;的用户线程被停止，接着执行&lt;code&gt;线程组2&lt;/code&gt;。&lt;/p&gt;
@@ -1017,7 +1004,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/14.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -1063,7 +1049,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/15.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -1117,7 +1102,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/16.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -1173,7 +1157,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;每次运行时，用户的三次循环的&lt;code&gt;响应断言&lt;/code&gt;值分别引用&lt;code&gt;CSV 数据文件设置&lt;/code&gt;的&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;、&lt;code&gt;1111&lt;/code&gt;、&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;，导致用户第二次循环时执行&lt;code&gt;错误请求1&lt;/code&gt;时发生错误，
@@ -1200,7 +1183,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/18.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -1410,7 +1392,6 @@
 &lt;/a&gt;
 &lt;/div&gt;
 
-
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
 &lt;p&gt;每次运行时，Jmeter都会延迟&lt;code&gt;3&lt;/code&gt;秒（看右上角）,然后再执行&lt;code&gt;线程组&lt;/code&gt;值。由于&lt;code&gt;持续时间&lt;/code&gt;设置的是&lt;code&gt;2&lt;/code&gt;秒，&lt;code&gt;线程组&lt;/code&gt;只会持续执行&lt;code&gt;2&lt;/code&gt;秒，而固定定时器的延迟是&lt;code&gt;3&lt;/code&gt;，所以不会执行&lt;code&gt;请求2&lt;/code&gt;。&lt;/p&gt;
@@ -1437,7 +1418,6 @@
 &lt;img src=&#34;img/Jmeter/ThreadGroup/20.gif&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;p&gt;连续运行了3次，结果一致且与预期一致。取样器在线程组中按从上至下的顺序执行。&lt;/p&gt;
@@ -1557,7 +1537,6 @@
 &lt;img src=&#34;img/Jmeter/Preface/0.png&#34; alt=&#34;&#34;  /&gt;
 &lt;/a&gt;
 &lt;/div&gt;
-
 
 &lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
