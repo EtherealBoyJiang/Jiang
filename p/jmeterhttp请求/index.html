@@ -1,23 +1,65 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/Jiang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Jiang/livereload" data-no-instant defer></script><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='HTTP请求 '>
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='HTTP请求 JMeter提供多种取样器，HTTP取样器（HTTP Sampler）无疑是最核心的一个。HTTP取样器是用来模拟客户端和服务器之间HTTP请求和接收响应的工具，它可以发送各种类型的HTTP请求，如GET、POST、PUT、DELETE等，用于请求不同的资源。
+HTTP取样器控制面板中包含元素：
+名称、注释
+web服务器
+HTTP请求
+参数
+消息体数据
+文件上传
+客户端实现
+超时
+从HTML文件获取所有内含的资源
+源地址
+代理服务器
+其他任务
+web服务器 '>
 <meta name="keywords" content="Jmeter"><title>JmeterHTTP请求</title>
 
-<link rel='canonical' href='http://localhost:1313/Jiang/p/jmeterhttp%E8%AF%B7%E6%B1%82/'>
+<link rel='canonical' href='https://thelonelypatient.github.io/Jiang/p/jmeterhttp%E8%AF%B7%E6%B1%82/'>
 
 <link rel="stylesheet" href="/Jiang/scss/style.min.189d3104f1eaecf0785e379d83b6ff0b6ec3b8865ba9c1e02448e364e5266078.css">
 <body>
     
 </body>
 <meta property='og:title' content='JmeterHTTP请求'>
-<meta property='og:description' content='HTTP请求 '>
-<meta property='og:url' content='http://localhost:1313/Jiang/p/jmeterhttp%E8%AF%B7%E6%B1%82/'>
+<meta property='og:description' content='HTTP请求 JMeter提供多种取样器，HTTP取样器（HTTP Sampler）无疑是最核心的一个。HTTP取样器是用来模拟客户端和服务器之间HTTP请求和接收响应的工具，它可以发送各种类型的HTTP请求，如GET、POST、PUT、DELETE等，用于请求不同的资源。
+HTTP取样器控制面板中包含元素：
+名称、注释
+web服务器
+HTTP请求
+参数
+消息体数据
+文件上传
+客户端实现
+超时
+从HTML文件获取所有内含的资源
+源地址
+代理服务器
+其他任务
+web服务器 '>
+<meta property='og:url' content='https://thelonelypatient.github.io/Jiang/p/jmeterhttp%E8%AF%B7%E6%B1%82/'>
 <meta property='og:site_name' content='EtherealBoyJiang'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Jmeter' /><meta property='article:tag' content='取样器' /><meta property='article:published_time' content='2024-03-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-03-19T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/Jiang/img/Jmeter/0.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Jmeter' /><meta property='article:tag' content='取样器' /><meta property='article:published_time' content='2024-03-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-03-19T00:00:00&#43;00:00'/><meta property='og:image' content='https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png' />
 <meta name="twitter:title" content="JmeterHTTP请求">
-<meta name="twitter:description" content="HTTP请求 "><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/Jiang/img/Jmeter/0.png' />
+<meta name="twitter:description" content="HTTP请求 JMeter提供多种取样器，HTTP取样器（HTTP Sampler）无疑是最核心的一个。HTTP取样器是用来模拟客户端和服务器之间HTTP请求和接收响应的工具，它可以发送各种类型的HTTP请求，如GET、POST、PUT、DELETE等，用于请求不同的资源。
+HTTP取样器控制面板中包含元素：
+名称、注释
+web服务器
+HTTP请求
+参数
+消息体数据
+文件上传
+客户端实现
+超时
+从HTML文件获取所有内含的资源
+源地址
+代理服务器
+其他任务
+web服务器 "><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png' />
     <link rel="shortcut icon" href="https://thelonelypatient.github.io/Jiang/favicon.ico" />
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -234,7 +276,38 @@
     </div>
 </aside>
 
-    
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#web服务器"><em>web服务器</em></a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
 
             <main class="main full-width">
     <article class="has-image main-article">
@@ -314,6 +387,47 @@
     
     
     <h1 id="http请求"><em>HTTP请求</em></h1>
+<p>JMeter提供多种取样器，HTTP取样器（HTTP Sampler）无疑是最核心的一个。HTTP取样器是用来模拟客户端和服务器之间HTTP请求和接收响应的工具，它可以发送各种类型的HTTP请求，如GET、POST、PUT、DELETE等，用于请求不同的资源。</p>
+<p><strong>HTTP取样器控制面板中包含元素：</strong></p>
+<ul>
+<li>
+<p><strong>名称、注释</strong></p>
+</li>
+<li>
+<p><strong>web服务器</strong></p>
+</li>
+<li>
+<p><strong>HTTP请求</strong></p>
+</li>
+<li>
+<p><strong>参数</strong></p>
+</li>
+<li>
+<p><strong>消息体数据</strong></p>
+</li>
+<li>
+<p><strong>文件上传</strong></p>
+</li>
+<li>
+<p><strong>客户端实现</strong></p>
+</li>
+<li>
+<p><strong>超时</strong></p>
+</li>
+<li>
+<p><strong>从HTML文件获取所有内含的资源</strong></p>
+</li>
+<li>
+<p><strong>源地址</strong></p>
+</li>
+<li>
+<p><strong>代理服务器</strong></p>
+</li>
+<li>
+<p><strong>其他任务</strong></p>
+</li>
+</ul>
+<h2 id="web服务器"><em>web服务器</em></h2>
 
 </section>
 
@@ -498,7 +612,7 @@
 			
 		
 		发表了5篇文章 · 
-		总计1.67k字
+		总计1.68k字
 	</section>
 	
     <section class="powerby">

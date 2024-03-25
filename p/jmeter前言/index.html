@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><script src="/Jiang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Jiang/livereload" data-no-instant defer></script><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='前言 为什么要撰写这样一个教程呢？ 深入学习Jmeter
 温故而知新。尽管我已经使用JMeter很长时间，但还有许多元件我并不十分了解，因此，编写教程的过程成为了我的学习过程，通过反复回顾和整理知识，我能够更全面地掌握JMeter。
 分享知识
@@ -39,7 +39,7 @@ JMeter 可以用于对服务器、网络或对象模拟巨大的负载，来自�
 内容引用 Jmeter测试组件介绍|EMQ本系列教程中部分组件介绍文本引用于此https://www.emqx.com/zh/blog/introduction-to-jmeter-test-components#%E4%B8%80-%E7%BA%BF%E7%A8%8B%E7%BB%84鸟哥教程本系列教程中部分组件介绍文本引用于此https://www.niaoge.com/jmeter/jmeter-index.html示例接口代码 下载示例代码本系列文章中所有示例接口皆由python编写，python版本为3.'>
 <meta name="keywords" content="Jmeter"><title>Jmeter前言</title>
 
-<link rel='canonical' href='http://localhost:1313/Jiang/p/jmeter%E5%89%8D%E8%A8%80/'>
+<link rel='canonical' href='https://thelonelypatient.github.io/Jiang/p/jmeter%E5%89%8D%E8%A8%80/'>
 
 <link rel="stylesheet" href="/Jiang/scss/style.min.189d3104f1eaecf0785e379d83b6ff0b6ec3b8865ba9c1e02448e364e5266078.css">
 <body>
@@ -82,9 +82,9 @@ JMeter 可以用于对服务器、网络或对象模拟巨大的负载，来自�
 配置元件、前置处理器、定时器、取样器、后置处理器、断言、监听器
 工作流程 JMeter通过模拟一组用户将请求发送到目标服务器。 随后，收集数据以通过各种格式计算目标服务器的统计和显示性能度量。
 内容引用 Jmeter测试组件介绍|EMQ本系列教程中部分组件介绍文本引用于此https://www.emqx.com/zh/blog/introduction-to-jmeter-test-components#%E4%B8%80-%E7%BA%BF%E7%A8%8B%E7%BB%84鸟哥教程本系列教程中部分组件介绍文本引用于此https://www.niaoge.com/jmeter/jmeter-index.html示例接口代码 下载示例代码本系列文章中所有示例接口皆由python编写，python版本为3.'>
-<meta property='og:url' content='http://localhost:1313/Jiang/p/jmeter%E5%89%8D%E8%A8%80/'>
+<meta property='og:url' content='https://thelonelypatient.github.io/Jiang/p/jmeter%E5%89%8D%E8%A8%80/'>
 <meta property='og:site_name' content='EtherealBoyJiang'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Jmeter' /><meta property='article:tag' content='线程组' /><meta property='article:published_time' content='2024-01-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-01-23T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/Jiang/img/Jmeter/0.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Jmeter' /><meta property='article:tag' content='线程组' /><meta property='article:published_time' content='2024-01-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-01-23T00:00:00&#43;00:00'/><meta property='og:image' content='https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png' />
 <meta name="twitter:title" content="Jmeter前言">
 <meta name="twitter:description" content="前言 为什么要撰写这样一个教程呢？ 深入学习Jmeter
 温故而知新。尽管我已经使用JMeter很长时间，但还有许多元件我并不十分了解，因此，编写教程的过程成为了我的学习过程，通过反复回顾和整理知识，我能够更全面地掌握JMeter。
@@ -122,7 +122,7 @@ JMeter 可以用于对服务器、网络或对象模拟巨大的负载，来自�
 配置元件、前置处理器、定时器、取样器、后置处理器、断言、监听器
 工作流程 JMeter通过模拟一组用户将请求发送到目标服务器。 随后，收集数据以通过各种格式计算目标服务器的统计和显示性能度量。
 内容引用 Jmeter测试组件介绍|EMQ本系列教程中部分组件介绍文本引用于此https://www.emqx.com/zh/blog/introduction-to-jmeter-test-components#%E4%B8%80-%E7%BA%BF%E7%A8%8B%E7%BB%84鸟哥教程本系列教程中部分组件介绍文本引用于此https://www.niaoge.com/jmeter/jmeter-index.html示例接口代码 下载示例代码本系列文章中所有示例接口皆由python编写，python版本为3."><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='http://localhost:1313/Jiang/img/Jmeter/0.png' />
+    <meta name="twitter:image" content='https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png' />
     <link rel="shortcut icon" href="https://thelonelypatient.github.io/Jiang/favicon.ico" />
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -559,7 +559,6 @@ JMeter 可以用于对服务器、网络或对象模拟巨大的负载，来自�
 <img src="img/Jmeter/Preface/0.png" alt=""  />
 </a>
 </div>
-
 </p>
 <div><br></div>
 <h2 id="内容引用"><em>内容引用</em></h2>
@@ -1189,7 +1188,7 @@ JMeter 可以用于对服务器、网络或对象模拟巨大的负载，来自�
 			
 		
 		发表了5篇文章 · 
-		总计1.67k字
+		总计1.68k字
 	</section>
 	
     <section class="powerby">
