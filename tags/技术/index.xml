@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>技术 on EtherealBoyJiang</title>
-        <link>https://thelonelypatient.github.io/Jiang/tags/%E6%8A%80%E6%9C%AF/</link>
+        <link>http://localhost:1313/Jiang/tags/%E6%8A%80%E6%9C%AF/</link>
         <description>Recent content in 技术 on EtherealBoyJiang</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>EtherealBoyJiang</copyright>
-        <lastBuildDate>Fri, 26 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://thelonelypatient.github.io/Jiang/tags/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 26 Jan 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/Jiang/tags/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Jmeter测试计划</title>
-        <link>https://thelonelypatient.github.io/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/</link>
+        <link>http://localhost:1313/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/</link>
         <pubDate>Fri, 26 Jan 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://thelonelypatient.github.io/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/</guid>
-        <description>&lt;img src="https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter测试计划" /&gt;&lt;h1 id=&#34;测试计划&#34;&gt;&lt;em&gt;测试计划&lt;/em&gt;&lt;/h1&gt;
+        <guid>http://localhost:1313/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/</guid>
+        <description>&lt;img src="http://localhost:1313/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter测试计划" /&gt;&lt;h1 id=&#34;测试计划&#34;&gt;&lt;em&gt;测试计划&lt;/em&gt;&lt;/h1&gt;
 &lt;p&gt;可以将测试计划可视化为用于运行测试的JMeter脚本。测试计划由测试元素组成，例如线程组，逻辑控制器，样本生成控制器，监听器，定时器，断言和配置元素。 每个测试计划中至少应有一个线程组。 我们可以根据要求添加或删除元素。 前言中的快速开始就是一个测试计划。&lt;/p&gt;
 &lt;p&gt;测试计划控制面板中的元素：&lt;/p&gt;
 &lt;ul&gt;
@@ -93,8 +93,8 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/0.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/0.gif&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/0.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/0.gif&#34;
 		
 		
 		
@@ -102,15 +102,7 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/0.gif&#34;&gt;
-&lt;img src=&#34;img/Jmeter/TestPlan/0.gif&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;运行查看结果树&#34;&gt;&lt;em&gt;运行，查看结果树&lt;/em&gt;&lt;/h3&gt;
 
 
@@ -186,8 +178,8 @@
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/1.gif&#34;
 		
 		
 		
@@ -195,15 +187,7 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/1.gif&#34;&gt;
-&lt;img src=&#34;img/Jmeter/TestPlan/1.gif&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;结语&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;可以清晰地看出，接口请求参数中调用了&lt;code&gt;用户定义的变量&lt;/code&gt;的值:&lt;code&gt;我是用户定义的变量&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;此外，JMeter提供的配置元件中也包含&lt;code&gt;用户定义的变量&lt;/code&gt;元件，通过&lt;code&gt;测试计划/线程组/取样器-添加-配置元件-用户定义的变量&lt;/code&gt;进行添加。用法与测试计划面板中的&lt;code&gt;用户定义的变量&lt;/code&gt;一致，不同之处在于作用域。&lt;/p&gt;
@@ -315,8 +299,8 @@
 &lt;/div&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/2.gif&#34;
 		
 		
 		
@@ -324,15 +308,7 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/2.gif&#34;&gt;
-&lt;img src=&#34;img/Jmeter/TestPlan/2.gif&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求在同一时刻发出，即 &lt;code&gt;2024-01-16 11:19:34&lt;/code&gt;。因为两个线程组是并发、随机执行的。&lt;/p&gt;
 &lt;h4 id=&#34;勾选独立运行每个线程组运行结果&#34;&gt;&lt;em&gt;勾选&lt;code&gt;独立运行每个线程组&lt;/code&gt;，运行结果&lt;/em&gt;&lt;/h4&gt;
 
@@ -397,8 +373,8 @@
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/3.gif&#34;
 		
 		
 		
@@ -406,15 +382,7 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/3.gif&#34;&gt;
-&lt;img src=&#34;img/Jmeter/TestPlan/3.gif&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求并非在同一时刻发出。具体而言，HTTP 请求1的请求发出时间是 &lt;code&gt;2024-01-16 11:32:52&lt;/code&gt;，而 HTTP 请求2的请求发出时间是 &lt;code&gt;2024-01-16 11:32:55&lt;/code&gt;。两者之间的时间差正好为三秒，与接口休眠的三秒相符，这表明两个线程组是顺序执行的。&lt;/p&gt;
 &lt;h3 id=&#34;结语-1&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;当勾选了&lt;code&gt;独立运行每个线程组&lt;/code&gt;选项时，能够确保测试计划中的相同类型线程组按照顺序执行。在某些特定的测试情况下，这个选项非常有用。相反，若未勾选 &lt;code&gt;独立运行每个线程组&lt;/code&gt;时，线程组是并发执行。&lt;/p&gt;
@@ -509,8 +477,8 @@
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/4.gif&#34;
 		
 		
 		
@@ -518,21 +486,13 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/4.gif&#34;&gt;
-&lt;img src=&#34;img/Jmeter/TestPlan/4.gif&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;因为不勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;，而且响应体&lt;code&gt;{&amp;quot;code&amp;quot;: 200,&amp;quot;data&amp;quot;: &amp;quot;处理完毕&amp;quot;}&lt;/code&gt;与断言&lt;code&gt;1111&lt;/code&gt;无法匹配，响应断言判断该取样器请求发生错误，所以只有线程组被执行完毕后，而 tearDown 线程组并未被执行。&lt;/p&gt;
 &lt;p&gt;此时，修改响应断言为：&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;再运行。&lt;/p&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/5.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/5.gif&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/5.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/5.gif&#34;
 		
 		
 		
@@ -540,21 +500,13 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/5.gif&#34;&gt;
-&lt;img src=&#34;img/Jmeter/TestPlan/5.gif&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;即使不勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;，因为响应体&lt;code&gt;{&amp;quot;code&amp;quot;: 200,&amp;quot;data&amp;quot;: &amp;quot;处理完毕&amp;quot;}&lt;/code&gt;与断言&lt;code&gt;{&amp;quot;code&amp;quot;:200,&lt;/code&gt;匹配，响应断言判断该取样器请求正常，所以线程组被执行完毕后，执行 tearDown 线程组。&lt;/p&gt;
 &lt;h4 id=&#34;勾选主线程结束后运行teardown线程组运行结果&#34;&gt;&lt;em&gt;勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;,运行结果&lt;/em&gt;&lt;/h4&gt;
 &lt;p&gt;响应断言改回为：&lt;code&gt;1111&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/6.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/TestPlan/6.gif&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/6.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/TestPlan/6.gif&#34;
 		
 		
 		
@@ -562,15 +514,7 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/TestPlan/6.gif&#34;&gt;
-&lt;img src=&#34;img/Jmeter/TestPlan/6.gif&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;即使响应断言判断请求发生错误，因为勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;,线程组被执行后，tearDown 线程组紧接被执行。&lt;/p&gt;
 &lt;h3 id=&#34;结语-2&#34;&gt;&lt;em&gt;结语&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;在确保测试环境的可靠性和稳定性方面，通过勾选&lt;code&gt;主线程结束后运行tearDown线程组&lt;/code&gt;以及配置线程组中的取样器错误后执行的动作，可以在主线程结束后执行 tearDown 线程组，从而进行一些关键的清理和还原操作。这一设置在测试流程中发生错误或异常情况时，能够确保系统状态的正确还原，为后续测试提供稳定的基础。&lt;/p&gt;
@@ -611,11 +555,11 @@
         </item>
         <item>
         <title>Jmeter环境配置</title>
-        <link>https://thelonelypatient.github.io/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+        <link>http://localhost:1313/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
         <pubDate>Thu, 25 Jan 2024 00:00:00 +0000</pubDate>
         
-        <guid>https://thelonelypatient.github.io/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
-        <description>&lt;img src="https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter环境配置" /&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;
+        <guid>http://localhost:1313/Jiang/p/jmeter%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+        <description>&lt;img src="http://localhost:1313/Jiang/img/Jmeter/0.png" alt="Featured image of post Jmeter环境配置" /&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h1 id=&#34;jmeter-环境安装及配置&#34;&gt;JMeter 环境安装及配置&lt;/h1&gt;
 &lt;p&gt;在使用 JMeter 之前，需要配置相应的环境，包括安装JDK和JMeter。&lt;/p&gt;
 &lt;p&gt;首先，了解一下JDK，它就是Java的开发工具包。&lt;/p&gt;
@@ -772,8 +716,8 @@
 &lt;br&gt;
 &lt;/div&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/1.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/1.png&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/1.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/1.png&#34;
 		
 		
 		
@@ -781,21 +725,13 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/1.png&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/1.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;2安装jdk&#34;&gt;&lt;em&gt;2.安装JDK&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;建议在安装之前在&lt;code&gt;D盘或C盘&lt;/code&gt;下新建一个下新建一个&lt;code&gt;Tools&lt;/code&gt; 文件夹。在安装 JDK 时，修改安装目录为&lt;code&gt;Tools&lt;/code&gt;文件夹。这样做的好处在于方便管理和配置环境变量。&lt;/p&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/2.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/2.png&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/2.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/2.png&#34;
 		
 		
 		
@@ -803,18 +739,10 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/2.png&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/2.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/3.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/3.png&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/3.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/3.png&#34;
 		
 		
 		
@@ -822,15 +750,7 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/3.png&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/3.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;接下来就是一直下一步就行。&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;配置jdk系统变量环境变量&#34;&gt;&lt;em&gt;配置JDK系统变量、环境变量&lt;/em&gt;&lt;/h3&gt;
@@ -876,8 +796,8 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/4.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/4.png&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/4.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/4.png&#34;
 		
 		
 		
@@ -885,15 +805,7 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/4.png&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/4.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h4 id=&#34;path中新建java_home的环境环境&#34;&gt;&lt;em&gt;Path中新建JAVA_HOME的环境环境&lt;/em&gt;&lt;/h4&gt;
 &lt;ol&gt;
@@ -911,8 +823,8 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/5.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/5.png&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/5.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/5.png&#34;
 		
 		
 		
@@ -920,15 +832,7 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/5.png&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/5.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h2 id=&#34;jmeter&#34;&gt;&lt;em&gt;Jmeter&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;JMeter 是一个独立的 Java 应用程序，它不依赖于系统注册表或其他系统级配置。所以它能够在不同操作系统上运行而无需进行安装。只需要下载完成后，将 ZIP 文件解压缩到指定的目录。
@@ -1081,8 +985,8 @@
 &lt;br&gt;
 &lt;/div&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/6.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/6.png&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/6.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/6.png&#34;
 		
 		
 		
@@ -1090,15 +994,7 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/6.png&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/6.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;
 &lt;a1 href=&#34;https://jmeter.apache.org/download_jmeter.cgi&#34; target=&#34;_blank&#34;&gt;
     &lt;div class=&#34;zhengti&#34;&gt;
@@ -1246,8 +1142,8 @@
 &lt;br&gt;
 &lt;/div&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/7.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/7.png&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/7.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/7.png&#34;
 		
 		
 		
@@ -1255,21 +1151,13 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/7.png&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/7.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;解压到目录&#34;&gt;&lt;em&gt;解压到目录&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;建议解压到D:\Tools目录下，方便管理。&lt;/p&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/8.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/8.png&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/8.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/8.png&#34;
 		
 		
 		
@@ -1277,21 +1165,13 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/8.png&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/8.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;汉化jmeter界面&#34;&gt;&lt;em&gt;汉化Jmeter界面&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;编辑Jmeter/bin/jmeter.properties，40行增加&lt;code&gt;language=zh_CN&lt;/code&gt;，然后保存。&lt;/p&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/9.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/9.png&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/9.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/9.png&#34;
 		
 		
 		
@@ -1299,20 +1179,12 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/9.png&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/9.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;发送启动文件到桌面快捷方式&#34;&gt;&lt;em&gt;发送启动文件到桌面快捷方式&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/10.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/10.png&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/10.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/10.png&#34;
 		
 		
 		
@@ -1320,21 +1192,13 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/10.png&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/10.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h3 id=&#34;启动jmeter&#34;&gt;&lt;em&gt;启动Jmeter&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;双击桌面上的 JMeter 快捷方式，等待脚本运行，然后 JMeter 界面将会显示出来。&lt;/p&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/11.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/11.png&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/11.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/11.png&#34;
 		
 		
 		
@@ -1342,15 +1206,7 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/11.png&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/11.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;/div&gt;
 &lt;h2 id=&#34;快速使用&#34;&gt;&lt;em&gt;快速使用&lt;/em&gt;&lt;/h2&gt;
 &lt;p&gt;我们可以使用最简单的JMeter脚本来快速进行一次接口请求。这个脚本包括测试计划、线程组、取样器（Sampler）以及查看结果器（View Results Tree）。&lt;/p&gt;
@@ -1393,8 +1249,8 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/12.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/12.png&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/12.png&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/12.png&#34;
 		
 		
 		
@@ -1402,19 +1258,11 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/12.png&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/12.png&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;运行点击上方绿色三角形查看结果树&#34;&gt;&lt;em&gt;运行（点击上方绿色三角形），查看结果树&lt;/em&gt;&lt;/h3&gt;
 &lt;p&gt;
-&lt;a href=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/1.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
-	&lt;img src=&#34;https://thelonelypatient.github.io/Jiang/Jiang/img/Jmeter/EnvConfig/1.gif&#34;
+&lt;a href=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/1.gif&#34; class=&#34;fancybox&#34; data-fancybox=&#34;gallery&#34; data-caption=&#34;&#34;&gt;
+	&lt;img src=&#34;http://localhost:1313/Jiang/Jiang/img/Jmeter/EnvConfig/1.gif&#34;
 		
 		
 		
@@ -1422,15 +1270,7 @@
 		
 		
 	&gt;
-&lt;/a&gt;
-
-
-&lt;div class=&#34;post-img-view&#34;&gt;
-&lt;a data-fancybox=&#34;gallery&#34; href=&#34;img/Jmeter/EnvConfig/1.gif&#34;&gt;
-&lt;img src=&#34;img/Jmeter/EnvConfig/1.gif&#34; alt=&#34;&#34;  /&gt;
-&lt;/a&gt;
-&lt;/div&gt;
-&lt;/p&gt;
+&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;请求成功。请求数据中，包括&lt;code&gt;Request Headers 请求头&lt;/code&gt;和&lt;code&gt;Request Body 请求体&lt;/code&gt;。响应数据中，包括&lt;code&gt;Response Headers 响应头&lt;/code&gt;和&lt;code&gt;Response Body 响应体&lt;/code&gt;。&lt;/p&gt;
 &lt;p&gt;此次请求的响应体数据为 &lt;font style=&#34;background-color: #fbe5e1; color:#c0341d;&#34;&gt;{&amp;ldquo;code&amp;rdquo;: 200, &amp;ldquo;data&amp;rdquo;: &amp;ldquo;It is successful!&amp;rdquo;}&lt;/font&gt;&lt;/p&gt;
 &lt;div&gt;&lt;br&gt;&lt;hr&gt;&lt;/div&gt;

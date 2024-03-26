@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn" dir="ltr">
-    <head><meta charset='utf-8'>
+    <head><script src="/Jiang/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=Jiang/livereload" data-no-instant defer></script><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='测试计划 可以将测试计划可视化为用于运行测试的JMeter脚本。测试计划由测试元素组成，例如线程组，逻辑控制器，样本生成控制器，监听器，定时器，断言和配置元素。 每个测试计划中至少应有一个线程组。 我们可以根据要求添加或删除元素。 前言中的快速开始就是一个测试计划。
 测试计划控制面板中的元素：
 名称和注释
@@ -15,7 +15,7 @@
 示例接口代码： 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/TestPlan/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def testplan(): # Jmeter教程测试计划-用户定义的变量api if request.method != &amp;#39;POST&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;ERROR: The request method is not POST&amp;#39;}) data = request.get_json() if &amp;#34;UserDefinedVariables&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;ERROR: The request body is error!&amp;#39;}) return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39;Your request parameters is &amp;#39; &#43; &amp;#39;&amp;#34;UserDefinedVariables:&amp;#39; &#43; data[&amp;#39;UserDefinedVariables&amp;#39;] &#43; &amp;#39;&amp;#34;&amp;#39;})!'>
 <meta name="keywords" content="Jmeter"><title>Jmeter测试计划</title>
 
-<link rel='canonical' href='https://thelonelypatient.github.io/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/'>
+<link rel='canonical' href='http://localhost:1313/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/'>
 
 <link rel="stylesheet" href="/Jiang/scss/style.min.189d3104f1eaecf0785e379d83b6ff0b6ec3b8865ba9c1e02448e364e5266078.css">
 <body>
@@ -34,9 +34,9 @@
 测试计划控制面板中的用户定义的变量的作用域覆盖整个测试计划。
 你可以通过${变量名称}的方式来引用这些变量。这种方式允许你在不同的请求或操作中使用相同的数值，从而更加方便地维护和修改。
 示例接口代码： 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/TestPlan/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def testplan(): # Jmeter教程测试计划-用户定义的变量api if request.method != &amp;#39;POST&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;ERROR: The request method is not POST&amp;#39;}) data = request.get_json() if &amp;#34;UserDefinedVariables&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;ERROR: The request body is error!&amp;#39;}) return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39;Your request parameters is &amp;#39; &#43; &amp;#39;&amp;#34;UserDefinedVariables:&amp;#39; &#43; data[&amp;#39;UserDefinedVariables&amp;#39;] &#43; &amp;#39;&amp;#34;&amp;#39;})!'>
-<meta property='og:url' content='https://thelonelypatient.github.io/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/'>
+<meta property='og:url' content='http://localhost:1313/Jiang/p/jmeter%E6%B5%8B%E8%AF%95%E8%AE%A1%E5%88%92/'>
 <meta property='og:site_name' content='EtherealBoyJiang'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='测试' /><meta property='article:tag' content='技术' /><meta property='article:tag' content='Jmeter' /><meta property='article:tag' content='测试计划' /><meta property='article:published_time' content='2024-01-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-03-18T00:00:00&#43;00:00'/><meta property='og:image' content='https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='测试' /><meta property='article:tag' content='技术' /><meta property='article:tag' content='Jmeter' /><meta property='article:tag' content='测试计划' /><meta property='article:published_time' content='2024-01-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2024-03-18T00:00:00&#43;00:00'/><meta property='og:image' content='http://localhost:1313/Jiang/img/Jmeter/0.png' />
 <meta name="twitter:title" content="Jmeter测试计划">
 <meta name="twitter:description" content="测试计划 可以将测试计划可视化为用于运行测试的JMeter脚本。测试计划由测试元素组成，例如线程组，逻辑控制器，样本生成控制器，监听器，定时器，断言和配置元素。 每个测试计划中至少应有一个线程组。 我们可以根据要求添加或删除元素。 前言中的快速开始就是一个测试计划。
 测试计划控制面板中的元素：
@@ -50,7 +50,7 @@
 测试计划控制面板中的用户定义的变量的作用域覆盖整个测试计划。
 你可以通过${变量名称}的方式来引用这些变量。这种方式允许你在不同的请求或操作中使用相同的数值，从而更加方便地维护和修改。
 示例接口代码： 1 2 3 4 5 6 7 8 9 @api.route(&amp;#39;/TestPlan/&amp;#39;, methods=[&amp;#39;GET&amp;#39;, &amp;#39;POST&amp;#39;]) def testplan(): # Jmeter教程测试计划-用户定义的变量api if request.method != &amp;#39;POST&amp;#39;: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;ERROR: The request method is not POST&amp;#39;}) data = request.get_json() if &amp;#34;UserDefinedVariables&amp;#34; not in data: return jsonify({&amp;#39;code&amp;#39;: 400, &amp;#39;data&amp;#39;: &amp;#39;ERROR: The request body is error!&amp;#39;}) return jsonify({&amp;#39;code&amp;#39;: 200, &amp;#39;data&amp;#39;: &amp;#39;Your request parameters is &amp;#39; &#43; &amp;#39;&amp;#34;UserDefinedVariables:&amp;#39; &#43; data[&amp;#39;UserDefinedVariables&amp;#39;] &#43; &amp;#39;&amp;#34;&amp;#39;})!"><meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content='https://thelonelypatient.github.io/Jiang/img/Jmeter/0.png' />
+    <meta name="twitter:image" content='http://localhost:1313/Jiang/img/Jmeter/0.png' />
     <link rel="shortcut icon" href="https://thelonelypatient.github.io/Jiang/favicon.ico" />
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
@@ -502,15 +502,7 @@
 		
 		
 	>
-</a>
-
-
-<div class="post-img-view">
-<a data-fancybox="gallery" href="img/Jmeter/TestPlan/0.gif">
-<img src="img/Jmeter/TestPlan/0.gif" alt=""  />
-</a>
-</div>
-</p>
+</a></p>
 <h3 id="运行查看结果树"><em>运行，查看结果树</em></h3>
 
 
@@ -595,15 +587,7 @@
 		
 		
 	>
-</a>
-
-
-<div class="post-img-view">
-<a data-fancybox="gallery" href="img/Jmeter/TestPlan/1.gif">
-<img src="img/Jmeter/TestPlan/1.gif" alt=""  />
-</a>
-</div>
-</p>
+</a></p>
 <h3 id="结语"><em>结语</em></h3>
 <p>可以清晰地看出，接口请求参数中调用了<code>用户定义的变量</code>的值:<code>我是用户定义的变量</code>。</p>
 <p>此外，JMeter提供的配置元件中也包含<code>用户定义的变量</code>元件，通过<code>测试计划/线程组/取样器-添加-配置元件-用户定义的变量</code>进行添加。用法与测试计划面板中的<code>用户定义的变量</code>一致，不同之处在于作用域。</p>
@@ -724,15 +708,7 @@
 		
 		
 	>
-</a>
-
-
-<div class="post-img-view">
-<a data-fancybox="gallery" href="img/Jmeter/TestPlan/2.gif">
-<img src="img/Jmeter/TestPlan/2.gif" alt=""  />
-</a>
-</div>
-</p>
+</a></p>
 <p>Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求在同一时刻发出，即 <code>2024-01-16 11:19:34</code>。因为两个线程组是并发、随机执行的。</p>
 <h4 id="勾选独立运行每个线程组运行结果"><em>勾选<code>独立运行每个线程组</code>，运行结果</em></h4>
 
@@ -806,15 +782,7 @@
 		
 		
 	>
-</a>
-
-
-<div class="post-img-view">
-<a data-fancybox="gallery" href="img/Jmeter/TestPlan/3.gif">
-<img src="img/Jmeter/TestPlan/3.gif" alt=""  />
-</a>
-</div>
-</p>
+</a></p>
 <p>Sample Start 是请求发出的时间，可以观察到两个线程组内的 HTTP 请求并非在同一时刻发出。具体而言，HTTP 请求1的请求发出时间是 <code>2024-01-16 11:32:52</code>，而 HTTP 请求2的请求发出时间是 <code>2024-01-16 11:32:55</code>。两者之间的时间差正好为三秒，与接口休眠的三秒相符，这表明两个线程组是顺序执行的。</p>
 <h3 id="结语-1"><em>结语</em></h3>
 <p>当勾选了<code>独立运行每个线程组</code>选项时，能够确保测试计划中的相同类型线程组按照顺序执行。在某些特定的测试情况下，这个选项非常有用。相反，若未勾选 <code>独立运行每个线程组</code>时，线程组是并发执行。</p>
@@ -918,15 +886,7 @@
 		
 		
 	>
-</a>
-
-
-<div class="post-img-view">
-<a data-fancybox="gallery" href="img/Jmeter/TestPlan/4.gif">
-<img src="img/Jmeter/TestPlan/4.gif" alt=""  />
-</a>
-</div>
-</p>
+</a></p>
 <p>因为不勾选<code>主线程结束后运行tearDown线程组</code>，而且响应体<code>{&quot;code&quot;: 200,&quot;data&quot;: &quot;处理完毕&quot;}</code>与断言<code>1111</code>无法匹配，响应断言判断该取样器请求发生错误，所以只有线程组被执行完毕后，而 tearDown 线程组并未被执行。</p>
 <p>此时，修改响应断言为：<code>{&quot;code&quot;:200,</code></p>
 <p>再运行。</p>
@@ -940,15 +900,7 @@
 		
 		
 	>
-</a>
-
-
-<div class="post-img-view">
-<a data-fancybox="gallery" href="img/Jmeter/TestPlan/5.gif">
-<img src="img/Jmeter/TestPlan/5.gif" alt=""  />
-</a>
-</div>
-</p>
+</a></p>
 <p>即使不勾选<code>主线程结束后运行tearDown线程组</code>，因为响应体<code>{&quot;code&quot;: 200,&quot;data&quot;: &quot;处理完毕&quot;}</code>与断言<code>{&quot;code&quot;:200,</code>匹配，响应断言判断该取样器请求正常，所以线程组被执行完毕后，执行 tearDown 线程组。</p>
 <h4 id="勾选主线程结束后运行teardown线程组运行结果"><em>勾选<code>主线程结束后运行tearDown线程组</code>,运行结果</em></h4>
 <p>响应断言改回为：<code>1111</code></p>
@@ -962,15 +914,7 @@
 		
 		
 	>
-</a>
-
-
-<div class="post-img-view">
-<a data-fancybox="gallery" href="img/Jmeter/TestPlan/6.gif">
-<img src="img/Jmeter/TestPlan/6.gif" alt=""  />
-</a>
-</div>
-</p>
+</a></p>
 <p>即使响应断言判断请求发生错误，因为勾选<code>主线程结束后运行tearDown线程组</code>,线程组被执行后，tearDown 线程组紧接被执行。</p>
 <h3 id="结语-2"><em>结语</em></h3>
 <p>在确保测试环境的可靠性和稳定性方面，通过勾选<code>主线程结束后运行tearDown线程组</code>以及配置线程组中的取样器错误后执行的动作，可以在主线程结束后执行 tearDown 线程组，从而进行一些关键的清理和还原操作。这一设置在测试流程中发生错误或异常情况时，能够确保系统状态的正确还原，为后续测试提供稳定的基础。</p>
@@ -1207,7 +1151,7 @@
 			
 		
 		发表了5篇文章 · 
-		总计1.68k字
+		总计1.96k字
 	</section>
 	
     <section class="powerby">
